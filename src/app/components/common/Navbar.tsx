@@ -1,16 +1,19 @@
 import Image from 'next/image';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import Link from 'next/link';
 
 
 export default function Navbar() {
     return (
         <nav className="flex items-center justify-between p-4 border-b-2 border-gray-200">
             <div className="flex items-center space-x-4">
-                <Image src="/Assets/NavbarImages/logo.png" alt="Truedeal Logo" width={150} height={30} />
+                <Link href="/">
+                    <Image src="/Assets/NavbarImages/logo.png" alt="Truedeal Logo" width={150} height={30} />
+                </Link>
             </div>
 
             <div className="hidden md:flex space-x-8 font-semibold">
-                <a href="#home" className="text-gray-500 hover:text-red-500">Home</a>
+                <Link href="/" className="text-gray-500 hover:text-red-500">Home</Link>
                 <a href="#about-us" className="text-gray-500 hover:text-red-500">About Us</a>
                 <a href="#services" className="text-gray-500 hover:text-red-500">Our Services</a>
                 <a href="#news" className="text-gray-500 hover:text-red-500">News</a>
