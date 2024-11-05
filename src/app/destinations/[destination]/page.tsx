@@ -1,22 +1,3 @@
-// 'use client'
-
-// import { useParams } from 'next/navigation'
-
-// export default function DestinationDetails() {
-//     const params = useParams()
-//     const { destination } = params
-
-//     return (
-//         <div className="p-8">
-//             <h1 className="text-3xl font-bold mb-4 capitalize">{destination} Itinerary</h1>
-//             {/* Add your itinerary details here */}
-//             <p>Itinerary details for {destination} will be displayed here.</p>
-//         </div>
-//     )
-// }
-
-// fix
-
 'use client'
 
 import { useState } from 'react'
@@ -33,53 +14,8 @@ import {
     PopoverTrigger,
 } from "@/components/ui/popover"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-
-const destinationsData = {
-    thailand: {
-        name: "Thailand",
-        images: [
-            "/Assets/DestinationsImage/thailand1.jpg",
-            "/Assets/DestinationsImage/thailand2.jpg",
-            "/Assets/DestinationsImage/thailand3.jpg",
-            "/Assets/DestinationsImage/thailand4.jpg",
-        ],
-        price: 8000,
-        duration: { nights: 5, days: 6 },
-        itinerary: [
-            { day: 1, activities: ["Arrive in Bangkok", "Visit Grand Palace", "Evening street food tour"] },
-            { day: 2, activities: ["Floating Market tour", "Temple of Dawn visit", "Thai cooking class"] },
-            { day: 3, activities: ["Fly to Phuket", "Beach relaxation", "Sunset at Promthep Cape"] },
-            { day: 4, activities: ["Phi Phi Islands tour", "Snorkeling", "Beach BBQ dinner"] },
-            { day: 5, activities: ["Phuket Old Town tour", "Big Buddha visit", "Farewell dinner"] },
-            { day: 6, activities: ["Free morning", "Departure"] },
-        ],
-        sightseeing: ["Grand Palace", "Wat Arun", "Phi Phi Islands", "Big Buddha", "Phuket Old Town"],
-    },
-    indonesia: {
-        name: "Indonesia",
-        images: [
-            "/Assets/DestinationsImage/indonesia1.jpg",
-            "/Assets/DestinationsImage/indonesia2.jpg",
-            "/Assets/DestinationsImage/indonesia3.jpg",
-            "/Assets/DestinationsImage/indonesia4.jpg",
-        ],
-        price: 9000,
-        duration: { nights: 7, days: 8 },
-        itinerary: [
-            { day: 1, activities: ["Arrive in Jakarta", "National Monument visit", "Welcome dinner"] },
-            { day: 2, activities: ["Taman Mini Indonesia Indah", "Old Town tour", "Sunda Kelapa Harbor"] },
-            { day: 3, activities: ["Fly to Yogyakarta", "Prambanan Temple visit", "Traditional dance show"] },
-            { day: 4, activities: ["Borobudur Temple sunrise", "Merapi Volcano tour", "Local market visit"] },
-            { day: 5, activities: ["Fly to Bali", "Ubud Monkey Forest", "Rice terrace walk"] },
-            { day: 6, activities: ["Bali temple tour", "Water palace visit", "Balinese cooking class"] },
-            { day: 7, activities: ["Nusa Penida island tour", "Snorkeling", "Farewell dinner"] },
-            { day: 8, activities: ["Free morning", "Departure"] },
-        ],
-        sightseeing: ["Borobudur Temple", "Prambanan Temple", "Ubud Monkey Forest", "Tanah Lot Temple", "Nusa Penida"],
-    },
-    // ... Add similar data for Bali, Switzerland, Vietnam, and Croatia
-}
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { destinationsData } from '@/lib/destinations-data'
 
 export default function DestinationDetails() {
     const params = useParams()
