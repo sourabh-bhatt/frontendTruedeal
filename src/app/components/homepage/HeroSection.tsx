@@ -14,7 +14,7 @@ export default function HeroSection() {
                 </h2>
 
                 {/* Search Form */}
-                <div className="mt-8 bg-white p-4 rounded-lg shadow-md w-full max-w-2xl border-2 border-red-600">
+                <div className="mt-8 bg-white p-10 rounded-lg shadow-md w-full max-w-4xl">
                     <div className="flex flex-col md:flex-row justify-between space-y-4  md:space-y-0 md:space-x-4">
                         {/* Destination */}
                         <div className="flex flex-col">
