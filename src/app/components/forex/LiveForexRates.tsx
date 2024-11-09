@@ -21,9 +21,6 @@ export default function LiveForexRates() {
                     </div>
                 </div>
             </div>
-
-            {/* Foreign Currency Services Section */}
-
         </div>
     );
 }

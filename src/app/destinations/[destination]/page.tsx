@@ -40,12 +40,10 @@ export default function DestinationDetails() {
     return (
         <div className="container mx-auto px-4 py-8">
             <h1 className="text-4xl font-bold mb-6">{destinationData.name}</h1>
-
-            {/* Image Slider */}
             <div className="relative w-full h-[500px] mb-8">
                 <Image
                     src={destinationData.images[currentImageIndex]}
-                    alt={`${destinationData.name} - Image ${currentImageIndex + 1}`}
+                    alt={`${destinationData.name} - Image ${currentImageIndex + 19}`}
                     layout="fill"
                     objectFit="cover"
                     className="rounded-lg"
