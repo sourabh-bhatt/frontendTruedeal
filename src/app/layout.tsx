@@ -4,23 +4,6 @@ import "./globals.css";
 import Navbar from "./components/common/Navbar";
 import Footer from "./components/common/Footer";
 
-// const geistSans = localFont({
-//   src: "./fonts/GeistVF.woff",
-//   variable: "--font-geist-sans",
-//   weight: "100 900",
-// });
-// const geistMono = localFont({
-//   src: "./fonts/GeistMonoVF.woff",
-//   variable: "--font-geist-mono",
-//   weight: "100 900",
-// });
-
-// const poppinsBlack = localFont({
-//   src: "./fonts/Poppins-Black.ttf",
-//   variable: "--popins-black",
-//   weight: "100 900",
-// });
-
 const poppins = localFont({
   src: [
     {
