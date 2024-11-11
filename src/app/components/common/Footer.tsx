@@ -2,45 +2,53 @@ import Image from "next/image"
 import Link from "next/link"
 import { Facebook, Twitter, Youtube } from "lucide-react"
 
-export default function Footer() {
+export default function Component() {
     return (
-        <footer className="bg-white pt-16 pb-12 px-4">
+        <footer className="bg-gray-200 py-12 px-4">
             <div className="max-w-7xl mx-auto">
                 {/* Newsletter Section */}
-                <div className="mb-16 text-center">
-                    <h2 className="text-gray-900 font-bold mb-2">KEEP IN TOUCH</h2>
-                    <p className="text-2xl mb-6">
-                        <span className="text-rose-500">Subscribe</span>{" "}
-                        <span className="text-gray-500">to our Newsletter</span>
-                    </p>
-                    <div className="max-w-xl mx-auto flex gap-2">
-                        <input
-                            type="email"
-                            placeholder="Enter your Email"
-                            className="flex-1 px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:border-rose-500"
-                        />
-                        <button className="px-8 py-2 bg-rose-500 text-white rounded-full hover:bg-rose-600 transition-colors">
-                            SUBSCRIBE
-                        </button>
+                <div className="mb-12 flex flex-col md:flex-row items-center justify-around">
+                    <div className="mb-4 md:mb-0">
+                        <h2 className="text-gray-900 text-sm tracking-wider mb-1 font-poppins font-bold">KEEP IN TOUCH</h2>
+                        <div className="flex items-center gap-2">
+                            <span className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-transparent bg-clip-text text-2xl font-poppins font-bold">
+                                Subscribe
+                            </span>
+                            <span className="text-gray-400 text-2xl font-poppins font-semibold">to our Newsletter</span>
+                        </div>
+                    </div>
+                    <div className="relative w-full md:w-auto">
+                        <div className="relative flex">
+                            <div className=" md:w-80 p-[1px] rounded-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
+                                <input
+                                    type="email"
+                                    placeholder="Enter your Email"
+                                    className="w-full px-6 py-3 rounded-full bg-white focus:outline-none"
+                                />
+                            </div>
+                            <button className="absolute right-0 px-8 py-3 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white rounded-full hover:opacity-90 transition-opacity font-bold">
+                                SUBSCRIBE
+                            </button>
+                        </div>
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:ml-[12%]">
                     {/* Company Info */}
-                    <div className="lg:col-span-1">
+                    <div>
                         <Image
                             src="/Assets/NavbarImages/logo.png"
                             alt="Truedeal Logo"
-                            width={200}
-                            height={50}
+                            width={180}
+                            height={45}
                             className="mb-4"
                         />
-                        <p className="text-gray-500 mb-4">
+                        <p className="text-gray-500 text-sm mb-4">
                             Turning travel mishaps into memorable achievements since 2014.
                         </p>
                         <div className="mb-4">
-                            <h3 className="font-semibold mb-2">Contact Us</h3>
-                            <p className="text-gray-500 text-sm">
+                            <h3 className="font-medium text-gray-900 mb-2">Contact Us</h3>
+                            <p className="text-gray-500 text-sm leading-relaxed">
                                 C 207, Logix Cyber Park, C Block, Phase 2, Industrial Area, Sector 62, Noida, Uttar Pradesh 201301
                             </p>
                         </div>
@@ -59,11 +67,11 @@ export default function Footer() {
 
                     {/* Quick Links */}
                     <div>
-                        <h3 className="font-semibold text-gray-900 mb-4">Quick Links</h3>
+                        <h3 className="font-medium text-gray-900 mb-4">Quick Links</h3>
                         <ul className="space-y-2">
-                            {["Home", "About Us", "Services", "Contact Us Blog"].map((link) => (
+                            {["Home", "About Us", "Services", "Contact Us", "Blog"].map((link) => (
                                 <li key={link}>
-                                    <Link href="#" className="text-gray-500 hover:text-gray-700">
+                                    <Link href="#" className="text-gray-500 hover:text-gray-700 text-sm">
                                         {link}
                                     </Link>
                                 </li>
@@ -73,7 +81,7 @@ export default function Footer() {
 
                     {/* Our Services Column 1 */}
                     <div>
-                        <h3 className="font-semibold text-gray-900 mb-4">Our Services</h3>
+                        <h3 className="font-medium text-gray-900 mb-4">Our Services</h3>
                         <ul className="space-y-2">
                             {[
                                 "Foreign Currency",
@@ -84,7 +92,7 @@ export default function Footer() {
                                 "Air Tickets Hotel",
                             ].map((service) => (
                                 <li key={service}>
-                                    <Link href="#" className="text-gray-500 hover:text-gray-700">
+                                    <Link href="#" className="text-gray-500 hover:text-gray-700 text-sm">
                                         {service}
                                     </Link>
                                 </li>
@@ -94,7 +102,7 @@ export default function Footer() {
 
                     {/* Our Services Column 2 */}
                     <div>
-                        <h3 className="font-semibold text-gray-900 mb-4">&nbsp;</h3>
+                        <h3 className="font-medium text-gray-900 mb-4 invisible">Our Services</h3>
                         <ul className="space-y-2">
                             {[
                                 "Bookings",
@@ -104,7 +112,7 @@ export default function Footer() {
                                 "Cruise Bookings",
                             ].map((service) => (
                                 <li key={service}>
-                                    <Link href="#" className="text-gray-500 hover:text-gray-700">
+                                    <Link href="#" className="text-gray-500 hover:text-gray-700 text-sm">
                                         {service}
                                     </Link>
                                 </li>

@@ -31,11 +31,11 @@ export default function Testimonials() {
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl font-bold mb-4">
-                        <span className="border-b-4 border-gradient-to-r from-blue-500 to-purple-500">
+                        <span className="border-b-4 border-gradient-to-r from-blue-500 to-purple-500 font-poppins">
                             HAPPY CUSTOMERS
                         </span>
                     </h2>
-                    <p className="text-gray-600 text-lg">
+                    <p className="text-gray-600 text-lg font-poppins">
                         We deliver what we promise. See what clients are expressing about us.
                     </p>
                 </div>
@@ -84,8 +84,8 @@ export default function Testimonials() {
                                     <svg
                                         key={i}
                                         className={`w-5 h-5 ${i < testimonial.rating
-                                                ? "text-yellow-400"
-                                                : "text-gray-300"
+                                            ? "text-yellow-400"
+                                            : "text-gray-300"
                                             }`}
                                         fill="currentColor"
                                         viewBox="0 0 20 20"

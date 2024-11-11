@@ -6,7 +6,7 @@ export default function HeroSection() {
         <div className="relative min-h-screen bg-cover bg-center" style={{ backgroundImage: `url('/Assets/HeroSectionImages/heroBg.jpg')` }}>
             <div className="absolute inset-0 bg-black opacity-50"></div>
             <div className="relative z-10 flex flex-col items-start justify-center min-h-screen text-white px-4 sm:px-8 md:px-20">
-                <h1 className="text-xl sm:text-2xl md:text-4xl mb-2 ml-[8%] mt-[4%] sm:mt-[2%]">
+                <h1 className="text-xl sm:text-2xl md:text-3xl mb-2 ml-[8%] mt-[4%] sm:mt-[2%]">
                     <span className='font-poppins font-semibold'>Welcome to the beta release of</span>{' '}
                     <span className='font-poppins font-bold'>Truedeal Travel Engine !!!</span>
                 </h1>
@@ -16,7 +16,7 @@ export default function HeroSection() {
                 </h2>
 
                 {/* Search Form */}
-                <div className="bg-white p-4 sm:p-6 md:p-6 shadow-md w-[84%] sm:w-[92%] md:w-full max-w-6xl ml-[8%] sm:ml-[4%] md:ml-[8%] font-poppins">
+                <div className="bg-white p-2 sm:p-6 md:p-6 w-[84%] sm:w-[92%] md:w-full max-w-4xl ml-[8%] sm:ml-[4%] md:ml-[9%] font-poppins mt-8 ">
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 font-poppins">
                         {/* Destination */}
                         <div className="flex flex-col">

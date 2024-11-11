@@ -51,7 +51,7 @@ export default function Destination() {
 
             </div>
 
-            <div className="flex flex-col md:flex-row justify-center items-start space-y-12 md:space-y-0 md:space-x-8">
+            <div className="flex flex-col md:flex-row justify-center items-start space-y-12 md:space-y-0 md:space-x-4 md:pb-10 md:pl-15 md:pr-15 ">
                 <DestinationCard continent="Asia" destinations={destinations.asia} currentIndex={asiaIndex} />
                 <div className="space-y-10">
                     {destinations.asia.map((dest, index) => (
@@ -103,7 +103,7 @@ function DestinationSubCard({ name, price, image }) {
 
     return (
         <div
-            className="flex space-x-4 items-center rounded-lg p-2 shadow-lg w-72 h-24 bg-white cursor-pointer"
+            className="flex space-x-4 items-center rounded-lg shadow-lg w-72 h-24 bg-white cursor-pointer"
             onClick={() => router.push(`/destinations/${name.toLowerCase()}`)}
         >
             <div className="rounded-lg overflow-hidden w-20 h-20 flex-shrink-0">
@@ -117,8 +117,8 @@ function DestinationSubCard({ name, price, image }) {
             </div>
             <div className="flex flex-col justify-center text-left">
                 <h4 className="text-gray-800 font-semibold text-lg">{name}</h4>
-                <div className="text-white font-bold rounded-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] px-3 py-1 inline-block mt-2">
-                    From {price} ₹
+                <div className="text-white font-semibold rounded-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] px-3 py-1 inline-block mt-2">
+                    FROM {price} ₹
                 </div>
             </div>
             <ChevronRight className="text-gray-400" />
