@@ -6,7 +6,7 @@ export default function Testimonials() {
         {
             name: "Abhilash",
             title: "Businessman",
-            image: "/placeholder.svg?height=80&width=80",
+            image: "/public/Assets/HeroSectionImages/heroBg.jpg",
             content: "100 percent in-house operations for all trips! No third parties involved, hence no fishy claims! 100 percent in-house operations for all trips! No third parties involved, hence no fishy claims!",
             rating: 4
         },
@@ -31,7 +31,7 @@ export default function Testimonials() {
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl font-bold mb-4">
-                        <span className="border-b-4 border-gradient-to-r from-blue-500 to-purple-500 font-poppins">
+                        <span className="border-b-4 border-gradient-to-r from-[#017ae3] to-[#00f6ff] font-poppins">
                             HAPPY CUSTOMERS
                         </span>
                     </h2>
@@ -52,8 +52,8 @@ export default function Testimonials() {
 
                             {/* Profile image with gradient border */}
                             <div className="flex justify-center mb-4">
-                                <div className="rounded-full p-1 bg-gradient-to-r from-blue-500 to-purple-500">
-                                    <div className="rounded-full overflow-hidden w-20 h-20">
+                                <div className="rounded-full p-1 bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
+                                    <div className="rounded-full overflow-hidden border-2 border-red-600">
                                         <Image
                                             src={testimonial.image}
                                             alt={testimonial.name}

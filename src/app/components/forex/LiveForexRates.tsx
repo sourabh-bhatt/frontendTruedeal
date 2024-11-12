@@ -1,10 +1,9 @@
-import { FaChartLine } from "react-icons/fa";
 import Image from "next/image";
 
 export default function LiveForexRates() {
     return (
         <div className="flex flex-col items-center py-10 bg-gradient-to-b from-gray-200 via-gray-100 to-white space-y-8">
-            <div className="bg-white shadow-md rounded-md flex items-center w-1/2 max-w-2xl ">
+            <div className="bg-white shadow-md rounded-md flex items-center max-w-2xl ">
 
                 <Image src="/Assets/Forex/forexGraph.webp" width={152} height={100} alt="Image live graph" />
 
