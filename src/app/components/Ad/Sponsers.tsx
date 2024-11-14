@@ -41,8 +41,8 @@ export default function Component() {
     return (
         <section className="py-16 px-4 bg-gray-50 overflow-hidden">
             <div className="max-w-7xl mx-auto">
-                <h2 className="text-2xl text-center mb-12">
-                    Partnered <span className="text-gray-500">with the best in the industry</span>
+                <h2 className="text-2xl text-center mb-12 font-poppins">
+                    <span className="font-bold font-poppins">Partnered</span> <span className="text-gray-500">with the best in the industry</span>
                 </h2>
 
                 <div className="relative pause-on-hover">

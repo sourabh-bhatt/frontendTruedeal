@@ -55,7 +55,7 @@ export default function HeroSection() {
                     <div className="mt-6 sm:mt-8 md:mt-6 flex justify-center relative top-4 sm:top-6 md:top-10">
                         <button className="px-4 sm:px-6 py-2 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white rounded-full font-semibold hover:opacity-90 transition-opacity duration-300 flex items-center text-sm sm:text-base font-poppins">
                             <Filter className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
-                            MORE FILTERS
+                            SEARCH
                         </button>
                     </div>
                 </div>

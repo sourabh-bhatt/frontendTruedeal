@@ -88,7 +88,7 @@
 //     );
 // }
 
-'use client'
+'use client';
 
 import { Dialog, DialogContent } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
@@ -138,6 +138,7 @@ export default function Navbar() {
                 <div className="flex items-center space-x-4">
                     <Image src="/Assets/NavbarImages/call.webp" alt="Call" width={24} height={24} className="w-6 h-6" />
                     <Image src="/Assets/NavbarImages/profile.webp" alt="Profile" width={24} height={24} className="w-6 h-6" />
+                    <h1 className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-transparent bg-clip-text font-poppins text-sm font-semibold">+91 8447498498</h1>
 
                     <button
                         className="px-6 py-2 rounded-full font-medium bg-white relative group"
