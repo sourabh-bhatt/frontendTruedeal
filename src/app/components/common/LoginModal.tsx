@@ -10,7 +10,6 @@ import { useRouter } from "next/navigation"
 import Image from "next/image"
 import Link from "next/link"
 
-// Update your Navbar component to include these new props and state
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [showLoginModal, setShowLoginModal] = useState(false)
@@ -137,8 +136,8 @@ function LoginModal({
                     {/* Left side with background image */}
                     <div className="relative hidden sm:block bg-gradient-to-br from-red-500 to-purple-600 p-6 text-white rounded-l-lg">
                         <div className="relative z-10">
-                            <h2 className="text-3xl font-bold mb-2">Truedeal</h2>
-                            <p className="text-lg mb-2">Turning travel mishaps</p>
+                            <h2 className="text-3xl font-bold mb-2 font-poppins">Truedeal</h2>
+                            <p className="text-lg mb-2 font-poppins">Turning travel mishaps</p>
                             <p className="text-lg mb-2">into memorable</p>
                             <p className="text-lg mb-2">achievements since 2014</p>
                         </div>

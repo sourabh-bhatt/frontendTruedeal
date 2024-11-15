@@ -23,6 +23,9 @@ export default function HeroSection() {
                             <label className="text-gray-600 mb-2 text-sm sm:text-base font-bold">Select Your Destination :</label>
                             <select className="p-2 border rounded-md text-gray-700 text-sm sm:text-base">
                                 <option>All Destinations</option>
+                                <option>China</option>
+                                <option>Japan</option>
+                                <option>Baku</option>
                             </select>
                         </div>
 
