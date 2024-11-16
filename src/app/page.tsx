@@ -1,4 +1,3 @@
-import Image from "next/image";
 import HeroSection from "./components/homepage/HeroSection";
 import Destination from "./components/homepage/Destinations";
 import LiveForexRates from "./components/forex/LiveForexRates";
