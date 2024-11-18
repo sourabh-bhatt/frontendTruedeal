@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { Filter } from 'lucide-react';
 
 export default function HeroSection() {

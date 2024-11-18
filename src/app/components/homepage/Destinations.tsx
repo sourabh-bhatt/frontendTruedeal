@@ -54,14 +54,14 @@ export default function Destination() {
             <div className="flex flex-col md:flex-row justify-center items-start space-y-12 md:space-y-0 md:space-x-4 md:pb-10 md:pl-15 md:pr-15 ">
                 <DestinationCard continent="Asia" destinations={destinations.asia} currentIndex={asiaIndex} />
                 <div className="space-y-10">
-                    {destinations.asia.map((dest, index) => (
+                    {destinations.asia.map((dest) => (
                         <DestinationSubCard key={dest.name} {...dest} />
                     ))}
                 </div>
 
                 <DestinationCard continent="Europe" destinations={destinations.europe} currentIndex={europeIndex} />
                 <div className="space-y-10">
-                    {destinations.europe.map((dest, index) => (
+                    {destinations.europe.map((dest) => (
                         <DestinationSubCard key={dest.name} {...dest} />
                     ))}
                 </div>

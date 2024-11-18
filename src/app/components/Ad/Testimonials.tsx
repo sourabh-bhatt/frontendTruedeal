@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { QuoteIcon } from 'lucide-react'
 
 const testimonials = [
@@ -55,10 +56,12 @@ export default function HappyCustomers() {
                                 <QuoteIcon className="text-4xl text-gray-300 absolute bottom-[-1.1rem] left-[23vw]" />
 
                                 <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 w-20 h-20 rounded-full overflow-hidden border-2 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] p-0.5">
-                                    <img
+                                    <Image
                                         src={testimonial.avatar}
                                         alt={testimonial.name}
                                         className="w-full h-full object-cover rounded-full"
+                                        width={80}
+                                        height={80}
                                     />
                                 </div>
 
