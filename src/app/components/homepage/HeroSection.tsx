@@ -1,4 +1,7 @@
+"use client";
+
 import { Filter } from 'lucide-react';
+import { Select } from 'antd';
 
 export default function HeroSection() {
     return (
@@ -20,12 +23,39 @@ export default function HeroSection() {
                         {/* Destination */}
                         <div className="flex flex-col">
                             <label className="text-gray-600 mb-2 text-sm sm:text-base font-bold">Select Your Destination :</label>
-                            <select className="p-2 border rounded-md text-gray-700 text-sm sm:text-base">
+                            {/* <select className="p-2 border rounded-md text-gray-700 text-sm sm:text-base">
+
                                 <option>All Destinations</option>
                                 <option>China</option>
                                 <option>Japan</option>
                                 <option>Baku</option>
-                            </select>
+                            </select> */}
+
+                            <Select
+                                className="p-2 border rounded-md text-gray-700 text-sm sm:text-base"
+                                showSearch
+                                placeholder="Select a destination"
+                                filterOption={(input, option) =>
+                                    (option?.label ?? '').toLowerCase().includes(input.toLowerCase())
+                                }
+                                options={[
+                                    { value: '1', label: 'Thailand' },
+                                    { value: '2', label: 'Singapore' },
+                                    { value: '3', label: 'Malaysia' },
+                                    { value: '4', label: 'India' },
+                                    { value: '5', label: 'Japan' },
+                                    { value: '6', label: 'South Korea' },
+                                    { value: '7', label: 'Vietnam' },
+                                    { value: '8', label: 'Indonesia (Bali)' },
+                                    { value: '9', label: 'China' },
+                                    { value: '10', label: 'Hong Kong' },
+                                    { value: '11', label: 'UAE (Dubai)' },
+                                    { value: '12', label: 'Maldives' },
+                                    { value: '13', label: 'Sri Lanka' }
+                                ]
+                                }
+                            />
+
                         </div>
 
                         {/* Date */}
@@ -68,6 +98,6 @@ export default function HeroSection() {
                     <i className="fas fa-robot text-white text-xl sm:text-2xl"></i>
                 </button>
             </div>
-        </div>
+        </div >
     );
 }
