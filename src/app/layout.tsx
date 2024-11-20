@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "./components/common/Navbar";
 import Footer from "./components/common/Footer";
+import { ClerkProvider, SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 
 const poppins = localFont({
   src: [
@@ -111,14 +112,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={poppins.variable}
-      >
-        <Navbar />
-        {children}
-        <Footer />
-      </body>
-    </html >
+    <ClerkProvider>
+      <html lang="en">
+
+        <body
+          className={poppins.variable}
+        >
+          <SignedOut>
+            <SignInButton />
+          </SignedOut>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
+          <Navbar />
+          {children}
+          <Footer />
+        </body>
+      </html >
+    </ClerkProvider>
+
   );
 }

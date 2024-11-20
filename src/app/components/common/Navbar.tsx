@@ -507,6 +507,7 @@ import { useRouter } from "next/navigation"
 import Image from "next/image"
 import Link from "next/link"
 import { Plane, Cloud, Menu } from 'lucide-react'
+import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
