@@ -1,7 +1,6 @@
 "use client";
 
 import { Filter } from 'lucide-react';
-import { Select } from 'antd';
 
 export default function HeroSection() {
     return (
@@ -23,15 +22,15 @@ export default function HeroSection() {
                         {/* Destination */}
                         <div className="flex flex-col">
                             <label className="text-gray-600 mb-2 text-sm sm:text-base font-bold">Select Your Destination :</label>
-                            {/* <select className="p-2 border rounded-md text-gray-700 text-sm sm:text-base">
+                            <select className="p-2 border rounded-md text-gray-700 text-sm sm:text-base">
 
                                 <option>All Destinations</option>
                                 <option>China</option>
                                 <option>Japan</option>
                                 <option>Baku</option>
-                            </select> */}
+                            </select>
 
-                            <Select
+                            {/* <Select
                                 className="p-2 border rounded-md text-gray-700 text-sm sm:text-base"
                                 showSearch
                                 placeholder="Select a destination"
@@ -54,7 +53,7 @@ export default function HeroSection() {
                                     { value: '13', label: 'Sri Lanka' }
                                 ]
                                 }
-                            />
+                            /> */}
 
                         </div>
 

@@ -10,7 +10,7 @@ const testimonials = [
         avatar: "/Assets/UserImages/rashid.jpg",
     },
     {
-        name: "Abhilash",
+        name: "Funsu",
         role: "Businessman",
         content:
             "100 percent in-house operations for all trips! No third parties involved, hence no fishy claims!",
