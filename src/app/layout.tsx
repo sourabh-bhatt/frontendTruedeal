@@ -118,12 +118,7 @@ export default function RootLayout({
         <body
           className={poppins.variable}
         >
-          <SignedOut>
-            <SignInButton />
-          </SignedOut>
-          <SignedIn>
-            <UserButton />
-          </SignedIn>
+
           <Navbar />
           {children}
           <Footer />
