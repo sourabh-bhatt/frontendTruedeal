@@ -1,13 +1,18 @@
-import { SignIn } from "@clerk/nextjs";
+// import { SignIn } from "@clerk/nextjs";
 
-export default function Page() {
-    return (
-        <>
+// export default function Page() {
+//     return (
+//         <>
+//             <div className="flex justify-center p-5">
+//                 <SignIn />
+//             </div>
 
-            <div className="flex justify-center p-5">
-                <SignIn />
-            </div>
+//         </>
+//     )
+// }
 
-        </>
-    )
+import AuthModal from '../../components/common/AuthModal';
+
+export default function SignInPage() {
+    return <AuthModal />;
 }
