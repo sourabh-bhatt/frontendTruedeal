@@ -5,7 +5,8 @@ import Forex from "./components/forex/Forex";
 import Ad from "./components/Ad/Ad";
 import Testimonials from "./components/Ad/Testimonials";
 import Sponsors from "./components/Ad/Sponsers";
-
+import Trending from "./components/homepage/Trending";
+import CurrencyExchange from "./components/forex/ForexLive";
 
 export default function Home() {
   return (
@@ -13,6 +14,8 @@ export default function Home() {
 
       <HeroSection />
       <Destination />
+      <Trending />
+      <CurrencyExchange />
       <LiveForexRates />
       <Forex />
       <Ad />
