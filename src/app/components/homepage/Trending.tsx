@@ -108,7 +108,7 @@ const TrendingOffers = () => {
                                 </div>
                             </div>
 
-                            <button className="w-full py-2 relative top-2 bg-blue-50 text-blue-600 rounded-b-3xl hover:bg-blue-100 transition-colors font-poppins font-semibold">
+                            <button className="w-full py-2 relative bg-blue-50 text-blue-600 rounded-b-3xl hover:bg-blue-100 transition-colors font-poppins font-semibold">
                                 View Itinerary
                             </button>
                         </div>

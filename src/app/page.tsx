@@ -7,6 +7,7 @@ import Testimonials from "./components/Ad/Testimonials";
 import Sponsors from "./components/Ad/Sponsers";
 import Trending from "./components/homepage/Trending";
 import CurrencyExchange from "./components/forex/ForexLive";
+import Founder from "./components/common/Founder";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <Ad />
       <Testimonials />
       <Sponsors />
+      <Founder />
     </>
   );
 }
