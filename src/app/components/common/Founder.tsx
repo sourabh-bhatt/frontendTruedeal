@@ -6,7 +6,7 @@ export default function Founder() {
             <div className="flex flex-col md:flex-row items-center gap-8 max-w-6xl mx-auto">
                 <div className="w-full md:w-1/2 relative left-10">
                     <Image
-                        src="/Assets/UserImages/TruedealCEO.png"
+                        src="/Assets/UserImages/ceo.png"
                         alt="Founder portrait"
                         width={100}
                         height={150}
