@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const TrendingOffers = () => {
     const offers = [
         {
@@ -55,9 +57,11 @@ const TrendingOffers = () => {
                 {offers.map((offer, index) => (
                     <div key={index} className="bg-white rounded-3xl overflow-hidden shadow-lg">
                         <div className="relative">
-                            <img
+                            <Image
                                 src={offer.image}
                                 alt={offer.title}
+                                width={100}
+                                height={38}
                                 className="w-full h-38 object-cover rounded-t-2xl"
                             />
                             <div className="absolute top-4 flex items-center">
