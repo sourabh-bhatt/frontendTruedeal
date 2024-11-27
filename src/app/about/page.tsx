@@ -199,7 +199,7 @@ export default function TravelWebsite() {
                             </h2>
                             <p className="text-gray-600 leading-relaxed font-poppins">
                                 TrueDeal aims to be nothing less than the best Thailand-based travel DMC, known for delivering
-                                unparalleled travel experiences that are customized to each client's unique needs and interests. We envision a
+                                unparalleled travel experiences that are customized to each client&apos;s unique needs and interests. We envision a
                                 future where we are recognized as a trusted partner for those looking to explore the beauty and culture of
                                 Thailand, while also making a positive impact on the local communities we visit.
                             </p>
