@@ -1,0 +1,184 @@
+{
+    "Sheet1": [
+        {
+            "Continent": "Europe",
+            "Country": "Russia",
+            "Popular Travel Cities": "Moscow, St. Petersburg, Kazan, Sochi, Lake Baikal, Vladivostok, Novosibirsk, Yekaterinburg, Kaliningrad, Murmansk, Nizhny Novgorod, Irkutsk"
+        },
+        {
+            "Country": "Denmark",
+            "Popular Travel Cities": "Copenhagen, Aarhus, Odense, Aalborg, Skagen, Roskilde, Bornholm, Ribe, Helsingør, Legoland Billund, Esbjerg"
+        },
+        {
+            "Country": "France",
+            "Popular Travel Cities": "Paris, Nice, Marseille, Lyon, Bordeaux, Toulouse, Strasbourg, Lille, Nantes, Montpellier"
+        },
+        {
+            "Country": "Italy",
+            "Popular Travel Cities": "Rome, Milan, Venice, Florence, Naples, Turin, Bologna, Genoa, Pisa, Verona"
+        },
+        {
+            "Country": "United Kingdom",
+            "Popular Travel Cities": "London, Edinburgh, Manchester, Birmingham, Glasgow, Liverpool, Bristol, Oxford, Cambridge, Cardiff"
+        },
+        {
+            "Country": "Spain",
+            "Popular Travel Cities": "Barcelona, Madrid, Valencia, Seville, Bilbao, Granada, Malaga, Zaragoza, San Sebastian, Salamanca"
+        },
+        {
+            "Country": "Germany",
+            "Popular Travel Cities": "Berlin, Munich, Frankfurt, Hamburg, Cologne, Stuttgart, Dusseldorf, Leipzig, Dresden, Nuremberg"
+        },
+        {
+            "Country": "Netherlands",
+            "Popular Travel Cities": "Amsterdam, Rotterdam, The Hague, Utrecht, Eindhoven, Maastricht, Haarlem, Groningen, Arnhem, Nijmegen"
+        },
+        {
+            "Country": "Czech Republic",
+            "Popular Travel Cities": "Prague, Brno, Ostrava, Plzen, Liberec, Olomouc, Ceske Budejovice, Hradec Kralove, Usti nad Labem, Pardubice"
+        },
+        {
+            "Country": "Austria",
+            "Popular Travel Cities": "Vienna, Salzburg, Innsbruck, Graz, Linz, Hallstatt, Zell am See, Bregenz, Klagenfurt, Villach"
+        },
+        {
+            "Country": "Portugal",
+            "Popular Travel Cities": "Lisbon, Porto, Sintra, Faro, Coimbra, Braga, Aveiro, Evora, Funchal, Lagos"
+        },
+        {
+            "Country": "Greece",
+            "Popular Travel Cities": "Athens, Thessaloniki, Santorini, Mykonos, Crete, Rhodes, Corfu, Patras, Nafplio, Chania"
+        },
+        {
+            "Country": "Turkey",
+            "Popular Travel Cities": "Istanbul, Ankara, Antalya, Izmir, Cappadocia, Bursa, Bodrum, Konya, Fethiye, Marmaris"
+        },
+        {
+            "Country": "Hungary",
+            "Popular Travel Cities": "Budapest, Debrecen, Szeged, Miskolc, Pecs, Gyor, Nyiregyhaza, Kecskemet, Szekesfehervar, Eger"
+        },
+        {
+            "Country": "Croatia",
+            "Popular Travel Cities": "Dubrovnik, Zagreb, Split, Zadar, Pula, Rijeka, Hvar, Osijek, Sibenik, Trogir"
+        },
+        {
+            "Country": "Scotland",
+            "Popular Travel Cities": "Edinburgh, Glasgow, Aberdeen, Inverness, Dundee, Stirling, Perth, St Andrews, Fort William, Ayr"
+        },
+        {
+            "Continent": "Asia",
+            "Country": "China",
+            "Popular Travel Cities": "Beijing, Shanghai, Xi'an, Hong Kong, Guilin, Chengdu, Hangzhou, Shenzhen, Suzhou, Lhasa (Tibet), Guangzhou, Chongqing, Wuhan, Tianjin, Nanjing, Harbin, Qingdao, Dalian, Shenyang, Kunming"
+        },
+        {
+            "Country": "Kazakhstan",
+            "Popular Travel Cities": "Almaty, Nur-Sultan (Astana), Shymkent, Aktau, Lake Balkhash, Baikonur Cosmodrome, Atyrau, Taraz, Karaganda, Turkestan, Pavlodar, Ust-Kamenogorsk, Kokshetau, Petropavl, Aktobe"
+        },
+        {
+            "Country": "Japan",
+            "Popular Travel Cities": "Tokyo, Kyoto, Osaka, Hiroshima, Sapporo, Nagoya, Fukuoka, Okinawa, Nara, Yokohama, Kobe, Sendai, Kanazawa, Nagasaki, Takayama, Hakone, Matsumoto, Nikko, Kamakura, Sasebo"
+        },
+        {
+            "Country": "Thailand",
+            "Popular Travel Cities": "Bangkok, Phuket, Chiang Mai, Pattaya, Krabi"
+        },
+        {
+            "Country": "Malaysia",
+            "Popular Travel Cities": "Kuala Lumpur, Penang, Langkawi, Malacca, Kota Kinabalu"
+        },
+        {
+            "Country": "Indonesia",
+            "Popular Travel Cities": "Bali, Jakarta, Yogyakarta, Surabaya, Bandung"
+        },
+        {
+            "Country": "Philippines",
+            "Popular Travel Cities": "Manila, Cebu, Boracay, Palawan, Davao"
+        },
+        {
+            "Country": "Myanmar",
+            "Popular Travel Cities": "Yangon, Mandalay, Bagan, Inle Lake, Naypyidaw"
+        },
+        null,
+        null,
+        {
+            "Continent": "North America",
+            "Country": "Canada",
+            "Popular Travel Cities": "Toronto, Vancouver, Montreal, Niagara Falls, Banff National Park, Quebec City, Ottawa, Whistler, Calgary, Halifax, Victoria, Edmonton, Winnipeg, Saskatoon, St. John's, Yellowknife, Whitehorse, Kelowna, London (Ontario), Hamilton"
+        },
+        {
+            "Country": "USA",
+            "Popular Travel Cities": "New York City, Los Angeles, Las Vegas, Orlando (Disney World), San Francisco, Chicago, Miami, Washington, D.C., Boston, Honolulu, Seattle, San Diego, Atlanta, New Orleans, Dallas, Houston, Philadelphia, Denver, Phoenix, Portland"
+        },
+        {
+            "Continent": "South America",
+            "Country": "Peru",
+            "Popular Travel Cities": "Machu Picchu, Lima, Cusco, Arequipa, Iquitos, Trujillo, Puno, Huaraz, Chiclayo, Piura"
+        },
+        {
+            "Country": "Brazil",
+            "Popular Travel Cities": "Rio de Janeiro, Sao Paulo, Salvador, Brasilia, Fortaleza, Recife, Manaus, Curitiba, Porto Alegre, Belo Horizonte"
+        },
+        {
+            "Country": "Argentina",
+            "Popular Travel Cities": "Buenos Aires, Mendoza, Bariloche, Cordoba, Rosario, Ushuaia, El Calafate, Salta, Mar del Plata, San Miguel de Tucuman"
+        },
+        {
+            "Country": "Chile",
+            "Popular Travel Cities": "Santiago, Valparaiso, San Pedro de Atacama, Punta Arenas, Puerto Montt, La Serena, Viña del Mar, Puerto Varas, Antofagasta, Pucón"
+        },
+        {
+            "Country": "Colombia",
+            "Popular Travel Cities": "Bogota, Medellin, Cartagena, Cali, Barranquilla, Santa Marta, San Andres, Pereira, Bucaramanga, Manizales"
+        },
+        {
+            "Country": "Ecuador",
+            "Popular Travel Cities": "Quito, Galapagos Islands, Guayaquil, Cuenca, Baños, Otavalo, Manta, Salinas, Loja, Ambato"
+        },
+        {
+            "Continent": "Africa",
+            "Country": "South Africa",
+            "Popular Travel Cities": "Cape Town, Johannesburg, Kruger National Park, Durban, Garden Route, Pretoria, Stellenbosch, Hermanus, Addo Elephant National Park, Drakensberg Mountains, Port Elizabeth, East London, Bloemfontein, Kimberley, Knysna"
+        },
+        {
+            "Continent": "South-East Asia",
+            "Country": "Thailand",
+            "Popular Travel Cities": "Bangkok, Phuket, Chiang Mai, Pattaya, Krabi, Koh Samui, Ayutthaya, Hua Hin, Pai, Koh Phi Phi"
+        },
+        {
+            "Country": "Indonesia",
+            "Popular Travel Cities": "Bali, Jakarta, Yogyakarta, Surabaya, Bandung, Medan, Lombok, Makassar, Semarang, Batam"
+        },
+        {
+            "Country": "Singapore",
+            "Popular Travel Cities": "Singapore"
+        },
+        {
+            "Country": "Malaysia",
+            "Popular Travel Cities": "Kuala Lumpur, Penang, Langkawi, Malacca, Kota Kinabalu, Ipoh, Johor Bahru, Cameron Highlands, Kuching, George Town"
+        },
+        {
+            "Country": "Vietnam",
+            "Popular Travel Cities": "Hanoi, Ho Chi Minh City, Da Nang, Hoi An, Ha Long Bay, Nha Trang, Hue, Phu Quoc, Sapa, Can Tho"
+        },
+        {
+            "Country": "Cambodia",
+            "Popular Travel Cities": "Siem Reap (Angkor Wat), Phnom Penh, Sihanoukville, Battambang, Kampot, Kep, Koh Rong, Kampong Cham, Banteay Meanchey, Koh Kong"
+        },
+        {
+            "Country": "Myanmar",
+            "Popular Travel Cities": "Yangon, Mandalay, Bagan, Inle Lake, Naypyidaw, Ngapali, Kyaiktiyo, Hpa-An, Mrauk U, Taunggyi"
+        },
+        {
+            "Country": "Philippines",
+            "Popular Travel Cities": "Manila, Cebu, Boracay, Palawan, Davao, Bohol, Vigan, Banaue, Iloilo, Baguio"
+        },
+        {
+            "Country": "Laos",
+            "Popular Travel Cities": "Vientiane, Luang Prabang, Vang Vieng, Pakse, Savannakhet, Phonsavan, Muang Ngoi, Thakhek, Huay Xai, Luang Namtha"
+        },
+        {
+            "Country": "India",
+            "Popular Travel Cities": "Delhi, Mumbai, Goa, Jaipur, Agra, Varanasi, Udaipur, Jodhpur, Rishikesh, Amritsar, Kolkata, Bangalore, Chennai, Hyderabad, Kochi, Mysore, Dar, Himanchal Pradesh, Uttrakhand, Kerala, Tamil Nadu, Karnataka, Andhra Pradesh, Telangana, Maharashtra, Gujarat, Rajasthan, Punjab, Haryana, Uttar Pradesh, Madhya Pradesh, Chhattisgarh, Jharkhand, Bihar, West Bengal, Odisha, Assam, Arunachal Pradesh, Nagaland, Manipur, Mizoram, Tripura, Meghalaya, Sikkim, Goa, Andaman and Nicobar Islands, Lakshadweep, Puducherry, Chandigarh, Dadra and Nagar Haveli, Daman and Diu, Delhi, Ladakh, Jammu and Kashmir, Himachal Pradesh, Uttarakhand, Haryana, Punjab, Chandigarh, Rajasthan, Gujarat, Maharashtra, Goa, Karnataka, Kerala, Tamil Nadu, Andhra Pradesh, Telangana, Odisha, West Bengal, Jharkhand, Bihar, Uttar Pradesh, Madhya Pradesh, Chhattisgarh, Assam, Arunachal Pradesh, Nagaland, Manipur, Mizoram, Tripura, Meghalaya, Sikkim, Himachal Pradesh, Uttarakhand, Punjab, Haryana, Delhi, Rajasthan, Uttar Pradesh, Bihar, Jharkhand, West Bengal, Odisha, Chhattisgarh, Madhya Pradesh, Gujarat, Maharashtra, Telangana, Andhra Pradesh, Karnataka, Tamil Nadu, Kerala, Goa, Assam, Arunachal Pradesh, Nagaland, Manipur, Mizoram, Tripura, Meghalaya, Sikkim, Himachal Pradesh, Uttarakhand, Punjab, Haryana, Delhi, Rajasthan, Uttar Pradesh, Bihar, Jharkhand, West Bengal, Odisha, Chhattisgarh, Madhya Pradesh, Gujarat, Maharashtra, Telangana, Andhra Pradesh, Karnataka, Tamil Nadu, Kerala, Goa, Assam, Arunachal Pradesh, Nagaland, Manipur, Mizoram, Tripura, Meghalaya, Sikkim, Himachal Pradesh, Uttarakhand, Punjab, Haryana, Delhi, Rajasthan, Uttar Pradesh, Bihar, Jharkhand, West Bengal, Odisha, Chhattisgarh, Madhya Pradesh, Gujarat, Maharashtra, Telangana, Andhra Pradesh, Karnataka, Tamil Nadu, Kerala, Goa, Assam, Arunachal Pradesh, Nagaland, Manipur, Mizoram, Tripura,"
+        }
+    ]
+}
