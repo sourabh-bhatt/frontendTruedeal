@@ -23,10 +23,8 @@ export default function BookingPage({ params }: { params: { id: string } }) {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
-        // Here you would typically send the booking data to your backend
         console.log('Booking submitted:', { packageId: params.id, ...formData })
 
-        // Simulate a successful booking
         router.push(`/booking-confirmation/${params.id}`)
     }
 

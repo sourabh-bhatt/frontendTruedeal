@@ -1,6 +1,10 @@
+"use client";
+
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const TrendingOffers = () => {
+    const router = useRouter();
     const offers = [
         {
             title: "Breeze Through Bangkok & Pattaya",
@@ -108,7 +112,10 @@ const TrendingOffers = () => {
                                 </div>
                             </div>
 
-                            <button className="w-full py-2 relative bg-blue-50 text-blue-600 rounded-b-3xl hover:bg-blue-100 transition-colors font-poppins font-semibold">
+                            <button
+                                onClick={() => router.push(`/package/${index + 1}`)}
+                                className="w-full py-2 relative bg-blue-50 text-blue-600 rounded-b-3xl hover:bg-blue-100 transition-colors font-poppins font-semibold"
+                            >
                                 View Itinerary
                             </button>
                         </div>

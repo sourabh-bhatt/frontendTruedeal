@@ -2,8 +2,9 @@ import { notFound } from 'next/navigation'
 import { Button } from '@/components/ui/button'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Star, Calendar, Utensils, Car, Map } from 'lucide-react'
+import Link from 'next/link'
 
-// This would typically come from an API or database
+// api or db
 const mockPackages = [
     {
         id: 1,
@@ -14,7 +15,7 @@ const mockPackages = [
         discountedPrice: 120000,
         rating: 4.5,
         reviews: 120,
-        image: '/Assets/PackageImages/maldives.jpg',
+        image: '/Assets/DestinationsImage/Maldives.jpg',
         description: 'Experience paradise in the Maldives with crystal clear waters and luxurious overwater bungalows.',
         itinerary: [
             { day: 1, description: 'Arrive in Male, transfer to resort' },
@@ -48,7 +49,6 @@ const mockPackages = [
             'Passport must be valid for at least 6 months from the date of return',
         ],
     },
-    // Add more mock packages here
 ]
 
 export default function PackageDetails({ params }: { params: { id: string } }) {
@@ -129,7 +129,9 @@ export default function PackageDetails({ params }: { params: { id: string } }) {
                             <span className="ml-2 text-sm text-gray-500 line-through">₹{travelPackage.price.toLocaleString()}</span>
                         </div>
                         <p className="text-gray-700 mb-4">Duration: {travelPackage.duration}</p>
-                        <Button className="w-full mb-4">Book Now</Button>
+                        <Link href="/booking">
+                            <Button className="w-full mb-4">Book Now</Button>
+                        </Link>
                         <Button variant="outline" className="w-full">Contact Agent</Button>
                     </div>
                 </div>
