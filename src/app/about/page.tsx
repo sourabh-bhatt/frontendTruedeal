@@ -3,14 +3,15 @@ import { Button } from "@/components/ui/button"
 import { Target, Eye } from 'lucide-react'
 import Services from "./Services"
 import Founder from "../components/common/Founder";
-
+// import NumberTicker from "@/components/magicui/number-ticker";
+import NumberTicker from "../../components/ui/number-ticker"
 
 export default function TravelWebsite() {
     return (
         <div>
             <section className="relative h-96">
                 <Image
-                    src="/Assets/NavbarImages/bgAerro.png"
+                    src="/Assets/About/bannerFlight.webp"
                     alt="Airplane flying above clouds"
                     fill
                     className="object-cover"
@@ -36,7 +37,7 @@ export default function TravelWebsite() {
                     {/* Left Column */}
                     <div className="space-y-6">
                         <div className="max-w-[200px]">
-                            <h1 className="text-3xl font-bold tracking-tight font-poppins">TRUEDEAL</h1>
+                            <h1 className="text-5xl font-bold tracking-tight font-poppins">TRUEDEAL</h1>
                             <div className="h-1 w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff]" />
                         </div>
                         <p className="text-gray-600 leading-relaxed max-w-xl font-poppins">
@@ -58,18 +59,37 @@ export default function TravelWebsite() {
                             <span className="text-4xl lg:text-5xl bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-transparent bg-clip-text font-poppins font-bold">Experience</span>
                         </h2>
 
-                        <div className="bg-white rounded-3xl p-4 shadow-lg border border-blue">
-                            <div className="grid grid-cols-2 gap-4">
-                                <div className="text-center">
-                                    <div className="text-4xl lg:text-7xl bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-transparent bg-clip-text font-poppins font-bold">3</div>
-                                    <div className="text-gray-800 font-semibold font-poppins">
-                                        + Decades of<br />Experience
-                                    </div>
-                                </div>
-                                <div className="text-center">
-                                    <div className="text-4xl lg:text-7xl bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-transparent bg-clip-text font-poppins font-bold">1M</div>
-                                    <div className="text-gray-800 font-semibold font-poppins">
-                                        + Happy<br />Customers
+                        <div className="relative">
+                            {/* Gradient shadow */}
+                            <div className="absolute inset-0 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] rounded-3xl blur-xl opacity-50 -z-10"></div>
+
+                            <div className="relative">
+                                {/* Gradient shadow */}
+                                <div className="absolute inset-0 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] rounded-3xl blur-xl opacity-50 -z-10"></div>
+
+                                {/* Card content */}
+                                <div className="bg-white rounded-3xl p-4 shadow-lg border relative z-10">
+                                    <div className="grid grid-cols-2 gap-4 relative">
+                                        {/* Vertical gradient line */}
+                                        <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-[#017ae3] to-[#00f6ff]"></div>
+
+                                        <div className="text-center">
+                                            <div className="text-4xl lg:text-7xl bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-transparent bg-clip-text font-poppins font-bold">
+
+                                                <NumberTicker className="text-4xl lg:text-7xl bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-transparent bg-clip-text font-poppins font-bold" value={40} />
+                                            </div>
+                                            <div className="text-gray-800 font-semibold font-poppins">
+                                                + Years of<br />Experience
+                                            </div>
+                                        </div>
+                                        <div className="text-center">
+                                            <div className="text-4xl lg:text-7xl bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-transparent bg-clip-text font-poppins font-bold">
+
+                                                <NumberTicker className="text-4xl lg:text-7xl bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-transparent bg-clip-text font-poppins font-bold" value={10000} /></div>
+                                            <div className="text-gray-800 font-semibold font-poppins">
+                                                + Happy<br />Customers
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
