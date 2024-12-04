@@ -11,11 +11,11 @@ import { useRouter } from 'next/navigation'
 import { Slider as AntSlider } from 'antd'
 
 const destinations = [
-    'Maldives', 'Dubai', 'Europe', 'Thailand', 'Bali', 'Azerbaijan', 'Malaysia', 'Fiji', 'Seychelles',
+    'Maldives', 'Dubai', 'Europe', 'Thailand', 'Bali', 'Azerbaijan', 'Malaysia', 'Fiji',
     'Australia', 'New Zealand', 'USA', 'Canada', 'Brazil', 'Argentina', 'Peru', 'Chile', 'Mexico',
     'Egypt', 'South Africa', 'Kenya', 'Tanzania', 'Morocco', 'Mauritius',
     'Japan', 'China', 'Hong Kong', 'Macau', 'South Korea', 'Philippines',
-    'India'
+    'India', 'Almaty', 'Baku', 'Singapore', 'Turkey', 'Kashmir', 'Manali', 'Shimla', 'Kerala', 'Andaman', 'South Korea',
 ]
 
 export default function HeroSection() {
