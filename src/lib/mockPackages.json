@@ -1,0 +1,64 @@
+[
+    {
+        "id": 1,
+        "name": "Breeze Through Bangkok & Pattaya",
+        "destination": "Thailand",
+        "duration": {
+            "nights": 2,
+            "days": 3
+        },
+        "price": 21059,
+        "advancePayment": 17522,
+        "image": "/Assets/DestinationsImage/Maldives.jpg",
+        "description": "Pattaya is a city on Thailand's eastern Gulf coast known for its beaches...",
+        "itinerary": [
+            {
+                "day": 1,
+                "title": "Coral Island Tour",
+                "description": "Visit the beautiful Coral Island"
+            },
+            {
+                "day": 2,
+                "title": "Alcazar Cabaret Show",
+                "description": "Experience the famous Alcazar show"
+            },
+            {
+                "day": 3,
+                "title": "Tiger Park Pattaya",
+                "description": "Visit the Tiger Park"
+            }
+        ],
+        "packageOptions": {
+            "3 Star": {
+                "Single share": "21900",
+                "Twin share": "21900",
+                "Triple share": "21900",
+                "Child with bed": "-",
+                "Child without bed": "-"
+            }
+        },
+        "inclusions": [
+            "02 nights accommodation in 3* hotel",
+            "02 breakfast,03 Lunch & 02 Dinner",
+            "All transfers under Pvt basis in air conditioned vehicle for the mentioned itinerary"
+        ],
+        "exclusions": [
+            "Any meals other than those mentioned in the inclusions.",
+            "Porterage, Beverages, Laundry expenses",
+            "Expenses caused by factors beyond our control like flight delays, roadblocks, vehicle malfunctions, political disturbances, natural calamities etc."
+        ],
+        "cancellationPolicy": [
+            "Rates are valid for Indian citizens only.",
+            "Reconfirmation/cancellation procedures can be done only post receiving the payment.",
+            "Unused services for transfers, tours & hotel accommodation are not refundable.",
+            "Standard Check in 1400 Hrs & Check out 1200 Hrs which may vary as per local rules."
+        ],
+        "galleryImages": [
+            "/Assets/DestinationsImage/Maldives.jpg",
+            "/Assets/DestinationsImage/bali.jpg",
+            "/Assets/DestinationsImage/japan.jpg",
+            "/Assets/DestinationsImage/paris.jpg"
+        ]
+    }
+    
+]

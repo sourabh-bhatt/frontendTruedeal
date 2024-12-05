@@ -4,71 +4,18 @@ import { notFound } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Camera, Calendar, Phone, MapPin, Clock } from 'lucide-react'
 import Image from "next/image"
+import { useState, use } from 'react'
+import { GalleryModal } from './gallery-modal'
+import mockPackages from "../../../lib/mockPackages.json";
 
-const mockPackages = [
-    {
-        id: 1,
-        name: 'Breeze Through Bangkok & Pattaya',
-        destination: 'Thailand',
-        duration: {
-            nights: 2,
-            days: 3
-        },
-        price: 21059,
-        advancePayment: 17522,
-        image: '/Assets/DestinationsImage/Maldives.jpg',
-        description: 'Pattaya is a city on Thailand\'s eastern Gulf coast known for its beaches. A quiet fishing village as recently as the 1960s, it\'s now lined with resort hotels, high-rise condos, shopping malls, cabaret bars and 24-hour clubs. Nearby, hillside Wat Phra Yai Temple features an 18m-tall golden Buddha. The area also features several designer golf courses, some with views of Pattaya Bay.',
-        itinerary: [
-            {
-                day: 1,
-                title: 'Coral Island Tour',
-                description: 'Visit the beautiful Coral Island'
-            },
-            {
-                day: 2,
-                title: 'Alcazar Cabaret Show',
-                description: 'Experience the famous Alcazar show'
-            },
-            {
-                day: 3,
-                title: 'Tiger Park Pattaya',
-                description: 'Visit the Tiger Park'
-            },
-        ],
-        packageOptions: {
-            "3 Star": {
-                "Single share": "21900",
-                "Twin share": "21900",
-                "Triple share": "21900",
-                "Child with bed": "-",
-                "Child without bed": "-"
-            }
-        },
-        inclusions: [
-            '02 nights accommodation in 3* hotel',
-            '02 breakfast,03 Lunch & 02 Dinner',
-            'All transfers under Pvt basis in air conditioned vehicle for the mentioned itinerary'
-        ],
-        exclusions: [
-            'Any meals other than those mentioned in the inclusions.',
-            'Porterage, Beverages, Laundry expenses',
-            'Expenses caused by factors beyond our control like flight delays, roadblocks, vehicle malfunctions, political disturbances, natural calamities etc.'
-        ],
-        cancellationPolicy: [
-            'Rates are valid for Indian citizens only.',
-            'Reconfirmation/cancellation procedures can be done only post receiving the payment.',
-            'Unused services for transfers, tours & hotel accommodation are not refundable.',
-            'Standard Check in 1400 Hrs & Check out 1200 Hrs which may vary as per local rules.'
-        ]
-    },
-]
-
-export default function PackageDetails({ params }: { params: { id: string } }) {
-    const travelPackage = mockPackages.find((p) => p.id === parseInt(params.id))
+export default function PackageDetails({ params }: { params: Promise<{ id: string }> }) {
+    const [isGalleryOpen, setIsGalleryOpen] = useState(false);
+    const resolvedParams = use(params);
+    const travelPackage = mockPackages.find((p) => p.id === parseInt(resolvedParams.id));
 
     if (!travelPackage) {
-        notFound()
-    }
+        notFound();
+        }
 
     return (
         <div className="min-h-screen bg-gray-50">
@@ -82,7 +29,10 @@ export default function PackageDetails({ params }: { params: { id: string } }) {
                         className="w-full h-[400px] object-cover"
                         priority
                     />
-                    <button className="absolute bottom-4 left-4 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white px-6 py-2.5 rounded-full flex items-center gap-2 hover:shadow-lg transition-all duration-300">
+                    <button 
+                        onClick={() => setIsGalleryOpen(true)}
+                        className="absolute bottom-4 left-4 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white px-6 py-2.5 rounded-full flex items-center gap-2 hover:shadow-lg transition-all duration-300"
+                    >
                         <Camera className="w-4 h-4" />
                         View Gallery
                     </button>
@@ -111,6 +61,12 @@ export default function PackageDetails({ params }: { params: { id: string } }) {
                         </div>
                     </div>
                 </div>
+
+                <GalleryModal
+                    isOpen={isGalleryOpen}
+                    onClose={() => setIsGalleryOpen(false)}
+                    images={travelPackage.galleryImages}
+                />
 
                 <div className="bg-white rounded-2xl shadow-lg p-8">
                     <h1 className="text-3xl font-bold mb-4 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] bg-clip-text text-transparent">
