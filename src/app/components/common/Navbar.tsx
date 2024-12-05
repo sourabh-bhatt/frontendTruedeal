@@ -12,6 +12,8 @@ export default function Navbar() {
     const navItems = [
         { href: "/", label: "Home" },
         { href: "/about", label: "About Us" },
+        { href: "/holidayPackages", label: "Holiday Packages" },
+        { href: "/trending", label: "Trending" },
     ]
 
     return (

@@ -15,7 +15,7 @@ const destinations = [
     'Australia', 'New Zealand', 'USA', 'Canada', 'Brazil', 'Argentina', 'Peru', 'Chile', 'Mexico',
     'Egypt', 'South Africa', 'Kenya', 'Tanzania', 'Morocco', 'Mauritius',
     'Japan', 'China', 'Hong Kong', 'Macau', 'South Korea', 'Philippines',
-    'India', 'Almaty', 'Baku', 'Singapore', 'Turkey', 'Kashmir', 'Manali', 'Shimla', 'Kerala', 'Andaman', 'South Korea',
+    'India', 'Almaty', 'Baku', 'Singapore', 'Turkey', 'Kashmir', 'Manali', 'Shimla', 'Kerala', 'Andaman',
 ]
 
 export default function HeroSection() {

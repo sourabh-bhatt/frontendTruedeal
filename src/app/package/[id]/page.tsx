@@ -7,11 +7,12 @@ import Image from "next/image"
 import { useState, use } from 'react'
 import { GalleryModal } from './gallery-modal'
 import mockPackages from "../../../lib/mockPackages.json";
+import { TravelPackage } from "@/types/package";
 
 export default function PackageDetails({ params }: { params: Promise<{ id: string }> }) {
     const [isGalleryOpen, setIsGalleryOpen] = useState(false);
     const resolvedParams = use(params);
-    const travelPackage = mockPackages.find((p) => p.id === parseInt(resolvedParams.id));
+    const travelPackage = (mockPackages as TravelPackage[]).find((p) => p.id === parseInt(resolvedParams.id));
 
     if (!travelPackage) {
         notFound();

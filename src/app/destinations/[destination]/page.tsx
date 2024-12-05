@@ -1,177 +1,184 @@
-'use client'
+'use client';
 
-import { useState } from 'react'
-import { useParams } from 'next/navigation'
-import Image from 'next/image'
-import { format } from 'date-fns'
-import { Calendar as CalendarIcon, ChevronLeft, ChevronRight, MapPin, Clock, Users, DollarSign } from 'lucide-react'
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
-import { Calendar } from "@/components/ui/calendar"
-import {
-    Popover,
-    PopoverContent,
-    PopoverTrigger,
-} from "@/components/ui/popover"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { destinationsData } from '@/lib/destinations-data'
+import { useState } from 'react';
+import { useParams } from 'next/navigation';
+import Image from 'next/image';
+import { Camera, Calendar, Phone, MapPin, Clock } from 'lucide-react';
+import { Button } from "@/components/ui/button";
+import { GalleryModal } from '@/app/package/[id]/gallery-modal';
+
+// Define the destination type
+interface DestinationDetails {
+    name: string;
+    price: number;
+    image: string;
+    packages: number;
+    description: string;
+    duration: {
+        days: number;
+        nights: number;
+    };
+    itinerary: Array<{
+        day: number;
+        title: string;
+        description: string;
+    }>;
+    inclusions: string[];
+    exclusions: string[];
+    cancellationPolicy: string[];
+    galleryImages: string[];
+}
+
+// Mock data for the destination details
+const getDestinationDetails = (name: string): DestinationDetails => ({
+    name,
+    price: 80000,
+    image: "/Assets/DestinationsImage/1.jpg",
+    packages: 4,
+    description: "Experience the beauty of this amazing destination with our carefully curated package...",
+    duration: {
+        days: 7,
+        nights: 6
+    },
+    itinerary: [
+        {
+            day: 1,
+            title: "Arrival and Welcome",
+            description: "Arrive at the destination and check in to your hotel. Evening at leisure."
+        },
+        {
+            day: 2,
+            title: "City Tour",
+            description: "Explore the city's main attractions and cultural sites."
+        }
+    ],
+    inclusions: [
+        "Hotel accommodation",
+        "Daily breakfast",
+        "Airport transfers",
+        "Sightseeing tours"
+    ],
+    exclusions: [
+        "Flights",
+        "Personal expenses",
+        "Travel insurance"
+    ],
+    cancellationPolicy: [
+        "Free cancellation up to 7 days before departure",
+        "50% refund up to 3 days before departure",
+        "No refund within 3 days of departure"
+    ],
+    galleryImages: [
+        "/Assets/DestinationsImage/1.jpg",
+        "/Assets/DestinationsImage/2.jpg",
+        "/Assets/DestinationsImage/3.jpg"
+    ]
+});
 
 export default function DestinationDetails() {
-    const params = useParams()
-    const { destination } = params
-    const [currentImageIndex, setCurrentImageIndex] = useState(0)
-    const [date, setDate] = useState<Date>()
+    const params = useParams();
+    const { destination } = params;
+    const [isGalleryOpen, setIsGalleryOpen] = useState(false);
 
-    const destinationData = destinationsData[destination as keyof typeof destinationsData]
-
-    if (!destinationData) {
-        return <div>Destination not found</div>
-    }
-
-    const nextImage = () => {
-        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % destinationData.images.length)
-    }
-
-    const prevImage = () => {
-        setCurrentImageIndex((prevIndex) => (prevIndex - 1 + destinationData.images.length) % destinationData.images.length)
-    }
+    const destinationData = getDestinationDetails(destination as string);
 
     return (
-        <div className="container mx-auto px-4 py-8">
-            <h1 className="text-4xl font-bold mb-6">{destinationData.name}</h1>
+        <div className="min-h-screen bg-gray-50">
+            <main className="container mx-auto px-4 py-8 max-w-7xl">
+                <div className="relative rounded-3xl overflow-hidden mb-8 shadow-xl">
+                    <Image
+                        src={destinationData.image}
+                        alt={destinationData.name}
+                        width={1400}
+                        height={400}
+                        className="w-full h-[400px] object-cover"
+                        priority
+                    />
+                    <button 
+                        onClick={() => setIsGalleryOpen(true)}
+                        className="absolute bottom-4 left-4 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white px-6 py-2.5 rounded-full flex items-center gap-2 hover:shadow-lg transition-all duration-300"
+                    >
+                        <Camera className="w-4 h-4" />
+                        View Gallery
+                    </button>
+                    <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-2xl max-w-xs">
+                        <div className="flex items-center gap-2 text-sm text-gray-600 mb-2">
+                            <Calendar className="w-4 h-4" />
+                            Available Packages: {destinationData.packages}
+                        </div>
+                        <div className="text-2xl font-bold mb-1">₹{destinationData.price.toLocaleString()}</div>
+                        <div className="text-sm text-gray-600 mb-4">Starting from</div>
+                        <Button className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white mb-4 transition-all duration-500">
+                            View Packages
+                        </Button>
+                        <div className="text-center">
+                            <div className="text-sm font-medium mb-1">Need Help?</div>
+                            <div className="text-xs text-gray-600 mb-2">
+                                Our Destination expert will be happy to help resolve your queries
+                            </div>
+                            <div className="flex items-center justify-center gap-2 text-[#017ae3] font-medium">
+                                <Phone className="w-4 h-4" />
+                                +91 9499000000
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-            {/* Image Slider */}
-            <div className="relative w-full h-[500px] mb-8">
-                <Image
-                    src={destinationData.images[currentImageIndex]}
-                    alt={`${destinationData.name} - Image ${currentImageIndex + 1}`}
-                    layout="fill"
-                    objectFit="cover"
-                    className="rounded-lg"
+                <GalleryModal
+                    isOpen={isGalleryOpen}
+                    onClose={() => setIsGalleryOpen(false)}
+                    images={destinationData.galleryImages}
                 />
-                <Button variant="outline" size="icon" className="absolute top-1/2 left-4 transform -translate-y-1/2" onClick={prevImage}>
-                    <ChevronLeft className="h-4 w-4" />
-                </Button>
-                <Button variant="outline" size="icon" className="absolute top-1/2 right-4 transform -translate-y-1/2" onClick={nextImage}>
-                    <ChevronRight className="h-4 w-4" />
-                </Button>
-            </div>
 
-            {/* Quick Info */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-                <Card>
-                    <CardHeader className="flex flex-row items-center space-x-2">
-                        <Clock className="h-4 w-4" />
-                        <CardTitle>Duration</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                        <p>{destinationData.duration.nights} Nights / {destinationData.duration.days} Days</p>
-                    </CardContent>
-                </Card>
-                <Card>
-                    <CardHeader className="flex flex-row items-center space-x-2">
-                        <Users className="h-4 w-4" />
-                        <CardTitle>Group Size</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                        <p>Max 15 people</p>
-                    </CardContent>
-                </Card>
-                <Card>
-                    <CardHeader className="flex flex-row items-center space-x-2">
-                        <DollarSign className="h-4 w-4" />
-                        <CardTitle>Price</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                        <p>From ₹{destinationData.price} per person</p>
-                    </CardContent>
-                </Card>
-            </div>
+                <div className="bg-white rounded-2xl shadow-lg p-8">
+                    <h1 className="text-3xl font-bold mb-4 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] bg-clip-text text-transparent">
+                        {destinationData.name}
+                    </h1>
+                    <div className="flex items-center gap-6 mb-8 text-sm">
+                        <div className="flex items-center gap-2 text-gray-600">
+                            <MapPin className="w-4 h-4 text-[#017ae3]" />
+                            {destinationData.name}
+                        </div>
+                        <div className="flex items-center gap-2 text-gray-600">
+                            <Clock className="w-4 h-4 text-[#017ae3]" />
+                            {destinationData.duration.nights} Nights
+                        </div>
+                        <div className="flex items-center gap-2 text-gray-600">
+                            <Calendar className="w-4 h-4 text-[#017ae3]" />
+                            {destinationData.duration.days} Days
+                        </div>
+                    </div>
 
-            {/* Date Selection */}
-            <Card className="mb-8">
-                <CardHeader>
-                    <CardTitle>Select Your Travel Dates</CardTitle>
-                    <CardDescription>Choose your preferred dates for November - December 2024</CardDescription>
-                </CardHeader>
-                <CardContent>
-                    <Popover>
-                        <PopoverTrigger asChild>
-                            <Button
-                                variant={"outline"}
-                                className={cn(
-                                    "w-[280px] justify-start text-left font-normal",
-                                    !date && "text-muted-foreground"
-                                )}
-                            >
-                                <CalendarIcon className="mr-2 h-4 w-4" />
-                                {date ? format(date, "PPP") : <span>Pick a date</span>}
-                            </Button>
-                        </PopoverTrigger>
-                        <PopoverContent className="w-auto p-0">
-                            <Calendar
-                                mode="single"
-                                selected={date}
-                                onSelect={setDate}
-                                initialFocus
-                                disabled={(date) => date < new Date('2024-11-01') || date > new Date('2024-12-31')}
-                            />
-                        </PopoverContent>
-                    </Popover>
-                </CardContent>
-            </Card>
+                    {/* Rest of the sections similar to package details */}
+                    <div className="space-y-12">
+                        <section>
+                            <h2 className="text-xl font-bold mb-4">Overview</h2>
+                            <p className="text-gray-600 leading-relaxed">{destinationData.description}</p>
+                        </section>
 
-            {/* Itinerary and Sightseeing Tabs */}
-            <Tabs defaultValue="itinerary" className="mb-8">
-                <TabsList>
-                    <TabsTrigger value="itinerary">Itinerary</TabsTrigger>
-                    <TabsTrigger value="sightseeing">Sightseeing</TabsTrigger>
-                </TabsList>
-                <TabsContent value="itinerary">
-                    <Card>
-                        <CardHeader>
-                            <CardTitle>Day-by-Day Itinerary</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                            {destinationData.itinerary.map((day) => (
-                                <div key={day.day} className="mb-4">
-                                    <h3 className="font-bold">Day {day.day}</h3>
-                                    <ul className="list-disc list-inside">
-                                        {day.activities.map((activity, index) => (
-                                            <li key={index}>{activity}</li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            ))}
-                        </CardContent>
-                    </Card>
-                </TabsContent>
-                <TabsContent value="sightseeing">
-                    <Card>
-                        <CardHeader>
-                            <CardTitle>Must-See Sights</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                {destinationData.sightseeing.map((sight, index) => (
-                                    <li key={index} className="flex items-center">
-                                        <MapPin className="h-4 w-4 mr-2" />
-                                        {sight}
-                                    </li>
+                        <section>
+                            <h2 className="text-xl font-bold mb-6">Sample Itinerary</h2>
+                            <div className="space-y-8">
+                                {destinationData.itinerary.map((day) => (
+                                    <div key={day.day} className="flex gap-4 group">
+                                        <div className="flex-shrink-0 relative">
+                                            <div className="w-3 h-3 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] rounded-full mt-2 group-hover:shadow-lg transition-all duration-300"></div>
+                                            <div className="absolute top-5 bottom-0 left-1.5 w-0.5 bg-gradient-to-b from-[#017ae3] to-transparent"></div>
+                                        </div>
+                                        <div className="group-hover:translate-x-2 transition-transform duration-300">
+                                            <div className="text-sm text-gray-500">Day {day.day}</div>
+                                            <div className="font-medium text-gray-900">{day.title}</div>
+                                            <div className="text-sm text-gray-600 mt-1">{day.description}</div>
+                                        </div>
+                                    </div>
                                 ))}
-                            </ul>
-                        </CardContent>
-                    </Card>
-                </TabsContent>
-            </Tabs>
+                            </div>
+                        </section>
 
-            {/* Book Now Button */}
-            <div className="text-center">
-                <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
-                    Book Now
-                </Button>
-            </div>
+                        {/* Similar sections for inclusions, exclusions, and cancellation policy */}
+                    </div>
+                </div>
+            </main>
         </div>
-    )
+    );
 }

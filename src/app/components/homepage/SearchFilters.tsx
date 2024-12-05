@@ -1,51 +1,66 @@
 'use client';
 
-import { useState } from 'react'
+import { useState, useCallback, useRef } from 'react'
 import { Slider } from 'antd'
+// import type { SliderRef } from 'antd/es/slider'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Label } from '@/components/ui/label'
 import { Button } from '@/components/ui/button'
 
 export default function SearchFilters() {
-    const [duration, setDuration] = useState<[number, number]>([1, 30])
-    const [rating, setRating] = useState<number>(0)
+    const [durationRange, setDurationRange] = useState<[number, number]>([1, 30])
+    const [ratingValue, setRatingValue] = useState<number>(0)
+    // const durationSliderRef = useRef<SliderRef>(null)
+    // const ratingSliderRef = useRef<SliderRef>(null)
 
     const amenities = ['Wi-Fi', 'Pool', 'Gym', 'Restaurant', 'Spa']
     const categories = ['Honeymoon', 'Family', 'Friends', 'Solo', 'Group', 'Couple']
     const continents = ['Asia', 'Europe', 'North America', 'South America', 'Africa', 'Australia']
 
-    const formatPrice = (value: number) => `₹${value.toLocaleString('en-IN')}`
+    const handleDurationChange = useCallback((value: number[]) => {
+        setDurationRange(value as [number, number])
+    }, [])
+
+    const handleRatingChange = useCallback((value: number) => {
+        setRatingValue(value)
+    }, [])
 
     return (
         <div className="space-y-6">
             <div>
                 <h3 className="text-lg font-semibold mb-2">Duration (days)</h3>
                 <Slider
+                    // ref={durationSliderRef}
                     range
                     min={1}
                     max={30}
-                    value={duration}
-                    onChange={(value: [number, number]) => setDuration(value)}
-                    tipFormatter={(value) => `${value} days`}
+                    value={durationRange}
+                    onChange={handleDurationChange}
+                    tooltip={{
+                        formatter: (value) => `${value} days`
+                    }}
                 />
                 <div className="flex justify-between mt-2">
-                    <span>{duration[0]} days</span>
-                    <span>{duration[1]} days</span>
+                    <span>{durationRange[0]} days</span>
+                    <span>{durationRange[1]} days</span>
                 </div>
             </div>
 
             <div>
                 <h3 className="text-lg font-semibold mb-2">Rating</h3>
                 <Slider
+                    // ref={ratingSliderRef}
                     min={0}
                     max={5}
                     step={0.5}
-                    value={rating}
-                    onChange={(value: number) => setRating(value)}
-                    tipFormatter={(value) => `${value} stars`}
+                    value={ratingValue}
+                    onChange={handleRatingChange}
+                    tooltip={{
+                        formatter: (value) => `${value} stars`
+                    }}
                 />
                 <div className="mt-2">
-                    <span>{rating} stars and above</span>
+                    <span>{ratingValue} stars and above</span>
                 </div>
             </div>
 

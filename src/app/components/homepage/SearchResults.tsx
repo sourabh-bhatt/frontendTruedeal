@@ -2,79 +2,43 @@ import Link from 'next/link'
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Star } from 'lucide-react'
+import mockPackages from '../../../lib/mockPackages.json'
+import { TravelPackage } from '@/types/package'
 
-// This would typically come from an API or database
-const mockPackages = [
-    {
-        id: 1,
-        name: 'Maldives Paradise',
-        destination: 'Maldives',
-        duration: '7 days',
-        price: 150000,
-        discountedPrice: 120000,
-        rating: 4.5,
-        reviews: 120,
-        image: '/Assets/DestinationsImage/Maldives.jpg',
-    },
-    {
-        id: 2,
-        name: 'Dubai Adventure',
-        destination: 'Dubai',
-        duration: '5 days',
-        price: 100000,
-        discountedPrice: 85000,
-        rating: 4.2,
-        reviews: 95,
-        image: '/Assets/DestinationsImage/Dubai.jpg',
-    },
+export default function SearchResults({ 
+    searchParams 
+}: { 
+    searchParams: { [key: string]: string | string[] | undefined } 
+}) {
+    const { destination, maxPrice } = searchParams;
 
-    {
-        id: 3,
-        name: 'Paris Getaway',
-        destination: 'Paris',
-        duration: '4 days',
-        price: 80000,
-        discountedPrice: 70000,
-        rating: 4.0,
-        reviews: 80,
-        image: '/Assets/DestinationsImage/paris.jpg',
-    },
-    {
-        id: 4,
-        name: 'Bali Bliss',
-        destination: 'Bali',
-        duration: '6 days',
-        price: 90000,
-        discountedPrice: 75000,
-        rating: 4.3,
-        reviews: 100,
-        image: '/Assets/DestinationsImage/bali.jpg',
-    },
-
-]
-
-export default function SearchResults({ searchParams }: { searchParams: { [key: string]: string | string[] | undefined } }) {
-    // In a real application, you would use the searchParams to fetch results from an API
-    console.log(searchParams)
+    const filteredPackages = (mockPackages as TravelPackage[]).filter(pkg => {
+        const matchesDestination = destination 
+            ? pkg.destination.toLowerCase().includes(destination.toString().toLowerCase()) 
+            : true;
+        const matchesPrice = maxPrice 
+            ? pkg.price <= parseInt(maxPrice.toString()) 
+            : true;
+        return matchesDestination && matchesPrice;
+    });
 
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {mockPackages.map((pkg) => (
+            {filteredPackages.map(pkg => (
                 <Card key={pkg.id}>
                     <CardHeader>
                         <img src={pkg.image} alt={pkg.name} className="w-full h-48 object-cover rounded-t-lg" />
                     </CardHeader>
                     <CardContent>
                         <CardTitle>{pkg.name}</CardTitle>
-                        <p className="text-sm text-gray-500">{pkg.destination} • {pkg.duration}</p>
+                        <p className="text-sm text-gray-500">{pkg.destination} • {pkg.duration.days} days</p>
                         <div className="flex items-center mt-2">
                             <Star className="text-yellow-400 w-5 h-5" />
-                            <span className="ml-1">{pkg.rating}</span>
-                            <span className="ml-2 text-sm text-gray-500">({pkg.reviews} reviews)</span>
+                            <span className="ml-1">{pkg.rating || 'N/A'}</span>
+                            <span className="ml-2 text-sm text-gray-500">({pkg.reviews || 0} reviews)</span>
                         </div>
                         <div className="mt-4">
-                            <span className="text-2xl font-bold">₹{pkg.discountedPrice.toLocaleString()}</span>
-                            <span className="ml-2 text-sm text-gray-500 line-through">₹{pkg.price.toLocaleString()}</span>
+                            <span className="text-2xl font-bold">₹{pkg.price.toLocaleString()}</span>
                         </div>
                     </CardContent>
                     <CardFooter>
@@ -85,6 +49,6 @@ export default function SearchResults({ searchParams }: { searchParams: { [key: 
                 </Card>
             ))}
         </div>
-    )
+    );
 }
 
