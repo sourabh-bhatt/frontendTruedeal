@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button'
 
 export default function SearchFilters() {
     const [duration, setDuration] = useState<[number, number]>([1, 30])
-    const [rating,  setRating] = useState<number>(0)
+    const [rating, setRating] = useState<number>(0)
 
     const amenities = ['Wi-Fi', 'Pool', 'Gym', 'Restaurant', 'Spa']
     const categories = ['Honeymoon', 'Family', 'Friends', 'Solo', 'Group', 'Couple']

@@ -16,7 +16,7 @@ export default function Home() {
       <Destination />
       <Trending />
       <CurrencyExchange />
-      <LiveForexRates />
+      {/* <LiveForexRates /> */}
       <Forex />
       <Ad />
       <Testimonials />
