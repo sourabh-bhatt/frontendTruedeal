@@ -1,48 +1,61 @@
+"use client";
+
 import Image from "next/image";
+import { useRouter } from 'next/navigation';
 
 const TrendingOffers = () => {
+    const router = useRouter();
+
     const offers = [
         {
-            title: "Breeze Through Bangkok & Pattaya",
-            nights: 2,
-            days: 3,
-            originalPrice: 26500,
-            discountedPrice: 21059,
+            title: "Almaty: City of Apples & Mountains",
+            slug: "almaty",
+            nights: 5,
+            days: 6,
+            originalPrice: 55980,
+            discountedPrice: 44275,
             image: "/Assets/DestinationsImage/china.jpg",
             discount: 18,
             amenities: ["Stay", "Transfers"]
         },
         {
-            title: "Breeze Through Bangkok & Pattaya",
-            nights: 2,
-            days: 3,
-            originalPrice: 26500,
-            discountedPrice: 21059,
+            title: "Baku: The City of Winds & Fire Temples",
+            slug: "baku",
+            nights: 4,
+            days: 5,
+            originalPrice: 46390,
+            discountedPrice: 30100,
             image: "/Assets/DestinationsImage/china.jpg",
             discount: 18,
+            amenities: ["Activities", "Transfers"]
+        },
+        {
+            title: "Vietnam: A City of Eternal Charm & Beauty",
+            slug: "vietnam",
+            nights: 5,
+            days: 6,
+            originalPrice: 58798,
+            discountedPrice: 46000,
+            image: "/Assets/DestinationsImage/china.jpg",
+            discount: 24,
             amenities: ["Stay", "Transfers"]
         },
         {
-            title: "Breeze Through Bangkok & Pattaya",
-            nights: 2,
-            days: 3,
-            originalPrice: 26500,
-            discountedPrice: 21059,
+            title: "Shimla: The Queen of Hills & Snow",
+            slug: "shimla",
+            nights: 3,
+            days: 4,
+            originalPrice: 28000,
+            discountedPrice: 12000,
             image: "/Assets/DestinationsImage/china.jpg",
-            discount: 18,
-            amenities: ["Stay", "Transfers"]
-        },
-        {
-            title: "Breeze Through Bangkok & Pattaya",
-            nights: 2,
-            days: 3,
-            originalPrice: 26500,
-            discountedPrice: 21059,
-            image: "/Assets/DestinationsImage/china.jpg",
-            discount: 18,
-            amenities: ["Stay", "Transfers"]
+            discount: 37,
+            amenities: ["Sightseeing", "Transfers"]
         }
     ];
+
+    const handleCardClick = (slug: string) => {
+        router.push(`/trending/${slug}`);
+    };
 
     return (
         <div className="max-w-7xl mx-auto px-4 py-8">
@@ -55,7 +68,10 @@ const TrendingOffers = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-6">
                 {offers.map((offer, index) => (
-                    <div key={index} className="bg-white rounded-3xl overflow-hidden shadow-lg">
+                    <div key={index}
+                        className="bg-white rounded-3xl overflow-hidden shadow-lg cursor-pointer"
+                        onClick={() => handleCardClick(offer.slug)}
+                    >
                         <div className="relative">
                             <Image
                                 src={offer.image}
@@ -71,15 +87,13 @@ const TrendingOffers = () => {
                                     </svg>
                                     {offer.discount}% OFF
                                 </div>
-                                <div
-                                    className="border-t-[16px] border-t-transparent border-l-[16px] border-l-red-500 border-b-[16px] border-b-transparent"
-                                />
+                                <div className="border-t-[16px] border-t-transparent border-l-[16px] border-l-red-500 border-b-[16px] border-b-transparent" />
                             </div>
                         </div>
 
-                        <div >
+                        <div>
                             <div className="px-2">
-                                <h3 className="font-semibold font-poppins text-md mb-2">{offer.title}</h3>
+                                <h3 className="font-semibold font-poppins text-md mb-2 mt-2">{offer.title}</h3>
 
                                 <div className="flex gap-2 mb-3">
                                     <span className="bg-blue-50 text-gray-700 px-4 py-1 rounded-full text-sm font-poppins font-semibold">
