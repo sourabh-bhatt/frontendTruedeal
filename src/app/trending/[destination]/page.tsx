@@ -10,6 +10,7 @@ import { BookingFormModal } from '@/app/components/BookingFormModal';
 import Trending from '@/app/components/homepage/Trending';
 import Testimonials from '@/app/components/Ad/Testimonials';
 import Destinations from '@/app/components/homepage/Destinations';
+import Shimmer from '@/components/ui/shimmer';
 
 interface TrendingDestinationDetails {
     name: string;
@@ -300,7 +301,7 @@ export default function TrendingDestinationDetails() {
     }
 
     if (!destinationData) {
-        return <div>Loading...</div>;
+        return <Shimmer />;
     }
 
     return (

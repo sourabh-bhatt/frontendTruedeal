@@ -36,20 +36,37 @@ export default function HeroSection() {
     }
 
     return (
-        <div className="relative min-h-screen bg-cover bg-center" style={{ backgroundImage: `url('/Assets/HeroSectionImages/heroBg.jpg')` }}>
-            <div className="absolute inset-0 bg-black opacity-50"></div>
-            <div className="relative z-10 flex flex-col items-start justify-center min-h-screen text-white px-4 sm:px-8 md:px-20">
-                <h1 className="text-xl sm:text-2xl md:text-3xl mb-2 ml-[8%] mt-[4%] sm:mt-[2%]">
-                    <span className='font-poppins font-semibold'>Welcome to the beta release of</span>{' '}
-                    <span className='font-poppins font-bold'>Truedeal Travel Engine !!!</span>
+        <div className="relative min-h-screen overflow-hidden">
+            {/* Background Video */}
+            <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute top-0 left-0 w-full h-full object-cover z-0"
+            >
+                <source src="/Assets/HeroSectionImages/bgVideoLoop.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
+
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-black opacity-50 z-[1]"></div>
+
+            {/* Content - increased z-index to appear above video */}
+            <div className="relative z-[2] flex flex-col items-center justify-center min-h-screen text-white px-4 sm:px-6 lg:px-8">
+                <h1 className="text-xl sm:text-2xl md:text-3xl mb-2 text-center">
+                    <span className='font-poppins font-semibold'>Discover Your Dream Vacation with</span>{' '}
+                    <span className='font-poppins font-bold'>Truedeal</span>
                 </h1>
-                <p className="text-xs sm:text-sm md:text-md mb-4 ml-[8%] relative top-2 sm:top-4 md:top-9 font-poppins font-semibold">GET READY FOR TAKE OFF</p>
-                <h2 className="text-2xl sm:text-3xl md:text-3xl mb-4 sm:mb-6 md:mb-8 ml-[8%] relative top-2 sm:top-4 md:top-6 font-poppins font-bold">
+                <p className="text-xs sm:text-sm md:text-md mb-4 text-center font-poppins font-semibold">
+                    GET READY FOR TAKE OFF
+                </p>
+                <h2 className="text-2xl sm:text-3xl md:text-3xl mb-8 text-center font-poppins font-bold">
                     Search <span className="underline">your Holida</span>y
                 </h2>
 
-                <div className="bg-white p-6 w-full max-w-4xl ml-[8%] sm:ml-[4%] md:ml-[9%] font-poppins mt-8 rounded-lg">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <div className="bg-white/80 backdrop-blur-sm p-4 sm:p-6 w-full max-w-4xl mx-auto font-poppins rounded-lg shadow-lg">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                         <div className="flex flex-col">
                             <Label htmlFor="destination" className="text-gray-600 mb-2 font-bold">Select Your Destination:</Label>
                             <Select onValueChange={setDestination} value={destination}>
