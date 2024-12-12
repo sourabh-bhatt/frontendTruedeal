@@ -1,26 +1,25 @@
 import Image from "next/image"
+import Link from "next/link"
 
 export default function Services() {
     const services = [
         {
             title: "Holiday Packages",
             image: "/Assets/DestinationsImage/1.jpg",
-            alt: "Couple taking photos on mountain top"
+            alt: "Couple taking photos on mountain top",
+            link: "/destinationpackage"
         },
         {
-            title: "Forex Services",
-            image: "/Assets/DestinationsImage/2.jpg",
-            alt: "International currency notes"
-        },
-        {
-            title: "Air Ticketing",
+            title: "Trending Destinations",
             image: "/Assets/DestinationsImage/3.jpg",
-            alt: "Commercial airplane at airport"
+            alt: "Commercial airplane at airport",
+            link: "/trendingpackage"
         },
         {
-            title: "Cruise",
+            title: "Exclusive Deals",
             image: "/Assets/DestinationsImage/4.jpg",
-            alt: "Cruise ship on ocean"
+            alt: "Cruise ship on ocean",
+            link: "/exclusive"
         }
     ]
 
@@ -37,22 +36,24 @@ export default function Services() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6 mr-10">
                     {services.map((service, index) => (
-                        <div key={index} className="relative group overflow-hidden rounded-lg">
-                            <div className="relative h-[300px] w-full">
-                                <Image
-                                    src={service.image}
-                                    alt={service.alt}
-                                    fill
-                                    className="object-cover transition-transform duration-300 group-hover:scale-110"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                                <h3 className="absolute bottom-6 left-6 text-white text-xl font-bold font-poppins">
-                                    {service.title}
-                                </h3>
+                        <Link href={service.link} key={index}>
+                            <div className="relative group overflow-hidden rounded-lg cursor-pointer">
+                                <div className="relative h-[300px] w-full">
+                                    <Image
+                                        src={service.image}
+                                        alt={service.alt}
+                                        fill
+                                        className="object-cover transition-transform duration-300 group-hover:scale-110"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                                    <h3 className="absolute bottom-6 left-6 text-white text-xl font-bold font-poppins">
+                                        {service.title}
+                                    </h3>
+                                </div>
                             </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
             </div>

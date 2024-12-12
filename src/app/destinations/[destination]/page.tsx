@@ -7,6 +7,9 @@ import { Camera, Calendar, Phone, MapPin, Clock, CheckCircle, XCircle, AlertCirc
 import { Button } from "@/components/ui/button";
 import { GalleryModal } from '@/app/package/[id]/gallery-modal';
 import { BookingFormModal } from '../../components/BookingFormModal';
+import Trending from '@/app/components/homepage/Trending';
+import Destinations from '@/app/components/homepage/Destinations';
+import Testimonials from '@/app/components/Ad/Testimonials';
 
 interface DestinationDetails {
     name: string;
@@ -831,6 +834,9 @@ export default function DestinationDetails() {
                     </div>
                 </div>
             </main>
+            <Trending />
+            <Destinations />
+            <Testimonials />
         </div>
     );
 }

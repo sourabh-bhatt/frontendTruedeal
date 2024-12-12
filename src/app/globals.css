@@ -81,3 +81,43 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes modalFade {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-content {
+  animation: modalFade 0.3s ease-out;
+}
+
+/* Add these styles for the currency select dropdown */
+select option {
+  background-color: #017ae3;
+  color: white;
+  padding: 8px;
+}
+
+select option:hover,
+select option:focus,
+select option:active,
+select option:checked {
+  background: linear-gradient(to right, #017ae3, #00f6ff);
+}
+
+/* For Firefox */
+select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #fff;
+}
+
+/* For webkit browsers */
+select::-webkit-listbox {
+  background-color: #017ae3;
+}

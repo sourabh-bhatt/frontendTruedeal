@@ -7,6 +7,9 @@ import { Camera, Calendar, Phone, MapPin, Clock, CheckCircle, XCircle, AlertCirc
 import { Button } from "@/components/ui/button";
 import { GalleryModal } from '@/app/package/[id]/gallery-modal';
 import { BookingFormModal } from '@/app/components/BookingFormModal';
+import Trending from '@/app/components/homepage/Trending';
+import Testimonials from '@/app/components/Ad/Testimonials';
+import Destinations from '@/app/components/homepage/Destinations';
 
 interface TrendingDestinationDetails {
     name: string;
@@ -326,7 +329,7 @@ export default function TrendingDestinationDetails() {
                         </div>
                         <div className="text-2xl font-bold mb-1">₹{destinationData.price.toLocaleString()}</div>
                         <div className="text-sm text-gray-600 mb-4">Per Person</div>
-                        <Button 
+                        <Button
                             className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white mb-4 transition-all duration-500"
                             onClick={() => setIsBookingModalOpen(true)}
                         >
@@ -439,6 +442,9 @@ export default function TrendingDestinationDetails() {
                     </div>
                 </div>
             </main>
+            <Destinations />
+            <Trending />
+            <Testimonials />
         </div>
     );
 }
