@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { Camera, Calendar, Phone, MapPin, Clock, CheckCircle, XCircle, AlertCircle } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { GalleryModal } from '@/app/package/[id]/gallery-modal';
+import { BookingFormModal } from '@/app/components/BookingFormModal';
 
 interface TrendingDestinationDetails {
     name: string;
@@ -277,6 +278,7 @@ export default function TrendingDestinationDetails() {
     const [isGalleryOpen, setIsGalleryOpen] = useState(false);
     const [destinationData, setDestinationData] = useState<TrendingDestinationDetails | null>(null);
     const [error, setError] = useState<string | null>(null);
+    const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
 
     useEffect(() => {
         try {
@@ -324,7 +326,10 @@ export default function TrendingDestinationDetails() {
                         </div>
                         <div className="text-2xl font-bold mb-1">₹{destinationData.price.toLocaleString()}</div>
                         <div className="text-sm text-gray-600 mb-4">Per Person</div>
-                        <Button className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white mb-4 transition-all duration-500">
+                        <Button 
+                            className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white mb-4 transition-all duration-500"
+                            onClick={() => setIsBookingModalOpen(true)}
+                        >
                             Book Now
                         </Button>
                         <div className="text-center">
@@ -344,6 +349,12 @@ export default function TrendingDestinationDetails() {
                     isOpen={isGalleryOpen}
                     onClose={() => setIsGalleryOpen(false)}
                     images={destinationData.galleryImages}
+                />
+
+                <BookingFormModal
+                    isOpen={isBookingModalOpen}
+                    onClose={() => setIsBookingModalOpen(false)}
+                    destinationName={destinationData.name}
                 />
 
                 <div className="bg-white rounded-2xl shadow-lg p-8">
