@@ -65,7 +65,7 @@ export default function HeroSection() {
                     Search <span className="underline">your Holida</span>y
                 </h2>
 
-                <div className="bg-white/80 backdrop-blur-sm p-4 sm:p-6 w-full max-w-4xl mx-auto font-poppins rounded-lg shadow-lg">
+                <div className="bg-white p-4 sm:p-6 w-full max-w-4xl mx-auto font-poppins rounded-lg">
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                         <div className="flex flex-col">
                             <Label htmlFor="destination" className="text-gray-600 mb-2 font-bold">Select Your Destination:</Label>
@@ -132,11 +132,6 @@ export default function HeroSection() {
                 </div>
             </div>
 
-            <div className="absolute bottom-10 right-10">
-                <Button className="bg-pink-500 p-4 rounded-full shadow-lg hover:bg-pink-600 focus:outline-none">
-                    <i className="fas fa-robot text-white text-2xl"></i>
-                </Button>
-            </div>
 
             <style jsx global>{`
                 .ant-slider-rail {

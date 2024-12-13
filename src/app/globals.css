@@ -45,6 +45,7 @@ body {
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
+
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
@@ -77,6 +78,7 @@ body {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
@@ -87,6 +89,7 @@ body {
     opacity: 0;
     transform: translateY(-20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -120,4 +123,84 @@ select:-moz-focusring {
 /* For webkit browsers */
 select::-webkit-listbox {
   background-color: #017ae3;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(var(--scroll-width));
+  }
+}
+
+.animate-scroll {
+  animation: scroll var(--animation-duration) linear infinite;
+  will-change: transform;
+}
+
+/* Add hover pause functionality */
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
+
+@keyframes border-breath {
+
+  0%,
+  100% {
+    background-size: 100% 100%;
+  }
+
+  50% {
+    background-size: 150% 150%;
+  }
+}
+
+.animate-border-breath {
+  animation: border-breath 8s ease infinite;
+  background-size: 200% 200%;
+}
+
+@keyframes modalFade {
+  0% {
+    opacity: 0;
+    transform: scale(0.95) translateY(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.modal-content {
+  animation: modalFade 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Add these to your existing animations */
+.image-gallery-slide {
+  transition: transform 0.3s ease-in-out;
+}
+
+.fullscreen-image-enter {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.fullscreen-image-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.fullscreen-image-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.fullscreen-image-exit-active {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.3s, transform 0.3s;
 }

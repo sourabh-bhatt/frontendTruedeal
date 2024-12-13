@@ -92,6 +92,8 @@ export default function HappyCustomers() {
                     ))}
                 </div>
             </div>
+            {/* <HappyCustomers />
+            <TestimonialCard /> */}
         </section>
     )
 }
