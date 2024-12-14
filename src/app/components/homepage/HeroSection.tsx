@@ -3,36 +3,41 @@
 import { useState } from 'react'
 import { Search } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
-import { Checkbox } from '@/components/ui/checkbox'
 import { useRouter } from 'next/navigation'
-import { Slider as AntSlider } from 'antd'
+import { motion, AnimatePresence } from 'framer-motion'
 
 const destinations = [
-    'Maldives', 'Dubai', 'Europe', 'Thailand', 'Bali', 'Azerbaijan', 'Malaysia', 'Fiji',
-    'Australia', 'New Zealand', 'USA', 'Canada', 'Brazil', 'Argentina', 'Peru', 'Chile', 'Mexico',
-    'Egypt', 'South Africa', 'Kenya', 'Tanzania', 'Morocco', 'Mauritius',
-    'Japan', 'China', 'Hong Kong', 'Macau', 'South Korea', 'Philippines',
-    'India', 'Almaty', 'Baku', 'Singapore', 'Turkey', 'Kashmir', 'Manali', 'Shimla', 'Kerala', 'Andaman',
+    'Thailand',
+    'Dubai',
+    'Singapore',
+    'Bali',
+    'Indonesia',
+    'Japan',
+    'Hongkong',
+    'China',
+    'Almaty',
+    'Baku',
+    'Vietnam',
+    'Shimla'
 ]
 
+const trendingDestinations = ['Almaty', 'Baku', 'Vietnam', 'Shimla']
+
 export default function HeroSection() {
-    const [destination, setDestination] = useState('')
-    const [date, setDate] = useState('')
-    const [maxPrice, setMaxPrice] = useState(100000)
-    const [promotionsOnly, setPromotionsOnly] = useState(false)
+    const [destination, setDestination] = useState<string>('')
     const router = useRouter()
 
-    const handleSearch = () => {
-        const searchParams = new URLSearchParams({
-            destination,
-            date,
-            maxPrice: maxPrice.toString(),
-            promotionsOnly: promotionsOnly.toString()
-        })
-        router.push(`/search?${searchParams.toString()}`)
+    const handleDestinationChange = (value: string) => {
+        setDestination(value)
+        if (value) {
+            if (trendingDestinations.includes(value)) {
+                router.push(`/trending/${value.toLowerCase()}`)
+            } else {
+                router.push(`/destinations/${value.toLowerCase()}`)
+            }
+        }
     }
 
     return (
@@ -52,7 +57,7 @@ export default function HeroSection() {
             {/* Overlay */}
             <div className="absolute inset-0 bg-black opacity-50 z-[1]"></div>
 
-            {/* Content - increased z-index to appear above video */}
+            {/* Content */}
             <div className="relative z-[2] flex flex-col items-center justify-center min-h-screen text-white px-4 sm:px-6 lg:px-8">
                 <h1 className="text-xl sm:text-2xl md:text-3xl mb-2 text-center">
                     <span className='font-poppins font-semibold'>Discover Your Dream Vacation with</span>{' '}
@@ -65,92 +70,46 @@ export default function HeroSection() {
                     Search <span className="underline">your Holida</span>y
                 </h2>
 
-                <div className="bg-white p-4 sm:p-6 w-full max-w-4xl mx-auto font-poppins rounded-lg">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-                        <div className="flex flex-col">
-                            <Label htmlFor="destination" className="text-gray-600 mb-2 font-bold">Select Your Destination:</Label>
-                            <Select onValueChange={setDestination} value={destination}>
-                                <SelectTrigger id="destination" className="bg-white text-gray-900 border-gray-300">
-                                    <SelectValue placeholder="All Destinations" />
-                                </SelectTrigger>
-                                <SelectContent className="bg-white border border-gray-300 rounded-md shadow-lg">
-                                    {destinations.map((dest) => (
-                                        <SelectItem key={dest} value={dest} className="text-gray-900 hover:bg-gray-100">
-                                            {dest}
-                                        </SelectItem>
-                                    ))}
-                                </SelectContent>
-                            </Select>
-                        </div>
-
-                        <div className="flex flex-col">
-                            <Label htmlFor="date" className="text-gray-600 font-semibold mb-2">Select Your Date:</Label>
-                            <Input
-                                type="date"
-                                id="date"
-                                value={date}
-                                onChange={(e) => setDate(e.target.value)}
-                                className="p-2 border rounded-md text-gray-900 bg-white"
-                            />
-                        </div>
-
-                        <div className="flex flex-col">
-                            <Label htmlFor="price-range" className="text-gray-600 font-semibold mb-2">Max Price: ₹{maxPrice}</Label>
-                            <AntSlider
-                                id="price-range"
-                                min={0}
-                                max={100000}
-                                step={1000}
-                                value={maxPrice}
-                                onChange={(value) => setMaxPrice(value)}
-                                className="w-full"
-                                tooltip={{
-                                    formatter: (value) => `₹${value}`
-                                }}
-                            />
-                            <div className="flex items-center space-x-2 mt-4">
-                                <Checkbox
-                                    id="promotions"
-                                    checked={promotionsOnly}
-                                    onCheckedChange={(checked) => setPromotionsOnly(checked as boolean)}
-                                    className="border-gray-400"
-                                />
-                                <Label htmlFor="promotions" className="text-gray-600 text-sm">See only promotions</Label>
+                <div className=" p-4 sm:p-6 w-full max-w-4xl mx-auto font-poppins rounded-lg">
+                    <div className="flex flex-col space-y-4">
+                        <div className="flex flex-col items-center">
+                            <div className="w-full max-w-xl">
+                                <Select onValueChange={handleDestinationChange} value={destination}>
+                                    <SelectTrigger
+                                        className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white border-0 rounded-full h-12 px-6 shadow-lg focus:ring-0 focus:ring-offset-0 hover:opacity-90 transition-all duration-300"
+                                    >
+                                        <Search className="mr-2 h-5 w-5 text-white" />
+                                        <SelectValue placeholder="Search countries, cities" />
+                                    </SelectTrigger>
+                                    <AnimatePresence>
+                                        <motion.div
+                                            initial={{ opacity: 0, y: -20 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            exit={{ opacity: 0, y: -20 }}
+                                            transition={{ duration: 0.2 }}
+                                        >
+                                            <SelectContent 
+                                                className="bg-white border-0 shadow-xl rounded-lg mt-2 p-2 backdrop-blur-sm bg-opacity-95"
+                                                position="popper"
+                                            >
+                                                {destinations.map((dest) => (
+                                                    <SelectItem
+                                                        key={dest}
+                                                        value={dest}
+                                                        className="text-gray-700 hover:bg-gradient-to-r hover:from-[#017ae3] hover:to-[#00f6ff] hover:text-white cursor-pointer py-3 px-4 rounded-md transition-all duration-200"
+                                                    >
+                                                        {dest}
+                                                    </SelectItem>
+                                                ))}
+                                            </SelectContent>
+                                        </motion.div>
+                                    </AnimatePresence>
+                                </Select>
                             </div>
                         </div>
                     </div>
-
-                    <div className="mt-6 flex justify-center">
-                        <Button
-                            onClick={handleSearch}
-                            className="px-6 py-2 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white rounded-full font-semibold hover:opacity-90 transition-opacity duration-300"
-                        >
-                            <Search className="mr-2 h-5 w-5" />
-                            SEARCH
-                        </Button>
-                    </div>
                 </div>
             </div>
-
-
-            <style jsx global>{`
-                .ant-slider-rail {
-                    background-color: #e2e8f0;
-                }
-                .ant-slider-track {
-                    background-color: #017ae3;
-                }
-                .ant-slider-handle {
-                    border-color: #017ae3;
-                }
-                .ant-slider-handle:focus {
-                    box-shadow: 0 0 0 5px rgba(1, 122, 227, 0.2);
-                }
-                .ant-slider-tooltip .ant-tooltip-inner {
-                    background-color: #017ae3;
-                    color: white;
-                }
-            `}</style>
         </div>
     )
 }
