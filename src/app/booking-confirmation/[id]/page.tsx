@@ -1,7 +1,14 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 
-export default function BookingConfirmation({ params }: { params: { id: string } }) {
+interface PageProps {
+  params: {
+    id: string
+  }
+  searchParams: { [key: string]: string | string[] | undefined }
+}
+
+export default function BookingConfirmationPage({ params, searchParams }: PageProps) {
     const bookingId = `TD${params.id}${Math.floor(Math.random() * 10000)}`
 
     return (
