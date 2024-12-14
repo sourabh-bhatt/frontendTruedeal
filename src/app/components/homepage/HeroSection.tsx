@@ -2,8 +2,6 @@
 
 import { useState } from 'react'
 import { Search } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { Label } from '@/components/ui/label'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { useRouter } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -88,7 +86,7 @@ export default function HeroSection() {
                                             exit={{ opacity: 0, y: -20 }}
                                             transition={{ duration: 0.2 }}
                                         >
-                                            <SelectContent 
+                                            <SelectContent
                                                 className="bg-white border-0 shadow-xl rounded-lg mt-2 p-2 backdrop-blur-sm bg-opacity-95"
                                                 position="popper"
                                             >
