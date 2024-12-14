@@ -8,9 +8,9 @@ import { Button } from "@/components/ui/button";
 import { GalleryModal } from '@/app/package/[id]/gallery-modal';
 import { BookingFormModal } from '@/app/components/BookingFormModal';
 import Trending from '@/app/components/homepage/Trending';
-import Testimonials from '@/app/components/Ad/Testimonials';
 import Destinations from '@/app/components/homepage/Destinations';
 import Shimmer from '@/components/ui/shimmer';
+import HappyCustomers from '@/app/components/Ad/HappyCustomers';
 
 interface TrendingDestinationDetails {
     name: string;
@@ -445,7 +445,8 @@ export default function TrendingDestinationDetails() {
             </main>
             <Destinations />
             <Trending />
-            <Testimonials />
+            <HappyCustomers />
+
         </div>
     );
 }

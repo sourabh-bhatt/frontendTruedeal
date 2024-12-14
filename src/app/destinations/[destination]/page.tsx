@@ -9,8 +9,8 @@ import { GalleryModal } from '@/app/package/[id]/gallery-modal';
 import { BookingFormModal } from '../../components/BookingFormModal';
 import Trending from '@/app/components/homepage/Trending';
 import Destinations from '@/app/components/homepage/Destinations';
-import Testimonials from '@/app/components/Ad/Testimonials';
 import Shimmer from '@/components/ui/shimmer';
+import HappyCustomers from '@/app/components/Ad/HappyCustomers';
 
 interface DestinationDetails {
     name: string;
@@ -837,7 +837,7 @@ export default function DestinationDetails() {
             </main>
             <Trending />
             <Destinations />
-            <Testimonials />
+            <HappyCustomers />
         </div>
     );
 }
