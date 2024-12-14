@@ -52,6 +52,7 @@ export function BookingFormModal({ isOpen, onClose, destinationName }: BookingFo
                 throw new Error('Failed to send email');
             }
         } catch (error) {
+            console.error(error);
             toast({
                 title: "Error",
                 description: "Something went wrong. Please try again later.",
@@ -66,6 +67,9 @@ export function BookingFormModal({ isOpen, onClose, destinationName }: BookingFo
             <DialogContent className="sm:max-w-[425px] bg-white">
                 <DialogHeader>
                     <DialogTitle>Need Assistance?</DialogTitle>
+                    <button onClick={onClose} className="absolute top-2 right-2">
+                        <X className="w-6 h-6" aria-label="Close" />
+                    </button>
                 </DialogHeader>
                 <form onSubmit={handleSubmit} className="space-y-4">
                     <div className="space-y-2">

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback, useRef } from 'react'
+import { useState, useCallback } from 'react'
 import { Slider } from 'antd'
 // import type { SliderRef } from 'antd/es/slider'
 import { Checkbox } from '@/components/ui/checkbox'

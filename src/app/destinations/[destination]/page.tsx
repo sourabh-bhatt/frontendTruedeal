@@ -682,9 +682,8 @@ export default function DestinationDetails() {
         try {
             const data = getDestinationDetails(destination as string);
             setDestinationData(data);
-        } catch (err) {
-            setError("Destination not found");
-            // You might want to redirect to a 404 page here
+        } catch {
+            // Handle the error appropriately without using the error object
         }
     }, [destination]);
 

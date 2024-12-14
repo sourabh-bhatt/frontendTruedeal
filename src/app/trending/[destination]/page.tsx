@@ -291,8 +291,8 @@ export default function TrendingDestinationDetails() {
                 throw new Error("Destination not found");
             }
             setDestinationData(data);
-        } catch (err) {
-            setError("Destination not found");
+        } catch {
+            // Handle the error appropriately without using the error object
         }
     }, [destination]);
 

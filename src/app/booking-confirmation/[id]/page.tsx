@@ -13,8 +13,8 @@ export default function BookingConfirmation({ params }: { params: { id: string }
                 <span className="block sm:inline">{bookingId}</span>
             </div>
             <p className="mb-8">
-                We've sent a confirmation email with all the details of your booking.
-                If you have any questions, please don't hesitate to contact our customer support.
+                We&apos;ve sent a confirmation email with all the details of your booking.
+                If you have any questions, please don&apos;t hesitate to contact our customer support.
             </p>
             <div className="space-y-4">
                 <Button asChild>

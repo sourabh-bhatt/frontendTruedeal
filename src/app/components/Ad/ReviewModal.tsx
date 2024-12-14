@@ -51,7 +51,7 @@ export function ReviewModal({ isOpen, onClose, review }: ReviewModalProps) {
                     <div className="relative p-[2px] bg-gradient-to-r from-[#017ae3] via-[#00f6ff] to-[#017ae3] rounded-2xl animate-border-breath">
                         <div className="bg-white p-4 sm:p-6 rounded-2xl relative overflow-hidden">
                             <DialogTitle className="sr-only">
-                                {review.name}'s Review
+                                {review.name}&apos;s Review
                             </DialogTitle>
 
                             {/* Background decoration */}

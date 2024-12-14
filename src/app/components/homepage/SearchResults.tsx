@@ -4,6 +4,7 @@ import { Badge } from '@/components/ui/badge'
 import { Star } from 'lucide-react'
 import mockPackages from '../../../lib/mockPackages.json'
 import { TravelPackage } from '@/types/package'
+import Image from 'next/image'
 
 export default function SearchResults({ 
     searchParams 
@@ -27,7 +28,13 @@ export default function SearchResults({
             {filteredPackages.map(pkg => (
                 <Card key={pkg.id}>
                     <CardHeader>
-                        <img src={pkg.image} alt={pkg.name} className="w-full h-48 object-cover rounded-t-lg" />
+                        <Image
+                            src={pkg.image}
+                            alt={pkg.name}
+                            width={500}
+                            height={300}
+                            layout="responsive"
+                        />
                     </CardHeader>
                     <CardContent>
                         <CardTitle>{pkg.name}</CardTitle>
