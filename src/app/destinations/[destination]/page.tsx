@@ -675,7 +675,7 @@ export default function DestinationDetails() {
     const { destination } = params;
     const [isGalleryOpen, setIsGalleryOpen] = useState(false);
     const [destinationData, setDestinationData] = useState<DestinationDetails | null>(null);
-    const [error, setError] = useState<string | null>(null);
+    const [error] = useState<string | null>(null);
     const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
 
     useEffect(() => {

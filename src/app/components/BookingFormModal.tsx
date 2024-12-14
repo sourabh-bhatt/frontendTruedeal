@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { X } from 'lucide-react';
-import { useToast } from "@/components/ui/use-toast"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -20,7 +19,6 @@ interface BookingFormModalProps {
 }
 
 export function BookingFormModal({ isOpen, onClose, destinationName }: BookingFormModalProps) {
-    const { toast } = useToast()
     const [formData, setFormData] = useState({
         destination: destinationName,
         departureCity: '',
@@ -31,34 +29,11 @@ export function BookingFormModal({ isOpen, onClose, destinationName }: BookingFo
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-
         try {
-            const response = await fetch('/api/send-booking-email', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            });
-
-            if (response.ok) {
-                toast({
-                    title: "Success!",
-                    description: "Details submitted. Our travel expert will connect with you soon.",
-                    duration: 5000,
-                })
-                onClose();
-            } else {
-                throw new Error('Failed to send email');
-            }
+            console.log("Form submitted successfully");
+            onClose();
         } catch (error) {
-            console.error(error);
-            toast({
-                title: "Error",
-                description: "Something went wrong. Please try again later.",
-                variant: "destructive",
-                duration: 5000,
-            })
+            console.error("Error submitting form:", error);
         }
     };
 
