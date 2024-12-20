@@ -18,7 +18,9 @@ const destinations = [
     'Almaty',
     'Baku',
     'Vietnam',
-    'Shimla'
+    'Shimla',
+    'Maldives',
+    'SriLanka',
 ]
 
 const trendingDestinations = ['Almaty', 'Baku', 'Vietnam', 'Shimla']

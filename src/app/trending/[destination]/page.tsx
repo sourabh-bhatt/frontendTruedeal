@@ -273,7 +273,70 @@ const trendingData: { [key: string]: TrendingDestinationDetails } = {
             "/Assets/DestinationsImage/shimla2.jpg",
             "/Assets/DestinationsImage/shimla3.jpg"
         ]
+    },
+    bali: {
+        name: "Bali - Island of the Gods",
+        price: 195,
+        image: "/Assets/DestinationsImage/baliImage.jpeg",
+        packages: 1,
+        description: "Experience the magical beauty of Bali, from serene beaches to ancient temples, lush rice terraces, and vibrant nightlife.",
+        duration: { days: 5, nights: 4 },
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrival – Transfer to hotel",
+                description: "Arrive in Bali and transfer to your hotel for check-in. Spend the rest of the day at leisure, relaxing or exploring the local surroundings."
+            },
+            {
+                day: 2,
+                title: "Visit Ulundanu Beratan temple – Handara gate – Tanah Lot temple",
+                description: "Explore Bali's stunning temples, starting with Ulundanu Beratan, Handara Gate, and the famous Tanah Lot temple."
+            },
+            {
+                day: 3,
+                title: "West Penida trip",
+                description: "Take a trip to West Penida, visit Kelingking Beach, Broken Beach, Angel Billabong, and Crystal Bay. Enjoy a local lunch and snorkeling."
+            },
+            {
+                day: 4,
+                title: "Swing and Sightseeing",
+                description: "Enjoy a swing at Nest Bali Jungle Swing, visit Kintamani volcano view, Tegalalang Rice Terrace, coffee plantation, Tegenungan waterfall, and Ubud Market."
+            },
+            {
+                day: 5,
+                title: "Airport drop",
+                description: "After breakfast, transfer to the airport for your return journey, taking home wonderful memories of Bali."
+            }
+        ],
+        inclusions: [
+            "Accommodation in 3-star and 4-star hotels as per itinerary (Deluxe Rooms, Pool Villas)",
+            "Private airport transfers",
+            "Meals as per itinerary",
+            "Sightseeing as per itinerary",
+            "Snorkeling session and local lunch in West Penida",
+            "Swing experience at Nest Bali",
+            "All applicable taxes in Bali"
+        ],
+        exclusions: [
+            "International flights",
+            "Visa fees",
+            "Personal expenses",
+            "Meals not mentioned in the itinerary",
+            "Travel insurance"
+        ],
+        cancellationPolicy: [
+            "Free cancellation up to 30 days before departure",
+            "50% refund up to 14 days before departure",
+            "No refund within 14 days of departure"
+        ],
+        galleryImages: [
+            "/Assets/DestinationsImage/bali1.jpg",
+            "/Assets/DestinationsImage/bali2.jpg",
+            "/Assets/DestinationsImage/bali3.jpg",
+            "/Assets/DestinationsImage/bali4.jpg"
+        ]
     }
+
 };
 
 export default function TrendingDestinationDetails() {

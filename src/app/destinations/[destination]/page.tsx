@@ -657,6 +657,132 @@ const destinationData: { [key: string]: DestinationDetails } = {
     },
 
 
+    maldives: {
+        name: "5 Days Maldives Family Retreat",
+        price: 100000,
+        image: "/Assets/DestinationsImage/maldives_image.jpeg",
+        packages: 2,
+        description: "Experience a luxurious family getaway in the Maldives with a perfect blend of relaxation and adventure. Enjoy stays in both beach and overwater villas, indulge in full-board gourmet dining, and partake in exciting water activities, all tailored for families with children.",
+        duration: {
+            days: 5,
+            nights: 4
+        },
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrival and Transfer to Resort",
+                description: "Arrive at Malé International Airport and transfer via speedboat to your chosen resort. Check-in to your Mirage Panoramic Room or Grand Beach Villa. Spend the rest of the day at leisure, exploring the resort's amenities and the beautiful beach."
+            },
+            {
+                day: 2,
+                title: "Relaxation and Water Activities",
+                description: "Enjoy a day of relaxation or engage in water activities such as snorkeling or kayaking. Children can participate in the resort's kids' club activities, designed to entertain and educate young guests."
+            },
+            {
+                day: 3,
+                title: "Transition to Overwater Villa",
+                description: "Move to your Mirage Water Villa with Jacuzzi or Grand Water Villa. Experience the unique charm of staying over the crystal-clear lagoon. In the evening, savor a family dinner with panoramic ocean views."
+            },
+            {
+                day: 4,
+                title: "Explore Marine Life",
+                description: "Embark on a guided snorkeling excursion to discover the vibrant marine life of the Maldives. Alternatively, opt for a dolphin-watching cruise or a fishing trip, suitable for all ages."
+            },
+            {
+                day: 5,
+                title: "Departure",
+                description: "After breakfast, check out from the resort and transfer back to Malé International Airport via speedboat for your departure flight."
+            }
+        ],
+        inclusions: [
+            "2 nights in Mirage Panoramic Room or Grand Beach Villa",
+            "2 nights in Mirage Water Villa with Jacuzzi or Grand Water Villa",
+            "Full board meal plan (breakfast, lunch, and dinner)",
+            "Round-trip speedboat transfers",
+            "Access to resort facilities including swimming pools, kids' club, and fitness center",
+            "Complimentary non-motorized water sports"
+        ],
+        exclusions: [
+            "International flights",
+            "Travel insurance",
+            "Visa fees",
+            "Personal expenses",
+            "Optional excursions and activities not listed in inclusions",
+            "Beverages not included in the meal plan"
+        ],
+        cancellationPolicy: [
+            "Free cancellation up to 30 days before arrival",
+            "50% refund up to 15 days before arrival",
+            "No refund within 15 days of arrival"
+        ],
+        galleryImages: [
+            "/Assets/DestinationsImage/maldives_1.jpg",
+            "/Assets/DestinationsImage/maldives_2.jpg",
+            "/Assets/DestinationsImage/maldives_3.jpg",
+            "/Assets/DestinationsImage/maldives_4.jpg"
+        ]
+    },
+
+
+    srilanka: {
+        name: "Sri Lanka - The Jewel of the Indian Ocean",
+        price: 17500,
+        image: "/Assets/DestinationsImage/srilankaImage.jpeg",
+        packages: 2,
+        description: "Explore the rich cultural heritage and stunning landscapes of Sri Lanka, from ancient temples to pristine beaches and scenic hills.",
+        duration: { days: 4, nights: 3 },
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrival in Kandy",
+                description: "Pick up from Colombo Airport and transfer to Kandy. Evening visit to the Temple of the Tooth and a cultural show."
+            },
+            {
+                day: 2,
+                title: "Kandy City Tour & Botanical Gardens",
+                description: "Explore Kandy, including a visit to the Royal Botanical Gardens and a scenic walk around Kandy Lake."
+            },
+            {
+                day: 3,
+                title: "Bentota Beach & Colombo City Tour",
+                description: "Relax at Bentota beach and later explore Colombo with a visit to Galle Face Green, the National Museum, and local markets."
+            },
+            {
+                day: 4,
+                title: "Departure from Colombo",
+                description: "Morning shopping at the local markets and then drop-off at Colombo Airport for your return journey."
+            }
+        ],
+        inclusions: [
+            "Accommodation in hotels as per itinerary (Deluxe Rooms)",
+            "Airport pick-up and drop-off (private transfers)",
+            "Meals on Full Board basis (3 breakfasts, 3 lunches, 3 dinners)",
+            "Sightseeing as per itinerary",
+            "All transfers in an air-conditioned vehicle",
+            "Local SIM with 1GB data per room",
+            "20% discount voucher at Amith Gems Kandy",
+            "All applicable taxes in Sri Lanka"
+        ],
+        exclusions: [
+            "International flights",
+            "Visa fees",
+            "Entrance fees not mentioned in inclusions",
+            "Personal expenses",
+            "Meals outside the specified meal plan"
+        ],
+        cancellationPolicy: [
+            "Free cancellation up to 30 days before departure",
+            "50% refund up to 14 days before departure",
+            "No refund within 14 days of departure"
+        ],
+        galleryImages: [
+            "/Assets/DestinationsImage/srilanka1.jpg",
+            "/Assets/DestinationsImage/srilanka2.jpg",
+            "/Assets/DestinationsImage/srilanka3.jpg",
+            "/Assets/DestinationsImage/srilanka4.jpg"
+        ]
+    },
+
 };
 
 const getDestinationDetails = (destinationSlug: string): DestinationDetails => {

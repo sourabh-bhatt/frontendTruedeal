@@ -7,6 +7,7 @@ import CurrencyExchange from "./components/forex/ForexLive";
 import Exclusive from "./components/forex/Exclusive";
 import { AnimatedListDemo } from "./components/CardsSwap";
 import HappyCustomers from "./components/Ad/HappyCustomers";
+import ExoticDestinations from "./components/homepage/Exotic"
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <CurrencyExchange />
       <Exclusive />
       <AnimatedListDemo />
+      <ExoticDestinations />
       <Ad />
       <HappyCustomers />
       <Sponsors />

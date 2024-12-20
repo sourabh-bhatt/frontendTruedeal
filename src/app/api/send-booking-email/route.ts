@@ -21,11 +21,12 @@ export async function POST(request: Request) {
         };
 
         const msg = {
-            to: 'web@truedeal4u.com',
-            from: 'web@truedeal4u.com', // Must be a verified sender in SendGrid
+            to: 'sales4@truedeal4u.com',
+            from: 'web@truedeal4u.com',
             subject: `New Booking Inquiry for ${destination}`,
             html: generateEmailHTML(enquiryData),
         };
+
 
         await sgMail.send(msg);
 
