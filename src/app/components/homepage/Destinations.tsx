@@ -14,16 +14,16 @@ type Destination = {
 
 const destinations: { [key: string]: Destination[] } = {
     asia: [
-        { name: "Thailand", price: 25000, image: "/Assets/DestinationsImage/1.jpg", packages: 4 },
-        { name: "Dubai", price: 54000, image: "/Assets/DestinationsImage/8.jpg", packages: 3 },
-        { name: "Singapore", price: 66000, image: "/Assets/DestinationsImage/4.jpg", packages: 5 },
-        { name: "Bali", price: 19500, image: "/Assets/DestinationsImage/1.jpg", packages: 4 },
+        { name: "Thailand", price: 25000, image: "/IMAGES/thailand/2/1.webp", packages: 4 },
+        { name: "Dubai", price: 54000, image: "/IMAGES/dubai/1080 x 1274/4.webp", packages: 3 },
+        { name: "Singapore", price: 66000, image: "/IMAGES/singapore/1/1.webp", packages: 5 },
+        { name: "Bali", price: 19500, image: "/IMAGES/bali/1/4.webp", packages: 4 },
     ],
     europe: [
-        { name: "Indonesia", price: 55500, image: "/Assets/DestinationsImage/3.jpg", packages: 6 },
-        { name: "Japan", price: 170500, image: "/Assets/DestinationsImage/7.jpg", packages: 4 },
-        { name: "Hongkong", price: 74680, image: "/Assets/DestinationsImage/2.jpg", packages: 5 },
-        { name: "China", price: 120000, image: "/Assets/DestinationsImage/3.jpg", packages: 6 },
+        { name: "Indonesia", price: 55500, image: "/IMAGES/Indonesia/2/4.webp", packages: 6 },
+        { name: "Japan", price: 170500, image: "/IMAGES/japan/2/3.webp", packages: 4 },
+        { name: "Hongkong", price: 74680, image: "/IMAGES/Hongkong/2/3.webp", packages: 5 },
+        { name: "China", price: 120000, image: "/IMAGES/china/1/3.webp", packages: 6 },
     ]
 }
 

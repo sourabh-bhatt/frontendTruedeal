@@ -8,19 +8,25 @@ import Exclusive from "./components/forex/Exclusive";
 import { AnimatedListDemo } from "./components/CardsSwap";
 import HappyCustomers from "./components/Ad/HappyCustomers";
 import ExoticDestinations from "./components/homepage/Exotic"
+import Europe from "./components/homepage/Europe";
+import Domestic from "./components/homepage/Domestic";
+import Gallery from "./components/homepage/Gallery";
 
 export default function Home() {
   return (
     <main className="min-h-screen">
       <HeroSection />
       <Destination />
+      <Domestic />
       <Trending />
-      <CurrencyExchange />
       <Exclusive />
       <AnimatedListDemo />
       <ExoticDestinations />
+      <Europe />
       <Ad />
       <HappyCustomers />
+      <CurrencyExchange />
+      <Gallery />
       <Sponsors />
     </main>
   );

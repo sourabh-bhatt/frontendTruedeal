@@ -37,7 +37,7 @@ const trendingData: { [key: string]: TrendingDestinationDetails } = {
     almaty: {
         name: "Almaty: A City of Eternal Charm & Beauty",
         price: 44275,
-        image: "/Assets/DestinationsImage/china.jpg",
+        image: "/IMAGES/Almaty/1/1.webp",
         packages: 3,
         description: "Experience the beauty of Almaty with our carefully curated package. From bustling city life to serene mountains, immerse yourself in Kazakh culture and natural wonders.",
         duration: { days: 6, nights: 5 },
@@ -100,16 +100,17 @@ const trendingData: { [key: string]: TrendingDestinationDetails } = {
             "No refund within 15 days of departure"
         ],
         galleryImages: [
-            "/Assets/DestinationsImage/china.jpg",
-            "/Assets/DestinationsImage/china.jpg",
-            "/Assets/DestinationsImage/china.jpg"
+            "/IMAGES/Almaty/1/1.webp",
+            "/IMAGES/Almaty/1/2.webp",
+            "/IMAGES/Almaty/1/3.webp",
+            "/IMAGES/Almaty/1/4.webp"
         ]
     },
 
     baku: {
         name: "Baku: The City of Winds & Fire Temples",
         price: 30100,
-        image: "/Assets/DestinationsImage/china.jpg",
+        image: "/IMAGES/Baku/1/2.webp",
         packages: 3,
         description: "Explore the rich history and culture of Baku with our exclusive package. Discover the city's iconic landmarks, ancient temples, and vibrant nightlife.",
         duration: { days: 5, nights: 5 },
@@ -148,16 +149,17 @@ const trendingData: { [key: string]: TrendingDestinationDetails } = {
             "No refund within 15 days of departure"
         ],
         galleryImages: [
-            "/Assets/DestinationsImage/china.jpg",
-            "/Assets/DestinationsImage/china.jpg",
-            "/Assets/DestinationsImage/china.jpg"
+            "/IMAGES/Baku/1/1.webp",
+            "/IMAGES/Baku/1/2.webp",
+            "/IMAGES/Baku/1/3.webp",
+            "/IMAGES/Baku/1/4.webp"
         ]
     },
 
     vietnam: {
         name: "Vietnam: Land of Timeless Charm",
         price: 46000,
-        image: "/Assets/DestinationsImage/china.jpg",
+        image: "/IMAGES/Vietnam/2/1.webp",
         packages: 4,
         description: "Experience Vietnam's rich history, breathtaking landscapes, and vibrant culture. From the bustling streets of Hanoi to the serene beauty of Halong Bay and the iconic Ba Na Hills, this journey offers unforgettable memories.",
         duration: { days: 6, nights: 5 },
@@ -216,16 +218,17 @@ const trendingData: { [key: string]: TrendingDestinationDetails } = {
             "No refund within 15 days of departure"
         ],
         galleryImages: [
-            "/Assets/DestinationsImage/china.jpg",
-            "/Assets/DestinationsImage/china.jpg",
-            "/Assets/DestinationsImage/china.jpg"
+            "/IMAGES/Vietnam/2/1.webp",
+            "/IMAGES/Vietnam/2/2.webp",
+            "/IMAGES/Vietnam/2/3.webp",
+            "/IMAGES/Vietnam/2/4.webp"
         ]
     },
 
     shimla: {
         name: "Shimla: The Queen of Hills",
         price: 12000,
-        image: "/Assets/DestinationsImage/shimla.jpg",
+        image: "/IMAGES/Shimla/2/1.webp",
         packages: 1,
         description: "Escape to the serene landscapes of Shimla for a perfect getaway. From the vibrant Mall Road to the snowy charm of Kufri, this trip offers a blend of relaxation and adventure.",
         duration: { days: 4, nights: 3 },
@@ -269,15 +272,16 @@ const trendingData: { [key: string]: TrendingDestinationDetails } = {
             "No refund within 7 days of departure"
         ],
         galleryImages: [
-            "/Assets/DestinationsImage/shimla1.jpg",
-            "/Assets/DestinationsImage/shimla2.jpg",
-            "/Assets/DestinationsImage/shimla3.jpg"
+            "/IMAGES/Shimla/2/1.webp",
+            "/IMAGES/Shimla/2/2.webp",
+            "/IMAGES/Shimla/2/3.webp",
+            "/IMAGES/Shimla/2/4.webp"
         ]
     },
     bali: {
         name: "Bali - Island of the Gods",
         price: 195,
-        image: "/Assets/DestinationsImage/baliImage.jpeg",
+        image: "/IMAGES/bali/2/1.webp",
         packages: 1,
         description: "Experience the magical beauty of Bali, from serene beaches to ancient temples, lush rice terraces, and vibrant nightlife.",
         duration: { days: 5, nights: 4 },
@@ -330,10 +334,10 @@ const trendingData: { [key: string]: TrendingDestinationDetails } = {
             "No refund within 14 days of departure"
         ],
         galleryImages: [
-            "/Assets/DestinationsImage/bali1.jpg",
-            "/Assets/DestinationsImage/bali2.jpg",
-            "/Assets/DestinationsImage/bali3.jpg",
-            "/Assets/DestinationsImage/bali4.jpg"
+            "/IMAGES/bali/2/1.webp",
+            "/IMAGES/bali/2/2.webp",
+            "/IMAGES/bali/2/3.webp",
+            "/IMAGES/bali/2/4.webp"
         ]
     }
 

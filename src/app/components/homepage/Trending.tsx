@@ -14,7 +14,7 @@ const TrendingOffers = () => {
             days: 6,
             originalPrice: 55980,
             discountedPrice: 44275,
-            image: "/Assets/DestinationsImage/china.jpg",
+            image: "/IMAGES/Almaty/2/1.webp",
             discount: 18,
             amenities: ["Stay", "Transfers"]
         },
@@ -25,7 +25,7 @@ const TrendingOffers = () => {
             days: 5,
             originalPrice: 46390,
             discountedPrice: 30100,
-            image: "/Assets/DestinationsImage/china.jpg",
+            image: "/IMAGES/Baku/2/1.webp",
             discount: 18,
             amenities: ["Activities", "Transfers"]
         },
@@ -36,7 +36,7 @@ const TrendingOffers = () => {
             days: 6,
             originalPrice: 58798,
             discountedPrice: 46000,
-            image: "/Assets/DestinationsImage/china.jpg",
+            image: "/IMAGES/Vietnam/1/1.webp",
             discount: 24,
             amenities: ["Stay", "Transfers"]
         },
@@ -47,7 +47,7 @@ const TrendingOffers = () => {
             days: 4,
             originalPrice: 28000,
             discountedPrice: 12000,
-            image: "/Assets/DestinationsImage/china.jpg",
+            image: "/IMAGES/Shimla/1/1.webp",
             discount: 37,
             amenities: ["Sightseeing", "Transfers"]
         }

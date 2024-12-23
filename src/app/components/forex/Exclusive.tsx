@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
+import { Building2, Castle, Mountain } from 'lucide-react'
 
 export default function Exclusive() {
     return (
@@ -22,7 +23,10 @@ export default function Exclusive() {
                         <div className="flex flex-wrap justify-center md:justify-end gap-4 md:gap-8 md:mr-[16rem]">
                             {/* Almaty */}
                             <Link href="/trending/almaty" className="flex flex-col items-center justify-center w-28 md:w-40 h-24 md:h-32 text-white hover:scale-105 transition-transform cursor-pointer">
-                                <Image alt='illustrations' src="/Assets/Forex/a1.webp" width={40} height={40} className="mb-2 md:w-[60px] md:h-[60px]" />
+                                <Mountain
+                                    className="mb-2 w-[40px] h-[40px] md:w-[60px] md:h-[60px]"
+                                    strokeWidth={1.5}
+                                />
                                 <p className="text-xs md:text-sm text-center font-poppins font-semibold leading-tight">
                                     Almaty
                                 </p>
@@ -30,7 +34,10 @@ export default function Exclusive() {
 
                             {/* Baku */}
                             <Link href="/trending/baku" className="flex flex-col items-center justify-center w-28 md:w-40 h-24 md:h-32 text-white hover:scale-105 transition-transform cursor-pointer">
-                                <Image alt='illustrations' src="/Assets/Forex/a2.webp" width={40} height={40} className="mb-2 md:w-[60px] md:h-[60px]" />
+                                <Castle
+                                    className="mb-2 w-[40px] h-[40px] md:w-[60px] md:h-[60px]"
+                                    strokeWidth={1.5}
+                                />
                                 <p className="text-xs md:text-sm text-center font-poppins font-semibold leading-tight">
                                     Baku
                                 </p>
@@ -38,7 +45,10 @@ export default function Exclusive() {
 
                             {/* Japan */}
                             <Link href="/destinations/japan" className="flex flex-col items-center justify-center w-28 md:w-40 h-24 md:h-32 text-white hover:scale-105 transition-transform cursor-pointer">
-                                <Image alt='illustrations' src="/Assets/Forex/a3.webp" width={40} height={40} className="mb-2 md:w-[60px] md:h-[60px]" />
+                                <Building2
+                                    className="mb-2 w-[40px] h-[40px] md:w-[60px] md:h-[60px]"
+                                    strokeWidth={1.5}
+                                />
                                 <p className="text-xs md:text-sm text-center font-poppins font-semibold leading-tight">
                                     Japan
                                 </p>

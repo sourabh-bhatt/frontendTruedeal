@@ -38,7 +38,7 @@ const destinationData: { [key: string]: DestinationDetails } = {
     thailand: {
         name: "Thailand - Phuket & Krabi",
         price: 25000,
-        image: "/Assets/DestinationsImage/dubaiImage.jpeg",
+        image: "/IMAGES/thailand/1/1.webp",
         packages: 4,
         description: "Experience the beauty of Thailand with our carefully curated package. From bustling Phuket to serene beaches, immerse yourself in Thai culture and natural wonders.",
         duration: { days: 5, nights: 4 },
@@ -88,18 +88,17 @@ const destinationData: { [key: string]: DestinationDetails } = {
             "No refund within 15 days of departure"
         ],
         galleryImages: [
-            "/Assets/DestinationsImage/phuket1.jpg",
-            "/Assets/DestinationsImage/phuket2.jpg",
-            "/Assets/DestinationsImage/krabi1.jpg",
-            "/Assets/DestinationsImage/krabi2.jpg",
-            "/Assets/DestinationsImage/thailand3.jpg"
+            "/IMAGES/thailand/1/1.webp",
+            "/IMAGES/thailand/1/2.webp",
+            "/IMAGES/thailand/1/3.webp",
+            "/IMAGES/thailand/1/4.webp",
         ]
     },
 
     dubai: {
         name: "Dubai - The City of Dreams",
         price: 54000,
-        image: "/Assets/DestinationsImage/dubaiImage.jpeg",
+        image: "/IMAGES/dubai/1282 x 814/2.webp",
         packages: 6,
         description: "Discover the mesmerizing blend of modernity and tradition in Dubai. From iconic skyscrapers to cultural landmarks and desert adventures, this trip offers an unforgettable experience.",
         duration: { days: 6, nights: 5 },
@@ -160,17 +159,17 @@ const destinationData: { [key: string]: DestinationDetails } = {
             "No refund within 15 days of departure"
         ],
         galleryImages: [
-            "/Assets/DestinationsImage/dubai1.jpg",
-            "/Assets/DestinationsImage/dubai2.jpg",
-            "/Assets/DestinationsImage/dubai3.jpg",
-            "/Assets/DestinationsImage/dubai4.jpg"
+            "/IMAGES/dubai/1282 x 814/1.webp",
+            "/IMAGES/dubai/1282 x 814/2.webp",
+            "/IMAGES/dubai/1282 x 814/3.webp",
+            "/IMAGES/dubai/1282 x 814/4.webp",
         ]
     },
 
     singapore: {
         name: "Singapore - A World of Wonders",
         price: 66000,
-        image: "/Assets/DestinationsImage/singaporeImage.jpeg",
+        image: "/IMAGES/singapore/2/1.webp",
         packages: 6,
         description: "Immerse yourself in the vibrant culture, thrilling attractions, and iconic landmarks of Singapore. This trip promises a perfect mix of adventure, entertainment, and relaxation.",
         duration: { days: 6, nights: 5 },
@@ -232,17 +231,18 @@ const destinationData: { [key: string]: DestinationDetails } = {
         ],
 
         galleryImages: [
-            "/Assets/DestinationsImage/singapore1.jpg",
-            "/Assets/DestinationsImage/singapore2.jpg",
-            "/Assets/DestinationsImage/singapore3.jpg",
-            "/Assets/DestinationsImage/singapore4.jpg"
+            "/IMAGES/singapore/2/1.webp",
+            "/IMAGES/singapore/2/2.webp",
+            "/IMAGES/singapore/2/3.webp",
+            "/IMAGES/singapore/2/4.webp"
+
         ]
     },
 
     bali: {
         name: "Bali - A Tropical Getaway",
         price: 19500,
-        image: "/Assets/DestinationsImage/baliImage.jpeg",
+        image: "/IMAGES/bali/2/1.webp",
         packages: 5,
         description: "Discover Bali's enchanting temples, stunning beaches, and vibrant culture with this thoughtfully curated 4 Nights / 5 Days package.",
         duration: { days: 5, nights: 4 },
@@ -297,17 +297,17 @@ const destinationData: { [key: string]: DestinationDetails } = {
         ],
 
         galleryImages: [
-            "/Assets/DestinationsImage/bali1.jpg",
-            "/Assets/DestinationsImage/bali2.jpg",
-            "/Assets/DestinationsImage/bali3.jpg",
-            "/Assets/DestinationsImage/bali4.jpg"
+            "/IMAGES/bali/2/1.webp",
+            "/IMAGES/bali/2/2.webp",
+            "/IMAGES/bali/2/3.webp",
+            "/IMAGES/bali/2/4.webp"
         ]
     },
 
     indonesia: {
         name: "Bali - Paradise Awaits",
         price: 55500,
-        image: "/Assets/DestinationsImage/baliImage.jpeg",
+        image: "/IMAGES/Indonesia/1/1.webp",
         packages: 8,
         description: "Experience the beauty and serenity of Bali with its stunning beaches, temples, and vibrant culture. From water sports to cultural tours, this trip offers a perfect blend of relaxation and adventure.",
         duration: {
@@ -381,17 +381,17 @@ const destinationData: { [key: string]: DestinationDetails } = {
         ],
 
         galleryImages: [
-            "/Assets/DestinationsImage/bali1.jpg",
-            "/Assets/DestinationsImage/bali2.jpg",
-            "/Assets/DestinationsImage/bali3.jpg",
-            "/Assets/DestinationsImage/bali4.jpg"
+            "/IMAGES/Indonesia/1/1.webp",
+            "/IMAGES/Indonesia/1/2.webp",
+            "/IMAGES/Indonesia/1/3.webp",
+            "/IMAGES/Indonesia/1/4.webp"
         ]
     },
 
     japan: {
         name: "Japan - The Land of Wonders",
         price: 170500,
-        image: "/Assets/DestinationsImage/japanImage.jpeg",
+        image: "/IMAGES/japan/1/1.webp",
         packages: 1,
         description: "Explore the enchanting cities of Japan, from the vibrant culture of Tokyo to the scenic beauty of Kyoto, Osaka, and Mount Fuji. This 9-night journey offers a blend of modern attractions, historic sites, and serene landscapes.",
         duration: {
@@ -474,17 +474,17 @@ const destinationData: { [key: string]: DestinationDetails } = {
         ],
 
         galleryImages: [
-            "/Assets/DestinationsImage/japan1.jpg",
-            "/Assets/DestinationsImage/japan2.jpg",
-            "/Assets/DestinationsImage/japan3.jpg",
-            "/Assets/DestinationsImage/japan4.jpg"
+            "/IMAGES/japan/1/1.webp",
+            "/IMAGES/japan/1/2.webp",
+            "/IMAGES/japan/1/3.webp",
+            "/IMAGES/japan/1/4.webp",
         ]
     },
 
     hongkong: {
         name: "Hong Kong & Macau - A Dual City Adventure",
         price: 74680,
-        image: "/Assets/DestinationsImage/hong_kong_macau_image.jpeg",
+        image: "/IMAGES/Hongkong/1/1.webp",
         packages: 1,
         description: "Explore the vibrant city of Hong Kong and the historic charm of Macau. This 5-night tour offers a perfect blend of thrilling attractions, cultural experiences, and leisure time.",
         duration: {
@@ -553,17 +553,17 @@ const destinationData: { [key: string]: DestinationDetails } = {
         ],
 
         galleryImages: [
-            "/Assets/DestinationsImage/hong_kong_macau1.jpg",
-            "/Assets/DestinationsImage/hong_kong_macau2.jpg",
-            "/Assets/DestinationsImage/hong_kong_macau3.jpg",
-            "/Assets/DestinationsImage/hong_kong_macau4.jpg"
+            "/IMAGES/Hongkong/1/1.webp",
+            "/IMAGES/Hongkong/1/2.webp",
+            "/IMAGES/Hongkong/1/3.webp",
+            "/IMAGES/Hongkong/1/4.webp",
         ]
     },
 
     china: {
         name: "10 Days China Tour: Beijing, Shanghai, Suzhou, Hangzhou & Shenzhen",
         price: 120000,
-        image: "/Assets/DestinationsImage/china_image.jpeg",
+        image: "/IMAGES/china/2/1.webp",
         packages: 1,
         description: "Explore the rich history, culture, and modern marvels of China in this 10-day tour. Visit iconic cities such as Beijing, Shanghai, Suzhou, Hangzhou, and Shenzhen while experiencing ancient landmarks, breathtaking views, and bustling cityscapes.",
         duration: {
@@ -649,10 +649,10 @@ const destinationData: { [key: string]: DestinationDetails } = {
         ],
 
         galleryImages: [
-            "/Assets/DestinationsImage/china_1.jpg",
-            "/Assets/DestinationsImage/china_2.jpg",
-            "/Assets/DestinationsImage/china_3.jpg",
-            "/Assets/DestinationsImage/china_4.jpg"
+            "/IMAGES/china/2/1.webp",
+            "/IMAGES/china/2/2.webp",
+            "/IMAGES/china/2/3.webp",
+            "/IMAGES/china/2/4.webp",
         ]
     },
 
@@ -660,7 +660,7 @@ const destinationData: { [key: string]: DestinationDetails } = {
     maldives: {
         name: "5 Days Maldives Family Retreat",
         price: 100000,
-        image: "/Assets/DestinationsImage/maldives_image.jpeg",
+        image: "/webImage/maldives/1/1.webp",
         packages: 2,
         description: "Experience a luxurious family getaway in the Maldives with a perfect blend of relaxation and adventure. Enjoy stays in both beach and overwater villas, indulge in full-board gourmet dining, and partake in exciting water activities, all tailored for families with children.",
         duration: {
@@ -716,10 +716,10 @@ const destinationData: { [key: string]: DestinationDetails } = {
             "No refund within 15 days of arrival"
         ],
         galleryImages: [
-            "/Assets/DestinationsImage/maldives_1.jpg",
-            "/Assets/DestinationsImage/maldives_2.jpg",
-            "/Assets/DestinationsImage/maldives_3.jpg",
-            "/Assets/DestinationsImage/maldives_4.jpg"
+            "/webImage/maldives/1/1.webp",
+            "/webImage/maldives/1/2.webp",
+            "/webImage/maldives/1/3.webp",
+            "/webImage/maldives/1/4.webp",
         ]
     },
 
@@ -727,7 +727,7 @@ const destinationData: { [key: string]: DestinationDetails } = {
     srilanka: {
         name: "Sri Lanka - The Jewel of the Indian Ocean",
         price: 17500,
-        image: "/Assets/DestinationsImage/srilankaImage.jpeg",
+        image: "/webImage/Andaman/1/1.webp",
         packages: 2,
         description: "Explore the rich cultural heritage and stunning landscapes of Sri Lanka, from ancient temples to pristine beaches and scenic hills.",
         duration: { days: 4, nights: 3 },
@@ -776,12 +776,276 @@ const destinationData: { [key: string]: DestinationDetails } = {
             "No refund within 14 days of departure"
         ],
         galleryImages: [
-            "/Assets/DestinationsImage/srilanka1.jpg",
-            "/Assets/DestinationsImage/srilanka2.jpg",
-            "/Assets/DestinationsImage/srilanka3.jpg",
-            "/Assets/DestinationsImage/srilanka4.jpg"
+            "/webImage/Andaman/1/1.webp",
+            "/webImage/Andaman/1/2.webp",
+            "/webImage/Andaman/1/3.webp",
+            "/webImage/Andaman/1/4.webp",
         ]
     },
+
+    amritsar_to_shimla: {
+        name: "Amritsar to Shimla",
+        price: 20000,
+        image: "/IMAGES/india/amritsar-to-shimla.webp",
+        packages: 9,
+        description: "Discover the diverse beauty of North India with this captivating tour from Amritsar to Shimla, featuring iconic landmarks, serene temples, and breathtaking hill stations.",
+        duration: { days: 9, nights: 8 },
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrival in Amritsar",
+                description: "Arrive at Amritsar Airport, check in to your hotel, and visit the historic Jallianwala Bagh. In the evening, attend the Wagah Border Beating Retreat Ceremony, followed by a visit to the illuminated Golden Temple. Overnight stay in Amritsar."
+            },
+            {
+                day: 2,
+                title: "Amritsar to Dalhousie",
+                description: "After breakfast, journey to Dalhousie, enjoying scenic landscapes. Visit Chamira Lake in the evening, then check into your hotel for an overnight stay in Dalhousie."
+            },
+            {
+                day: 3,
+                title: "Exploring Dalhousie",
+                description: "Visit Khajjiar, 'Mini Switzerland of India,' with its stunning meadows and forests. Explore Panchpula Waterfall in the afternoon and enjoy optional activities like zorbing or paragliding in Khajjiar. Return to Dalhousie for an overnight stay."
+            },
+            {
+                day: 4,
+                title: "Dalhousie to Manali",
+                description: "Drive to Manali, stopping at Pandoh Dam and exploring the picturesque Kullu Valley en route. Relax or explore Mall Road in Manali in the evening. Overnight stay in Manali."
+            },
+            {
+                day: 5,
+                title: "Exploring Manali",
+                description: "Visit Hidimba Devi Temple amidst cedar trees, followed by a trip to Vashisht Hot Springs. Explore the laid-back charm of Old Manali in the evening. Stay overnight in Manali."
+            },
+            {
+                day: 6,
+                title: "Solang Valley and Atal Tunnel",
+                description: "Enjoy a thrilling day in Solang Valley with adventure activities like skiing and paragliding. Drive through the Atal Tunnel, an engineering marvel. Return to Manali for an overnight stay."
+            },
+            {
+                day: 7,
+                title: "Manali to Shimla",
+                description: "Drive to Shimla, visiting Kalibari Temple, Viceregal Lodge, and the Botanical Garden upon arrival. Immerse yourself in Shimla's history and natural beauty before checking into your hotel for the night."
+            },
+            {
+                day: 8,
+                title: "Shimla and Kufri Excursion",
+                description: "Take a morning excursion to Kufri, known for breathtaking views and adventure activities. Enjoy the rest of the day at leisure before an overnight stay in Shimla."
+            },
+            {
+                day: 9,
+                title: "Shimla to Chandigarh",
+                description: "Drive to Chandigarh and conclude your tour with a drop-off at Chandigarh Airport or Railway Station."
+            }
+        ],
+        inclusions: [
+            "Accommodation with breakfast",
+            "Sightseeing tours as per itinerary",
+            "Transfers in a comfortable vehicle",
+            "Local guides for city tours"
+        ],
+        exclusions: [
+            "Adventure activity fees",
+            "Entry tickets to monuments",
+            "Travel insurance",
+            "Personal expenses"
+        ],
+        cancellationPolicy: [
+            "Free cancellation up to 30 days before departure",
+            "50% refund up to 15 days before departure",
+            "No refund within 15 days of departure"
+        ],
+        galleryImages: [
+            "/IMAGES/india/amritsar.webp",
+            "/IMAGES/india/dalhousie.webp",
+            "/IMAGES/india/manali.webp",
+            "/IMAGES/india/shimla.webp"
+        ]
+    },
+
+    bhutan: {
+        name: "Bhutan - Phuentsholing, Thimphu, Punakha, Paro",
+            price: 43300,
+                image: "/IMAGES/bhutan/1/1.webp",
+                    packages: 3,
+                        description: "Explore the Kingdom of Bhutan with its serene landscapes, rich cultural heritage, and majestic monasteries. This tour is designed for an unforgettable experience in the 'Land of Happiness.'",
+                            duration: { days: 7, nights: 6 },
+        itinerary: [
+            {
+                day: 1,
+                title: "Bagdogra Airport to Phuentsholing",
+                description: "Arrive at Bagdogra Airport, meet our representative, complete immigration pre-registration, and transfer to your hotel in Phuentsholing. Check-in and relax."
+            },
+            {
+                day: 2,
+                title: "Morning Transfer to Thimphu",
+                description: "Drive to Thimphu, visiting Chuzom en route. Check into your hotel and explore local attractions like Buddha Point, King's Memorial Chorten, National Library, and Simply Bhutan."
+            },
+            {
+                day: 3,
+                title: "Thimphu – Wangdi / Punakha Excursion – Thimphu",
+                description: "Drive to Wangdi via Dochu La Pass. Visit Punakha Dzong and Chimi Lhakhang. Return to Thimphu in the evening."
+            },
+            {
+                day: 4,
+                title: "Thimphu to Paro",
+                description: "Drive to Paro, visit Ta Dzong (National Museum) and Rinpung Dzong. Check into your hotel and enjoy the evening at leisure."
+            },
+            {
+                day: 5,
+                title: "Paro—Excursion to Taktsang Monastery (Tiger’s Nest)",
+                description: "Hike to Taktsang Monastery (approx. 5 hours). In the afternoon, visit Drukgyel Dzong and Kyichu Lhakhang."
+            },
+            {
+                day: 6,
+                title: "Paro to Phuentsholing",
+                description: "Drive back to Phuentsholing and check into your hotel. Spend the evening relaxing or exploring the local area."
+            },
+            {
+                day: 7,
+                title: "Phuentsholing to Bagdogra Airport Transfer",
+                description: "After breakfast, transfer to Bagdogra Airport for your onward journey, concluding the trip."
+            }
+        ],
+            inclusions: [
+                "Assistance upon arrival and departures",
+                "6 nights’ accommodation in 3-star hotels",
+                "Meal plan: Breakfast and Dinner (MAPI)",
+                "All transfers and sightseeing in private vehicle",
+                "English-speaking guide during sightseeing",
+                "All applicable taxes, driver allowances, and fuel charges"
+            ],
+                exclusions: [
+                    "Airfare to and from Bagdogra",
+                    "Lunches",
+                    "Pony rides and optional activities",
+                    "Entry fees to monuments and parks",
+                    "Personal expenses and tips",
+                    "Travel insurance",
+                    "Additional costs due to unforeseen circumstances"
+                ],
+                    cancellationPolicy: [
+                        "Free cancellation up to 30 days before departure",
+                        "50% refund up to 15 days before departure",
+                        "No refund within 15 days of departure"
+                    ],
+                        galleryImages: [
+                            "/IMAGES/bhutan/1/1.webp",
+                            "/IMAGES/bhutan/1/2.webp",
+                            "/IMAGES/bhutan/1/3.webp",
+                            "/IMAGES/bhutan/1/4.webp"
+                        ]
+    },
+
+
+kashmir: {
+    name: "Kashmir - Srinagar, Pahalgam, Gulmarg & Sonmarg",
+        price: 20000,
+            image: "/IMAGES/kashmir/1/1.webp",
+                packages: 4,
+                    description: "Discover the enchanting beauty of Kashmir with our meticulously planned package. From serene houseboats to picturesque valleys, immerse yourself in the magical charm of this paradise on earth.",
+                        duration: { days: 5, nights: 4 },
+    itinerary: [
+        {
+            day: 1,
+            title: "Arrival in Srinagar and Local Sightseeing",
+            description: "Upon arrival in Srinagar, meet our representative at the airport. Check into your hotel and visit Mughal Gardens, Nishat Bagh, Shalimar Bagh, and the Hazratbal Shrine. Dinner and overnight stay in Srinagar."
+        },
+        {
+            day: 2,
+            title: "Srinagar to Pahalgam",
+            description: "After breakfast, drive to Pahalgam, visiting saffron fields, Awantipura Ruins, and Lidder Stream en route. Enjoy optional activities like pony rides and local taxi tours. Return to Srinagar for dinner and overnight stay."
+        },
+        {
+            day: 3,
+            title: "Srinagar to Sonmarg and Back",
+            description: "After breakfast, travel to Sonmarg, known as the 'Meadow of Gold.' Optional pony rides to Thajiwas Glacier. Return to Srinagar for dinner and overnight stay."
+        },
+        {
+            day: 4,
+            title: "Srinagar to Gulmarg and Back",
+            description: "Drive to Gulmarg, famous for its ski slopes and golf course. Enjoy a Gondola ride (optional) and views of Nanga Parbat. Return to Srinagar for a houseboat stay, including a Shikara ride on Dal Lake. Dinner and overnight stay."
+        },
+        {
+            day: 5,
+            title: "Departure from Srinagar",
+            description: "After breakfast, check out from the houseboat and proceed to Srinagar Airport for your onward journey, concluding the tour."
+        }
+    ],
+        inclusions: [
+            "Assistance upon arrival and departures",
+            "4 nights’ accommodation (3 in Srinagar hotel, 1 in houseboat)",
+            "Meal plan: Breakfast and Dinner (MAPI)",
+            "1 double room",
+            "AC Toyota Etios for all transfers and sightseeing",
+            "Shikara ride on Dal Lake (1 hour)",
+            "All transport taxes, parking, driver allowances, night halt charges, and fuel"
+        ],
+            exclusions: [
+                "Airfare",
+                "Lunches",
+                "Pony rides at Pahalgam, Gulmarg, and Sonmarg",
+                "Gondola ride fees",
+                "Local taxi fees for optional tours",
+                "Entry tickets to gardens, Betaab Valley, etc.",
+                "Camera fees and personal expenses",
+                "Travel insurance",
+                "Tips and additional costs due to unforeseen circumstances"
+            ],
+                cancellationPolicy: [
+                    "Free cancellation up to 30 days before departure",
+                    "50% refund up to 15 days before departure",
+                    "No refund within 15 days of departure"
+                ],
+                    galleryImages: [
+                        "/IMAGES/kashmir/1/1.webp",
+                        "/IMAGES/kashmir/1/2.webp",
+                        "/IMAGES/kashmir/1/3.webp",
+                        "/IMAGES/kashmir/1/4.webp"
+                    ]
+},
+
+himachal: {
+    name: "Himachal Pradesh - The Land of the Himalayas",
+        price: 17500,
+            image: "/IMAGES/himachal/1/1.webp",
+                packages: 2,
+                    description: "Explore the majestic beauty of Himachal Pradesh, from the snow-capped mountains to the lush valleys and vibrant culture.",
+                        duration: { days: 4, nights: 3 },
+    itinerary: [],
+        inclusions: [],
+            exclusions: [],
+                cancellationPolicy: [],
+                    galleryImages: []
+},
+
+punjab: {
+    name: "Punjab - The Land of Five Rivers",
+        price: 17500,
+            image: "/IMAGES/himachal/1/1.webp",
+                packages: 2,
+                    description: "Explore the rich culture and vibrant festivals of Punjab, from the Golden Temple to the vibrant bazaars and delicious cuisine.",
+                        duration: { days: 4, nights: 3 },
+    itinerary: [],
+        inclusions: [],
+            exclusions: [],
+                cancellationPolicy: [],
+                    galleryImages: []
+},
+
+sikkim: {
+    name: "Sikkim - The Land of the Himalayas",
+        price: 17500,
+            image: "/IMAGES/himachal/1/1.webp",
+                packages: 2,
+                    description: "Explore the majestic beauty of Sikkim, from the snow-capped mountains to the lush valleys and vibrant culture.",
+                        duration: { days: 4, nights: 3 },
+    itinerary: [],
+        inclusions: [],
+            exclusions: [],
+                cancellationPolicy: [],
+                    galleryImages: []
+},
+
 
 };
 
