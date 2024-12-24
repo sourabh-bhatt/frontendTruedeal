@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useRouter } from 'next/navigation'
 
 interface Destination {
     name: string
@@ -11,52 +12,57 @@ interface Destination {
 
 const destinations: Destination[] = [
     {
-        name: 'Andaman',
-        price: '29,999',
-        image: '/IMAGES/Shimla/2/1.webp'
+        name: 'France',
+        price: '89,999',
+        image: '/webImage/kashmir/2/1.webp'
     },
     {
-        name: 'Rajasthan',
-        price: '12,999',
-        image: '/IMAGES/Shimla/2/2.webp'
+        name: 'Italy',
+        price: '82,999',
+        image: '/webImage/kashmir/2/2.webp'
     },
     {
-        name: 'Kashmir',
-        price: '24,499',
-        image: '/IMAGES/Shimla/2/3.webp'
+        name: 'Spain',
+        price: '74,999',
+        image: '/webImage/kashmir/1/3.webp'
     },
     {
-        name: 'Himachal',
-        price: '7,999',
-        image: '/IMAGES/Shimla/2/4.webp'
+        name: 'Switzerland',
+        price: '97,999',
+        image: '/webImage/kashmir/1/4.webp'
     },
     {
-        name: 'Kerala',
-        price: '12,999',
-        image: '/IMAGES/Shimla/2/1.webp'
+        name: 'Greece',
+        price: '72,999',
+        image: '/webImage/kenya/2/1.webp'
     },
     {
-        name: 'Shimla',
-        price: '12,999',
-        image: '/IMAGES/Shimla/2/2.webp'
+        name: 'Germany',
+        price: '78,999',
+        image: '/webImage/kenya/2/2.webp'
     },
     {
-        name: 'Punjab',
-        price: '12,999',
-        image: '/IMAGES/Shimla/2/3.webp'
+        name: 'Netherlands',
+        price: '76,999',
+        image: '/webImage/kenya/2/3.webp'
     },
     {
-        name: 'Bihar',
-        price: '12,999',
-        image: '/IMAGES/Shimla/2/4.webp'
+        name: 'Austria',
+        price: '82,999',
+        image: '/webImage/kenya/2/4.webp'
     },
 ]
 
 export default function Europe() {
+    const router = useRouter()
     const [currentIndex, setCurrentIndex] = useState(0)
 
     // Create an infinitely repeating array
     const infiniteDestinations = [...destinations, ...destinations, ...destinations]
+
+    const handleCardClick = (destinationName: string) => {
+        router.push(`/destinations/${destinationName.toLowerCase()}`)
+    }
 
     const nextSlide = () => {
         setCurrentIndex((prevIndex) => {
@@ -128,7 +134,7 @@ export default function Europe() {
                         {infiniteDestinations.map((destination, index) => (
                             <motion.div
                                 key={`${destination.name}-${index}`}
-                                className="relative min-w-[220px] h-[280px] rounded-2xl overflow-hidden flex-shrink-0 group shadow-xl"
+                                className="relative min-w-[220px] h-[280px] rounded-2xl overflow-hidden flex-shrink-0 group shadow-xl cursor-pointer"
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{
                                     opacity: 1,
@@ -138,6 +144,7 @@ export default function Europe() {
                                     duration: 0.3,
                                     delay: index * 0.1
                                 }}
+                                onClick={() => handleCardClick(destination.name)}
                             >
                                 <Image
                                     src={destination.image}

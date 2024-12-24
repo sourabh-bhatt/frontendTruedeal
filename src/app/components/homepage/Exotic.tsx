@@ -25,16 +25,16 @@ const exoticDestinations = [
         link: "/destinations/kenya"
     },
     {
-        name: "Mauritius",
+        name: "Phillipines",
         tagline: "Tropical Paradise",
         image: "/webImage/mauritius/2/1.webp",
-        link: "/destinations/mauritius"
+        link: "/destinations/phillipines"
     },
     {
-        name: "Fiji",
+        name: "Indonesia",
         tagline: "Pacific Island Paradise",
         image: "/webImage/fiji/2/1.webp",
-        link: "/destinations/fiji"
+        link: "/destinations/indonesia"
     }
 ];
 

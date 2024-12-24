@@ -255,7 +255,7 @@ const destinationData: { [key: string]: DestinationDetails } = {
             {
                 day: 2,
                 title: "Full-Day Nusa Penida Tour",
-                description: "Enjoy a full-day tour of Nusa Penida, including a visit to iconic locations like Broken Beach, Angel’s Billabong, and Kelingking Beach. Includes lunch."
+                description: "Enjoy a full-day tour of Nusa Penida, including a visit to iconic locations like Broken Beach, Angel's Billabong, and Kelingking Beach. Includes lunch."
             },
             {
                 day: 3,
@@ -864,11 +864,11 @@ const destinationData: { [key: string]: DestinationDetails } = {
 
     bhutan: {
         name: "Bhutan - Phuentsholing, Thimphu, Punakha, Paro",
-            price: 43300,
-                image: "/IMAGES/bhutan/1/1.webp",
-                    packages: 3,
-                        description: "Explore the Kingdom of Bhutan with its serene landscapes, rich cultural heritage, and majestic monasteries. This tour is designed for an unforgettable experience in the 'Land of Happiness.'",
-                            duration: { days: 7, nights: 6 },
+        price: 43300,
+        image: "/IMAGES/bhutan/1/1.webp",
+        packages: 3,
+        description: "Explore the Kingdom of Bhutan with its serene landscapes, rich cultural heritage, and majestic monasteries. This tour is designed for an unforgettable experience in the 'Land of Happiness.'",
+        duration: { days: 7, nights: 6 },
         itinerary: [
             {
                 day: 1,
@@ -892,7 +892,7 @@ const destinationData: { [key: string]: DestinationDetails } = {
             },
             {
                 day: 5,
-                title: "Paro—Excursion to Taktsang Monastery (Tiger’s Nest)",
+                title: "Paro—Excursion to Taktsang Monastery (Tiger's Nest)",
                 description: "Hike to Taktsang Monastery (approx. 5 hours). In the afternoon, visit Drukgyel Dzong and Kyichu Lhakhang."
             },
             {
@@ -906,147 +906,1114 @@ const destinationData: { [key: string]: DestinationDetails } = {
                 description: "After breakfast, transfer to Bagdogra Airport for your onward journey, concluding the trip."
             }
         ],
-            inclusions: [
-                "Assistance upon arrival and departures",
-                "6 nights’ accommodation in 3-star hotels",
-                "Meal plan: Breakfast and Dinner (MAPI)",
-                "All transfers and sightseeing in private vehicle",
-                "English-speaking guide during sightseeing",
-                "All applicable taxes, driver allowances, and fuel charges"
-            ],
-                exclusions: [
-                    "Airfare to and from Bagdogra",
-                    "Lunches",
-                    "Pony rides and optional activities",
-                    "Entry fees to monuments and parks",
-                    "Personal expenses and tips",
-                    "Travel insurance",
-                    "Additional costs due to unforeseen circumstances"
-                ],
-                    cancellationPolicy: [
-                        "Free cancellation up to 30 days before departure",
-                        "50% refund up to 15 days before departure",
-                        "No refund within 15 days of departure"
-                    ],
-                        galleryImages: [
-                            "/IMAGES/bhutan/1/1.webp",
-                            "/IMAGES/bhutan/1/2.webp",
-                            "/IMAGES/bhutan/1/3.webp",
-                            "/IMAGES/bhutan/1/4.webp"
-                        ]
+        inclusions: [
+            "Assistance upon arrival and departures",
+            "6 nights' accommodation in 3-star hotels",
+            "Meal plan: Breakfast and Dinner (MAPI)",
+            "All transfers and sightseeing in private vehicle",
+            "English-speaking guide during sightseeing",
+            "All applicable taxes, driver allowances, and fuel charges"
+        ],
+        exclusions: [
+            "Airfare to and from Bagdogra",
+            "Lunches",
+            "Pony rides and optional activities",
+            "Entry fees to monuments and parks",
+            "Personal expenses and tips",
+            "Travel insurance",
+            "Additional costs due to unforeseen circumstances"
+        ],
+        cancellationPolicy: [
+            "Free cancellation up to 30 days before departure",
+            "50% refund up to 15 days before departure",
+            "No refund within 15 days of departure"
+        ],
+        galleryImages: [
+            "/IMAGES/bhutan/1/1.webp",
+            "/IMAGES/bhutan/1/2.webp",
+            "/IMAGES/bhutan/1/3.webp",
+            "/IMAGES/bhutan/1/4.webp"
+        ]
     },
 
 
-kashmir: {
-    name: "Kashmir - Srinagar, Pahalgam, Gulmarg & Sonmarg",
+    kashmir: {
+        name: "Kashmir - Srinagar, Pahalgam, Gulmarg & Sonmarg",
         price: 20000,
-            image: "/IMAGES/kashmir/1/1.webp",
-                packages: 4,
-                    description: "Discover the enchanting beauty of Kashmir with our meticulously planned package. From serene houseboats to picturesque valleys, immerse yourself in the magical charm of this paradise on earth.",
-                        duration: { days: 5, nights: 4 },
-    itinerary: [
-        {
-            day: 1,
-            title: "Arrival in Srinagar and Local Sightseeing",
-            description: "Upon arrival in Srinagar, meet our representative at the airport. Check into your hotel and visit Mughal Gardens, Nishat Bagh, Shalimar Bagh, and the Hazratbal Shrine. Dinner and overnight stay in Srinagar."
-        },
-        {
-            day: 2,
-            title: "Srinagar to Pahalgam",
-            description: "After breakfast, drive to Pahalgam, visiting saffron fields, Awantipura Ruins, and Lidder Stream en route. Enjoy optional activities like pony rides and local taxi tours. Return to Srinagar for dinner and overnight stay."
-        },
-        {
-            day: 3,
-            title: "Srinagar to Sonmarg and Back",
-            description: "After breakfast, travel to Sonmarg, known as the 'Meadow of Gold.' Optional pony rides to Thajiwas Glacier. Return to Srinagar for dinner and overnight stay."
-        },
-        {
-            day: 4,
-            title: "Srinagar to Gulmarg and Back",
-            description: "Drive to Gulmarg, famous for its ski slopes and golf course. Enjoy a Gondola ride (optional) and views of Nanga Parbat. Return to Srinagar for a houseboat stay, including a Shikara ride on Dal Lake. Dinner and overnight stay."
-        },
-        {
-            day: 5,
-            title: "Departure from Srinagar",
-            description: "After breakfast, check out from the houseboat and proceed to Srinagar Airport for your onward journey, concluding the tour."
-        }
-    ],
+        image: "/IMAGES/kashmir/1/1.webp",
+        packages: 4,
+        description: "Discover the enchanting beauty of Kashmir with our meticulously planned package. From serene houseboats to picturesque valleys, immerse yourself in the magical charm of this paradise on earth.",
+        duration: { days: 5, nights: 4 },
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrival in Srinagar and Local Sightseeing",
+                description: "Upon arrival in Srinagar, meet our representative at the airport. Check into your hotel and visit Mughal Gardens, Nishat Bagh, Shalimar Bagh, and the Hazratbal Shrine. Dinner and overnight stay in Srinagar."
+            },
+            {
+                day: 2,
+                title: "Srinagar to Pahalgam",
+                description: "After breakfast, drive to Pahalgam, visiting saffron fields, Awantipura Ruins, and Lidder Stream en route. Enjoy optional activities like pony rides and local taxi tours. Return to Srinagar for dinner and overnight stay."
+            },
+            {
+                day: 3,
+                title: "Srinagar to Sonmarg and Back",
+                description: "After breakfast, travel to Sonmarg, known as the 'Meadow of Gold.' Optional pony rides to Thajiwas Glacier. Return to Srinagar for dinner and overnight stay."
+            },
+            {
+                day: 4,
+                title: "Srinagar to Gulmarg and Back",
+                description: "Drive to Gulmarg, famous for its ski slopes and golf course. Enjoy a Gondola ride (optional) and views of Nanga Parbat. Return to Srinagar for a houseboat stay, including a Shikara ride on Dal Lake. Dinner and overnight stay."
+            },
+            {
+                day: 5,
+                title: "Departure from Srinagar",
+                description: "After breakfast, check out from the houseboat and proceed to Srinagar Airport for your onward journey, concluding the tour."
+            }
+        ],
         inclusions: [
             "Assistance upon arrival and departures",
-            "4 nights’ accommodation (3 in Srinagar hotel, 1 in houseboat)",
+            "4 nights' accommodation (3 in Srinagar hotel, 1 in houseboat)",
             "Meal plan: Breakfast and Dinner (MAPI)",
             "1 double room",
             "AC Toyota Etios for all transfers and sightseeing",
             "Shikara ride on Dal Lake (1 hour)",
             "All transport taxes, parking, driver allowances, night halt charges, and fuel"
         ],
-            exclusions: [
-                "Airfare",
-                "Lunches",
-                "Pony rides at Pahalgam, Gulmarg, and Sonmarg",
-                "Gondola ride fees",
-                "Local taxi fees for optional tours",
-                "Entry tickets to gardens, Betaab Valley, etc.",
-                "Camera fees and personal expenses",
-                "Travel insurance",
-                "Tips and additional costs due to unforeseen circumstances"
-            ],
-                cancellationPolicy: [
-                    "Free cancellation up to 30 days before departure",
-                    "50% refund up to 15 days before departure",
-                    "No refund within 15 days of departure"
-                ],
-                    galleryImages: [
-                        "/IMAGES/kashmir/1/1.webp",
-                        "/IMAGES/kashmir/1/2.webp",
-                        "/IMAGES/kashmir/1/3.webp",
-                        "/IMAGES/kashmir/1/4.webp"
-                    ]
-},
+        exclusions: [
+            "Airfare",
+            "Lunches",
+            "Pony rides at Pahalgam, Gulmarg, and Sonmarg",
+            "Gondola ride fees",
+            "Local taxi fees for optional tours",
+            "Entry tickets to gardens, Betaab Valley, etc.",
+            "Camera fees and personal expenses",
+            "Travel insurance",
+            "Tips and additional costs due to unforeseen circumstances"
+        ],
+        cancellationPolicy: [
+            "Free cancellation up to 30 days before departure",
+            "50% refund up to 15 days before departure",
+            "No refund within 15 days of departure"
+        ],
+        galleryImages: [
+            "/IMAGES/kashmir/1/1.webp",
+            "/IMAGES/kashmir/1/2.webp",
+            "/IMAGES/kashmir/1/3.webp",
+            "/IMAGES/kashmir/1/4.webp"
+        ]
+    },
 
-himachal: {
-    name: "Himachal Pradesh - The Land of the Himalayas",
+    himachal: {
+        name: "Himachal Pradesh - The Land of the Himalayas",
         price: 17500,
-            image: "/IMAGES/himachal/1/1.webp",
-                packages: 2,
-                    description: "Explore the majestic beauty of Himachal Pradesh, from the snow-capped mountains to the lush valleys and vibrant culture.",
-                        duration: { days: 4, nights: 3 },
-    itinerary: [],
-        inclusions: [],
-            exclusions: [],
-                cancellationPolicy: [],
-                    galleryImages: []
-},
+        image: "/IMAGES/himachal/1/1.webp",
+        packages: 2,
+        description: "Explore the majestic beauty of Himachal Pradesh, from the snow-capped mountains to the lush valleys and vibrant culture.",
+        duration: { days: 4, nights: 3 },
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrival in Shimla",
+                description: "Arrive at Shimla Airport and transfer to your hotel. In the evening, visit the Christ Church and the Mall Road."
+            },
+            {
+                day: 2,
+                title: "Shimla City Tour",
+                description: "Explore Shimla, including the Jakhoo Hill, the Ridge, and the Christ Church."
+            },
+            {
+                day: 3,
+                title: "Shimla to Manali",
+                description: "Drive to Manali, visiting Kufri and Naggar en route. Check into your hotel and enjoy the evening at leisure."
+            },
+            {
+                day: 4,
+                title: "Manali to Shimla",
+                description: "Drive back to Shimla and conclude your tour with a drop-off at Shimla Airport or Railway Station."
+            }
+        ],
+        inclusions: [
+            "Accommodation in hotels as per itinerary (Deluxe Rooms)",
+            "Airport pick-up and drop-off (private transfers)",
+            "Meals on Full Board basis (3 breakfasts, 3 lunches, 3 dinners)",
+            "Sightseeing tours as per itinerary",
+            "All transfers in an air-conditioned vehicle",
+            "Local guides for city tours"
+        ],
+        exclusions: [
+            "Entry fees to monuments",
+            "Travel insurance",
+            "Personal expenses",
+            "Meals outside the specified meal plan"
+        ],
+        cancellationPolicy: [
+            "Free cancellation up to 30 days before departure",
+            "50% refund up to 15 days before departure",
+            "No refund within 15 days of departure"
+        ],
+        galleryImages: [
+            "/IMAGES/himachal/1/1.webp",
+            "/IMAGES/himachal/1/2.webp",
+            "/IMAGES/himachal/1/3.webp",
+            "/IMAGES/himachal/1/4.webp"
+        ]
+    },
 
-punjab: {
-    name: "Punjab - The Land of Five Rivers",
+    punjab: {
+        name: "Punjab - The Land of Five Rivers",
         price: 17500,
-            image: "/IMAGES/himachal/1/1.webp",
-                packages: 2,
-                    description: "Explore the rich culture and vibrant festivals of Punjab, from the Golden Temple to the vibrant bazaars and delicious cuisine.",
-                        duration: { days: 4, nights: 3 },
-    itinerary: [],
-        inclusions: [],
-            exclusions: [],
-                cancellationPolicy: [],
-                    galleryImages: []
-},
+        image: "/IMAGES/himachal/1/1.webp",
+        packages: 2,
+        description: "Explore the rich culture and vibrant festivals of Punjab, from the Golden Temple to the vibrant bazaars and delicious cuisine.",
+        duration: { days: 4, nights: 3 },
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrival in Amritsar",
+                description: "Arrive at Amritsar Airport and transfer to your hotel. In the evening, visit the Golden Temple and Jallianwala Bagh."
+            },
+            {
+                day: 2,
+                title: "Amritsar City Tour",
+                description: "Explore Amritsar, including the Golden Temple, Jallianwala Bagh, and the Wagah Border."
+            },
+            {
+                day: 3,
+                title: "Amritsar to Chandigarh",
+                description: "Drive to Chandigarh and conclude your tour with a drop-off at Chandigarh Airport or Railway Station."
+            },
+            {
+                day: 4,
+                title: "Departure from Chandigarh",
+                description: "After breakfast, check out from the hotel and proceed to Chandigarh Airport for your onward journey, concluding the tour."
+            }
+        ],
+        inclusions: [
+            "Accommodation in hotels as per itinerary (Deluxe Rooms)",
+            "Airport pick-up and drop-off (private transfers)",
+            "Meals on Full Board basis (3 breakfasts, 3 lunches, 3 dinners)",
+            "Sightseeing tours as per itinerary",
+            "All transfers in an air-conditioned vehicle",
+            "Local guides for city tours"
+        ],
+        exclusions: [
+            "Entry fees to monuments",
+            "Travel insurance",
+            "Personal expenses",
+            "Meals outside the specified meal plan"
+        ],
+        cancellationPolicy: [
+            "Free cancellation up to 30 days before departure",
+            "50% refund up to 15 days before departure",
+            "No refund within 15 days of departure"
+        ],
+        galleryImages: [
+            "/IMAGES/himachal/1/1.webp",
+            "/IMAGES/himachal/1/2.webp",
+            "/IMAGES/himachal/1/3.webp",
+            "/IMAGES/himachal/1/4.webp"
+        ]
+    },
 
-sikkim: {
-    name: "Sikkim - The Land of the Himalayas",
+    sikkim: {
+        name: "Sikkim - The Land of the Himalayas",
         price: 17500,
-            image: "/IMAGES/himachal/1/1.webp",
-                packages: 2,
-                    description: "Explore the majestic beauty of Sikkim, from the snow-capped mountains to the lush valleys and vibrant culture.",
-                        duration: { days: 4, nights: 3 },
-    itinerary: [],
-        inclusions: [],
-            exclusions: [],
-                cancellationPolicy: [],
-                    galleryImages: []
-},
+        image: "/IMAGES/himachal/1/1.webp",
+        packages: 2,
+        description: "Explore the majestic beauty of Sikkim, from the snow-capped mountains to the lush valleys and vibrant culture.",
+        duration: { days: 4, nights: 3 },
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrival in Gangtok",
+                description: "Arrive at Bagdogra Airport and transfer to your hotel. In the evening, visit the Gangtok Market."
+            },
+            {
+                day: 2,
+                title: "Gangtok City Tour",
+                description: "Explore Gangtok, including the Tashi View Point, the Rumtek Monastery, and the Gangtok Market."
+            },
+            {
+                day: 3,
+                title: "Gangtok to Pelling",
+                description: "Drive to Pelling, visiting the Tashiding Monastery and the Pemayangtse Monastery. Return to Gangtok for dinner and overnight stay."
+            },
+            {
+                day: 4,
+                title: "Pelling to Gangtok",
+                description: "Drive back to Gangtok and conclude your tour with a drop-off at Bagdogra Airport or Railway Station."
+            },
+            {
+                day: 5,
+                title: "Departure from Bagdogra",
+                description: "After breakfast, check out from the hotel and proceed to Bagdogra Airport for your onward journey, concluding the tour."
+            },
 
+        ],
+        inclusions: [
+            "Accommodation in hotels as per itinerary (Deluxe Rooms)",
+            "Airport pick-up and drop-off (private transfers)",
+            "Meals on Full Board basis (3 breakfasts, 3 lunches, 3 dinners)",
+            "Sightseeing tours as per itinerary",
+            "All transfers in an air-conditioned vehicle",
+            "Local guides for city tours"
+        ],
+        exclusions: [
+            "Entry fees to monuments",
+            "Travel insurance",
+            "Personal expenses",
+            "Meals outside the specified meal plan"
+        ],
+        cancellationPolicy: [
+            "Free cancellation up to 30 days before departure",
+            "50% refund up to 15 days before departure",
+            "No refund within 15 days of departure"
+        ],
+        galleryImages: [
+            "/IMAGES/himachal/1/1.webp",
+            "/IMAGES/himachal/1/2.webp",
+            "/IMAGES/himachal/1/3.webp",
+            "/IMAGES/himachal/1/4.webp"
+        ]
+    },
 
+    finland: {
+        name: "Finland - Northern Lights & Arctic Adventure",
+        price: 245000,
+        image: "/IMAGES/finland/1/1.webp",
+        packages: 2,
+        description: "Experience the magic of the Arctic Circle with this enchanting Finnish adventure. Witness the spectacular Northern Lights, stay in glass igloos, and enjoy unique winter activities in Lapland.",
+        duration: { days: 7, nights: 6 },
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrival in Helsinki",
+                description: "Arrive in Helsinki and transfer to your hotel. Evening city tour including Senate Square, Helsinki Cathedral, and the unique Rock Church."
+            },
+            {
+                day: 2,
+                title: "Helsinki to Rovaniemi",
+                description: "Fly to Rovaniemi, the official hometown of Santa Claus. Visit Santa Claus Village and cross the Arctic Circle. Evening Northern Lights hunting expedition."
+            },
+            {
+                day: 3,
+                title: "Arctic Activities",
+                description: "Experience husky sledding and reindeer farm visit. Evening in a glass igloo for Northern Lights viewing."
+            },
+            {
+                day: 4,
+                title: "Ice Hotel Experience",
+                description: "Visit the Snow Hotel, ice restaurant, and participate in ice sculpting. Evening snowmobile safari."
+            },
+            {
+                day: 5,
+                title: "Kemi Ice Breaker Cruise",
+                description: "Take the famous Sampo Icebreaker cruise. Optional ice floating experience in the frozen Baltic Sea."
+            },
+            {
+                day: 6,
+                title: "Finnish Wilderness",
+                description: "Cross-country skiing lesson and traditional Finnish sauna experience. Final Northern Lights hunting expedition."
+            },
+            {
+                day: 7,
+                title: "Departure",
+                description: "Transfer to Helsinki Airport for your departure flight."
+            }
+        ],
+        inclusions: [
+            "Accommodation in Helsinki and Rovaniemi",
+            "Glass igloo stay for one night",
+            "All transfers and domestic flights",
+            "Northern Lights hunting expeditions",
+            "Husky and reindeer safari",
+            "Sampo Icebreaker cruise",
+            "Winter activity equipment",
+            "Daily breakfast and selected dinners"
+        ],
+        exclusions: [
+            "International flights",
+            "Travel insurance",
+            "Optional activities",
+            "Personal expenses",
+            "Alcoholic beverages",
+            "Additional Northern Lights tours"
+        ],
+        cancellationPolicy: [
+            "Free cancellation up to 60 days before departure",
+            "50% refund up to 30 days before departure",
+            "No refund within 30 days of departure"
+        ],
+        galleryImages: [
+            "/IMAGES/finland/1/1.webp",
+            "/IMAGES/finland/1/2.webp",
+            "/IMAGES/finland/1/3.webp",
+            "/IMAGES/finland/1/4.webp"
+        ]
+    },
+
+    phillipines: {
+        name: "Philippines - Tropical Paradise Explorer",
+        price: 85000,
+        image: "/IMAGES/philippines/1/1.webp",
+        packages: 5,
+        description: "Embark on an unforgettable journey through the Philippines' most stunning destinations. Experience world-class beaches, vibrant marine life, historic sites, and the warmth of Filipino hospitality across Manila, Palawan, Cebu, and Boracay.",
+        duration: { days: 8, nights: 7 },
+        itinerary: [
+            {
+                day: 1,
+                title: "Manila Heritage Tour",
+                description: "Arrive in Manila. City tour including Intramuros (walled city), Fort Santiago, San Agustin Church, and Rizal Park. Evening welcome dinner with cultural show at Barbara's Heritage Restaurant."
+            },
+            {
+                day: 2,
+                title: "Palawan - Underground River",
+                description: "Fly to Puerto Princesa, Palawan. Visit the UNESCO World Heritage Underground River, one of the New 7 Wonders of Nature. Evening firefly watching tour on the Iwahig River."
+            },
+            {
+                day: 3,
+                title: "El Nido Island Hopping",
+                description: "Transfer to El Nido. Tour A island hopping covering Big Lagoon, Secret Lagoon, Shimizu Island, and Seven Commando Beach. Includes snorkeling, kayaking, and beachside lunch."
+            },
+            {
+                day: 4,
+                title: "El Nido to Cebu",
+                description: "Morning free for beach activities. Afternoon flight to Cebu. Evening food tour experiencing Cebu's famous lechon, dried mangoes, and local delicacies."
+            },
+            {
+                day: 5,
+                title: "Cebu & Bohol Tour",
+                description: "Day trip to Bohol. Visit Chocolate Hills, Tarsier Sanctuary, Loboc River Cruise with lunch, Blood Compact Site, and Baclayon Church. Return to Cebu."
+            },
+            {
+                day: 6,
+                title: "Boracay Paradise",
+                description: "Morning flight to Boracay. Afternoon beach hopping tour including Puka Shell Beach, Crystal Cove, and Magic Island. Sunset paraw sailing experience."
+            },
+            {
+                day: 7,
+                title: "Boracay Activities",
+                description: "Morning water activities: parasailing, banana boat, and helmet diving. Afternoon spa treatment. Evening pub crawl at D'Mall and White Beach stations."
+            },
+            {
+                day: 8,
+                title: "Departure",
+                description: "Free morning for last-minute shopping. Transfer to Caticlan Airport for return flight via Manila."
+            }
+        ],
+        inclusions: [
+            "All domestic flights (Manila-Puerto Princesa-Cebu-Boracay-Manila)",
+            "7 nights accommodation in 4-star hotels",
+            "Daily breakfast and selected meals",
+            "Private air-conditioned transfers",
+            "Underground River tour with permits",
+            "El Nido island hopping with lunch",
+            "Bohol countryside tour with lunch",
+            "Boracay water activities package",
+            "English-speaking guides",
+            "Entrance fees to all attractions",
+            "Hotel and airport transfers",
+            "Welcome dinner with cultural show"
+        ],
+        exclusions: [
+            "International flights",
+            "Travel insurance",
+            "Terminal fees and tourist taxes",
+            "Optional tours and activities",
+            "Personal expenses and shopping",
+            "Drinks during meals",
+            "Tips for guides and drivers",
+            "Early check-in/late check-out",
+            "Excess baggage charges"
+        ],
+        cancellationPolicy: [
+            "Free cancellation up to 45 days before departure",
+            "75% refund up to 30 days before departure",
+            "50% refund up to 15 days before departure",
+            "No refund within 15 days of departure"
+        ],
+        galleryImages: [
+            "/IMAGES/philippines/1/1.webp", // Underground River
+            "/IMAGES/philippines/1/2.webp", // El Nido Lagoon
+            "/IMAGES/philippines/1/3.webp", // Chocolate Hills
+            "/IMAGES/philippines/1/4.webp"  // Boracay White Beach
+        ]
+    },
+
+    kenya: {
+        name: "Kenya - Safari Adventure",
+        price: 275000,
+        image: "/IMAGES/kenya/1/1.webp",
+        packages: 2,
+        description: "Experience the ultimate African safari in Kenya's most iconic national parks. Witness the Great Migration, spot the Big Five, and immerse yourself in Maasai culture.",
+        duration: { days: 8, nights: 7 },
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrival in Nairobi",
+                description: "Arrive in Nairobi and transfer to hotel. Visit Giraffe Center and David Sheldrick Wildlife Trust."
+            },
+            {
+                day: 2,
+                title: "Nairobi to Masai Mara",
+                description: "Drive to Masai Mara National Reserve. Afternoon game drive to spot wildlife."
+            },
+            {
+                day: 3,
+                title: "Masai Mara Safari",
+                description: "Full-day game drive in Masai Mara. Optional hot air balloon safari at sunrise."
+            },
+            {
+                day: 4,
+                title: "Masai Village Experience",
+                description: "Morning game drive. Afternoon visit to traditional Maasai village."
+            },
+            {
+                day: 5,
+                title: "Lake Nakuru National Park",
+                description: "Drive to Lake Nakuru. Afternoon game drive to see flamingos and rhinos."
+            },
+            {
+                day: 6,
+                title: "Amboseli National Park",
+                description: "Transfer to Amboseli. Game drive with views of Mount Kilimanjaro."
+            },
+            {
+                day: 7,
+                title: "Amboseli Safari",
+                description: "Full-day game drive in Amboseli. Evening sundowner experience."
+            },
+            {
+                day: 8,
+                title: "Departure",
+                description: "Return to Nairobi for departure flight."
+            }
+        ],
+        inclusions: [
+            "All ground transfers in 4x4 safari vehicle",
+            "Luxury lodge accommodation",
+            "Full board meals",
+            "Game drives and park fees",
+            "English-speaking safari guide",
+            "Bottled water during safari",
+            "Maasai village visit"
+        ],
+        exclusions: [
+            "International flights",
+            "Travel insurance",
+            "Hot air balloon safari",
+            "Visa fees",
+            "Personal expenses",
+            "Gratuities"
+        ],
+        cancellationPolicy: [
+            "Free cancellation up to 60 days before departure",
+            "50% refund up to 30 days before departure",
+            "No refund within 30 days of departure"
+        ],
+        galleryImages: [
+            "/IMAGES/kenya/1/1.webp",
+            "/IMAGES/kenya/1/2.webp",
+            "/IMAGES/kenya/1/3.webp",
+            "/IMAGES/kenya/1/4.webp"
+        ]
+    },
+
+    france: {
+        name: "France - Romance & Culture",
+        price: 185000,
+        image: "/webImage/kashmir/2/1.webp",
+        packages: 3,
+        description: "Experience the magic of France, from the iconic Eiffel Tower to the romantic streets of Paris, the stunning French Riviera, and the picturesque countryside of Provence.",
+        duration: { days: 7, nights: 6 },
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrival in Paris",
+                description: "Arrive in Paris. Evening Seine River cruise and Eiffel Tower visit with dinner at 58 Tour Eiffel."
+            },
+            {
+                day: 2,
+                title: "Paris City Tour",
+                description: "Visit Louvre Museum, Notre-Dame Cathedral, Arc de Triomphe, and Champs-Élysées. Evening at Montmartre."
+            },
+            {
+                day: 3,
+                title: "Versailles Palace",
+                description: "Full-day tour of Palace of Versailles and its gardens. Evening free for shopping."
+            },
+            {
+                day: 4,
+                title: "Loire Valley Castles",
+                description: "Day trip to Loire Valley visiting Chambord and Chenonceau castles."
+            },
+            {
+                day: 5,
+                title: "Nice & French Riviera",
+                description: "Travel to Nice. Afternoon walking tour of Old Town and Promenade des Anglais."
+            },
+            {
+                day: 6,
+                title: "Monaco & Monte Carlo",
+                description: "Day trip to Monaco and Monte Carlo. Visit the Royal Palace and famous Casino."
+            },
+            {
+                day: 7,
+                title: "Departure",
+                description: "Transfer to Nice Airport for departure."
+            }
+        ],
+        inclusions: [
+            "Accommodation in 4-star hotels",
+            "Daily breakfast and selected dinners",
+            "Seine River cruise with dinner",
+            "Skip-the-line entry to major attractions",
+            "First-class train travel between cities",
+            "All transfers and guided tours",
+            "English-speaking guides"
+        ],
+        exclusions: [
+            "International flights",
+            "Travel insurance",
+            "City tourist tax",
+            "Personal expenses",
+            "Optional tours",
+            "Meals not mentioned"
+        ],
+        cancellationPolicy: [
+            "Free cancellation up to 45 days before departure",
+            "50% refund up to 30 days before departure",
+            "No refund within 30 days of departure"
+        ],
+        galleryImages: [
+            "/webImage/kashmir/2/1.webp",
+            "/webImage/kashmir/2/2.webp",
+            "/webImage/kashmir/1/3.webp",
+            "/webImage/kashmir/1/4.webp"
+        ]
+    },
+
+    italy: {
+        name: "Italy - Art, History & Cuisine",
+        price: 175000,
+        image: "/webImage/kashmir/2/2.webp",
+        packages: 4,
+        description: "Discover the beauty of Italy through its art, history, and world-renowned cuisine. Visit Rome's ancient ruins, Florence's Renaissance treasures, and Venice's romantic canals.",
+        duration: { days: 8, nights: 7 },
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrival in Rome",
+                description: "Welcome to Rome. Evening walking tour including Trevi Fountain and Spanish Steps."
+            },
+            {
+                day: 2,
+                title: "Ancient Rome",
+                description: "Visit Colosseum, Roman Forum, and Palatine Hill. Evening food tour in Trastevere."
+            },
+            {
+                day: 3,
+                title: "Vatican City",
+                description: "Tour Vatican Museums, Sistine Chapel, and St. Peter's Basilica."
+            },
+            {
+                day: 4,
+                title: "Florence",
+                description: "Travel to Florence. Visit Uffizi Gallery and Accademia (David). Evening wine tasting."
+            },
+            {
+                day: 5,
+                title: "Tuscany",
+                description: "Day trip to Siena, San Gimignano, and Chianti wine region."
+            },
+            {
+                day: 6,
+                title: "Venice",
+                description: "Travel to Venice. Gondola ride and St. Mark's Basilica visit."
+            },
+            {
+                day: 7,
+                title: "Venice Islands",
+                description: "Visit Murano, Burano, and Torcello islands."
+            },
+            {
+                day: 8,
+                title: "Departure",
+                description: "Transfer to Venice Airport for departure."
+            }
+        ],
+        inclusions: [
+            "4-star hotel accommodation",
+            "Daily breakfast and selected meals",
+            "Skip-the-line museum entries",
+            "First-class train travel",
+            "Gondola ride in Venice",
+            "Wine tasting in Tuscany",
+            "Professional guides"
+        ],
+        exclusions: [
+            "International flights",
+            "Travel insurance",
+            "City tourist taxes",
+            "Personal expenses",
+            "Optional tours"
+        ],
+        cancellationPolicy: [
+            "Free cancellation up to 45 days before departure",
+            "50% refund up to 30 days before departure",
+            "No refund within 30 days of departure"
+        ],
+        galleryImages: [
+            "/webImage/kashmir/2/2.webp",
+            "/webImage/kashmir/1/3.webp",
+            "/webImage/kashmir/1/4.webp",
+            "/webImage/kenya/2/1.webp"
+        ]
+    },
+
+    spain: {
+        name: "Spain - Passion & Culture",
+        price: 165000,
+        image: "/webImage/kashmir/1/3.webp",
+        packages: 3,
+        description: "Experience the vibrant spirit of Spain through its passionate flamenco, stunning architecture, delicious tapas, and rich cultural heritage. From Barcelona's modernist wonders to Andalusia's Moorish treasures.",
+        duration: { days: 8, nights: 7 },
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrival in Madrid",
+                description: "Welcome to Madrid. Evening tapas tour in historic center and flamenco show."
+            },
+            {
+                day: 2,
+                title: "Madrid Highlights",
+                description: "Visit Royal Palace, Prado Museum, and Retiro Park. Evening at Plaza Mayor."
+            },
+            {
+                day: 3,
+                title: "Toledo Day Trip",
+                description: "Full-day excursion to medieval Toledo, including Cathedral and Jewish Quarter."
+            },
+            {
+                day: 4,
+                title: "Barcelona",
+                description: "High-speed train to Barcelona. Visit Sagrada Familia and Gothic Quarter."
+            },
+            {
+                day: 5,
+                title: "Barcelona & Gaudi",
+                description: "Park Güell, Casa Batlló, and Casa Milà tour. Evening at La Rambla."
+            },
+            {
+                day: 6,
+                title: "Seville",
+                description: "Fly to Seville. Visit Real Alcázar and Santa Cruz Quarter."
+            },
+            {
+                day: 7,
+                title: "Granada",
+                description: "Day trip to Granada, visiting Alhambra Palace and Generalife Gardens."
+            },
+            {
+                day: 8,
+                title: "Departure",
+                description: "Transfer to Madrid Airport for departure."
+            }
+        ],
+        inclusions: [
+            "4-star hotel accommodation",
+            "Daily breakfast and selected meals",
+            "High-speed train tickets",
+            "Domestic flight (Barcelona-Seville)",
+            "Skip-the-line entrance to monuments",
+            "Flamenco show with dinner",
+            "Professional guides"
+        ],
+        exclusions: [
+            "International flights",
+            "Travel insurance",
+            "City tourist taxes",
+            "Personal expenses",
+            "Optional tours"
+        ],
+        cancellationPolicy: [
+            "Free cancellation up to 45 days before departure",
+            "50% refund up to 30 days before departure",
+            "No refund within 30 days of departure"
+        ],
+        galleryImages: [
+            "/webImage/kashmir/1/3.webp",
+            "/webImage/kashmir/1/4.webp",
+            "/webImage/kenya/2/1.webp",
+            "/webImage/kenya/2/2.webp"
+        ]
+    },
+
+    switzerland: {
+        name: "Switzerland - Alpine Paradise",
+        price: 195000,
+        image: "/webImage/kashmir/1/4.webp",
+        packages: 4,
+        description: "Discover the breathtaking beauty of the Swiss Alps, pristine lakes, charming villages, and world-class cities. Experience Switzerland's stunning landscapes and rich cultural heritage.",
+        duration: { days: 7, nights: 6 },
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrival in Zurich",
+                description: "Welcome to Zurich. City tour including Old Town and Lake Zurich."
+            },
+            {
+                day: 2,
+                title: "Lucerne",
+                description: "Visit Chapel Bridge, Lion Monument, and Lake Lucerne cruise."
+            },
+            {
+                day: 3,
+                title: "Mount Titlis",
+                description: "Full-day excursion to Mount Titlis with rotating gondola and Ice Flyer."
+            },
+            {
+                day: 4,
+                title: "Interlaken & Jungfraujoch",
+                description: "Journey to Jungfraujoch - Top of Europe, visit Ice Palace."
+            },
+            {
+                day: 5,
+                title: "Zermatt",
+                description: "Travel to car-free Zermatt, view of Matterhorn, mountain excursion."
+            },
+            {
+                day: 6,
+                title: "Geneva",
+                description: "Visit UN headquarters, Old Town, and Lake Geneva."
+            },
+            {
+                day: 7,
+                title: "Departure",
+                description: "Transfer to Geneva Airport for departure."
+            }
+        ],
+        inclusions: [
+            "4-star hotel accommodation",
+            "Swiss Travel Pass for trains",
+            "Mountain excursions",
+            "Daily breakfast",
+            "All transfers",
+            "Professional guides"
+        ],
+        exclusions: [
+            "International flights",
+            "Travel insurance",
+            "Personal expenses",
+            "Optional activities"
+        ],
+        cancellationPolicy: [
+            "Free cancellation up to 45 days before departure",
+            "50% refund up to 30 days before departure",
+            "No refund within 30 days of departure"
+        ],
+        galleryImages: [
+            "/webImage/kashmir/1/4.webp",
+            "/webImage/kenya/2/1.webp",
+            "/webImage/kenya/2/2.webp",
+            "/webImage/kenya/2/3.webp"
+        ]
+    },
+
+    greece: {
+        name: "Greece - Ancient Wonders",
+        price: 145000,
+        image: "/webImage/kenya/2/1.webp",
+        packages: 5,
+        description: "Journey through ancient history and stunning Mediterranean landscapes. From the Acropolis to the beautiful Santorini sunsets, experience the best of Greece.",
+        duration: { days: 8, nights: 7 },
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrival in Athens",
+                description: "Welcome to Athens. Evening walking tour of Plaka district."
+            },
+            {
+                day: 2,
+                title: "Athens Exploration",
+                description: "Visit Acropolis, Parthenon, and Archaeological Museum."
+            },
+            {
+                day: 3,
+                title: "Delphi Day Trip",
+                description: "Full-day tour of ancient Delphi and Temple of Apollo."
+            },
+            {
+                day: 4,
+                title: "Santorini",
+                description: "Fly to Santorini. Visit Oia for famous sunset views."
+            },
+            {
+                day: 5,
+                title: "Santorini Activities",
+                description: "Caldera cruise, volcanic islands, and hot springs."
+            },
+            {
+                day: 6,
+                title: "Mykonos",
+                description: "Ferry to Mykonos. Explore windmills and Little Venice."
+            },
+            {
+                day: 7,
+                title: "Mykonos Beaches",
+                description: "Beach hopping and traditional village tour."
+            },
+            {
+                day: 8,
+                title: "Departure",
+                description: "Return to Athens for departure."
+            }
+        ],
+        inclusions: [
+            "4-star hotels",
+            "Island transfers",
+            "Daily breakfast",
+            "Guided tours",
+            "Domestic flights",
+            "Ferry tickets"
+        ],
+        exclusions: [
+            "International flights",
+            "Travel insurance",
+            "Optional activities",
+            "Personal expenses"
+        ],
+        cancellationPolicy: [
+            "Free cancellation up to 45 days before departure",
+            "50% refund up to 30 days before departure",
+            "No refund within 30 days of departure"
+        ],
+        galleryImages: [
+            "/webImage/kenya/2/1.webp",
+            "/webImage/kenya/2/2.webp",
+            "/webImage/kenya/2/3.webp",
+            "/webImage/kenya/2/4.webp"
+        ]
+    },
+
+    netherlands: {
+        name: "Netherlands - Land of Tulips",
+        price: 155000,
+        image: "/webImage/kenya/2/3.webp",
+        packages: 3,
+        description: "Experience Dutch charm through Amsterdam's canals, windmills, tulip fields, and rich art history. Discover the perfect blend of historical heritage and modern culture.",
+        duration: { days: 6, nights: 5 },
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrival in Amsterdam",
+                description: "Welcome to Amsterdam. Evening canal cruise with dinner."
+            },
+            {
+                day: 2,
+                title: "Amsterdam Highlights",
+                description: "Visit Van Gogh Museum, Rijksmuseum, and Anne Frank House."
+            },
+            {
+                day: 3,
+                title: "Dutch Countryside",
+                description: "Tour to Zaanse Schans windmills, Volendam, and Marken."
+            },
+            {
+                day: 4,
+                title: "Keukenhof Gardens",
+                description: "Visit world-famous tulip gardens (seasonal) and Delft."
+            },
+            {
+                day: 5,
+                title: "Rotterdam & The Hague",
+                description: "Modern architecture in Rotterdam and government seat in The Hague."
+            },
+            {
+                day: 6,
+                title: "Departure",
+                description: "Transfer to Amsterdam Airport."
+            }
+        ],
+        inclusions: [
+            "4-star hotel accommodation",
+            "Canal cruise with dinner",
+            "Museum entries",
+            "Daily breakfast",
+            "Transportation",
+            "Professional guides"
+        ],
+        exclusions: [
+            "International flights",
+            "Travel insurance",
+            "Personal expenses",
+            "Optional tours"
+        ],
+        cancellationPolicy: [
+            "Free cancellation up to 45 days before departure",
+            "50% refund up to 30 days before departure",
+            "No refund within 30 days of departure"
+        ],
+        galleryImages: [
+            "/webImage/kenya/2/3.webp",
+            "/webImage/kenya/2/4.webp",
+            "/webImage/kashmir/2/1.webp",
+            "/webImage/kashmir/2/2.webp"
+        ]
+    },
+
+    austria: {
+        name: "Austria - Imperial Splendor",
+        price: 165000,
+        image: "/webImage/kenya/2/4.webp",
+        packages: 4,
+        description: "Discover Austria's imperial heritage, musical legacy, and Alpine beauty. From Vienna's palaces to Salzburg's musical history and the stunning Austrian Alps.",
+        duration: { days: 7, nights: 6 },
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrival in Vienna",
+                description: "Welcome to Vienna. Evening classical concert."
+            },
+            {
+                day: 2,
+                title: "Imperial Vienna",
+                description: "Visit Schönbrunn Palace, Belvedere, and Hofburg Palace."
+            },
+            {
+                day: 3,
+                title: "Vienna Arts",
+                description: "Kunsthistorisches Museum and Spanish Riding School."
+            },
+            {
+                day: 4,
+                title: "Salzburg",
+                description: "Travel to Salzburg. Mozart's birthplace and Sound of Music tour."
+            },
+            {
+                day: 5,
+                title: "Austrian Alps",
+                description: "Day trip to Hallstatt and lake region."
+            },
+            {
+                day: 6,
+                title: "Innsbruck",
+                description: "Visit Tyrolean capital and Swarovski Crystal World."
+            },
+            {
+                day: 7,
+                title: "Departure",
+                description: "Return to Vienna for departure."
+            }
+        ],
+        inclusions: [
+            "4-star hotels",
+            "Concert tickets",
+            "Palace entries",
+            "Daily breakfast",
+            "Train tickets",
+            "Guided tours"
+        ],
+        exclusions: [
+            "International flights",
+            "Travel insurance",
+            "Personal expenses",
+            "Optional activities"
+        ],
+        cancellationPolicy: [
+            "Free cancellation up to 45 days before departure",
+            "50% refund up to 30 days before departure",
+            "No refund within 30 days of departure"
+        ],
+        galleryImages: [
+            "/webImage/kenya/2/4.webp",
+            "/webImage/kashmir/2/1.webp",
+            "/webImage/kashmir/2/2.webp",
+            "/webImage/kashmir/1/3.webp"
+        ]
+    },
+
+    germany: {
+        name: "Germany - History & Innovation",
+        price: 175000,
+        image: "/webImage/kenya/2/2.webp",
+        packages: 4,
+        description: "Experience Germany's rich history, stunning architecture, and modern innovation. From medieval castles to vibrant cities, discover the perfect blend of old and new in the heart of Europe.",
+        duration: { days: 8, nights: 7 },
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrival in Berlin",
+                description: "Welcome to Berlin. Evening walking tour including Brandenburg Gate and East Side Gallery of the Berlin Wall."
+            },
+            {
+                day: 2,
+                title: "Berlin Highlights",
+                description: "Visit Museum Island, Checkpoint Charlie, Reichstag Building, and Holocaust Memorial. Evening dinner at TV Tower restaurant."
+            },
+            {
+                day: 3,
+                title: "Potsdam Day Trip",
+                description: "Visit Sanssouci Palace and Gardens, Dutch Quarter, and Cecilienhof Palace where the Potsdam Conference was held."
+            },
+            {
+                day: 4,
+                title: "Munich",
+                description: "High-speed train to Munich. Visit Marienplatz, Frauenkirche, and enjoy traditional Bavarian dinner with beer tasting."
+            },
+            {
+                day: 5,
+                title: "Neuschwanstein Castle",
+                description: "Day trip to the fairy-tale Neuschwanstein Castle and charming town of Füssen in the Bavarian Alps."
+            },
+            {
+                day: 6,
+                title: "Romantic Road",
+                description: "Tour the medieval towns of Rothenburg ob der Tauber and Würzburg along the Romantic Road."
+            },
+            {
+                day: 7,
+                title: "Rhine Valley",
+                description: "Visit the Rhine Valley, including river cruise, wine tasting, and visit to historic castles."
+            },
+            {
+                day: 8,
+                title: "Departure",
+                description: "Transfer to Frankfurt Airport for departure."
+            }
+        ],
+        inclusions: [
+            "4-star hotel accommodation",
+            "Daily breakfast and selected dinners",
+            "High-speed train tickets",
+            "Castle entrance fees",
+            "Rhine River cruise",
+            "Wine tasting session",
+            "Beer hall experience",
+            "Professional guides",
+            "All transfers between cities"
+        ],
+        exclusions: [
+            "International flights",
+            "Travel insurance",
+            "City tourist taxes",
+            "Personal expenses",
+            "Optional tours",
+            "Meals not mentioned"
+        ],
+        cancellationPolicy: [
+            "Free cancellation up to 45 days before departure",
+            "50% refund up to 30 days before departure",
+            "No refund within 30 days of departure"
+        ],
+        galleryImages: [
+            "/webImage/kenya/2/2.webp",
+            "/webImage/kenya/2/3.webp",
+            "/webImage/kenya/2/4.webp",
+            "/webImage/kashmir/2/1.webp"
+        ]
+    }
 };
 
 const getDestinationDetails = (destinationSlug: string): DestinationDetails => {
@@ -1086,7 +2053,7 @@ export default function DestinationDetails() {
     }
 
     return (
-        <div className="min-h-screen bg-gray-50">
+        <div className="min-h-screen bg-gray-50 mt-10">
             <main className="container mx-auto px-4 py-8 max-w-7xl">
                 <div className="relative rounded-3xl overflow-hidden mb-8 shadow-xl">
                     <Image
