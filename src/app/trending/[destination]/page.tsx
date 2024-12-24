@@ -11,6 +11,10 @@ import Trending from '@/app/components/homepage/Trending';
 import Destinations from '@/app/components/homepage/Destinations';
 import Shimmer from '@/components/ui/shimmer';
 import HappyCustomers from '@/app/components/Ad/HappyCustomers';
+import Domestic from '@/app/components/homepage/Domestic';
+import ExoticDestinations from '@/app/components/homepage/Exotic';
+import Europe from '@/app/components/homepage/Europe';
+import Gallery from '@/app/components/homepage/Gallery';
 
 interface TrendingDestinationDetails {
     name: string;
@@ -511,8 +515,12 @@ export default function TrendingDestinationDetails() {
                 </div>
             </main>
             <Destinations />
+            <Domestic />
             <Trending />
+            <ExoticDestinations />
+            <Europe />
             <HappyCustomers />
+            <Gallery />
 
         </div>
     );
