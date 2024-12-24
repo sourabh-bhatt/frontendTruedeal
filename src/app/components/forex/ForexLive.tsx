@@ -23,7 +23,7 @@ const ForexLive = () => {
 
     return (
         <>
-            <div className="max-w-6xl mx-auto px-4 py-8">
+            <div id="forex" className="max-w-6xl mx-auto px-4 py-8">
                 {/* Header Section */}
                 <div className="mb-8">
                     <p className="text-gray-600 text-sm mb-1 font-poppins font-semibold">ONE STOP SHOP FOR ALL YOUR</p>
@@ -34,7 +34,7 @@ const ForexLive = () => {
                     {/* Service Cards */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {/* Currency Exchange Card */}
-                        <div 
+                        <div
                             onClick={() => handleOpenModal('exchange')}
                             className="p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow cursor-pointer"
                         >
@@ -50,7 +50,7 @@ const ForexLive = () => {
                         </div>
 
                         {/* Money Transfer Card */}
-                        <div 
+                        <div
                             onClick={() => handleOpenModal('transfer')}
                             className="p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow cursor-pointer"
                         >
@@ -103,7 +103,7 @@ const ForexLive = () => {
 
             {/* Modal */}
             {showModal && (
-                <div 
+                <div
                     className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
                     onClick={(e) => {
                         // Close modal when clicking outside

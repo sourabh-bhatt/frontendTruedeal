@@ -5,16 +5,13 @@ import { useEffect } from "react"
 
 export default function Component() {
     const sponsors = [
-        { name: "Amadeus", logo: "/Assets/Sponsers/1.webp" },
-        { name: "Expedia", logo: "/Assets/Sponsers/2.webp" },
-        { name: "Malindo Air", logo: "/Assets/Sponsers/3.webp" },
-        { name: "Viator", logo: "/Assets/Sponsers/4.webp" },
-        { name: "IATA", logo: "/Assets/Sponsers/5.webp" },
-        { name: "Dubai Expert", logo: "/Assets/Sponsers/6.webp" },
-        { name: "Certification 1", logo: "/Assets/Sponsers/7.webp" },
-        { name: "Certification 2", logo: "/Assets/Sponsers/8.webp" },
-        { name: "New Zealand Tourism", logo: "/Assets/Sponsers/9.webp" },
-        { name: "Iceland Inspired", logo: "/Assets/Sponsers/1.webp" },
+        { name: "Aussie Specialist Australia", logo: "/logoBrands/aussie.jpeg" },
+        { name: "Canada Keep Exploring", logo: "/logoBrands/canada.png" },
+        { name: "IATA", logo: "/logoBrands/iata-logo-header.svg" },
+        { name: "Kiwi Specialist", logo: "/logoBrands/kiwi.png" },
+        { name: "Royal Carribean International", logo: "/logoBrands/royalCarribean.svg" },
+        { name: "Star Cruises", logo: "/logoBrands/Star_cruises_logo.svg.png" },
+        { name: "Swiss", logo: "/logoBrands/swiss-logo.svg" },
 
     ]
 

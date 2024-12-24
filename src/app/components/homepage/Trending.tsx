@@ -69,60 +69,55 @@ const TrendingOffers = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-6">
                 {offers.map((offer, index) => (
                     <div key={index}
-                        className="bg-white rounded-3xl overflow-hidden shadow-lg cursor-pointer"
+                        className="bg-white rounded-2xl overflow-hidden shadow-lg cursor-pointer hover:shadow-xl transition-shadow duration-300"
                         onClick={() => handleCardClick(offer.slug)}
                     >
                         <div className="relative">
                             <Image
                                 src={offer.image}
                                 alt={offer.title}
-                                width={100}
-                                height={38}
-                                className="w-full h-38 object-cover rounded-t-2xl"
+                                width={400}
+                                height={250}
+                                className="w-full h-[200px] object-cover"
                             />
-                            <div className="absolute top-4 flex items-center">
-                                <div className="bg-red-500 text-white px-1 py-1 flex items-center font-poppins font-semibold">
-                                    <svg viewBox="0 0 24 24" className="w-4 h-4 mr-1 fill-current">
-                                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                                    </svg>
+                            <div className="absolute top-4 left-0">
+                                <div className="bg-red-500 text-white px-3 py-1 flex items-center font-poppins text-sm">
+                                    <span className="mr-1">₹</span>
                                     {offer.discount}% OFF
                                 </div>
-                                <div className="border-t-[16px] border-t-transparent border-l-[16px] border-l-red-500 border-b-[16px] border-b-transparent" />
                             </div>
                         </div>
 
-                        <div>
-                            <div className="px-2">
-                                <h3 className="font-semibold font-poppins text-md mb-2 mt-2">{offer.title}</h3>
+                        <div className="p-4">
+                            <h3 className="font-semibold text-lg mb-2">{offer.title}</h3>
 
-                                <div className="flex gap-2 mb-3">
-                                    <span className="bg-blue-50 text-gray-700 px-4 py-1 rounded-full text-sm font-poppins font-semibold">
-                                        {offer.nights} Nights
-                                    </span>
-                                    <span className="bg-blue-50 text-gray-700 px-4 py-1 rounded-full text-sm font-poppins font-semibold">
-                                        {offer.days} Days
-                                    </span>
-                                </div>
-
-                                <div className="flex items-center gap-2 mb-3">
-                                    <span className="text-2xl font-poppins font-bold">₹{offer.discountedPrice.toLocaleString()}</span>
-                                    <span className="text-red-500 line-through">₹{offer.originalPrice.toLocaleString()}</span>
-                                    <span className="text-gray-500 text-sm font-poppins font-semibold">Per Person</span>
-                                </div>
-
-                                <div className="flex gap-3 mb-4">
-                                    {offer.amenities.map((amenity, idx) => (
-                                        <div key={idx} className="flex items-center gap-1 text-gray-600">
-                                            <svg className="w-5 h-5 text-green-500" viewBox="0 0 24 24" fill="currentColor">
-                                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-                                            </svg>
-                                            <span>{amenity}</span>
-                                        </div>
-                                    ))}
-                                </div>
+                            <div className="flex gap-3 mb-3">
+                                <span className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">
+                                    {offer.nights} Nights
+                                </span>
+                                <span className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">
+                                    {offer.days} Days
+                                </span>
                             </div>
 
-                            <button className="w-full py-2 relative bg-blue-50 text-blue-600 rounded-b-3xl hover:bg-blue-100 transition-colors font-poppins font-semibold">
+                            <div className="flex items-baseline gap-2 mb-3">
+                                <span className="text-2xl font-bold">₹{offer.discountedPrice.toLocaleString()}</span>
+                                <span className="text-gray-400 line-through text-sm">₹{offer.originalPrice.toLocaleString()}</span>
+                                <span className="text-gray-500 text-sm">Per Person</span>
+                            </div>
+
+                            <div className="flex flex-wrap gap-3 mb-4">
+                                {offer.amenities.map((amenity, idx) => (
+                                    <div key={idx} className="flex items-center gap-1 text-gray-600 text-sm">
+                                        <svg className="w-4 h-4 text-green-500" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                                        </svg>
+                                        <span>{amenity}</span>
+                                    </div>
+                                ))}
+                            </div>
+
+                            <button className="w-full py-2 text-blue-600 hover:text-blue-700 text-center font-medium">
                                 View Itinerary
                             </button>
                         </div>
