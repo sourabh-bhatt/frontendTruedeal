@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import { Facebook, Twitter, Youtube, Instagram, Linkedin, Phone, Mail, MapPin } from 'lucide-react'
+import { Facebook, Twitter, Youtube, Instagram, Linkedin } from 'lucide-react'
 
 export default function Component() {
     return (
@@ -32,7 +32,7 @@ export default function Component() {
                     </div>
                     <div>
                         <h3 className="font-medium mb-2">Call us</h3>
-                        <p className="text-gray-600 text-sm">Request a quote, or just chat about your next vacation. We're always happy to help!</p>
+                        <p className="text-gray-600 text-sm">Request a quote, or just chat about your next vacation. We&apos;re always happy to help!</p>
                         <a href="tel:+918447498498" className="text-[#017ae3] text-sm font-medium hover:underline mt-2 block">+91 8447498498</a>
                     </div>
                     <div>

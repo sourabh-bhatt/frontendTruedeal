@@ -15,8 +15,8 @@ export default function CareersPage() {
                     <div className="prose max-w-none">
                         <h2 className="text-2xl font-semibold mb-4">How to Apply</h2>
                         <p className="text-gray-600 mb-6">
-                            We're always looking for talented individuals to join our team. If you're passionate about travel and
-                            want to make a difference, we'd love to hear from you.
+                            We&apos;re always looking for talented individuals to join our team. If you&apos;re passionate about travel and
+                            want to make a difference, we&apos;d love to hear from you.
                         </p>
 
                         <div className="bg-blue-50 p-6 rounded-lg mb-8">

@@ -1,7 +1,7 @@
-'use client'
-import { useState } from 'react'
+'use client';
+
 import Image from 'next/image'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { useRouter } from 'next/navigation'
 
 interface Destination {
