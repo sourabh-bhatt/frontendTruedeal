@@ -6,7 +6,6 @@ import Link from "next/link"
 import { Menu, X } from 'lucide-react'
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs"
 import { usePathname } from 'next/navigation'
-import { set } from "date-fns";
 
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)

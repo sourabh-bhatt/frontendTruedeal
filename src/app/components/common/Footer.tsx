@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import { Facebook, Twitter, Youtube, Instagram, Linkedin, Phone, Mail, MapPin } from "lucide-react"
+import { Facebook, Twitter, Instagram, Linkedin, Phone, Mail, MapPin } from "lucide-react"
 
 export default function Component() {
     return (
