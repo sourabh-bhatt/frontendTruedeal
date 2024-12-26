@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { ChevronDown, X } from 'lucide-react';
 import { indianStates, transferCountries, currencyRates } from '@/app/types/forex';
+import { safeWindowOpen } from '@/utils/safe-window';
 
 interface TransferFormData {
   city: string;
@@ -49,14 +50,17 @@ Receiving Amount: ${formData.receivingAmount} ${formData.receivingCurrency}
 Sending Amount: ₹${formData.sendingAmount}
 Rate: ${currencyRates.find(c => c.code === formData.receivingCurrency)?.sellRate}
     `;
-    
+
+    // const whatsappUrl = `https://wa.me/918447498498?text=${encodeURIComponent(message)}`;
+    // window.open(whatsappUrl, '_blank');
+
     const whatsappUrl = `https://wa.me/918447498498?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
+    safeWindowOpen(whatsappUrl, '_blank');
   };
 
   return (
     <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-lg modal-content relative">
-      <button 
+      <button
         onClick={onClose}
         className="absolute -top-2 -right-2 p-2 bg-white hover:bg-gray-100 rounded-full shadow-lg transition-all z-50"
       >
@@ -127,8 +131,8 @@ Rate: ${currencyRates.find(c => c.code === formData.receivingCurrency)?.sellRate
               >
                 <option value="" className="bg-[#017ae3]">Select</option>
                 {currencyRates.map(currency => (
-                  <option 
-                    key={currency.code} 
+                  <option
+                    key={currency.code}
                     value={currency.code}
                     className="bg-[#017ae3] hover:bg-[#00f6ff]"
                   >

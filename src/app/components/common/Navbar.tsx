@@ -6,6 +6,7 @@ import Link from "next/link"
 import { Menu, X } from 'lucide-react'
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs"
 import { usePathname } from 'next/navigation'
+import { set } from "date-fns";
 
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -16,8 +17,14 @@ export default function Navbar() {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 0)
         }
-        window.addEventListener('scroll', handleScroll)
-        return () => window.removeEventListener('scroll', handleScroll)
+
+        // Add scroll event listener when the component mounts to client side
+
+        if (typeof window !== 'undefined') {
+            setIsScrolled(window.scrollY > 0)
+            window.addEventListener('scroll', handleScroll)
+            return () => window.removeEventListener('scroll', handleScroll)
+        }
     }, [])
 
     const navItems = [
@@ -51,8 +58,8 @@ export default function Navbar() {
                                 key={item.label}
                                 href={item.href}
                                 className={`transition-colors duration-300 ${pathname === item.href
-                                        ? 'text-transparent bg-clip-text bg-gradient-to-r from-[#017ae3] to-[#00f6ff]'
-                                        : 'text-gray-500 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#017ae3] to-[#00f6ff]'
+                                    ? 'text-transparent bg-clip-text bg-gradient-to-r from-[#017ae3] to-[#00f6ff]'
+                                    : 'text-gray-500 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#017ae3] to-[#00f6ff]'
                                     }`}
                             >
                                 {item.label}
@@ -136,8 +143,8 @@ export default function Navbar() {
                             key={item.label}
                             href={item.href}
                             className={`block py-3 px-4 ${pathname === item.href
-                                    ? 'text-transparent bg-clip-text bg-gradient-to-r from-[#017ae3] to-[#00f6ff]'
-                                    : 'text-gray-500 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#017ae3] to-[#00f6ff]'
+                                ? 'text-transparent bg-clip-text bg-gradient-to-r from-[#017ae3] to-[#00f6ff]'
+                                : 'text-gray-500 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#017ae3] to-[#00f6ff]'
                                 } transition-colors duration-300`}
                             onClick={() => setIsMenuOpen(false)}
                         >

@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { ChevronDown, X } from 'lucide-react';
 import { indianStates, currencyRates, products } from '@/app/types/forex';
+import { safeWindowOpen } from '@/utils/safe-window';
 
 interface ExchangeFormData {
   type: 'buy' | 'sell';
@@ -32,8 +33,8 @@ const CurrencyExchange: React.FC<CurrencyExchangeProps> = ({ onClose }) => {
   });
 
   const handleForexAmountChange = (amount: string) => {
-    const currency = currencyRates.find(c => 
-      formType === 'buy' 
+    const currency = currencyRates.find(c =>
+      formType === 'buy'
         ? c.code === formData.wantCurrency
         : c.code === formData.haveCurrency
     );
@@ -58,14 +59,19 @@ Forex Amount: ${formData.forexAmount} ${formType === 'buy' ? formData.wantCurren
 INR Amount: ₹${formData.inrAmount}
 Rate: ${currencyRates.find(c => c.code === (formType === 'buy' ? formData.wantCurrency : formData.haveCurrency))?.sellRate}
     `;
-    
+
+    // const whatsappUrl = `https://wa.me/918447498498?text=${encodeURIComponent(message)}`;
+    // window.open(whatsappUrl, '_blank');
+
     const whatsappUrl = `https://wa.me/918447498498?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
+    safeWindowOpen(whatsappUrl, '_blank');
+
+
   };
 
   return (
     <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-lg modal-content relative">
-      <button 
+      <button
         onClick={onClose}
         className="absolute -top-2 -right-2 p-2 bg-white hover:bg-gray-100 rounded-full shadow-lg transition-all z-50"
       >
@@ -75,7 +81,7 @@ Rate: ${currencyRates.find(c => c.code === (formType === 'buy' ? formData.wantCu
       <div className="space-y-6">
         {/* Tabs */}
         <div className="flex gap-4 border-b">
-          <button 
+          <button
             onClick={() => {
               setFormType('buy');
               setFormData(prev => ({ ...prev, type: 'buy', wantCurrency: '', product: '' }));
@@ -84,7 +90,7 @@ Rate: ${currencyRates.find(c => c.code === (formType === 'buy' ? formData.wantCu
           >
             Buy Forex Cards & Currency
           </button>
-          <button 
+          <button
             onClick={() => {
               setFormType('sell');
               setFormData(prev => ({ ...prev, type: 'sell', haveCurrency: '', product: '' }));
@@ -141,7 +147,7 @@ Rate: ${currencyRates.find(c => c.code === (formType === 'buy' ? formData.wantCu
                 </select>
               )}
             </div>
-            
+
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
                 Currency You {formType === 'buy' ? 'Want' : 'Have'}
@@ -197,7 +203,7 @@ Rate: ${currencyRates.find(c => c.code === (formType === 'buy' ? formData.wantCu
                 />
                 {(formType === 'buy' ? formData.wantCurrency : formData.haveCurrency) && (
                   <div className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500">
-                    Rate = ₹{currencyRates.find(c => 
+                    Rate = ₹{currencyRates.find(c =>
                       c.code === (formType === 'buy' ? formData.wantCurrency : formData.haveCurrency)
                     )?.sellRate}
                   </div>
