@@ -2,25 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Facebook, Twitter, Instagram, Linkedin, Phone, Mail, MapPin } from "lucide-react"
 
-
-
 export default function Component() {
-
-    const ContactItem = ({ icon: Icon, title, content }: { icon: React.ElementType; title: string; content: string | string[] }) => (
-        <div className="bg-white rounded-lg shadow-lg p-6 transform transition-all duration-300 hover:scale-105">
-            <div className="flex items-center mb-4">
-                <Icon className="w-8 h-8 text-[#017ae3] mr-3" />
-                <h3 className="text-xl font-semibold text-gray-800">{title}</h3>
-            </div>
-            {Array.isArray(content) ? (
-                content.map((item, index) => (
-                    <p key={index} className="text-gray-600 mt-2">{item}</p>
-                ))
-            ) : (
-                <p className="text-gray-600">{content}</p>
-            )}
-        </div>
-    )
 
     return (
         <>

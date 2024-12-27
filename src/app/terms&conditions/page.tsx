@@ -8,12 +8,12 @@ export default function TermsAndConditions() {
                 <div className="bg-white/10 backdrop-blur-lg rounded-lg p-6 shadow-lg">
                     <h2 className="text-2xl font-semibold mb-4">1. Acceptance of Terms</h2>
                     <p className="mb-4">
-                        By accessing and using Truedeal's services, you agree to comply with and be bound by these Terms & Conditions.
+                        By accessing and using Truedeal&apos;s services, you agree to comply with and be bound by these Terms & Conditions.
                     </p>
 
                     <h2 className="text-2xl font-semibold mb-4">2. Use of Services</h2>
                     <p className="mb-4">
-                        You agree to use Truedeal's services for lawful purposes only and in accordance with these Terms & Conditions.
+                        You agree to use Truedeal&apos;s services for lawful purposes only and in accordance with these Terms & Conditions.
                     </p>
 
                     <h2 className="text-2xl font-semibold mb-4">3. Booking and Payments</h2>
@@ -33,7 +33,7 @@ export default function TermsAndConditions() {
 
                     <h2 className="text-2xl font-semibold mb-4">6. Privacy Policy</h2>
                     <p className="mb-4">
-                        Your use of Truedeal's services is also governed by our Privacy Policy. Please review it to understand how we collect, use, and protect your personal information.
+                        Your use of Truedeal&apos;s services is also governed by our Privacy Policy. Please review it to understand how we collect, use, and protect your personal information.
                     </p>
 
                     <h2 className="text-2xl font-semibold mb-4">7. Changes to Terms</h2>

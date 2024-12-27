@@ -4,6 +4,14 @@ import sgMail from '@sendgrid/mail';
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY!);
 
+export interface EnquiryData {
+    name: string;
+    email: string;
+    phone: string;
+    subject: string;
+    message: string;
+}
+
 export async function submitContactForm(formData: FormData) {
     const name = formData.get('name') as string;
     const email = formData.get('email') as string;
@@ -36,7 +44,7 @@ export async function submitContactForm(formData: FormData) {
     }
 }
 
-function generateEmailHTML(enquiryData: any) {
+function generateEmailHTML(enquiryData: EnquiryData) {
     return `
     <!DOCTYPE html>
     <html lang="en">

@@ -133,7 +133,7 @@ export default function ContactPage() {
                 <div>
                     <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Contact Us</h2>
                     <p className="mt-2 text-center text-sm text-gray-600">
-                        We'd love to hear from you. Please fill out this form.
+                        We&apos;d love to hear from you. Please fill out this form.
                     </p>
                 </div>
                 <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
