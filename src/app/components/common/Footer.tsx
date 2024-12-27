@@ -2,37 +2,81 @@ import Image from "next/image"
 import Link from "next/link"
 import { Facebook, Twitter, Instagram, Linkedin, Phone, Mail, MapPin } from "lucide-react"
 
+
+
 export default function Component() {
+
+    const ContactItem = ({ icon: Icon, title, content }: { icon: React.ElementType; title: string; content: string | string[] }) => (
+        <div className="bg-white rounded-lg shadow-lg p-6 transform transition-all duration-300 hover:scale-105">
+            <div className="flex items-center mb-4">
+                <Icon className="w-8 h-8 text-[#017ae3] mr-3" />
+                <h3 className="text-xl font-semibold text-gray-800">{title}</h3>
+            </div>
+            {Array.isArray(content) ? (
+                content.map((item, index) => (
+                    <p key={index} className="text-gray-600 mt-2">{item}</p>
+                ))
+            ) : (
+                <p className="text-gray-600">{content}</p>
+            )}
+        </div>
+    )
+
     return (
         <>
             {/* Contact Info Section */}
-            <section className="bg-white py-8 px-4">
-                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
-                    <div className="text-center md:text-left">
-                        <div className="flex items-center justify-center md:justify-start gap-3 mb-2">
-                            <Phone className="w-5 h-5 text-[#017ae3]" />
-                            <h3 className="font-medium">Call us</h3>
+            <section className="py-12 px-4 bg-gradient-to-br from-[#017ae3] to-[#00f6ff]">
+                <div className="max-w-6xl mx-auto">
+                    <h2 className="text-3xl font-bold text-center text-white mb-8">
+                        Get in Touch
+                    </h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="flex items-center bg-white rounded-lg shadow-md p-6">
+                            <div className="text-[#017ae3] mr-4">
+                                <Phone size={32} />
+                            </div>
+                            <div>
+                                <h3 className="text-lg font-semibold text-gray-800">Call Us</h3>
+                                <p className="text-gray-600">+91 8447498498</p>
+                            </div>
                         </div>
-                        <p className="text-gray-600">+91 8447498498</p>
+                        <div className="flex items-center bg-white rounded-lg shadow-md p-6">
+                            <div className="text-[#017ae3] mr-4">
+                                <Mail size={32} />
+                            </div>
+                            <div>
+                                <h3 className="text-lg font-semibold text-gray-800">Write to Us</h3>
+                                <p className="text-gray-600">info@truedeal4u.com</p>
+                            </div>
+                        </div>
                     </div>
-
-                    <div className="text-center md:text-left">
-                        <div className="flex items-center justify-center md:justify-start gap-3 mb-2">
-                            <Mail className="w-5 h-5 text-[#017ae3]" />
-                            <h3 className="font-medium">Write to us</h3>
+                    <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="flex flex-col bg-white rounded-lg shadow-md p-6">
+                            <div className="flex items-center mb-4">
+                                <div className="text-[#017ae3] mr-4">
+                                    <MapPin size={32} />
+                                </div>
+                                <h3 className="text-lg font-semibold text-gray-800">Our Delhi Office</h3>
+                            </div>
+                            <p className="text-gray-600">
+                                LGF 47, World Trade Center, beside Lalit Hotel, Barakhamba Road, Connaught Place, Delhi 110006
+                            </p>
                         </div>
-                        <p className="text-gray-600">info@truedeal4u.com</p>
-                    </div>
-
-                    <div className="text-center md:text-left md:col-span-2">
-                        <div className="flex items-center justify-center md:justify-start gap-3 mb-2">
-                            <MapPin className="w-5 h-5 text-[#017ae3]" />
-                            <h3 className="font-medium">Our Location</h3>
+                        <div className="flex flex-col bg-white rounded-lg shadow-md p-6">
+                            <div className="flex items-center mb-4">
+                                <div className="text-[#017ae3] mr-4">
+                                    <MapPin size={32} />
+                                </div>
+                                <h3 className="text-lg font-semibold text-gray-800">Our Noida Office</h3>
+                            </div>
+                            <p className="text-gray-600">
+                                C 207, Logix Cyber Park, C Block, Phase 2, Industrial Area, Sector 62, Noida, Uttar Pradesh 201301
+                            </p>
                         </div>
-                        <p className="text-gray-600">C 207, Logix Cyber Park, C Block, Phase 2, Industrial Area, Sector 62, Noida, Uttar Pradesh 201301</p>
                     </div>
                 </div>
             </section>
+
 
             <footer className="bg-gray-200 py-12 px-4">
                 <div className="max-w-7xl mx-auto">
