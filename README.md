@@ -4,3 +4,4 @@
 2. npm i react-icons
 3. npm i lucide-react
 4. major react updated the whole next version to 19/15
+5. Added environment variables
