@@ -141,7 +141,7 @@ export default function TermsAndConditions() {
                         <section id="transmitted">
                             <h2 className="text-2xl font-semibold mb-4 text-blue-600">Transmitted Material</h2>
                             <p className="mb-4">
-                                Internet communications can'&apos; be completely private or secure. You understand that any message or information that you have sent to this site can be intercepted by others unless there is a special notice (for example, credit card information) that is encrypted. Sending a message to Truedeal does not cause the site to have any special responsibility.
+                                Internet communications can'&apos;t be completely private or secure. You understand that any message or information that you have sent to this site can be intercepted by others unless there is a special notice (for example, credit card information) that is encrypted. Sending a message to Truedeal does not cause the site to have any special responsibility.
                             </p>
                             <p className="mb-4">
                                 The copyright in the contents of this website belongs to Truedeal. Copying any part or all the contents of this website without permission of Truedeal is not allowed except to the extent that such copying or printing is essential for the purpose of availing the paid services offered.
