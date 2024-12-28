@@ -5,7 +5,7 @@ export default function Services() {
     const services = [
         {
             title: "Holiday Packages",
-            image: "/Assets/DestinationsImage/1.jpg",
+            image: "/IMAGES/Almaty/1/1.webp",
             alt: "Couple taking photos on mountain top",
             link: "/destinationpackage"
         },
