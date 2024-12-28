@@ -6,11 +6,11 @@ export default function Founder() {
             <div className="flex flex-col md:flex-row items-center gap-8 max-w-6xl mx-auto">
                 <div className="w-full md:w-1/2 relative left-10">
                     <Image
-                        src="/Assets/UserImages/ceo.png"
+                        src="/ceo/Aman_Arora_CEO_Standing_At_Travel_Tech_Asia.jpeg"
                         alt="Founder portrait"
                         width={100}
                         height={150}
-                        className="w-96 grayscale object-cover rounded-lg relative left-10"
+                        className="w-96 object-cover rounded-lg relative left-10"
                     />
                 </div>
                 <div className="w-full md:w-1/2 space-y-4 relative pl-6">

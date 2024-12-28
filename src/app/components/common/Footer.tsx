@@ -38,7 +38,7 @@ export default function Component() {
                                 <div className="text-[#017ae3] mr-4">
                                     <MapPin size={32} />
                                 </div>
-                                <h3 className="text-lg font-semibold text-gray-800">Our Delhi Office</h3>
+                                <h3 className="text-lg font-semibold text-gray-800">Our Head Office</h3>
                             </div>
                             <p className="text-gray-600">
                                 LGF 47, World Trade Center, beside Lalit Hotel, Barakhamba Road, Connaught Place, Delhi 110006
@@ -49,7 +49,7 @@ export default function Component() {
                                 <div className="text-[#017ae3] mr-4">
                                     <MapPin size={32} />
                                 </div>
-                                <h3 className="text-lg font-semibold text-gray-800">Our Noida Office</h3>
+                                <h3 className="text-lg font-semibold text-gray-800">Our Corporate Office</h3>
                             </div>
                             <p className="text-gray-600">
                                 C 207, Logix Cyber Park, C Block, Phase 2, Industrial Area, Sector 62, Noida, Uttar Pradesh 201301
@@ -128,7 +128,7 @@ export default function Component() {
                                     { name: "Destination Package", path: "/destinationpackage" },
                                     { name: "Trending Package", path: "/trendingpackage" },
                                     { name: "Exclusive", path: "/exclusive" },
-                                    { name: "Contact Us", path: "/contact" },
+                                    { name: "Contact Us", path: "/contact-us" },
                                     { name: "Careers", path: "/careers" },
                                 ].map((link) => (
                                     <li key={link.name}>
