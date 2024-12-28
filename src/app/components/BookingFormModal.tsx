@@ -26,14 +26,34 @@
 //         phone: '',
 //         email: ''
 //     });
+//     const [isSubmitting, setIsSubmitting] = useState(false);
+//     const [submitError, setSubmitError] = useState<string | null>(null);
 
 //     const handleSubmit = async (e: React.FormEvent) => {
 //         e.preventDefault();
+//         setIsSubmitting(true);
+//         setSubmitError(null);
+
 //         try {
+//             const response = await fetch('/api/send-booking-email', {
+//                 method: 'POST',
+//                 headers: {
+//                     'Content-Type': 'application/json',
+//                 },
+//                 body: JSON.stringify(formData),
+//             });
+
+//             if (!response.ok) {
+//                 throw new Error('Failed to send email');
+//             }
+
 //             console.log("Form submitted successfully");
 //             onClose();
 //         } catch (error) {
 //             console.error("Error submitting form:", error);
+//             setSubmitError('Failed to send email. Please try again.');
+//         } finally {
+//             setIsSubmitting(false);
 //         }
 //     };
 
@@ -94,8 +114,15 @@
 //                             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
 //                         />
 //                     </div>
-//                     <Button type="submit" className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white hover:from-[#00f6ff] hover:to-[#017ae3] transition-all duration-300">
-//                         Get a Callback
+//                     {submitError && (
+//                         <div className="text-red-500 text-sm">{submitError}</div>
+//                     )}
+//                     <Button
+//                         type="submit"
+//                         className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white hover:from-[#00f6ff] hover:to-[#017ae3] transition-all duration-300"
+//                         disabled={isSubmitting}
+//                     >
+//                         {isSubmitting ? 'Sending...' : 'Get a Callback'}
 //                     </Button>
 //                 </form>
 //             </DialogContent>
@@ -135,6 +162,7 @@ export function BookingFormModal({ isOpen, onClose, destinationName }: BookingFo
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitError, setSubmitError] = useState<string | null>(null);
+    const [isSubmissionSuccessful, setIsSubmissionSuccessful] = useState(false);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -155,7 +183,11 @@ export function BookingFormModal({ isOpen, onClose, destinationName }: BookingFo
             }
 
             console.log("Form submitted successfully");
-            onClose();
+            setIsSubmissionSuccessful(true);
+            setTimeout(() => {
+                onClose();
+                setIsSubmissionSuccessful(false);
+            }, 3000);
         } catch (error) {
             console.error("Error submitting form:", error);
             setSubmitError('Failed to send email. Please try again.');
@@ -173,6 +205,16 @@ export function BookingFormModal({ isOpen, onClose, destinationName }: BookingFo
                         <X className="w-6 h-6" aria-label="Close" />
                     </button>
                 </DialogHeader>
+                {isSubmissionSuccessful && (
+                    <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-90 z-10">
+                        <div className="text-green-600 text-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <p className="text-xl font-semibold">Enquiry submitted successfully!</p>
+                        </div>
+                    </div>
+                )}
                 <form onSubmit={handleSubmit} className="space-y-4">
                     <div className="space-y-2">
                         <Label htmlFor="destination">DESTINATION</Label>
