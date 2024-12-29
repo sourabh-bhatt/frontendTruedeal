@@ -1392,7 +1392,7 @@ const destinationData: { [key: string]: DestinationDetails } = {
     phillipines: {
         name: "Philippines - Tropical Paradise Explorer",
         price: 85000,
-        image: "/IMAGES/philippines/1/1.webp",
+        image: "/webImage/Philippines/1/1.webp",
         packages: 5,
         description: "Embark on an unforgettable journey through the Philippines' most stunning destinations. Experience world-class beaches, vibrant marine life, historic sites, and the warmth of Filipino hospitality across Manila, Palawan, Cebu, and Boracay.",
         variants: [
@@ -1400,7 +1400,7 @@ const destinationData: { [key: string]: DestinationDetails } = {
                 id: "north-luzon",
                 name: "North Luzon",
                 price: 85000,
-                image: "/IMAGES/philippines/1/1.webp",
+                image: "/webImage/Philippines/1/1.webp",
                 duration: { days: 3, nights: 2 },
                 description: "Explore the beautiful landscapes and cultural heritage of North Luzon.",
                 itinerary: [
@@ -1425,7 +1425,7 @@ const destinationData: { [key: string]: DestinationDetails } = {
                 id: "cordillera-cultural-trails",
                 name: "Cordillera Cultural Trails",
                 price: 99000,
-                image: "/IMAGES/philippines/1/2.webp",
+                image: "/webImage/Philippines/1/2.webp",
                 duration: { days: 4, nights: 3 },
                 description: "Discover the cultural heritage and natural beauty of the Cordillera region.",
                 itinerary: [
@@ -1455,7 +1455,7 @@ const destinationData: { [key: string]: DestinationDetails } = {
                 id: "cordillera-round-trip",
                 name: "Cordillera Round Trip",
                 price: 106000,
-                image: "/IMAGES/philippines/1/3.webp",
+                image: "/webImage/Philippines/1/3.webp",
                 duration: { days: 5, nights: 4 },
                 description: "Experience the full beauty of the Cordillera region with this comprehensive tour.",
                 itinerary: [
@@ -1490,7 +1490,7 @@ const destinationData: { [key: string]: DestinationDetails } = {
                 id: "locos-Coast-Cordillera",
                 name: "Ilocos Coast to Cordillera",
                 price: 112119,
-                image: "/IMAGES/philippines/1/1.webp",
+                image: "/webImage/Philippines/1/4.webp",
                 duration: { days: 6, nights: 5 },
                 description: "Explore the beautiful landscapes and cultural heritage of Ilocos Coast to Cordillera.",
                 itinerary:
@@ -1542,37 +1542,6 @@ const destinationData: { [key: string]: DestinationDetails } = {
                         },
                     ]
             },
-            // {
-            //     id: "batanes",
-            //     name: "Batanes",
-            //     price: 39000,
-            //     image: "/IMAGES/philippines/1/1.webp",
-            //     duration: { days: 4, nights: 3 },
-            //     description: "Explore the beautiful landscapes and cultural heritage of Batanes.",
-            //     itinerary: [
-            //         {
-            //             day: 1,
-            //             title: "Arrival Basco",
-            //             description: "Welcome arrival, meet and greet at the Basco Airport. There are only two flights going to Basco via Philippine Airlines at 0640H to 0840H in the morning and 1025H to 1215H in the afternoon."
-            //         },
-            //         {
-            //             day: 2,
-            //             title: "BATANES - SABTANG ISLAND TOUR",
-            //             description: "Mt. Carmel Chapel (Tukon Church), Pag-asa Station (Radar Tukon), Didawud Idjang, Dipnaysupuan Japanese Tunnel, Valugan Boulder Beach, Basco Plaza, Kilometer Zero, and Aman Dangat, Casa Real, Sto. Domingo Church, Basco Lighthouse on top of Naidi Hill, and Vayang Rolling Hills."
-            //         },
-            //         {
-            //             day: 3,
-            //             title: "BATANES - SOUTH BATAN TOUR",
-            //             description: "Pick-up from the hotel to San Vicente Port. The second day is to explore Sabtang Island - one of the nearby islands known for its old and traditional villages composed of native houses made of stones. As the materials used for their abode signify that the island is exposed into a harsh weather condition. Crossing the sea to the island from Basco will take an adventurous journey by crossing the sea. Get into a different realm of landscape that opens into a different world. Be mesmerized by the stunning open landscape of the unknown."
-            //         },
-            //         {
-            //             day: 4,
-            //             title: "Departure BATANES",
-            //             description: "Last day on the island is dedicated to visiting the rest of the island of Basco that offers a more ardent scenery of beauty. The Southern part of the island is magical and wonderfully blessed with a poetic feel of nature."
-            //         }
-
-            //     ]
-            // },
         ],
         inclusions: [
             "Accommodation in comfortable lodges",
@@ -1598,10 +1567,14 @@ const destinationData: { [key: string]: DestinationDetails } = {
             "No refund within 30 days of departure"
         ],
         galleryImages: [
-            "/IMAGES/philippines/1/1.webp",
-            "/IMAGES/philippines/1/2.webp",
-            "/IMAGES/philippines/1/3.webp",
-            "/IMAGES/philippines/1/4.webp"
+            "/webImage/Philippines/1/1.webp",
+            "/webImage/Philippines/1/2.webp",
+            "/webImage/Philippines/1/3.webp",
+            "/webImage/Philippines/1/4.webp",
+            "/webImage/Philippines/2/1.webp",
+            "/webImage/Philippines/2/2.webp",
+            "/webImage/Philippines/2/3.webp",
+            "/webImage/Philippines/2/4.webp",
         ]
     },
 
