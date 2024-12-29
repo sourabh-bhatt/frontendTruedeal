@@ -1395,85 +1395,213 @@ const destinationData: { [key: string]: DestinationDetails } = {
         image: "/IMAGES/philippines/1/1.webp",
         packages: 5,
         description: "Embark on an unforgettable journey through the Philippines' most stunning destinations. Experience world-class beaches, vibrant marine life, historic sites, and the warmth of Filipino hospitality across Manila, Palawan, Cebu, and Boracay.",
-        duration: { days: 8, nights: 7 },
-        itinerary: [
+        variants: [
             {
-                day: 1,
-                title: "Manila Heritage Tour",
-                description: "Arrive in Manila. City tour including Intramuros (walled city), Fort Santiago, San Agustin Church, and Rizal Park. Evening welcome dinner with cultural show at Barbara's Heritage Restaurant."
+                id: "north-luzon",
+                name: "North Luzon",
+                price: 85000,
+                image: "/IMAGES/philippines/1/1.webp",
+                duration: { days: 3, nights: 2 },
+                description: "Explore the beautiful landscapes and cultural heritage of North Luzon.",
+                itinerary: [
+                    {
+                        day: 1,
+                        title: "Manila - Banaue",
+                        description: "Early departure from Manila to Banaue. Experience the relaxing view of farms and low land rice farms and panoramic view of the countryside including stops at Dalton Pass and Ibulao Bridge. Lunch in a local restaurant in San Jose. Check-in at Banaue Grand View Hotel."
+                    },
+                    {
+                        day: 2,
+                        title: "Banaue - Batad Village Tour",
+                        description: "Breakfast at the hotel. Morning departure on a local jeepney then to Batad jump off point for trekking to the village. Trek to the terraces and visit the traditional huts made of hardwood. Enjoy interaction with the locals and then proceed to its waterfalls. Lunch in the village. Return to Banaue by jeepney and proceed to the Banaue View Point."
+                    },
+                    {
+                        day: 3,
+                        title: "Banaue - Manila",
+                        description: "Breakfast at the hotel. Morning departure for your return back to Manila. Short stops for more photo opportunities en route. Lunch in San Jose, Nueva Ecija. Estimated time of arrival in Manila airport."
+                    }
+                ]
             },
             {
-                day: 2,
-                title: "Palawan - Underground River",
-                description: "Fly to Puerto Princesa, Palawan. Visit the UNESCO World Heritage Underground River, one of the New 7 Wonders of Nature. Evening firefly watching tour on the Iwahig River."
+                id: "cordillera-cultural-trails",
+                name: "Cordillera Cultural Trails",
+                price: 99000,
+                image: "/IMAGES/philippines/1/2.webp",
+                duration: { days: 4, nights: 3 },
+                description: "Discover the cultural heritage and natural beauty of the Cordillera region.",
+                itinerary: [
+                    {
+                        day: 1,
+                        title: "Manila - Banaue",
+                        description: "Pick up from the hotel in a private transportation and depart Manila to Banaue, passing by the provinces of Nueva Ecija and Nueva Vizcaya. Lunch in a local restaurant in San Jose. Late afternoon arrival in Banaue. Check-in at Banaue Grand View Hotel."
+                    },
+                    {
+                        day: 2,
+                        title: "Banaue - Batad Village Tour",
+                        description: "Breakfast at the hotel. Morning departure on a local jeepney then to Batad jump off point for trekking to the village. Trek to the terraces and visit the traditional huts made of hardwood. Lunch in the village. Return to Banaue by jeepney and proceed to the Banaue View Point."
+                    },
+                    {
+                        day: 3,
+                        title: "Sagada Tour",
+                        description: "Breakfast at the hotel. Visit Sagada with its old church, villages, and the burial caves. Short trek to the entrance of Lumiang and Sumaguing Cave. Lunch in a local restaurant. Return to Banaue Grand View Hotel."
+                    },
+                    {
+                        day: 4,
+                        title: "Banaue - Manila",
+                        description: "Breakfast at the hotel. Morning departure for your trip back to Manila. Lunch in San Jose, Nueva Ecija. Estimated time of arrival in Manila airport."
+                    }
+                ]
             },
             {
-                day: 3,
-                title: "El Nido Island Hopping",
-                description: "Transfer to El Nido. Tour A island hopping covering Big Lagoon, Secret Lagoon, Shimizu Island, and Seven Commando Beach. Includes snorkeling, kayaking, and beachside lunch."
+                id: "cordillera-round-trip",
+                name: "Cordillera Round Trip",
+                price: 106000,
+                image: "/IMAGES/philippines/1/3.webp",
+                duration: { days: 5, nights: 4 },
+                description: "Experience the full beauty of the Cordillera region with this comprehensive tour.",
+                itinerary: [
+                    {
+                        day: 1,
+                        title: "Manila - Banaue",
+                        description: "Pick up from the airport in a private transportation and depart from Manila to Banaue. Lunch in San Jose. Late afternoon arrival in Banaue. Check-in at Banaue Grand View Hotel."
+                    },
+                    {
+                        day: 2,
+                        title: "Banaue - Batad Village Tour",
+                        description: "Breakfast at the hotel. Morning departure on a local jeepney then to Batad jump off point for trekking to the village. Trek to the terraces and visit the traditional huts made of hardwood. Lunch in the village. Return to Banaue by jeepney and proceed to the Banaue View Point."
+                    },
+                    {
+                        day: 3,
+                        title: "Sagada Tour",
+                        description: "Breakfast at the hotel. Visit Sagada with its old church, villages, and the burial caves. Short trek to the entrance of Lumiang and Sumaguing Cave. Lunch in a local restaurant. Return to Banaue Grand View Hotel."
+                    },
+                    {
+                        day: 4,
+                        title: "Sagada & Baguio Tour",
+                        description: "Early breakfast and check out. Tour at Sagada Town and its environment. Lunch in a Local Restaurant. Proceed to Baguio. Late afternoon arrival in Baguio City. Check-in at Le Monet Hotel."
+                    },
+                    {
+                        day: 5,
+                        title: "Baguio - Manila",
+                        description: "Early breakfast. Check out. Morning tour of Baguio City. Lunch enroute. Return back to Manila airport."
+                    }
+                ]
             },
             {
-                day: 4,
-                title: "El Nido to Cebu",
-                description: "Morning free for beach activities. Afternoon flight to Cebu. Evening food tour experiencing Cebu's famous lechon, dried mangoes, and local delicacies."
+                id: "locos-Coast-Cordillera",
+                name: "Ilocos Coast to Cordillera",
+                price: 112119,
+                image: "/IMAGES/philippines/1/1.webp",
+                duration: { days: 6, nights: 5 },
+                description: "Explore the beautiful landscapes and cultural heritage of Ilocos Coast to Cordillera.",
+                itinerary:
+                    [
+                        {
+                            day: 1,
+                            title: "Manila - Banaue",
+                            description: "Early departure from Manila to Banaue. Experience the relaxing view of farms and low land rice farms and panoramic view of the countryside including stops at Dalton Pass and Ibulao Bridge. Lunch in a local restaurant in San Jose. Check-in at Banaue Grand View Hotel."
+                        },
+                        {
+                            day: 2,
+                            title: "Banaue - Batad Village Tour",
+                            description: "Breakfast at the hotel. Morning departure on a local jeepney then to Batad jump off point for trekking to the village. Trek to the terraces and visit the traditional huts made of hardwood. Enjoy interaction with the locals and then proceed to its waterfalls. Lunch in the village. Return to Banaue by jeepney and proceed to the Banaue View Point."
+                        },
+                        {
+                            day: 3,
+                            title: "Banaue - Manila",
+                            description: "Breakfast at the hotel. Morning departure for your return back to Manila. Short stops for more photo opportunities en route. Lunch in San Jose, Nueva Ecija. Estimated time of arrival in Manila airport."
+                        },
+                        {
+                            day: 1,
+                            title: "Arrival Laoag",
+                            description: "Arrival in Laoag International Airport. Tour of Laoag City (St. Williams Cathedral, Sinking Bell Tower, drive through Ilocos Norte Capitol Building and Tobacco Monopoly market). Visit Ilocos Museum, Aurora Park, Marcos Hall of Justice. Lunch during the tour at a local restaurant. Transfer to Fort Ilocandia Resort(3 Stars) for accommodation."
+                        },
+                        {
+                            day: 2,
+                            title: "Laoag - Vigan",
+                            description: "Early breakfast at the hotel and check-out. Drive to the fishing town of Currimao for lunch. Continue on the road to Vigan. Visit Bantay Church and Bell Tower, Burgos Museum, Crisologo Museum, and Vigan Heritage Town. Take a walking tour of Calle Crisologo where all old heritage houses are in place. Lunch during the tour at a local restaurant. Check in for an overnight stay at Hotel Luna(4 Stars)."
+                        },
+                        {
+                            day: 3,
+                            title: "Vigan - Sagada",
+                            description: "Early breakfast at the hotel then check-out. Travel to Sagada with sightseeing en route to Ilocos towns. Stop at Sta. Maria town for its UNESCO Heritage church. Continue to Sagada with lunch in Cervantes. Check-in at St. Joseph’s Inn. Dinner at Masferre Inn on a personal account."
+                        },
+                        {
+                            day: 4,
+                            title: "Sagada - Bontoc - Banaue",
+                            description: "Breakfast at the hotel and check-out. Visit Sumaguing Cave, Hanging Coffins Burial Cave, and Sagada Rice Terraces. Travel to Bontoc and visit the Bontoc Museum. Lunch in a local restaurant in Bontoc. Continue to Banaue and stop for a photo opportunity in Banaue Viewpoint. Check-in at Banaue Grand View Hotel."
+                        },
+                        {
+                            day: 5,
+                            title: "Banaue - Batad - Banaue",
+                            description: "Breakfast at the hotel. Depart on a jeepney for a tour of the rice terraces and its nearby villages. Walking in Batad gives a closer look at the Ifugao community and their well-preserved native culture. Lunch in a local restaurant. Return to Banaue Grand View Hotel."
+                        },
+                        {
+                            day: 6,
+                            title: "Banaue - Manila",
+                            description: "Breakfast at the hotel. Early morning departure from Banaue to Manila passing by the Central Plains of Luzon. Lunch at San Jose. Continue the journey to Manila, enjoying the scenic mountainous landscape of Nueva Vizcaya to Ifugao province. Arrival in Manila by late afternoon."
+                        },
+                    ]
             },
-            {
-                day: 5,
-                title: "Cebu & Bohol Tour",
-                description: "Day trip to Bohol. Visit Chocolate Hills, Tarsier Sanctuary, Loboc River Cruise with lunch, Blood Compact Site, and Baclayon Church. Return to Cebu."
-            },
-            {
-                day: 6,
-                title: "Boracay Paradise",
-                description: "Morning flight to Boracay. Afternoon beach hopping tour including Puka Shell Beach, Crystal Cove, and Magic Island. Sunset paraw sailing experience."
-            },
-            {
-                day: 7,
-                title: "Boracay Activities",
-                description: "Morning water activities: parasailing, banana boat, and helmet diving. Afternoon spa treatment. Evening pub crawl at D'Mall and White Beach stations."
-            },
-            {
-                day: 8,
-                title: "Departure",
-                description: "Free morning for last-minute shopping. Transfer to Caticlan Airport for return flight via Manila."
-            }
+            // {
+            //     id: "batanes",
+            //     name: "Batanes",
+            //     price: 39000,
+            //     image: "/IMAGES/philippines/1/1.webp",
+            //     duration: { days: 4, nights: 3 },
+            //     description: "Explore the beautiful landscapes and cultural heritage of Batanes.",
+            //     itinerary: [
+            //         {
+            //             day: 1,
+            //             title: "Arrival Basco",
+            //             description: "Welcome arrival, meet and greet at the Basco Airport. There are only two flights going to Basco via Philippine Airlines at 0640H to 0840H in the morning and 1025H to 1215H in the afternoon."
+            //         },
+            //         {
+            //             day: 2,
+            //             title: "BATANES - SABTANG ISLAND TOUR",
+            //             description: "Mt. Carmel Chapel (Tukon Church), Pag-asa Station (Radar Tukon), Didawud Idjang, Dipnaysupuan Japanese Tunnel, Valugan Boulder Beach, Basco Plaza, Kilometer Zero, and Aman Dangat, Casa Real, Sto. Domingo Church, Basco Lighthouse on top of Naidi Hill, and Vayang Rolling Hills."
+            //         },
+            //         {
+            //             day: 3,
+            //             title: "BATANES - SOUTH BATAN TOUR",
+            //             description: "Pick-up from the hotel to San Vicente Port. The second day is to explore Sabtang Island - one of the nearby islands known for its old and traditional villages composed of native houses made of stones. As the materials used for their abode signify that the island is exposed into a harsh weather condition. Crossing the sea to the island from Basco will take an adventurous journey by crossing the sea. Get into a different realm of landscape that opens into a different world. Be mesmerized by the stunning open landscape of the unknown."
+            //         },
+            //         {
+            //             day: 4,
+            //             title: "Departure BATANES",
+            //             description: "Last day on the island is dedicated to visiting the rest of the island of Basco that offers a more ardent scenery of beauty. The Southern part of the island is magical and wonderfully blessed with a poetic feel of nature."
+            //         }
+
+            //     ]
+            // },
         ],
         inclusions: [
-            "All domestic flights (Manila-Puerto Princesa-Cebu-Boracay-Manila)",
-            "7 nights accommodation in 4-star hotels",
+            "Accommodation in comfortable lodges",
+            "All specified activities and equipment",
+            "Professional English-speaking guides",
+            "Safety equipment and instructions",
             "Daily breakfast and selected meals",
-            "Private air-conditioned transfers",
-            "Underground River tour with permits",
-            "El Nido island hopping with lunch",
-            "Bohol countryside tour with lunch",
-            "Boracay water activities package",
-            "English-speaking guides",
-            "Entrance fees to all attractions",
-            "Hotel and airport transfers",
-            "Welcome dinner with cultural show"
+            "Airport transfers",
+            "Winter clothing rental",
+            "30% discount for children under 15 years"
         ],
         exclusions: [
             "International flights",
             "Travel insurance",
-            "Terminal fees and tourist taxes",
-            "Optional tours and activities",
-            "Personal expenses and shopping",
-            "Drinks during meals",
-            "Tips for guides and drivers",
-            "Early check-in/late check-out",
-            "Excess baggage charges"
+            "Optional activities",
+            "Personal expenses",
+            "Alcoholic beverages",
+            "Additional transfers not mentioned"
         ],
         cancellationPolicy: [
-            "Free cancellation up to 45 days before departure",
-            "75% refund up to 30 days before departure",
-            "50% refund up to 15 days before departure",
-            "No refund within 15 days of departure"
+            "Free cancellation up to 60 days before departure",
+            "50% refund up to 30 days before departure",
+            "No refund within 30 days of departure"
         ],
         galleryImages: [
-            "/IMAGES/philippines/1/1.webp", // Underground River
-            "/IMAGES/philippines/1/2.webp", // El Nido Lagoon
-            "/IMAGES/philippines/1/3.webp", // Chocolate Hills
-            "/IMAGES/philippines/1/4.webp"  // Boracay White Beach
+            "/IMAGES/philippines/1/1.webp",
+            "/IMAGES/philippines/1/2.webp",
+            "/IMAGES/philippines/1/3.webp",
+            "/IMAGES/philippines/1/4.webp"
         ]
     },
 
@@ -2286,7 +2414,189 @@ export default function DestinationDetails() {
                                             <h2 className="text-xl font-bold mb-6">Day Wise Itinerary</h2>
                                             <div className="space-y-8">
                                                 {variant.itinerary.map((day) => (
-                                                    <div key={day.day} className="flex gap-4 group">
+                                                    <div key={`${day.day}-${day.title}`} className="flex gap-4 group">
+                                                        <div className="flex-shrink-0 relative">
+                                                            <div className="w-3 h-3 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] rounded-full mt-2 group-hover:shadow-lg transition-all duration-300"></div>
+                                                            <div className="absolute top-5 bottom-0 left-1.5 w-0.5 bg-gradient-to-b from-[#017ae3] to-transparent"></div>
+                                                        </div>
+                                                        <div className="group-hover:translate-x-2 transition-transform duration-300">
+                                                            <div className="text-sm text-gray-500">Day {day.day}</div>
+                                                            <div className="font-medium text-gray-900">{day.title}</div>
+                                                            <div className="text-sm text-gray-600 mt-1">{day.description}</div>
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </section>
+
+                                        <section>
+                                            <h2 className="text-xl font-bold mb-6">Inclusions</h2>
+                                            <div className="space-y-2">
+                                                {destinationData.inclusions.map((inclusion, index) => (
+                                                    <div key={index} className="flex items-center gap-2 text-gray-600">
+                                                        <CheckCircle className="w-4 h-4 text-green-600" />
+                                                        {inclusion}
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </section>
+
+                                        <section>
+                                            <h2 className="text-xl font-bold mb-6">Exclusions</h2>
+                                            <div className="space-y-2">
+                                                {destinationData.exclusions.map((exclusion, index) => (
+                                                    <div key={index} className="flex items-center gap-2 text-gray-600">
+                                                        <XCircle className="w-4 h-4 text-red-600" />
+                                                        {exclusion}
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </section>
+
+                                        <section>
+                                            <h2 className="text-xl font-bold mb-6">Cancellation Policy</h2>
+                                            <div className="space-y-2">
+                                                {destinationData.cancellationPolicy.map((policy, index) => (
+                                                    <div key={index} className="flex items-center gap-2 text-gray-600">
+                                                        <AlertCircle className="w-4 h-4 text-yellow-600" />
+                                                        {policy}
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
+                            </TabsContent>
+                        ))}
+                    </Tabs>
+
+                    <GalleryModal
+                        isOpen={isGalleryOpen}
+                        onClose={() => setIsGalleryOpen(false)}
+                        images={destinationData.galleryImages}
+                    />
+
+                    <BookingFormModal
+                        isOpen={isBookingModalOpen}
+                        onClose={() => setIsBookingModalOpen(false)}
+                        destinationName={
+                            selectedVariant
+                                ? `${destinationData.name} - ${destinationData.variants.find(v => v.id === selectedVariant)?.name}`
+                                : destinationData.name
+                        }
+                    />
+                </main>
+
+                <Trending />
+                <Destinations />
+                <HappyCustomers />
+                <Domestic />
+                <ExoticDestinations />
+                <Europe />
+                <HappyCustomers />
+                <Gallery />
+            </div>
+        );
+    }
+
+    if (destination === 'phillipines' && destinationData.variants) {
+        return (
+            <div className="min-h-screen bg-gray-50 mt-10">
+                <main className="container mx-auto px-4 py-8 max-w-7xl">
+                    <Tabs
+                        defaultValue={destinationData.variants[0].id}
+                        className="mb-8"
+                        onValueChange={(value) => setSelectedVariant(value)}
+                    >
+                        <TabsList className="grid grid-cols-4 w-full">
+                            {destinationData.variants.map((variant) => (
+                                <TabsTrigger
+                                    key={variant.id}
+                                    value={variant.id}
+                                    className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#017ae3] data-[state=active]:to-[#00f6ff] data-[state=active]:text-white"
+                                >
+                                    {variant.name}
+                                </TabsTrigger>
+                            ))}
+                        </TabsList>
+
+                        {destinationData.variants.map((variant) => (
+                            <TabsContent key={variant.id} value={variant.id}>
+                                <div className="relative rounded-3xl overflow-hidden mb-8 shadow-xl">
+                                    <Image
+                                        src={variant.image}
+                                        alt={variant.name}
+                                        width={1400}
+                                        height={400}
+                                        className="w-full h-[400px] object-cover"
+                                        priority
+                                    />
+                                    <button
+                                        onClick={() => setIsGalleryOpen(true)}
+                                        className="absolute bottom-4 left-4 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white px-6 py-2.5 rounded-full flex items-center gap-2 hover:shadow-lg transition-all duration-300"
+                                    >
+                                        <Camera className="w-4 h-4" />
+                                        View Gallery
+                                    </button>
+                                    <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-2xl max-w-xs">
+                                        <div className="flex items-center gap-2 text-sm text-gray-600 mb-2">
+                                            <Calendar className="w-4 h-4" />
+                                            {variant.duration.days} Days / {variant.duration.nights} Nights
+                                        </div>
+                                        <div className="text-2xl font-bold mb-1">₹{variant.price.toLocaleString()}</div>
+                                        <div className="text-sm text-gray-600 mb-4">Per Person</div>
+                                        <Button
+                                            className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white mb-4 transition-all duration-500"
+                                            onClick={() => {
+                                                setSelectedVariant(variant.id);
+                                                setIsBookingModalOpen(true);
+                                            }}
+                                        >
+                                            Book Now
+                                        </Button>
+                                        <div className="text-center">
+                                            <div className="text-sm font-medium mb-1">Need Help?</div>
+                                            <div className="text-xs text-gray-600 mb-2">
+                                                Our Destination expert will be happy to help resolve your queries
+                                            </div>
+                                            <div className="flex items-center justify-center gap-2 text-[#017ae3] font-medium">
+                                                <Phone className="w-4 h-4" />
+                                                +91 8447498498
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="bg-white rounded-2xl shadow-lg p-8">
+                                    <h1 className="text-3xl font-bold mb-4 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] bg-clip-text text-transparent">
+                                        {variant.name}
+                                    </h1>
+                                    <div className="flex items-center gap-6 mb-8 text-sm">
+                                        <div className="flex items-center gap-2 text-gray-600">
+                                            <MapPin className="w-4 h-4 text-[#017ae3]" />
+                                            {variant.name}
+                                        </div>
+                                        <div className="flex items-center gap-2 text-gray-600">
+                                            <Clock className="w-4 h-4 text-[#017ae3]" />
+                                            {variant.duration.nights} Nights
+                                        </div>
+                                        <div className="flex items-center gap-2 text-gray-600">
+                                            <Calendar className="w-4 h-4 text-[#017ae3]" />
+                                            {variant.duration.days} Days
+                                        </div>
+                                    </div>
+
+                                    <div className="space-y-12">
+                                        <section>
+                                            <h2 className="text-xl font-bold mb-4">Overview</h2>
+                                            <p className="text-gray-600 leading-relaxed">{variant.description}</p>
+                                        </section>
+
+                                        <section>
+                                            <h2 className="text-xl font-bold mb-6">Day Wise Itinerary</h2>
+                                            <div className="space-y-8">
+                                                {variant.itinerary.map((day) => (
+                                                    <div key={`${day.day}-${day.title}`} className="flex gap-4 group">
                                                         <div className="flex-shrink-0 relative">
                                                             <div className="w-3 h-3 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] rounded-full mt-2 group-hover:shadow-lg transition-all duration-300"></div>
                                                             <div className="absolute top-5 bottom-0 left-1.5 w-0.5 bg-gradient-to-b from-[#017ae3] to-transparent"></div>
@@ -2457,7 +2767,7 @@ export default function DestinationDetails() {
                             <h2 className="text-xl font-bold mb-6">Day Wise Itinerary</h2>
                             <div className="space-y-8">
                                 {destinationData.itinerary?.map((day) => (
-                                    <div key={day.day} className="flex gap-4 group">
+                                    <div key={`${day.day}-${day.title}`} className="flex gap-4 group">
                                         <div className="flex-shrink-0 relative">
                                             <div className="w-3 h-3 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] rounded-full mt-2 group-hover:shadow-lg transition-all duration-300"></div>
                                             <div className="absolute top-5 bottom-0 left-1.5 w-0.5 bg-gradient-to-b from-[#017ae3] to-transparent"></div>
