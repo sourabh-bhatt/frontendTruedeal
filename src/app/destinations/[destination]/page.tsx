@@ -12,7 +12,6 @@ import Destinations from '@/app/components/homepage/Destinations';
 import Shimmer from '@/components/ui/shimmer';
 import HappyCustomers from '@/app/components/Ad/HappyCustomers';
 import Domestic from '@/app/components/homepage/Domestic';
-import ExoticDaestinations from '@/app/components/homepage/Exotic';
 import Europe from '@/app/components/homepage/Europe';
 import Gallery from '@/app/components/homepage/Gallery';
 import ExoticDestinations from '@/app/components/homepage/Exotic';
@@ -1479,52 +1478,47 @@ const destinationData: { [key: string]: DestinationDetails } = {
     },
 
     kenya: {
-        name: "Kenya - Safari Adventure",
-        price: 275000,
-        image: "/IMAGES/kenya/1/1.webp",
-        packages: 2,
+        name: "Kenya - Nairobi Adventure",
+        price: 211775,
+        image: "/webImage/kenya/1/2.webp",
+        packages: 1,
         description: "Experience the ultimate African safari in Kenya's most iconic national parks. Witness the Great Migration, spot the Big Five, and immerse yourself in Maasai culture.",
-        duration: { days: 8, nights: 7 },
+        duration: { days: 7, nights: 6 },
         itinerary: [
             {
                 day: 1,
                 title: "Arrival in Nairobi",
-                description: "Arrive in Nairobi and transfer to hotel. Visit Giraffe Center and David Sheldrick Wildlife Trust."
+                description: "Arrive in Nairobi and transfer to the Radisson Blu Hotel. Visit Giraffe Center and David Sheldrick Wildlife Trust."
             },
             {
                 day: 2,
-                title: "Nairobi to Masai Mara",
-                description: "Drive to Masai Mara National Reserve. Afternoon game drive to spot wildlife."
+                title: "Nairobi to Amboseli National Park",
+                description: "Drive to Amboseli National Park. Check-in at Kibo Safari Camp. Afternoon game drive to spot wildlife with Mount Kilimanjaro as a backdrop."
             },
             {
                 day: 3,
-                title: "Masai Mara Safari",
-                description: "Full-day game drive in Masai Mara. Optional hot air balloon safari at sunrise."
+                title: "Amboseli National Park",
+                description: "Enjoy a full day of guided game drives in Amboseli National Park. Witness the diverse wildlife and majestic elephants with evening relaxation at the camp."
             },
             {
                 day: 4,
-                title: "Masai Village Experience",
-                description: "Morning game drive. Afternoon visit to traditional Maasai village."
+                title: "Amboseli to Lake Nakuru National Park",
+                description: "Transfer to Lake Nakuru National Park. Check-in at Lake Nakuru Sopa Lodge. Afternoon game drive to see flamingos, rhinos, and tree-climbing lions."
             },
             {
                 day: 5,
-                title: "Lake Nakuru National Park",
-                description: "Drive to Lake Nakuru. Afternoon game drive to see flamingos and rhinos."
+                title: "Lake Nakuru to Masai Mara National Reserve",
+                description: "Drive to Masai Mara National Reserve. Check-in at Keekorok Lodge. Afternoon game drive to explore the famous savannah and its abundant wildlife."
             },
             {
                 day: 6,
-                title: "Amboseli National Park",
-                description: "Transfer to Amboseli. Game drive with views of Mount Kilimanjaro."
+                title: "Masai Mara National Reserve",
+                description: "Full-day game drive in Masai Mara. Explore the wildlife, from big cats to elephants and wildebeests. Option for a sunrise hot air balloon safari."
             },
             {
                 day: 7,
-                title: "Amboseli Safari",
-                description: "Full-day game drive in Amboseli. Evening sundowner experience."
-            },
-            {
-                day: 8,
-                title: "Departure",
-                description: "Return to Nairobi for departure flight."
+                title: "Departure from Nairobi",
+                description: "After breakfast, drive back to Nairobi. Drop-off at the airport for your departure flight."
             }
         ],
         inclusions: [
@@ -1550,10 +1544,15 @@ const destinationData: { [key: string]: DestinationDetails } = {
             "No refund within 30 days of departure"
         ],
         galleryImages: [
-            "/IMAGES/kenya/1/1.webp",
-            "/IMAGES/kenya/1/2.webp",
-            "/IMAGES/kenya/1/3.webp",
-            "/IMAGES/kenya/1/4.webp"
+            "/webImage/kenya/1/2.webp",
+            "/webImage/kenya/1/1.webp",
+            "/webImage/kenya/1/3.webp",
+            "/webImage/kenya/1/4.webp",
+            "/webImage/kenya/2/2.webp",
+            "/webImage/kenya/2/1.webp",
+            "/webImage/kenya/2/3.webp",
+            "/webImage/kenya/2/4.webp"
+
         ]
     },
 
@@ -2191,10 +2190,6 @@ export default function DestinationDetails() {
     }
 
     if (destination === 'finland' && destinationData.variants) {
-        const selectedVariantData = selectedVariant
-            ? destinationData.variants.find(v => v.id === selectedVariant)
-            : destinationData.variants[0];
-
         return (
             <div className="min-h-screen bg-gray-50 mt-10">
                 <main className="container mx-auto px-4 py-8 max-w-7xl">
