@@ -5,6 +5,7 @@ import Navbar from "./components/common/Navbar";
 import Footer from "./components/common/Footer";
 import { ClerkProvider } from "@clerk/nextjs";
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import Chatbot from "./components/chatbot/Chatbot";
 
 const poppins = localFont({
   src: [
@@ -123,6 +124,7 @@ export default function RootLayout({
           <Navbar />
           {children}
           <SpeedInsights />
+          <Chatbot />
           <Footer />
         </body>
       </html >

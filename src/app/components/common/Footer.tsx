@@ -99,7 +99,9 @@ export default function Component() {
                                 height={45}
                                 className="mb-4"
                             />
+                            <h1 className="font-bold font-poppins mb-2">TRUEDEAL TRAVELS PRIVATE LIMITED</h1>
                             <p className="text-gray-500 text-sm mb-4">
+
                                 Truedeal is your trusted partner for seamless travel experiences, forex solutions, and comprehensive travel services since 2014.
                             </p>
                             <div className="flex gap-4">
@@ -130,6 +132,8 @@ export default function Component() {
                                     { name: "Exclusive", path: "/exclusive" },
                                     { name: "Contact Us", path: "/contact-us" },
                                     { name: "Careers", path: "/careers" },
+                                    { name: "Terms & conditions", path: "/terms&conditions" },
+                                    { name: "Refund & Cancelation", path: "/refund&cancellation" },
                                 ].map((link) => (
                                     <li key={link.name}>
                                         <Link href={link.path} className="text-gray-500 hover:text-gray-700 text-sm">
