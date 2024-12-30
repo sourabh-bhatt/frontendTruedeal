@@ -21,7 +21,7 @@ export default function TermsAndCond() {
                 </li>
                 <li>100% of the total tour cost
                     must be paid 21 days before
-                    the date of trave
+                    the date of travel.
                 </li>
             </div>
         </section>
