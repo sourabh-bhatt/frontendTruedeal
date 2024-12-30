@@ -12,21 +12,23 @@ import Destinations from '@/app/components/homepage/Destinations';
 import Shimmer from '@/components/ui/shimmer';
 import HappyCustomers from '@/app/components/Ad/HappyCustomers';
 import Domestic from '@/app/components/homepage/Domestic';
-import ExoticDestinations from '@/app/components/homepage/Exotic';
 import Europe from '@/app/components/homepage/Europe';
 import Gallery from '@/app/components/homepage/Gallery';
+import ExoticDestinations from '@/app/components/homepage/Exotic';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 interface DestinationDetails {
     name: string;
-    price: number;
+    price?: number; // Make optional since variants may have their own prices
     image: string;
+    baseImage?: string; // Add baseImage property
     packages: number;
     description: string;
-    duration: {
+    duration?: {  // Make optional since variants have their own duration
         days: number;
         nights: number;
     };
-    itinerary: Array<{
+    itinerary?: Array<{  // Make optional since variants have their own itinerary
         day: number;
         title: string;
         description: string;
@@ -35,6 +37,22 @@ interface DestinationDetails {
     exclusions: string[];
     cancellationPolicy: string[];
     galleryImages: string[];
+    variants?: Array<{
+        id: string;
+        name: string;
+        price: number;
+        image: string;
+        duration: {
+            days: number;
+            nights: number;
+        };
+        description: string;
+        itinerary: Array<{
+            day: number;
+            title: string;
+            description: string;
+        }>;
+    }>;
 }
 
 
@@ -1183,58 +1201,172 @@ const destinationData: { [key: string]: DestinationDetails } = {
     },
 
     finland: {
-        name: "Finland - Northern Lights & Arctic Adventure",
-        price: 245000,
+        name: "Finland - Arctic Adventures",
         image: "/IMAGES/finland/1/1.webp",
-        packages: 2,
-        description: "Experience the magic of the Arctic Circle with this enchanting Finnish adventure. Witness the spectacular Northern Lights, stay in glass igloos, and enjoy unique winter activities in Lapland.",
-        duration: { days: 7, nights: 6 },
-        itinerary: [
+        baseImage: "/IMAGES/finland/1/1.webp",
+        packages: 4,
+        description: "Experience the magic of the Arctic Circle with these enchanting Finnish adventures. Choose from various packages offering unique winter activities, Northern Lights viewing, and unforgettable Arctic experiences.",
+        variants: [
             {
-                day: 1,
-                title: "Arrival in Helsinki",
-                description: "Arrive in Helsinki and transfer to your hotel. Evening city tour including Senate Square, Helsinki Cathedral, and the unique Rock Church."
+                id: "nature-escape",
+                name: "Nature Escape",
+                price: 85000, // 7600 SEK converted to INR approximately
+                image: "/IMAGES/finland/1/1.webp",
+                duration: { days: 4, nights: 3 },
+                description: "Perfect 4-day Arctic adventure for 10-14 persons with snowmobile rides and reindeer visits.",
+                itinerary: [
+                    {
+                        day: 1,
+                        title: "Arrival Day",
+                        description: "Arrive and check in to rooms. Evening orientation and welcome dinner."
+                    },
+                    {
+                        day: 2,
+                        title: "Snowmobile Adventure",
+                        description: "Half day snowmobile adventure (2 persons share a snowmobile) followed by a 1.5-hour reindeer visit experience."
+                    },
+                    {
+                        day: 3,
+                        title: "Husky Safari",
+                        description: "Half day husky safari (2 persons share a sled, transfer to kennel by mini bus). Optional forenoon or afternoon activities available."
+                    },
+                    {
+                        day: 4,
+                        title: "Departure",
+                        description: "Breakfast and departure. Transfer to airport with lasting memories of your Arctic adventure."
+                    }
+                ]
             },
             {
-                day: 2,
-                title: "Helsinki to Rovaniemi",
-                description: "Fly to Rovaniemi, the official hometown of Santa Claus. Visit Santa Claus Village and cross the Arctic Circle. Evening Northern Lights hunting expedition."
+                id: "nature-escape-xl",
+                name: "Nature Escape XL",
+                price: 99000, // 8900 SEK converted to INR approximately
+                image: "/IMAGES/finland/1/2.webp",
+                duration: { days: 5, nights: 4 },
+                description: "Extended 5-day Arctic experience for 10-14 persons featuring snowmobile, husky, and reindeer adventures.",
+                itinerary: [
+                    {
+                        day: 1,
+                        title: "Arrival Day",
+                        description: "Arrive and check in to rooms. Evening orientation and welcome dinner."
+                    },
+                    {
+                        day: 2,
+                        title: "Snowmobile Adventure",
+                        description: "Half day snowmobile adventure (2 persons share a snowmobile). Optional forenoon or afternoon activities available."
+                    },
+                    {
+                        day: 3,
+                        title: "Husky Safari",
+                        description: "Half day husky safari (2 persons share a sled, transfer to kennel by mini bus). Optional forenoon or afternoon activities."
+                    },
+                    {
+                        day: 4,
+                        title: "Reindeer Experience",
+                        description: "Reindeer visit 1.5 hours. Optional forenoon or afternoon activities available."
+                    },
+                    {
+                        day: 5,
+                        title: "Departure",
+                        description: "Breakfast and departure. Transfer to airport."
+                    }
+                ]
             },
             {
-                day: 3,
-                title: "Arctic Activities",
-                description: "Experience husky sledding and reindeer farm visit. Evening in a glass igloo for Northern Lights viewing."
+                id: "magic-lapland",
+                name: "Magic Lapland",
+                price: 98000, // 8850 SEK converted to INR approximately
+                image: "/IMAGES/finland/1/3.webp",
+                duration: { days: 5, nights: 4 },
+                description: "5-day magical Lapland experience for 10-14 persons including Northern Lights viewing.",
+                itinerary: [
+                    {
+                        day: 1,
+                        title: "Arrival Day",
+                        description: "Arrive and check in to rooms. Evening orientation and welcome dinner."
+                    },
+                    {
+                        day: 2,
+                        title: "Husky Safari & Northern Lights",
+                        description: "Half day husky safari (2 persons share a sled) followed by evening Northern Lights walk."
+                    },
+                    {
+                        day: 3,
+                        title: "Optional Activities",
+                        description: "Full day for optional activities of your choice."
+                    },
+                    {
+                        day: 4,
+                        title: "Snowmobile Adventure",
+                        description: "Half day snowmobile adventure (2 persons share a snowmobile). Optional forenoon or afternoon activities."
+                    },
+                    {
+                        day: 5,
+                        title: "Departure",
+                        description: "Breakfast and departure. Transfer to airport."
+                    }
+                ]
             },
             {
-                day: 4,
-                title: "Ice Hotel Experience",
-                description: "Visit the Snow Hotel, ice restaurant, and participate in ice sculpting. Evening snowmobile safari."
-            },
-            {
-                day: 5,
-                title: "Kemi Ice Breaker Cruise",
-                description: "Take the famous Sampo Icebreaker cruise. Optional ice floating experience in the frozen Baltic Sea."
-            },
-            {
-                day: 6,
-                title: "Finnish Wilderness",
-                description: "Cross-country skiing lesson and traditional Finnish sauna experience. Final Northern Lights hunting expedition."
-            },
-            {
-                day: 7,
-                title: "Departure",
-                description: "Transfer to Helsinki Airport for your departure flight."
+                id: "grand-arctic",
+                name: "Grand Arctic Week",
+                price: 152000, // 13700 SEK converted to INR approximately
+                image: "/IMAGES/finland/1/4.webp",
+                duration: { days: 8, nights: 7 },
+                description: "Complete 8-day Arctic experience for 10-14 persons featuring diverse winter activities.",
+                itinerary: [
+                    {
+                        day: 1,
+                        title: "Arrival Day",
+                        description: "Arrive and check in to rooms. Evening orientation and welcome dinner."
+                    },
+                    {
+                        day: 2,
+                        title: "Husky Safari",
+                        description: "Half day husky safari (2 persons share a sled, transfer to kennel by mini bus)."
+                    },
+                    {
+                        day: 3,
+                        title: "Snowshoe Adventure",
+                        description: "2-hour snowshoe walk with optional activities in forenoon or afternoon."
+                    },
+                    {
+                        day: 4,
+                        title: "Snowmobile Adventure",
+                        description: "Half day snowmobile adventure (2 persons share a snowmobile)."
+                    },
+                    {
+                        day: 5,
+                        title: "Cross-country Skiing",
+                        description: "2-hour cross-country skiing tour with optional activities."
+                    },
+                    {
+                        day: 6,
+                        title: "Arctic Moose Farm",
+                        description: "Visit to Arctic Moose Farm (1.5 hours + transfer by bus)."
+                    },
+                    {
+                        day: 7,
+                        title: "Optional Activities",
+                        description: "Full day for optional activities of your choice."
+                    },
+                    {
+                        day: 8,
+                        title: "Departure",
+                        description: "Breakfast and departure. Transfer to airport."
+                    }
+                ]
             }
         ],
         inclusions: [
-            "Accommodation in Helsinki and Rovaniemi",
-            "Glass igloo stay for one night",
-            "All transfers and domestic flights",
-            "Northern Lights hunting expeditions",
-            "Husky and reindeer safari",
-            "Sampo Icebreaker cruise",
-            "Winter activity equipment",
-            "Daily breakfast and selected dinners"
+            "Accommodation in comfortable Arctic lodges",
+            "All specified activities and equipment",
+            "Professional English-speaking guides",
+            "Safety equipment and instructions",
+            "Daily breakfast and selected meals",
+            "Airport transfers",
+            "Winter clothing rental",
+            "30% discount for children under 15 years"
         ],
         exclusions: [
             "International flights",
@@ -1242,7 +1374,7 @@ const destinationData: { [key: string]: DestinationDetails } = {
             "Optional activities",
             "Personal expenses",
             "Alcoholic beverages",
-            "Additional Northern Lights tours"
+            "Additional transfers not mentioned"
         ],
         cancellationPolicy: [
             "Free cancellation up to 60 days before departure",
@@ -1260,138 +1392,234 @@ const destinationData: { [key: string]: DestinationDetails } = {
     phillipines: {
         name: "Philippines - Tropical Paradise Explorer",
         price: 85000,
-        image: "/IMAGES/philippines/1/1.webp",
+        image: "/webImage/Philippines/1/1.webp",
         packages: 5,
         description: "Embark on an unforgettable journey through the Philippines' most stunning destinations. Experience world-class beaches, vibrant marine life, historic sites, and the warmth of Filipino hospitality across Manila, Palawan, Cebu, and Boracay.",
-        duration: { days: 8, nights: 7 },
-        itinerary: [
+        variants: [
             {
-                day: 1,
-                title: "Manila Heritage Tour",
-                description: "Arrive in Manila. City tour including Intramuros (walled city), Fort Santiago, San Agustin Church, and Rizal Park. Evening welcome dinner with cultural show at Barbara's Heritage Restaurant."
+                id: "north-luzon",
+                name: "North Luzon",
+                price: 85000,
+                image: "/webImage/Philippines/1/1.webp",
+                duration: { days: 3, nights: 2 },
+                description: "Explore the beautiful landscapes and cultural heritage of North Luzon.",
+                itinerary: [
+                    {
+                        day: 1,
+                        title: "Manila - Banaue",
+                        description: "Early departure from Manila to Banaue. Experience the relaxing view of farms and low land rice farms and panoramic view of the countryside including stops at Dalton Pass and Ibulao Bridge. Lunch in a local restaurant in San Jose. Check-in at Banaue Grand View Hotel."
+                    },
+                    {
+                        day: 2,
+                        title: "Banaue - Batad Village Tour",
+                        description: "Breakfast at the hotel. Morning departure on a local jeepney then to Batad jump off point for trekking to the village. Trek to the terraces and visit the traditional huts made of hardwood. Enjoy interaction with the locals and then proceed to its waterfalls. Lunch in the village. Return to Banaue by jeepney and proceed to the Banaue View Point."
+                    },
+                    {
+                        day: 3,
+                        title: "Banaue - Manila",
+                        description: "Breakfast at the hotel. Morning departure for your return back to Manila. Short stops for more photo opportunities en route. Lunch in San Jose, Nueva Ecija. Estimated time of arrival in Manila airport."
+                    }
+                ]
             },
             {
-                day: 2,
-                title: "Palawan - Underground River",
-                description: "Fly to Puerto Princesa, Palawan. Visit the UNESCO World Heritage Underground River, one of the New 7 Wonders of Nature. Evening firefly watching tour on the Iwahig River."
+                id: "cordillera-cultural-trails",
+                name: "Cordillera Cultural Trails",
+                price: 99000,
+                image: "/webImage/Philippines/1/2.webp",
+                duration: { days: 4, nights: 3 },
+                description: "Discover the cultural heritage and natural beauty of the Cordillera region.",
+                itinerary: [
+                    {
+                        day: 1,
+                        title: "Manila - Banaue",
+                        description: "Pick up from the hotel in a private transportation and depart Manila to Banaue, passing by the provinces of Nueva Ecija and Nueva Vizcaya. Lunch in a local restaurant in San Jose. Late afternoon arrival in Banaue. Check-in at Banaue Grand View Hotel."
+                    },
+                    {
+                        day: 2,
+                        title: "Banaue - Batad Village Tour",
+                        description: "Breakfast at the hotel. Morning departure on a local jeepney then to Batad jump off point for trekking to the village. Trek to the terraces and visit the traditional huts made of hardwood. Lunch in the village. Return to Banaue by jeepney and proceed to the Banaue View Point."
+                    },
+                    {
+                        day: 3,
+                        title: "Sagada Tour",
+                        description: "Breakfast at the hotel. Visit Sagada with its old church, villages, and the burial caves. Short trek to the entrance of Lumiang and Sumaguing Cave. Lunch in a local restaurant. Return to Banaue Grand View Hotel."
+                    },
+                    {
+                        day: 4,
+                        title: "Banaue - Manila",
+                        description: "Breakfast at the hotel. Morning departure for your trip back to Manila. Lunch in San Jose, Nueva Ecija. Estimated time of arrival in Manila airport."
+                    }
+                ]
             },
             {
-                day: 3,
-                title: "El Nido Island Hopping",
-                description: "Transfer to El Nido. Tour A island hopping covering Big Lagoon, Secret Lagoon, Shimizu Island, and Seven Commando Beach. Includes snorkeling, kayaking, and beachside lunch."
+                id: "cordillera-round-trip",
+                name: "Cordillera Round Trip",
+                price: 106000,
+                image: "/webImage/Philippines/1/3.webp",
+                duration: { days: 5, nights: 4 },
+                description: "Experience the full beauty of the Cordillera region with this comprehensive tour.",
+                itinerary: [
+                    {
+                        day: 1,
+                        title: "Manila - Banaue",
+                        description: "Pick up from the airport in a private transportation and depart from Manila to Banaue. Lunch in San Jose. Late afternoon arrival in Banaue. Check-in at Banaue Grand View Hotel."
+                    },
+                    {
+                        day: 2,
+                        title: "Banaue - Batad Village Tour",
+                        description: "Breakfast at the hotel. Morning departure on a local jeepney then to Batad jump off point for trekking to the village. Trek to the terraces and visit the traditional huts made of hardwood. Lunch in the village. Return to Banaue by jeepney and proceed to the Banaue View Point."
+                    },
+                    {
+                        day: 3,
+                        title: "Sagada Tour",
+                        description: "Breakfast at the hotel. Visit Sagada with its old church, villages, and the burial caves. Short trek to the entrance of Lumiang and Sumaguing Cave. Lunch in a local restaurant. Return to Banaue Grand View Hotel."
+                    },
+                    {
+                        day: 4,
+                        title: "Sagada & Baguio Tour",
+                        description: "Early breakfast and check out. Tour at Sagada Town and its environment. Lunch in a Local Restaurant. Proceed to Baguio. Late afternoon arrival in Baguio City. Check-in at Le Monet Hotel."
+                    },
+                    {
+                        day: 5,
+                        title: "Baguio - Manila",
+                        description: "Early breakfast. Check out. Morning tour of Baguio City. Lunch enroute. Return back to Manila airport."
+                    }
+                ]
             },
             {
-                day: 4,
-                title: "El Nido to Cebu",
-                description: "Morning free for beach activities. Afternoon flight to Cebu. Evening food tour experiencing Cebu's famous lechon, dried mangoes, and local delicacies."
+                id: "locos-Coast-Cordillera",
+                name: "Ilocos Coast to Cordillera",
+                price: 112119,
+                image: "/webImage/Philippines/1/4.webp",
+                duration: { days: 6, nights: 5 },
+                description: "Explore the beautiful landscapes and cultural heritage of Ilocos Coast to Cordillera.",
+                itinerary:
+                    [
+                        {
+                            day: 1,
+                            title: "Manila - Banaue",
+                            description: "Early departure from Manila to Banaue. Experience the relaxing view of farms and low land rice farms and panoramic view of the countryside including stops at Dalton Pass and Ibulao Bridge. Lunch in a local restaurant in San Jose. Check-in at Banaue Grand View Hotel."
+                        },
+                        {
+                            day: 2,
+                            title: "Banaue - Batad Village Tour",
+                            description: "Breakfast at the hotel. Morning departure on a local jeepney then to Batad jump off point for trekking to the village. Trek to the terraces and visit the traditional huts made of hardwood. Enjoy interaction with the locals and then proceed to its waterfalls. Lunch in the village. Return to Banaue by jeepney and proceed to the Banaue View Point."
+                        },
+                        {
+                            day: 3,
+                            title: "Banaue - Manila",
+                            description: "Breakfast at the hotel. Morning departure for your return back to Manila. Short stops for more photo opportunities en route. Lunch in San Jose, Nueva Ecija. Estimated time of arrival in Manila airport."
+                        },
+                        {
+                            day: 1,
+                            title: "Arrival Laoag",
+                            description: "Arrival in Laoag International Airport. Tour of Laoag City (St. Williams Cathedral, Sinking Bell Tower, drive through Ilocos Norte Capitol Building and Tobacco Monopoly market). Visit Ilocos Museum, Aurora Park, Marcos Hall of Justice. Lunch during the tour at a local restaurant. Transfer to Fort Ilocandia Resort(3 Stars) for accommodation."
+                        },
+                        {
+                            day: 2,
+                            title: "Laoag - Vigan",
+                            description: "Early breakfast at the hotel and check-out. Drive to the fishing town of Currimao for lunch. Continue on the road to Vigan. Visit Bantay Church and Bell Tower, Burgos Museum, Crisologo Museum, and Vigan Heritage Town. Take a walking tour of Calle Crisologo where all old heritage houses are in place. Lunch during the tour at a local restaurant. Check in for an overnight stay at Hotel Luna(4 Stars)."
+                        },
+                        {
+                            day: 3,
+                            title: "Vigan - Sagada",
+                            description: "Early breakfast at the hotel then check-out. Travel to Sagada with sightseeing en route to Ilocos towns. Stop at Sta. Maria town for its UNESCO Heritage church. Continue to Sagada with lunch in Cervantes. Check-in at St. Joseph’s Inn. Dinner at Masferre Inn on a personal account."
+                        },
+                        {
+                            day: 4,
+                            title: "Sagada - Bontoc - Banaue",
+                            description: "Breakfast at the hotel and check-out. Visit Sumaguing Cave, Hanging Coffins Burial Cave, and Sagada Rice Terraces. Travel to Bontoc and visit the Bontoc Museum. Lunch in a local restaurant in Bontoc. Continue to Banaue and stop for a photo opportunity in Banaue Viewpoint. Check-in at Banaue Grand View Hotel."
+                        },
+                        {
+                            day: 5,
+                            title: "Banaue - Batad - Banaue",
+                            description: "Breakfast at the hotel. Depart on a jeepney for a tour of the rice terraces and its nearby villages. Walking in Batad gives a closer look at the Ifugao community and their well-preserved native culture. Lunch in a local restaurant. Return to Banaue Grand View Hotel."
+                        },
+                        {
+                            day: 6,
+                            title: "Banaue - Manila",
+                            description: "Breakfast at the hotel. Early morning departure from Banaue to Manila passing by the Central Plains of Luzon. Lunch at San Jose. Continue the journey to Manila, enjoying the scenic mountainous landscape of Nueva Vizcaya to Ifugao province. Arrival in Manila by late afternoon."
+                        },
+                    ]
             },
-            {
-                day: 5,
-                title: "Cebu & Bohol Tour",
-                description: "Day trip to Bohol. Visit Chocolate Hills, Tarsier Sanctuary, Loboc River Cruise with lunch, Blood Compact Site, and Baclayon Church. Return to Cebu."
-            },
-            {
-                day: 6,
-                title: "Boracay Paradise",
-                description: "Morning flight to Boracay. Afternoon beach hopping tour including Puka Shell Beach, Crystal Cove, and Magic Island. Sunset paraw sailing experience."
-            },
-            {
-                day: 7,
-                title: "Boracay Activities",
-                description: "Morning water activities: parasailing, banana boat, and helmet diving. Afternoon spa treatment. Evening pub crawl at D'Mall and White Beach stations."
-            },
-            {
-                day: 8,
-                title: "Departure",
-                description: "Free morning for last-minute shopping. Transfer to Caticlan Airport for return flight via Manila."
-            }
         ],
         inclusions: [
-            "All domestic flights (Manila-Puerto Princesa-Cebu-Boracay-Manila)",
-            "7 nights accommodation in 4-star hotels",
+            "Accommodation in comfortable lodges",
+            "All specified activities and equipment",
+            "Professional English-speaking guides",
+            "Safety equipment and instructions",
             "Daily breakfast and selected meals",
-            "Private air-conditioned transfers",
-            "Underground River tour with permits",
-            "El Nido island hopping with lunch",
-            "Bohol countryside tour with lunch",
-            "Boracay water activities package",
-            "English-speaking guides",
-            "Entrance fees to all attractions",
-            "Hotel and airport transfers",
-            "Welcome dinner with cultural show"
+            "Airport transfers",
+            "Winter clothing rental",
+            "30% discount for children under 15 years"
         ],
         exclusions: [
             "International flights",
             "Travel insurance",
-            "Terminal fees and tourist taxes",
-            "Optional tours and activities",
-            "Personal expenses and shopping",
-            "Drinks during meals",
-            "Tips for guides and drivers",
-            "Early check-in/late check-out",
-            "Excess baggage charges"
+            "Optional activities",
+            "Personal expenses",
+            "Alcoholic beverages",
+            "Additional transfers not mentioned"
         ],
         cancellationPolicy: [
-            "Free cancellation up to 45 days before departure",
-            "75% refund up to 30 days before departure",
-            "50% refund up to 15 days before departure",
-            "No refund within 15 days of departure"
+            "Free cancellation up to 60 days before departure",
+            "50% refund up to 30 days before departure",
+            "No refund within 30 days of departure"
         ],
         galleryImages: [
-            "/IMAGES/philippines/1/1.webp", // Underground River
-            "/IMAGES/philippines/1/2.webp", // El Nido Lagoon
-            "/IMAGES/philippines/1/3.webp", // Chocolate Hills
-            "/IMAGES/philippines/1/4.webp"  // Boracay White Beach
+            "/webImage/Philippines/1/1.webp",
+            "/webImage/Philippines/1/2.webp",
+            "/webImage/Philippines/1/3.webp",
+            "/webImage/Philippines/1/4.webp",
+            "/webImage/Philippines/2/1.webp",
+            "/webImage/Philippines/2/2.webp",
+            "/webImage/Philippines/2/3.webp",
+            "/webImage/Philippines/2/4.webp",
         ]
     },
 
     kenya: {
-        name: "Kenya - Safari Adventure",
-        price: 275000,
-        image: "/IMAGES/kenya/1/1.webp",
-        packages: 2,
+        name: "Kenya - Nairobi Adventure",
+        price: 211775,
+        image: "/webImage/kenya/1/2.webp",
+        packages: 1,
         description: "Experience the ultimate African safari in Kenya's most iconic national parks. Witness the Great Migration, spot the Big Five, and immerse yourself in Maasai culture.",
-        duration: { days: 8, nights: 7 },
+        duration: { days: 7, nights: 6 },
         itinerary: [
             {
                 day: 1,
                 title: "Arrival in Nairobi",
-                description: "Arrive in Nairobi and transfer to hotel. Visit Giraffe Center and David Sheldrick Wildlife Trust."
+                description: "Arrive in Nairobi and transfer to the Radisson Blu Hotel. Visit Giraffe Center and David Sheldrick Wildlife Trust."
             },
             {
                 day: 2,
-                title: "Nairobi to Masai Mara",
-                description: "Drive to Masai Mara National Reserve. Afternoon game drive to spot wildlife."
+                title: "Nairobi to Amboseli National Park",
+                description: "Drive to Amboseli National Park. Check-in at Kibo Safari Camp. Afternoon game drive to spot wildlife with Mount Kilimanjaro as a backdrop."
             },
             {
                 day: 3,
-                title: "Masai Mara Safari",
-                description: "Full-day game drive in Masai Mara. Optional hot air balloon safari at sunrise."
+                title: "Amboseli National Park",
+                description: "Enjoy a full day of guided game drives in Amboseli National Park. Witness the diverse wildlife and majestic elephants with evening relaxation at the camp."
             },
             {
                 day: 4,
-                title: "Masai Village Experience",
-                description: "Morning game drive. Afternoon visit to traditional Maasai village."
+                title: "Amboseli to Lake Nakuru National Park",
+                description: "Transfer to Lake Nakuru National Park. Check-in at Lake Nakuru Sopa Lodge. Afternoon game drive to see flamingos, rhinos, and tree-climbing lions."
             },
             {
                 day: 5,
-                title: "Lake Nakuru National Park",
-                description: "Drive to Lake Nakuru. Afternoon game drive to see flamingos and rhinos."
+                title: "Lake Nakuru to Masai Mara National Reserve",
+                description: "Drive to Masai Mara National Reserve. Check-in at Keekorok Lodge. Afternoon game drive to explore the famous savannah and its abundant wildlife."
             },
             {
                 day: 6,
-                title: "Amboseli National Park",
-                description: "Transfer to Amboseli. Game drive with views of Mount Kilimanjaro."
+                title: "Masai Mara National Reserve",
+                description: "Full-day game drive in Masai Mara. Explore the wildlife, from big cats to elephants and wildebeests. Option for a sunrise hot air balloon safari."
             },
             {
                 day: 7,
-                title: "Amboseli Safari",
-                description: "Full-day game drive in Amboseli. Evening sundowner experience."
-            },
-            {
-                day: 8,
-                title: "Departure",
-                description: "Return to Nairobi for departure flight."
+                title: "Departure from Nairobi",
+                description: "After breakfast, drive back to Nairobi. Drop-off at the airport for your departure flight."
             }
         ],
         inclusions: [
@@ -1417,10 +1645,15 @@ const destinationData: { [key: string]: DestinationDetails } = {
             "No refund within 30 days of departure"
         ],
         galleryImages: [
-            "/IMAGES/kenya/1/1.webp",
-            "/IMAGES/kenya/1/2.webp",
-            "/IMAGES/kenya/1/3.webp",
-            "/IMAGES/kenya/1/4.webp"
+            "/webImage/kenya/1/2.webp",
+            "/webImage/kenya/1/1.webp",
+            "/webImage/kenya/1/3.webp",
+            "/webImage/kenya/1/4.webp",
+            "/webImage/kenya/2/2.webp",
+            "/webImage/kenya/2/1.webp",
+            "/webImage/kenya/2/3.webp",
+            "/webImage/kenya/2/4.webp"
+
         ]
     },
 
@@ -2038,6 +2271,7 @@ export default function DestinationDetails() {
     const [destinationData, setDestinationData] = useState<DestinationDetails | null>(null);
     const [error] = useState<string | null>(null);
     const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
+    const [selectedVariant, setSelectedVariant] = useState<string | null>(null);
 
     useEffect(() => {
         try {
@@ -2054,6 +2288,370 @@ export default function DestinationDetails() {
 
     if (!destinationData) {
         return <Shimmer />;
+    }
+
+    if (destination === 'finland' && destinationData.variants) {
+        return (
+            <div className="min-h-screen bg-gray-50 mt-10">
+                <main className="container mx-auto px-4 py-8 max-w-7xl">
+                    <Tabs
+                        defaultValue={destinationData.variants[0].id}
+                        className="mb-8"
+                        onValueChange={(value) => setSelectedVariant(value)}
+                    >
+                        <TabsList className="grid grid-cols-4 w-full">
+                            {destinationData.variants.map((variant) => (
+                                <TabsTrigger
+                                    key={variant.id}
+                                    value={variant.id}
+                                    className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#017ae3] data-[state=active]:to-[#00f6ff] data-[state=active]:text-white"
+                                >
+                                    {variant.name}
+                                </TabsTrigger>
+                            ))}
+                        </TabsList>
+
+                        {destinationData.variants.map((variant) => (
+                            <TabsContent key={variant.id} value={variant.id}>
+                                <div className="relative rounded-3xl overflow-hidden mb-8 shadow-xl">
+                                    <Image
+                                        src={variant.image}
+                                        alt={variant.name}
+                                        width={1400}
+                                        height={400}
+                                        className="w-full h-[400px] object-cover"
+                                        priority
+                                    />
+                                    <button
+                                        onClick={() => setIsGalleryOpen(true)}
+                                        className="absolute bottom-4 left-4 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white px-6 py-2.5 rounded-full flex items-center gap-2 hover:shadow-lg transition-all duration-300"
+                                    >
+                                        <Camera className="w-4 h-4" />
+                                        View Gallery
+                                    </button>
+                                    <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-2xl max-w-xs">
+                                        <div className="flex items-center gap-2 text-sm text-gray-600 mb-2">
+                                            <Calendar className="w-4 h-4" />
+                                            {variant.duration.days} Days / {variant.duration.nights} Nights
+                                        </div>
+                                        <div className="text-2xl font-bold mb-1">₹{variant.price.toLocaleString()}</div>
+                                        <div className="text-sm text-gray-600 mb-4">Per Person</div>
+                                        <Button
+                                            className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white mb-4 transition-all duration-500"
+                                            onClick={() => {
+                                                setSelectedVariant(variant.id);
+                                                setIsBookingModalOpen(true);
+                                            }}
+                                        >
+                                            Book Now
+                                        </Button>
+                                        <div className="text-center">
+                                            <div className="text-sm font-medium mb-1">Need Help?</div>
+                                            <div className="text-xs text-gray-600 mb-2">
+                                                Our Destination expert will be happy to help resolve your queries
+                                            </div>
+                                            <div className="flex items-center justify-center gap-2 text-[#017ae3] font-medium">
+                                                <Phone className="w-4 h-4" />
+                                                +91 8447498498
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="bg-white rounded-2xl shadow-lg p-8">
+                                    <h1 className="text-3xl font-bold mb-4 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] bg-clip-text text-transparent">
+                                        {variant.name}
+                                    </h1>
+                                    <div className="flex items-center gap-6 mb-8 text-sm">
+                                        <div className="flex items-center gap-2 text-gray-600">
+                                            <MapPin className="w-4 h-4 text-[#017ae3]" />
+                                            {variant.name}
+                                        </div>
+                                        <div className="flex items-center gap-2 text-gray-600">
+                                            <Clock className="w-4 h-4 text-[#017ae3]" />
+                                            {variant.duration.nights} Nights
+                                        </div>
+                                        <div className="flex items-center gap-2 text-gray-600">
+                                            <Calendar className="w-4 h-4 text-[#017ae3]" />
+                                            {variant.duration.days} Days
+                                        </div>
+                                    </div>
+
+                                    <div className="space-y-12">
+                                        <section>
+                                            <h2 className="text-xl font-bold mb-4">Overview</h2>
+                                            <p className="text-gray-600 leading-relaxed">{variant.description}</p>
+                                        </section>
+
+                                        <section>
+                                            <h2 className="text-xl font-bold mb-6">Day Wise Itinerary</h2>
+                                            <div className="space-y-8">
+                                                {variant.itinerary.map((day) => (
+                                                    <div key={`${day.day}-${day.title}`} className="flex gap-4 group">
+                                                        <div className="flex-shrink-0 relative">
+                                                            <div className="w-3 h-3 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] rounded-full mt-2 group-hover:shadow-lg transition-all duration-300"></div>
+                                                            <div className="absolute top-5 bottom-0 left-1.5 w-0.5 bg-gradient-to-b from-[#017ae3] to-transparent"></div>
+                                                        </div>
+                                                        <div className="group-hover:translate-x-2 transition-transform duration-300">
+                                                            <div className="text-sm text-gray-500">Day {day.day}</div>
+                                                            <div className="font-medium text-gray-900">{day.title}</div>
+                                                            <div className="text-sm text-gray-600 mt-1">{day.description}</div>
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </section>
+
+                                        <section>
+                                            <h2 className="text-xl font-bold mb-6">Inclusions</h2>
+                                            <div className="space-y-2">
+                                                {destinationData.inclusions.map((inclusion, index) => (
+                                                    <div key={index} className="flex items-center gap-2 text-gray-600">
+                                                        <CheckCircle className="w-4 h-4 text-green-600" />
+                                                        {inclusion}
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </section>
+
+                                        <section>
+                                            <h2 className="text-xl font-bold mb-6">Exclusions</h2>
+                                            <div className="space-y-2">
+                                                {destinationData.exclusions.map((exclusion, index) => (
+                                                    <div key={index} className="flex items-center gap-2 text-gray-600">
+                                                        <XCircle className="w-4 h-4 text-red-600" />
+                                                        {exclusion}
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </section>
+
+                                        <section>
+                                            <h2 className="text-xl font-bold mb-6">Cancellation Policy</h2>
+                                            <div className="space-y-2">
+                                                {destinationData.cancellationPolicy.map((policy, index) => (
+                                                    <div key={index} className="flex items-center gap-2 text-gray-600">
+                                                        <AlertCircle className="w-4 h-4 text-yellow-600" />
+                                                        {policy}
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
+                            </TabsContent>
+                        ))}
+                    </Tabs>
+
+                    <GalleryModal
+                        isOpen={isGalleryOpen}
+                        onClose={() => setIsGalleryOpen(false)}
+                        images={destinationData.galleryImages}
+                    />
+
+                    <BookingFormModal
+                        isOpen={isBookingModalOpen}
+                        onClose={() => setIsBookingModalOpen(false)}
+                        destinationName={
+                            selectedVariant
+                                ? `${destinationData.name} - ${destinationData.variants.find(v => v.id === selectedVariant)?.name}`
+                                : destinationData.name
+                        }
+                    />
+                </main>
+
+                <Trending />
+                <Destinations />
+                <HappyCustomers />
+                <Domestic />
+                <ExoticDestinations />
+                <Europe />
+                <HappyCustomers />
+                <Gallery />
+            </div>
+        );
+    }
+
+    if (destination === 'phillipines' && destinationData.variants) {
+        return (
+            <div className="min-h-screen bg-gray-50 mt-10">
+                <main className="container mx-auto px-4 py-8 max-w-7xl">
+                    <Tabs
+                        defaultValue={destinationData.variants[0].id}
+                        className="mb-8"
+                        onValueChange={(value) => setSelectedVariant(value)}
+                    >
+                        <TabsList className="grid grid-cols-4 w-full">
+                            {destinationData.variants.map((variant) => (
+                                <TabsTrigger
+                                    key={variant.id}
+                                    value={variant.id}
+                                    className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#017ae3] data-[state=active]:to-[#00f6ff] data-[state=active]:text-white"
+                                >
+                                    {variant.name}
+                                </TabsTrigger>
+                            ))}
+                        </TabsList>
+
+                        {destinationData.variants.map((variant) => (
+                            <TabsContent key={variant.id} value={variant.id}>
+                                <div className="relative rounded-3xl overflow-hidden mb-8 shadow-xl">
+                                    <Image
+                                        src={variant.image}
+                                        alt={variant.name}
+                                        width={1400}
+                                        height={400}
+                                        className="w-full h-[400px] object-cover"
+                                        priority
+                                    />
+                                    <button
+                                        onClick={() => setIsGalleryOpen(true)}
+                                        className="absolute bottom-4 left-4 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white px-6 py-2.5 rounded-full flex items-center gap-2 hover:shadow-lg transition-all duration-300"
+                                    >
+                                        <Camera className="w-4 h-4" />
+                                        View Gallery
+                                    </button>
+                                    <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-2xl max-w-xs">
+                                        <div className="flex items-center gap-2 text-sm text-gray-600 mb-2">
+                                            <Calendar className="w-4 h-4" />
+                                            {variant.duration.days} Days / {variant.duration.nights} Nights
+                                        </div>
+                                        <div className="text-2xl font-bold mb-1">₹{variant.price.toLocaleString()}</div>
+                                        <div className="text-sm text-gray-600 mb-4">Per Person</div>
+                                        <Button
+                                            className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white mb-4 transition-all duration-500"
+                                            onClick={() => {
+                                                setSelectedVariant(variant.id);
+                                                setIsBookingModalOpen(true);
+                                            }}
+                                        >
+                                            Book Now
+                                        </Button>
+                                        <div className="text-center">
+                                            <div className="text-sm font-medium mb-1">Need Help?</div>
+                                            <div className="text-xs text-gray-600 mb-2">
+                                                Our Destination expert will be happy to help resolve your queries
+                                            </div>
+                                            <div className="flex items-center justify-center gap-2 text-[#017ae3] font-medium">
+                                                <Phone className="w-4 h-4" />
+                                                +91 8447498498
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="bg-white rounded-2xl shadow-lg p-8">
+                                    <h1 className="text-3xl font-bold mb-4 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] bg-clip-text text-transparent">
+                                        {variant.name}
+                                    </h1>
+                                    <div className="flex items-center gap-6 mb-8 text-sm">
+                                        <div className="flex items-center gap-2 text-gray-600">
+                                            <MapPin className="w-4 h-4 text-[#017ae3]" />
+                                            {variant.name}
+                                        </div>
+                                        <div className="flex items-center gap-2 text-gray-600">
+                                            <Clock className="w-4 h-4 text-[#017ae3]" />
+                                            {variant.duration.nights} Nights
+                                        </div>
+                                        <div className="flex items-center gap-2 text-gray-600">
+                                            <Calendar className="w-4 h-4 text-[#017ae3]" />
+                                            {variant.duration.days} Days
+                                        </div>
+                                    </div>
+
+                                    <div className="space-y-12">
+                                        <section>
+                                            <h2 className="text-xl font-bold mb-4">Overview</h2>
+                                            <p className="text-gray-600 leading-relaxed">{variant.description}</p>
+                                        </section>
+
+                                        <section>
+                                            <h2 className="text-xl font-bold mb-6">Day Wise Itinerary</h2>
+                                            <div className="space-y-8">
+                                                {variant.itinerary.map((day) => (
+                                                    <div key={`${day.day}-${day.title}`} className="flex gap-4 group">
+                                                        <div className="flex-shrink-0 relative">
+                                                            <div className="w-3 h-3 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] rounded-full mt-2 group-hover:shadow-lg transition-all duration-300"></div>
+                                                            <div className="absolute top-5 bottom-0 left-1.5 w-0.5 bg-gradient-to-b from-[#017ae3] to-transparent"></div>
+                                                        </div>
+                                                        <div className="group-hover:translate-x-2 transition-transform duration-300">
+                                                            <div className="text-sm text-gray-500">Day {day.day}</div>
+                                                            <div className="font-medium text-gray-900">{day.title}</div>
+                                                            <div className="text-sm text-gray-600 mt-1">{day.description}</div>
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </section>
+
+                                        <section>
+                                            <h2 className="text-xl font-bold mb-6">Inclusions</h2>
+                                            <div className="space-y-2">
+                                                {destinationData.inclusions.map((inclusion, index) => (
+                                                    <div key={index} className="flex items-center gap-2 text-gray-600">
+                                                        <CheckCircle className="w-4 h-4 text-green-600" />
+                                                        {inclusion}
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </section>
+
+                                        <section>
+                                            <h2 className="text-xl font-bold mb-6">Exclusions</h2>
+                                            <div className="space-y-2">
+                                                {destinationData.exclusions.map((exclusion, index) => (
+                                                    <div key={index} className="flex items-center gap-2 text-gray-600">
+                                                        <XCircle className="w-4 h-4 text-red-600" />
+                                                        {exclusion}
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </section>
+
+                                        <section>
+                                            <h2 className="text-xl font-bold mb-6">Cancellation Policy</h2>
+                                            <div className="space-y-2">
+                                                {destinationData.cancellationPolicy.map((policy, index) => (
+                                                    <div key={index} className="flex items-center gap-2 text-gray-600">
+                                                        <AlertCircle className="w-4 h-4 text-yellow-600" />
+                                                        {policy}
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
+                            </TabsContent>
+                        ))}
+                    </Tabs>
+
+                    <GalleryModal
+                        isOpen={isGalleryOpen}
+                        onClose={() => setIsGalleryOpen(false)}
+                        images={destinationData.galleryImages}
+                    />
+
+                    <BookingFormModal
+                        isOpen={isBookingModalOpen}
+                        onClose={() => setIsBookingModalOpen(false)}
+                        destinationName={
+                            selectedVariant
+                                ? `${destinationData.name} - ${destinationData.variants.find(v => v.id === selectedVariant)?.name}`
+                                : destinationData.name
+                        }
+                    />
+                </main>
+
+                <Trending />
+                <Destinations />
+                <HappyCustomers />
+                <Domestic />
+                <ExoticDestinations />
+                <Europe />
+                <HappyCustomers />
+                <Gallery />
+            </div>
+        );
     }
 
     return (
@@ -2080,7 +2678,7 @@ export default function DestinationDetails() {
                             <Calendar className="w-4 h-4" />
                             Available Packages: {destinationData.packages}
                         </div>
-                        <div className="text-2xl font-bold mb-1">₹{destinationData.price.toLocaleString()}</div>
+                        <div className="text-2xl font-bold mb-1">₹{destinationData.price?.toLocaleString() ?? 'Contact for price'}</div>
                         <div className="text-sm text-gray-600 mb-4">Per Person</div>
                         <Button
                             className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white mb-4 transition-all duration-500"
@@ -2124,11 +2722,11 @@ export default function DestinationDetails() {
                         </div>
                         <div className="flex items-center gap-2 text-gray-600">
                             <Clock className="w-4 h-4 text-[#017ae3]" />
-                            {destinationData.duration.nights} Nights
+                            {destinationData.duration?.nights ?? '-'} Nights
                         </div>
                         <div className="flex items-center gap-2 text-gray-600">
                             <Calendar className="w-4 h-4 text-[#017ae3]" />
-                            {destinationData.duration.days} Days
+                            {destinationData.duration?.days ?? '-'} Days
                         </div>
                     </div>
 
@@ -2141,8 +2739,8 @@ export default function DestinationDetails() {
                         <section>
                             <h2 className="text-xl font-bold mb-6">Day Wise Itinerary</h2>
                             <div className="space-y-8">
-                                {destinationData.itinerary.map((day) => (
-                                    <div key={day.day} className="flex gap-4 group">
+                                {destinationData.itinerary?.map((day) => (
+                                    <div key={`${day.day}-${day.title}`} className="flex gap-4 group">
                                         <div className="flex-shrink-0 relative">
                                             <div className="w-3 h-3 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] rounded-full mt-2 group-hover:shadow-lg transition-all duration-300"></div>
                                             <div className="absolute top-5 bottom-0 left-1.5 w-0.5 bg-gradient-to-b from-[#017ae3] to-transparent"></div>

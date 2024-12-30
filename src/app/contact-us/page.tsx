@@ -162,7 +162,7 @@ export default function ContactPage() {
                         We are here to help
                     </h1>
                     <p className="mt-4 text-lg text-gray-600">
-                        We're here to help and answer any questions you might have
+                        We are here to help and answer any questions you might have
                     </p>
                 </div>
 
@@ -172,7 +172,7 @@ export default function ContactPage() {
                         {showSuccess && (
                             <div className="mb-6 p-4 bg-gradient-to-r from-[#017ae3]/10 to-[#00f6ff]/10 border border-[#017ae3]/20 rounded-lg">
                                 <p className="text-[#017ae3] font-medium text-center">
-                                    Message sent successfully! We'll get back to you soon.
+                                    Message sent successfully! We will get back to you soon.
                                 </p>
                             </div>
                         )}
@@ -293,9 +293,9 @@ export default function ContactPage() {
                                     Why Choose Us?
                                 </h4>
                                 <p className="text-gray-600">
-                                    We're dedicated to providing exceptional service with a focus on innovation,
+                                    We are dedicated to providing exceptional service with a focus on innovation,
                                     reliability, and customer satisfaction. Our experienced team ensures your
-                                    project's success from start to finish.
+                                    projects success from start to finish.
                                 </p>
                             </div>
                             <div className="bg-white p-6 rounded-xl shadow-md">
@@ -303,7 +303,7 @@ export default function ContactPage() {
                                     Our Commitment
                                 </h4>
                                 <p className="text-gray-600">
-                                    We're committed to delivering high-quality solutions that meet your needs
+                                    We are committed to delivering high-quality solutions that meet your needs
                                     and exceed your expectations. Our support team is available 24/7 to
                                     assist you with any questions.
                                 </p>
