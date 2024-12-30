@@ -134,6 +134,7 @@ export default function Component() {
                                     { name: "Careers", path: "/careers" },
                                     { name: "Terms & conditions", path: "/terms&conditions" },
                                     { name: "Refund & Cancelation", path: "/refund&cancellation" },
+                                    { name: "Payment", path: "/payment" }
                                 ].map((link) => (
                                     <li key={link.name}>
                                         <Link href={link.path} className="text-gray-500 hover:text-gray-700 text-sm">
