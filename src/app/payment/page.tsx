@@ -67,7 +67,7 @@ export default function PaymentPage() {
                 </Card>
 
                 {/* Razorpay Link Section */}
-                <Card className="p-6">
+                {/* <Card className="p-6">
                     <div className="flex items-center gap-2 mb-4">
                         <span className="bg-black text-white px-3 py-1 rounded-full text-sm font-medium">
                             Razorpay Link
@@ -89,7 +89,7 @@ export default function PaymentPage() {
                             Note: A payment gateway charge 3% will be levied on using above given payment link.
                         </p>
                     </div>
-                </Card>
+                </Card> */}
 
                 {/* How to Book Section */}
                 <Card className="p-6">
