@@ -22,8 +22,8 @@ export default function PaymentPage() {
                     </div>
                     <div className="flex items-center mb-4">
                         <Image
-                            src="/hsbc-logo.png"
-                            alt="HSBC"
+                            src="/Assets/BankLogo/icici.png"
+                            alt="ICICI Bank Logo"
                             width={60}
                             height={24}
                             className="mr-2"
