@@ -340,9 +340,9 @@ export function Chatbot() {
                     size="icon"
                 >
                     <Image
-                        src="/Assets/chatbot/botGif.gif"
+                        src="/Assets/chatbot/botGif.svg"
                         alt="Chatbot"
-                        width={38}
+                        width={48}
                         height={48}
                         className="rounded-full"
                     />
