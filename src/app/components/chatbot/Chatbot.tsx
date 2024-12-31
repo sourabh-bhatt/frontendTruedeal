@@ -1,210 +1,327 @@
+// 'use client'
+
+// import React, { useState, useEffect, useRef } from 'react';
+// import { motion, AnimatePresence } from 'framer-motion';
+// import { X, Send } from 'lucide-react';
+// import { Button } from "@/components/ui/button"
+// import { Input } from "@/components/ui/input"
+// import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+// import Image from 'next/image';
+
+// type ChatStep = 'greeting' | 'name' | 'phone' | 'query' | 'finished';
+
+// interface ChatMessage {
+//     text: string;
+//     isUser: boolean;
+// }
+
+// function formatWhatsAppMessage(name: string, phone: string, query: string): string {
+//     return encodeURIComponent(
+//         `Hi Team Truedeal,
+
+// I am ${name} and my phone number is ${phone}.
+
+// I am looking for your help in: ${query}
+
+// Warm Regards,
+// ${name}`
+//     );
+// }
+
+// export function Chatbot() {
+//     const [isOpen, setIsOpen] = useState(false);
+//     const [step, setStep] = useState<ChatStep>('greeting');
+//     const [messages, setMessages] = useState<ChatMessage[]>([]);
+//     const [name, setName] = useState('');
+//     const [phone, setPhone] = useState('');
+//     const [query, setQuery] = useState('');
+//     const [input, setInput] = useState('');
+//     const messagesEndRef = useRef<HTMLDivElement>(null);
+
+//     useEffect(() => {
+//         if (isOpen && messages.length === 0) {
+//             addBotMessage("Hello! I'm True Friend, your personal assistant. May I know your name?");
+//         }
+//     }, [isOpen, messages.length]);
+
+//     useEffect(() => {
+//         if (messagesEndRef.current) {
+//             messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
+//         }
+//     }, [messages]);
+
+//     const addBotMessage = (text: string) => {
+//         setMessages(prev => [...prev, { text, isUser: false }]);
+//     };
+
+//     const addUserMessage = (text: string) => {
+//         setMessages(prev => [...prev, { text, isUser: true }]);
+//     };
+
+//     const handleUserInput = (input: string) => {
+//         addUserMessage(input);
+
+//         switch (step) {
+//             case 'greeting':
+//                 setName(input);
+//                 setStep('name');
+//                 addBotMessage(`${input}, could you please provide your phone number?`);
+//                 break;
+//             case 'name':
+//                 setPhone(input);
+//                 setStep('phone');
+//                 addBotMessage(`Thank you, ${name}. How can I assist you today?`);
+//                 break;
+//             case 'phone':
+//                 setQuery(input);
+//                 setStep('query');
+//                 addBotMessage(`I will surely look into that, ${name}.`);
+//                 setTimeout(() => {
+//                     addBotMessage("I will connect you to our WhatsApp chat support so that you can get the answer.");
+//                     setTimeout(() => {
+//                         addBotMessage("Connecting to WhatsApp support...");
+//                         setStep('finished');
+//                     }, 2000);
+//                 }, 2000);
+//                 break;
+//         }
+//     };
+
+//     const handleSubmit = (e: React.FormEvent) => {
+//         e.preventDefault();
+//         if (input.trim()) {
+//             handleUserInput(input.trim());
+//             setInput('');
+//         }
+//     };
+
+//     const handleWhatsAppRedirect = () => {
+//         const whatsappMessage = formatWhatsAppMessage(name, phone, query);
+//         setTimeout(() => {
+//             setMessages([]);
+//             setStep('greeting');
+//             setName('');
+//             setPhone('');
+//             setQuery('');
+//             setIsOpen(false);
+//         }, 100);
+//         window.open(`https://wa.me/919911179796?text=${whatsappMessage}`, '_blank');
+//     };
+
+//     return (
+//         <>
+//             <motion.div
+//                 whileHover={{ scale: 1.1 }}
+//                 whileTap={{ scale: 0.9 }}
+//                 animate={{
+//                     scale: [1, 1.1, 1],
+//                     transition: {
+//                         duration: 2,
+//                         repeat: Infinity,
+//                         repeatType: "reverse"
+//                     }
+//                 }}
+//                 className="fixed bottom-4 right-4 z-50"
+//             >
+//                 <Button
+//                     onClick={() => setIsOpen(true)}
+//                     className="rounded-full shadow-lg bg-gradient-to-r from-[#017ae3] to-[#00f6ff]"
+//                     size="icon"
+//                 >
+//                     <Image
+//                         src="/Assets/chatbot/botGif.gif"
+//                         alt="Chatbot"
+//                         width={34}
+//                         height={24}
+//                     />
+//                     <span className="sr-only">Open chat</span>
+//                 </Button>
+//             </motion.div>
+//             <AnimatePresence>
+//                 {isOpen && (
+//                     <motion.div
+//                         initial={{ opacity: 0, y: 20 }}
+//                         animate={{ opacity: 1, y: 0 }}
+//                         exit={{ opacity: 0, y: 20 }}
+//                         className="fixed bottom-4 right-4 w-96 h-[32rem] bg-background rounded-lg shadow-xl flex flex-col z-50"
+//                     >
+//                         <Card className="w-full h-full flex flex-col">
+//                             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
+//                                 <CardTitle className="text-lg font-semibold text-white">True Friend</CardTitle>
+//                                 <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)} className="text-white">
+//                                     <X className="h-4 w-4" />
+//                                     <span className="sr-only">Close chat</span>
+//                                 </Button>
+//                             </CardHeader>
+//                             <CardContent className="flex-1 overflow-y-auto p-4 space-y-4">
+//                                 {messages.map((message, index) => (
+//                                     <motion.div
+//                                         key={index}
+//                                         initial={{ opacity: 0, y: 20 }}
+//                                         animate={{ opacity: 1, y: 0 }}
+//                                         transition={{ duration: 0.3 }}
+//                                         className={`max-w-[80%] p-3 rounded-lg ${message.isUser
+//                                             ? 'bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white ml-auto'
+//                                             : 'bg-gray-100 text-gray-800'
+//                                             }`}
+//                                     >
+//                                         {message.text}
+//                                     </motion.div>
+//                                 ))}
+//                                 <div ref={messagesEndRef} />
+//                             </CardContent>
+//                             <CardFooter>
+//                                 {step === 'finished' ? (
+//                                     <Button
+//                                         onClick={handleWhatsAppRedirect}
+//                                         className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white"
+//                                     >
+//                                         Connect on WhatsApp
+//                                     </Button>
+//                                 ) : (
+//                                     <form onSubmit={handleSubmit} className="flex w-full space-x-2">
+//                                         <Input
+//                                             type="text"
+//                                             value={input}
+//                                             onChange={(e) => setInput(e.target.value)}
+//                                             placeholder="Type your message..."
+//                                             className="flex-1"
+//                                         />
+//                                         <Button type="submit" size="icon" className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
+//                                             <Send className="h-4 w-4 text-white" />
+//                                             <span className="sr-only">Send message</span>
+//                                         </Button>
+//                                     </form>
+//                                 )}
+//                             </CardFooter>
+//                         </Card>
+//                     </motion.div>
+//                 )}
+//             </AnimatePresence>
+//         </>
+//     );
+// }
+
 'use client'
 
-import React, { useState, useEffect, useRef } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import React, { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { X, Send } from 'lucide-react';
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import Image from 'next/image';
 
-type Message = {
-    text: string
-    isBot: boolean
+type ChatStep = 'greeting' | 'name' | 'phone' | 'query' | 'finished';
+
+interface ChatMessage {
+    text: string;
+    isUser: boolean;
 }
 
-const Chatbot: React.FC = () => {
-    const [isOpen, setIsOpen] = useState(false)
-    const [messages, setMessages] = useState<Message[]>([])
-    const [input, setInput] = useState('')
-    const [step, setStep] = useState(0)
-    const [userData, setUserData] = useState({ name: '', phone: '', query: '' })
-    const [isTyping, setIsTyping] = useState(false)
-    const [isConnecting, setIsConnecting] = useState(false)
-    const [isInputDisabled, setIsInputDisabled] = useState(false)
-    const messagesEndRef = useRef<HTMLDivElement>(null)
+function formatWhatsAppMessage(name: string, phone: string, query: string): string {
+    return encodeURIComponent(
+        `Hi Team Truedeal,
 
-    const botMessages = [
-        "Hello! I'm Sarah, your personal assistant. May I know your name?",
-        "It's great to meet you, {name}! Could you please provide your phone number?",
-        "Thank you, {name}. How can I assist you today?",
-        "We will surely look into that, {name}. I'm connecting you with our specialized support team on WhatsApp for personalized assistance.",
-        "Connecting you to our WhatsApp support team now. You'll be redirected shortly.",
-    ]
+I am ${name} and my phone number is +91${phone}.
+
+I am looking for your help in: ${query}
+
+Looking forward to your response.
+
+Warm Regards,
+${name}`
+    );
+}
+
+export function Chatbot() {
+    const [isOpen, setIsOpen] = useState(false);
+    const [step, setStep] = useState<ChatStep>('greeting');
+    const [messages, setMessages] = useState<ChatMessage[]>([]);
+    const [name, setName] = useState('');
+    const [phone, setPhone] = useState('');
+    const [query, setQuery] = useState('');
+    const [input, setInput] = useState('');
+    const [isTyping, setIsTyping] = useState(false);
+    const messagesEndRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         if (isOpen && messages.length === 0) {
-            setTimeout(() => addBotMessage(botMessages[0]), 1000)
+            addBotMessage("Hello! I'm True Friend, your personal assistant. May I know your name?");
         }
-    }, [isOpen])
+    }, [isOpen, messages.length]);
 
     useEffect(() => {
-        scrollToBottom()
-    }, [messages])
-
-    const scrollToBottom = () => {
-        messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
-    }
+        if (messagesEndRef.current) {
+            messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    }, [messages]);
 
     const addBotMessage = (text: string) => {
-        setIsTyping(true)
-        let i = 0
-        const interval = setInterval(() => {
-            if (i < text.length) {
-                setMessages((prev) => [
-                    ...prev.slice(0, -1),
-                    { text: text.slice(0, i + 1), isBot: true },
-                ])
-                i++
-            } else {
-                clearInterval(interval)
-                setIsTyping(false)
-            }
-        }, 30)
-    }
+        setIsTyping(true);
+        setTimeout(() => {
+            setMessages(prev => [...prev, { text, isUser: false }]);
+            setIsTyping(false);
+        }, 1000);
+    };
 
-    const handleSendMessage = () => {
-        if (input.trim() === '') return
+    const addUserMessage = (text: string) => {
+        setMessages(prev => [...prev, { text, isUser: true }]);
+    };
 
-        setMessages((prev) => [...prev, { text: input, isBot: false }])
-        setInput('')
+    const handleUserInput = (input: string) => {
+        addUserMessage(input);
 
         switch (step) {
-            case 0:
-                setUserData((prev) => ({ ...prev, name: input }))
-                setStep(1)
-                setTimeout(() => addBotMessage(botMessages[1].replace('{name}', input)), 1000)
-                break
-            case 1:
-                setUserData((prev) => ({ ...prev, phone: input }))
-                setStep(2)
-                setIsInputDisabled(true)
+            case 'greeting':
+                setName(input);
+                setStep('name');
+                addBotMessage(`${input}, could you please provide your phone number?`);
+                break;
+            case 'name':
+                setPhone(input);
+                setStep('phone');
+                addBotMessage(`Thank you, ${name}. How can I assist you today?`);
+                break;
+            case 'phone':
+                setQuery(input);
+                setStep('query');
+                addBotMessage(`I will surely look into that, ${name}.`);
                 setTimeout(() => {
-                    addBotMessage(botMessages[2].replace('{name}', userData.name))
-                    setIsInputDisabled(false)
-                }, 1000)
-                break
-            case 2:
-                setUserData((prev) => ({ ...prev, query: input }))
-                setStep(3)
-                setTimeout(() => {
-                    addBotMessage(botMessages[3].replace('{name}', userData.name))
+                    addBotMessage("I will connect you to our WhatsApp chat support so that you can get the answer.");
                     setTimeout(() => {
-                        setIsConnecting(true)
-                        addBotMessage(botMessages[4])
-                        setTimeout(() => {
-                            redirectToWhatsApp()
-                        }, 4000)
-                    }, 2000)
-                }, 1000)
-                break
+                        addBotMessage("Connecting to WhatsApp support...");
+                        setStep('finished');
+                    }, 2000);
+                }, 2000);
+                break;
         }
-    }
+    };
 
-    const redirectToWhatsApp = () => {
-        const phoneNumber = '918447498498'
-        const message = encodeURIComponent(
-            `Hi Team Truedeal, my name is ${userData.name} and my phone number is ${userData.phone}
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (input.trim()) {
+            handleUserInput(input.trim());
+            setInput('');
+        }
+    };
 
-I enquired on your website for:
-${userData.query ? `• ${userData.query}` : '• No specific enquiry provided'}
-
-Looking forward for your immediate response.
-
-Warm Regards,
-${userData.name}`
-        )
-        window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank')
-        setIsOpen(false)
-        resetChat()
-    }
-
-    const resetChat = () => {
-        setMessages([])
-        setStep(0)
-        setUserData({ name: '', phone: '', query: '' })
-        setIsConnecting(false)
-        setIsInputDisabled(false)
-    }
+    const handleWhatsAppRedirect = () => {
+        const whatsappMessage = formatWhatsAppMessage(name, phone, query);
+        setTimeout(() => {
+            setMessages([]);
+            setStep('greeting');
+            setName('');
+            setPhone('');
+            setQuery('');
+            setIsOpen(false);
+        }, 100);
+        window.open(`https://wa.me/919911179796?text=${whatsappMessage}`, '_blank');
+    };
 
     return (
-        <div className="fixed bottom-4 right-4 z-50">
-            <AnimatePresence>
-                {isOpen && (
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 20 }}
-                        className="bg-white rounded-lg shadow-xl w-full sm:w-96 overflow-hidden mb-4 max-h-[80vh] flex flex-col"
-                    >
-                        <div className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] p-4 flex justify-between items-center rounded-t-lg">
-                            <h2 className="text-white text-lg font-semibold">Chat with Us</h2>
-                            <button
-                                onClick={() => setIsOpen(false)}
-                                className="text-white hover:text-gray-200 focus:outline-none"
-                            >
-                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                                </svg>
-                            </button>
-                        </div>
-                        <div className="flex-grow overflow-y-auto p-4 bg-gray-50">
-                            {messages.map((message, index) => (
-                                <div
-                                    key={index}
-                                    className={`mb-4 flex ${message.isBot ? 'justify-start' : 'justify-end'
-                                        }`}
-                                >
-                                    <div
-                                        className={`max-w-[75%] rounded-lg px-4 py-2 ${message.isBot
-                                            ? 'bg-gray-100 text-gray-800'
-                                            : 'bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white'
-                                            }`}
-                                    >
-                                        {message.text}
-                                    </div>
-                                </div>
-                            ))}
-                            {isTyping && (
-                                <div className="flex justify-start mb-4">
-                                    <div className="bg-white text-gray-800 rounded-lg px-4 py-2 shadow">
-                                        <motion.div
-                                            initial={{ width: 0 }}
-                                            animate={{ width: 40 }}
-                                            transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
-                                            className="h-2 bg-gray-400 rounded-full"
-                                        />
-                                    </div>
-                                </div>
-                            )}
-                            {isConnecting && (
-                                <div className="text-center mb-4">
-                                    <span className="inline-block rounded-lg px-4 py-2 bg-yellow-100 text-yellow-800">
-                                        Connecting to WhatsApp support...
-                                    </span>
-                                </div>
-                            )}
-                            <div ref={messagesEndRef} />
-                        </div>
-                        <div className="p-4 bg-white border-t">
-                            <div className="flex rounded-lg overflow-hidden shadow-sm">
-                                <input
-                                    type="text"
-                                    value={input}
-                                    onChange={(e) => setInput(e.target.value)}
-                                    onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
-                                    placeholder="Type your message..."
-                                    className="flex-grow px-4 py-2 focus:outline-none"
-                                    disabled={isInputDisabled || step === 3}
-                                />
-                                <button
-                                    onClick={handleSendMessage}
-                                    className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white px-6 py-2 hover:opacity-90 transition-opacity disabled:opacity-50 focus:outline-none"
-                                    disabled={isInputDisabled || step === 3}
-                                >
-                                    Send
-                                </button>
-                            </div>
-                        </div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
-            <motion.button
+        <>
+            <motion.div
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 animate={{
@@ -215,26 +332,97 @@ ${userData.name}`
                         repeatType: "reverse"
                     }
                 }}
-                onClick={() => setIsOpen(!isOpen)}
-                className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white rounded-full p-4 shadow-lg hover:shadow-xl transition-shadow focus:outline-none"
+                className="fixed bottom-4 right-4 z-50"
             >
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    className="w-6 h-6"
+                <Button
+                    onClick={() => setIsOpen(true)}
+                    className="rounded-full shadow-lg bg-gradient-to-r from-[#017ae3] to-[#00f6ff] p-0 w-14 h-14"
+                    size="icon"
                 >
-                    <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M20 12l-8-8v5H4v6h8v5l8-8z"
+                    <Image
+                        src="/Assets/chatbot/botGif.gif"
+                        alt="Chatbot"
+                        width={38}
+                        height={48}
+                        className="rounded-full"
                     />
-                </svg>
-            </motion.button>
-        </div>
-    )
+                    <span className="sr-only">Open chat</span>
+                </Button>
+            </motion.div>
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: 20, scale: 0.95 }}
+                        transition={{ duration: 0.2 }}
+                        className="fixed bottom-4 right-4 w-96 h-[32rem] bg-background rounded-lg shadow-xl flex flex-col z-50"
+                    >
+                        <Card className="w-full h-full flex flex-col overflow-hidden">
+                            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
+                                <CardTitle className="text-lg font-semibold text-white">True Friend</CardTitle>
+                                <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)} className="text-white">
+                                    <X className="h-4 w-4" />
+                                    <span className="sr-only">Close chat</span>
+                                </Button>
+                            </CardHeader>
+                            <CardContent className="flex-1 overflow-y-auto p-4 space-y-4">
+                                {messages.map((message, index) => (
+                                    <motion.div
+                                        key={index}
+                                        initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                                        transition={{ duration: 0.2 }}
+                                        className={`max-w-[80%] p-3 rounded-lg ${message.isUser
+                                            ? 'bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white ml-auto'
+                                            : 'bg-gray-100 text-gray-800'
+                                            }`}
+                                    >
+                                        {message.text}
+                                    </motion.div>
+                                ))}
+                                {isTyping && (
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        className="flex space-x-2 items-center"
+                                    >
+                                        <div className="w-3 h-3 bg-gray-400 rounded-full animate-bounce" />
+                                        <div className="w-3 h-3 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }} />
+                                        <div className="w-3 h-3 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.4s' }} />
+                                    </motion.div>
+                                )}
+                                <div ref={messagesEndRef} />
+                            </CardContent>
+                            <CardFooter>
+                                {step === 'finished' ? (
+                                    <Button
+                                        onClick={handleWhatsAppRedirect}
+                                        className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white"
+                                    >
+                                        Connect on WhatsApp
+                                    </Button>
+                                ) : (
+                                    <form onSubmit={handleSubmit} className="flex w-full space-x-2">
+                                        <Input
+                                            type="text"
+                                            value={input}
+                                            onChange={(e) => setInput(e.target.value)}
+                                            placeholder="Type your message..."
+                                            className="flex-1"
+                                        />
+                                        <Button type="submit" size="icon" className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
+                                            <Send className="h-4 w-4 text-white" />
+                                            <span className="sr-only">Send message</span>
+                                        </Button>
+                                    </form>
+                                )}
+                            </CardFooter>
+                        </Card>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </>
+    );
 }
 
-export default Chatbot

@@ -27,6 +27,7 @@
     "@sendgrid/mail": "^8.1.4",
     "@vercel/speed-insights": "^1.1.0",
     "add": "^2.0.6",
+    "ai": "^4.0.22",
     "alert": "^6.0.2",
     "antd": "^5.22.1",
     "class-variance-authority": "^0.7.0",
