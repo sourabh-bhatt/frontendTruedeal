@@ -13,22 +13,33 @@
 //     const pathname = usePathname()
 
 //     useEffect(() => {
-//         const handleScroll = () => {
-//             setIsScrolled(window.scrollY > 0)
-//         }
+//         const header = document.createElement('div')
+//         header.style.position = 'absolute'
+//         header.style.top = '0'
+//         header.style.left = '0'
+//         header.style.right = '0'
+//         header.style.height = '1px'
+//         document.body.appendChild(header)
 
-//         // Add scroll event listener when the component mounts to client side
+//         const observer = new IntersectionObserver(
+//             ([entry]) => {
+//                 setIsScrolled(!entry.isIntersecting)
+//             },
+//             {
+//                 threshold: [1],
+//             }
+//         )
 
-//         if (typeof window !== 'undefined') {
-//             setIsScrolled(window.scrollY > 0)
-//             window.addEventListener('scroll', handleScroll)
-//             return () => window.removeEventListener('scroll', handleScroll)
+//         observer.observe(header)
+
+//         return () => {
+//             observer.disconnect()
+//             document.body.removeChild(header)
 //         }
 //     }, [])
 
 //     const navItems = [
 //         { href: "/", label: "Home" },
-//         { href: "/about", label: "About Us" },
 //         { href: "/destinationpackage", label: "Holiday Packages" },
 //         { href: "/trendingpackage", label: "Trending" },
 //     ]
@@ -156,14 +167,12 @@
 //     )
 // }
 
-// without window
-
 'use client';
 
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { Menu, X } from 'lucide-react'
+import { MoreVertical, X } from 'lucide-react'
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs"
 import { usePathname } from 'next/navigation'
 
@@ -207,8 +216,8 @@ export default function Navbar() {
     return (
         <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md' : 'bg-white/80 backdrop-blur-sm'
             }`}>
-            <div className="max-w-7xl mx-auto">
-                <div className="flex items-center justify-between p-2 border-b-2 border-gray-200">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                <div className="flex items-center justify-between py-2 border-b-2 border-gray-200 w-full">
                     <div className="flex items-center">
                         <Link href="/" className="flex-shrink-0">
                             <Image
@@ -237,7 +246,7 @@ export default function Navbar() {
                         ))}
                     </div>
 
-                    <div className="flex items-center space-x-4">
+                    <div className="flex items-center gap-4 shrink-0">
                         <div className="flex items-center hover:scale-105 transition-transform duration-300">
                             <Image
                                 src="/Assets/NavbarImages/call.webp"
@@ -255,7 +264,7 @@ export default function Navbar() {
                         </div>
 
                         <SignedOut>
-                            <div className="flex space-x-2">
+                            <div className="flex gap-2 shrink-0">
                                 <Link
                                     href="/sign-in"
                                     className="px-2 py-1 md:px-6 md:py-2 rounded-full text-xs md:text-sm font-medium bg-white relative group hover:scale-105 transition-transform duration-300"
@@ -299,7 +308,7 @@ export default function Navbar() {
                             {isMenuOpen ? (
                                 <X className="h-5 w-5" />
                             ) : (
-                                <Menu className="h-5 w-5" />
+                                <MoreVertical className="h-5 w-5" />
                             )}
                         </button>
                     </div>

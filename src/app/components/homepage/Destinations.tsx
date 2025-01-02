@@ -100,7 +100,9 @@ function DestinationCard({ continent, destinations, currentIndex }: {
             <div className="absolute inset-0 bg-black opacity-30"></div>
             <div className="absolute bottom-4 left-4 text-white">
                 <div className="flex items-center space-x-2 mb-1">
-                    <span className="text-4xl absolute bottom-40 md:bottom-[20rem]">🗼</span>
+                    <span className="text-4xl absolute bottom-40 md:bottom-[20rem]">
+                        <Image src={"/Assets/Icons/gateway-of-india.webp"} alt='gateway of India' width={40} height={40} />
+                    </span>
                     <h3 className="text-xl font-bold">{continent}</h3>
                 </div>
                 <p className="text-sm">{currentDest.packages} Packages</p>

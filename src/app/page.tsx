@@ -11,6 +11,7 @@ import ExoticDestinations from "./components/homepage/Exotic"
 import Europe from "./components/homepage/Europe";
 import Domestic from "./components/homepage/Domestic";
 import Gallery from "./components/homepage/Gallery";
+import WallOfLove from "./components/homepage/Ugc";
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
       <HappyCustomers />
       <CurrencyExchange />
       <Gallery />
+      <WallOfLove />
       <Sponsors />
     </main>
   );
