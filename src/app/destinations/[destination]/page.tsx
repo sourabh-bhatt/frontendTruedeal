@@ -16,6 +16,10 @@ import Europe from '@/app/components/homepage/Europe';
 import Gallery from '@/app/components/homepage/Gallery';
 import ExoticDestinations from '@/app/components/homepage/Exotic';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import CurrencyExchange from '../../components/forex/ForexLive';
+import WallOfLove from '@/app/components/homepage/Ugc';
+import Sponsors from "../../components/Ad/Sponsers";
+
 
 interface DestinationDetails {
     name: string;
@@ -2800,7 +2804,10 @@ export default function DestinationDetails() {
             <ExoticDestinations />
             <Europe />
             <HappyCustomers />
+            <CurrencyExchange />
             <Gallery />
+            <WallOfLove />
+            <Sponsors />
         </div>
     );
 }

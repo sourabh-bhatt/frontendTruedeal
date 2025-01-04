@@ -15,7 +15,9 @@ import Domestic from '@/app/components/homepage/Domestic';
 import ExoticDestinations from '@/app/components/homepage/Exotic';
 import Europe from '@/app/components/homepage/Europe';
 import Gallery from '@/app/components/homepage/Gallery';
-
+import WallOfLove from '@/app/components/homepage/Ugc';
+import CurrencyExchange from '@/app/components/forex/ForexLive';
+import Sponsors from '@/app/components/Ad/Sponsers';
 interface TrendingDestinationDetails {
     name: string;
     price: number;
@@ -521,6 +523,9 @@ export default function TrendingDestinationDetails() {
             <Europe />
             <HappyCustomers />
             <Gallery />
+            <CurrencyExchange />
+            <WallOfLove />
+            <Sponsors />
 
         </div>
     );
