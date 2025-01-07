@@ -128,7 +128,7 @@ export default function HeroSection() {
                     </div>
                 ) : (
                     <div className="p-8 text-center text-gray-500">
-                        No destinations found for "{searchTerm}"
+                        No destinations found for &quot;{searchTerm}&quot;
                     </div>
                 )}
             </div>

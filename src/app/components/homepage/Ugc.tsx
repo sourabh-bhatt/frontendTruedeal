@@ -4,6 +4,7 @@ import { useRef, useState, useEffect } from "react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight, Star } from 'lucide-react'
+import Image from 'next/image'
 
 interface Testimonial {
     videoUrl: string
@@ -64,10 +65,20 @@ export default function WallOfLove() {
                     <div className="flex items-center gap-6">
                         <div className="flex items-center gap-3">
                             <div className="bg-white rounded-full p-1.5">
-                                <img src="/Assets/Icons/icons8-google.svg" alt="Google" className="w-5 h-5" />
+                                <Image
+                                    src="/Assets/Icons/icons8-google.svg"
+                                    alt="Google"
+                                    width={20}
+                                    height={20}
+                                />
                             </div>
                             <div className="bg-white rounded-full p-1.5">
-                                <img src="/Assets/Icons/icons8-instagram.svg" alt="Instagram" className="w-5 h-5" />
+                                <Image
+                                    src="/Assets/Icons/icons8-instagram.svg"
+                                    alt="Instagram"
+                                    width={20}
+                                    height={20}
+                                />
                             </div>
                         </div>
                         <div className="flex items-center gap-2">
