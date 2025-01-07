@@ -130,9 +130,140 @@ Rating Breakdown:
         date: '31st Dec 2024',
         content: 'True Deal,  my frist package tour from these guys, these guys are so friendly,  they will organized each and every demand that you quoted, that was an amazing experience.',
         media: [
-            { type: 'image', url: '/GoogleReviews/1/Screenshot 2025-01-07 031446.png' },
+            { type: 'image', url: '/GoogleReviews/4/Screenshot 2025-01-07 042033.png' },
+            { type: 'image', url: '/GoogleReviews/4/Screenshot 2025-01-07 044212.png' },
+            { type: 'image', url: '/GoogleReviews/4/Screenshot 2025-01-07 044230.png' },
+            { type: 'image', url: '/GoogleReviews/4/Screenshot 2025-01-07 044246.png' },
+            { type: 'image', url: '/GoogleReviews/4/Screenshot 2025-01-07 044302.png' },
+            { type: 'image', url: '/GoogleReviews/4/Screenshot 2025-01-07 044324.png' },
+
         ],
         booked: 'Maldives'
+    },
+    {
+        id: '5',
+        author: 'Akshay Bhisikar',
+        rating: 4.0,
+        date: 'June 2024',
+        content: `Great Team. Well-Planned Itinerary. Good Service.
+
+We are grateful to the True Deal team for organizing an amazing trip to Bali. They assisted us every step of the way, from booking flights and exchanging money to arranging all aspects of our trip. The itinerary was well-planned and hassle-free, with options for customization. Our accommodations were all above 3-star quality, and we thoroughly enjoyed our stay. The tour drivers and guides were highly professional, and the vehicles were impeccably clean.
+
+Highly Recommended.
+Cheers to the Team!`,
+        media: [
+            { type: 'image', url: '/GoogleReviews/5/akb (1).png' },
+            { type: 'image', url: '/GoogleReviews/5/akb (2).png' },
+            { type: 'image', url: '/GoogleReviews/5/akb (3).png' },
+            { type: 'image', url: '/GoogleReviews/5/akb (4).png' },
+            { type: 'image', url: '/GoogleReviews/5/akb (5).png' },
+            { type: 'image', url: '/GoogleReviews/5/akb (6).png' },
+            { type: 'image', url: '/GoogleReviews/5/akb (7).png' },
+            { type: 'image', url: '/GoogleReviews/5/akb (8).png' },
+
+
+        ],
+        booked: 'Bali'
+    },
+    {
+        id: '6',
+        author: 'Savi Ganesh',
+        rating: 5.0,
+        date: 'December 2024',
+        content: `Dear Trudeal Travel Team,
+
+I recently returned from my trip to Thailand, and I wanted to take a moment to express my gratitude and appreciation for the exceptional service provided by your team.
+
+From the initial planning stages to the final execution, everything was seamless and well-organized. The itinerary you created for me was perfect, and I enjoyed every moment of my trip.
+
+The hotels, transportation, and activities you arranged were all top-notch, and I was impressed by the attention to detail.
+
+I would especially like to thank Aman and Rashid for their professionalism, knowledge, and responsiveness. They were always available to answer my questions and provide guidance throughout the trip.
+
+I would highly recommend Trudeal Travel to anyone planning a trip to Thailand. Your team's expertise and dedication to customer satisfaction are truly exceptional.
+
+Thank you again for making my trip to Thailand an unforgettable experience!
+
+Best regards,
+Savi
+`,
+        media: [
+            { type: 'image', url: '/GoogleReviews/6/a (1).png' },
+            { type: 'image', url: '/GoogleReviews/6/a (2).png' },
+            { type: 'image', url: '/GoogleReviews/6/a (3).png' },
+
+
+        ],
+        booked: 'Thailand'
+    },
+    {
+        id: '7',
+        author: 'Surya Sharma',
+        rating: 4.0,
+        date: 'September 2024',
+        content: `Reason for 4 stars -
+1) During our trip we got stuck in SaPa due to typhoon yagi and our indian trip organiser Mr. Rashid has really helped us in getting out of the region.
+2) However , the Vietnam organizers were very reluctant and I felt they were not interested in getting is out and due this our trip was completely ruined and we have to cancel our flights and divert the iternity.
+
+During our initial 3 days we enjoyed a lot but last 5 days of trip was not worthy.
+However the hotels and hospitality provided by Vietnamese were beyond our expectations.
+`,
+        media: [
+            { type: 'image', url: '/GoogleReviews/7/surya (1).png' },
+            { type: 'image', url: '/GoogleReviews/7/surya (2).png' },
+            { type: 'image', url: '/GoogleReviews/7/surya (3).png' },
+            { type: 'image', url: '/GoogleReviews/7/surya (4).png' },
+            { type: 'image', url: '/GoogleReviews/7/surya (5).png' },
+            { type: 'image', url: '/GoogleReviews/7/surya (6).png' },
+        ],
+        booked: 'Vietnam'
+    },
+    {
+        id: '8',
+        author: 'Mrityunjay Singh',
+        rating: 4.0,
+        date: 'December 2024',
+        content: `It was my first trip after marriage bit worried but the group was really good and helpful with every details.
+
+`,
+        media: [
+            { type: 'image', url: '/GoogleReviews/8/andaman (1).png' },
+            { type: 'image', url: '/GoogleReviews/8/andaman (2).png' },
+            { type: 'image', url: '/GoogleReviews/8/andaman (3).png' },
+            { type: 'image', url: '/GoogleReviews/8/andaman (4).png' },
+            { type: 'image', url: '/GoogleReviews/8/andaman (5).png' },
+            { type: 'image', url: '/GoogleReviews/8/andaman (6).png' },
+            { type: 'image', url: '/GoogleReviews/8/andaman (7).png' },
+            { type: 'image', url: '/GoogleReviews/8/andaman (8).png' },
+
+        ],
+        booked: 'Andaman'
+    },
+    {
+        id: '9',
+        author: 'Vijay Chand',
+        rating: 5.0,
+        date: 'December 2024',
+        content: `This is the 3rd trip with True Deal to Almaty & Baku and again my friend Aman made this a good one.
+Hotels and services provided at both the places were very confortable.
+This was the one of the True Deal received and will surely look forward for such more vacations.
+True Deal turns to be a True Deal
+Best in service.
+Cheers to Aman 💐
+
+`,
+        media: [
+            { type: 'image', url: '/GoogleReviews/9/vc (1).png' },
+            { type: 'image', url: '/GoogleReviews/9/vc (2).png' },
+            { type: 'image', url: '/GoogleReviews/9/vc (3).png' },
+            { type: 'image', url: '/GoogleReviews/9/vc (4).png' },
+            { type: 'image', url: '/GoogleReviews/9/vc (5).png' },
+            { type: 'image', url: '/GoogleReviews/9/vc (6).png' },
+            { type: 'image', url: '/GoogleReviews/9/vc (7).png' },
+            { type: 'image', url: '/GoogleReviews/9/vc (8).png' },
+
+        ],
+        booked: 'Almaty & Baku'
     },
 ]
 
@@ -264,9 +395,19 @@ export default function ReviewsPage() {
 
     return (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div className="text-center mb-12">
-                <h1 className="text-4xl font-bold text-gray-900 mb-4 mt-10">TRUEDEAL REVIEWS</h1>
-                <p className="text-xl text-gray-600">Endless real stories from travellers like you</p>
+            <div className="relative w-full h-[300px] mb-12 rounded-lg overflow-hidden mt-10">
+                <Image
+                    src="/GoogleReviews/9/vc (1).png"
+                    alt="Reviews Banner"
+                    fill
+                    className="object-cover"
+                    priority
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
+                    <h1 className="text-4xl font-bold mb-4">TRUEDEAL REVIEWS</h1>
+                    <p className="text-xl">Endless real stories from travellers like you</p>
+                </div>
             </div>
 
             <div className="space-y-12">

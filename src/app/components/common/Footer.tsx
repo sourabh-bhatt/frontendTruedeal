@@ -133,6 +133,7 @@ export default function Component() {
                                     { name: "Contact Us", path: "/contact-us" },
                                     { name: "Careers", path: "/careers" },
                                     { name: "Terms & conditions", path: "/terms&conditions" },
+                                    { name: "Reviews", path: "/reviews" },
                                     { name: "Refund & Cancelation", path: "/refund&cancellation" },
                                     { name: "Payment", path: "/payment" }
                                 ].map((link) => (
