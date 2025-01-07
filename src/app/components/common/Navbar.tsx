@@ -56,7 +56,7 @@ export default function Navbar() {
                                 alt="Truedeal Logo"
                                 width={100}
                                 height={20}
-                                className="w-18 md:w-[150px]"
+                                className="w-18 md:w-[150px] "
                                 priority
                             />
                         </Link>

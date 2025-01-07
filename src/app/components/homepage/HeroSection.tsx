@@ -136,9 +136,9 @@ export default function HeroSection() {
     )
 
     return (
-        <div className="relative min-h-[100svh] md:min-h-screen overflow-hidden">
+        <div className="relative min-h-[70svh] md:min-h-screen overflow-hidden">
             {/* Background Video */}
-            <div className="absolute inset-0 h-[100svh] md:h-screen">
+            <div className="absolute inset-0 h-[70svh] md:h-screen">
                 <video
                     autoPlay
                     loop
@@ -153,15 +153,15 @@ export default function HeroSection() {
             </div>
 
             {/* Content */}
-            <div className="relative z-[2] flex flex-col items-center justify-center min-h-[100svh] md:min-h-screen text-white px-4 sm:px-6 lg:px-8">
+            <div className="relative z-[2] flex flex-col items-center justify-center min-h-[70svh] md:min-h-screen text-white px-4 sm:px-6 lg:px-8">
                 <h1 className="text-xl sm:text-2xl md:text-3xl mb-2 text-center">
                     <span className='font-poppins font-semibold'>Discover Your Dream Vacation with</span>{' '}
                     <span className='font-poppins font-bold'>Truedeal</span>
                 </h1>
-                <p className="text-xs sm:text-sm md:text-md mb-4 text-center font-poppins font-semibold">
+                <p className="text-xs sm:text-sm md:text-md mb-2 md:mb-4 text-center font-poppins font-semibold">
                     GET READY FOR TAKE OFF
                 </p>
-                <h2 className="text-2xl sm:text-3xl md:text-3xl mb-8 text-center font-poppins font-bold">
+                <h2 className="text-2xl sm:text-3xl md:text-3xl mb-6 md:mb-8 text-center font-poppins font-bold">
                     Search <span className="underline">your Holida</span>y
                 </h2>
 

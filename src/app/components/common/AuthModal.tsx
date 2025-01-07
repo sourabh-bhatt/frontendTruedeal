@@ -53,7 +53,7 @@ const AuthModal = () => {
                 <div className="p-4 md:p-2 flex flex-col w-full">
                     <div className="flex justify-between items-center mb-4 md:mb-6">
                         <h1 className="text-xl md:text-2xl font-bold flex items-center ml-2 md:ml-[5rem]">
-                            Welcome to{' '}
+                            Welcome to {' '}
                             <span className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] bg-clip-text text-transparent">
                                 {' '}Truedeal
                             </span>

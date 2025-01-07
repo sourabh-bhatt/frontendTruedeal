@@ -58,9 +58,9 @@ export default function Domestic() {
     }
 
     return (
-        <section className="relative w-full mb-40 md:mb-60 lg:mb-40">
-            <div className="h-[50vh] md:h-[60vh] lg:h-[70vh] px-4 md:px-6 lg:px-8">
-                <div className="relative w-full h-full rounded-3xl overflow-hidden">
+        <section className="relative w-full mb-20 md:mb-32 lg:mb-24">
+            <div className="h-[40vh] md:h-[45vh] lg:h-[50vh] px-2 md:px-4 lg:px-6">
+                <div className="relative w-full max-w-[1200px] mx-auto h-full rounded-2xl overflow-hidden">
                     <video
                         autoPlay
                         loop
@@ -72,13 +72,10 @@ export default function Domestic() {
 
                     <div className="absolute top-0 left-0 w-full h-full bg-black/40" />
 
-                    <div className="relative z-10 h-full flex flex-col px-4 md:px-6 lg:px-8 py-8 md:py-10 lg:py-12 max-w-[1400px] mx-auto">
+                    <div className="relative z-10 h-full flex flex-col px-4 md:px-6 lg:px-8 py-6 md:py-8 lg:py-10 max-w-[1400px] mx-auto">
                         <div className="text-white">
-                            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-3">Explore India</h1>
-                            <p className="text-lg md:text-xl font-light mb-4 md:mb-6">A Journey Through Time, Colour And Culture</p>
-                            <button className="px-6 md:px-8 py-2 md:py-2.5 bg-yellow-400 text-black font-medium rounded-md hover:bg-yellow-500 transition-colors text-sm">
-                                Explore
-                            </button>
+                            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-1 md:mb-2">Explore India</h1>
+                            <p className="text-base md:text-lg font-light">A Journey Through Time, Colour And Culture</p>
                         </div>
                     </div>
                 </div>
@@ -90,7 +87,7 @@ export default function Domestic() {
                         {destinations.map((destination, index) => (
                             <motion.div
                                 key={`${destination.name}-${index}`}
-                                className="relative w-[160px] md:w-[170px] lg:w-[180px] h-[240px] md:h-[260px] lg:h-[280px] rounded-2xl overflow-hidden flex-shrink-0 group shadow-xl cursor-pointer"
+                                className="relative w-[140px] md:w-[150px] lg:w-[160px] h-[200px] md:h-[220px] lg:h-[240px] rounded-2xl overflow-hidden flex-shrink-0 group shadow-xl cursor-pointer"
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{
                                     opacity: 1,
