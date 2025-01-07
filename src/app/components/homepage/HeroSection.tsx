@@ -1,64 +1,159 @@
 'use client';
 
 import { useState } from 'react'
-import { Search } from 'lucide-react'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import { Search, MapPin, Globe } from 'lucide-react'
 import { useRouter } from 'next/navigation'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
+import { Input } from "@/components/ui/input"
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
 
-const destinations = [
-    'Thailand',
-    'Dubai',
-    'Singapore',
-    'Bali',
-    'Indonesia',
-    'Japan',
-    'Hongkong',
-    'China',
-    'Almaty',
-    'Baku',
-    'Vietnam',
-    'Shimla',
-    'Maldives',
-    'SriLanka',
+interface Destination {
+    name: string;
+    tag?: {
+        label: string;
+        color: string;
+    };
+    isTrending?: boolean;
+}
+
+const destinations: Destination[] = [
+    { name: 'Maldives', tag: { label: 'HONEYMOON', color: 'pink' } },
+    { name: 'Dubai', tag: { label: 'IN SEASON', color: 'green' } },
+    { name: 'Singapore' },
+    { name: 'Bali', tag: { label: 'POPULAR', color: 'rose' } },
+    { name: 'Indonesia' },
+    { name: 'Japan' },
+    { name: 'Hongkong' },
+    { name: 'China' },
+    { name: 'Almaty', isTrending: true },
+    { name: 'Baku', isTrending: true },
+    { name: 'Vietnam', isTrending: true },
+    { name: 'Shimla', isTrending: true },
+    { name: 'Thailand', tag: { label: 'BUDGET', color: 'amber' } },
+    { name: 'SriLanka' },
+    { name: 'Finland' },
+    { name: 'Kenya' },
+    { name: 'Philippines' },
+    { name: 'Abu Dhabi', tag: { label: 'POPULAR', color: 'violet' } }
 ]
 
-const trendingDestinations = ['Almaty', 'Baku', 'Vietnam', 'Shimla']
-
 export default function HeroSection() {
-    const [destination, setDestination] = useState<string>('')
+    const [searchTerm, setSearchTerm] = useState<string>('')
+    const [isSearchModalOpen, setIsSearchModalOpen] = useState<boolean>(false)
     const router = useRouter()
 
-    const handleDestinationChange = (value: string) => {
-        setDestination(value)
-        if (value) {
-            if (trendingDestinations.includes(value)) {
-                router.push(`/trending/${value.toLowerCase()}`)
-            } else {
-                router.push(`/destinations/${value.toLowerCase()}`)
-            }
+    const filteredDestinations = destinations.filter(dest =>
+        dest.name.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+
+    const handleDestinationSelect = (destination: Destination) => {
+        setSearchTerm(destination.name)
+        setIsSearchModalOpen(false)
+        if (destination.isTrending) {
+            router.push(`/trending/${destination.name.toLowerCase()}`)
+        } else {
+            router.push(`/destinations/${destination.name.toLowerCase()}`)
         }
     }
 
-    return (
-        <div className="relative min-h-screen overflow-hidden">
-            {/* Background Video */}
-            <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="absolute top-0 left-0 w-full h-full object-cover z-0"
-            >
-                <source src="https://res.cloudinary.com/dwwyljy3m/video/upload/v1735820545/bgVideoLoop_rszpwq.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-            </video>
+    const highlightMatch = (text: string, highlight: string) => {
+        if (!highlight) return text;
+        const parts = text.split(new RegExp(`(${highlight})`, 'gi'));
+        return (
+            <span>
+                {parts.map((part, index) =>
+                    part.toLowerCase() === highlight.toLowerCase() ?
+                        <span key={index} className="bg-yellow-200 text-gray-800">{part}</span> :
+                        part
+                )}
+            </span>
+        );
+    }
 
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-black opacity-50 z-[1]"></div>
+    const SearchContent = () => (
+        <div className="w-full">
+            <div className="relative">
+                <Input
+                    type="text"
+                    placeholder="Search countries, cities"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="w-full bg-gradient-to-r from-[#e7e9ec] to-[#00f6ff] text-black border-0 rounded-full h-12 px-6 pr-12 shadow-lg focus:ring-0 focus:ring-offset-0 hover:opacity-90 transition-all duration-300 placeholder-white"
+                    autoFocus
+                />
+                <Search className="absolute right-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-white pointer-events-none" />
+            </div>
+
+            <div className="mt-4 bg-white rounded-xl shadow-lg max-h-[60vh] overflow-y-auto">
+                {filteredDestinations.length > 0 ? (
+                    <div className="p-2">
+                        {filteredDestinations.map((dest, index) => (
+                            <motion.button
+                                key={dest.name}
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ duration: 0.15, delay: index * 0.03 }}
+                                onClick={() => handleDestinationSelect(dest)}
+                                className="w-full flex items-center gap-3 px-4 py-3 text-left text-gray-700 rounded-xl transition-all hover:bg-gray-50"
+                                role="option"
+                            >
+                                <span className="flex-shrink-0">
+                                    {dest.isTrending ? (
+                                        <Globe className="h-5 w-5 text-blue-500" />
+                                    ) : (
+                                        <MapPin className="h-5 w-5 text-gray-400" />
+                                    )}
+                                </span>
+                                <span className="flex-grow font-medium">
+                                    {highlightMatch(dest.name, searchTerm)}
+                                </span>
+                                <div className="flex gap-2 items-center">
+                                    {dest.tag && (
+                                        <span className={`flex-shrink-0 px-2 py-1 text-xs font-medium rounded-full
+                                            ${dest.tag.label === 'Family' ? 'bg-pink-100 text-pink-700' :
+                                                dest.tag.label === 'POPULAR' ? 'bg-rose-100 text-rose-700' :
+                                                    dest.tag.label === 'BUDGET' ? 'bg-amber-100 text-amber-700' :
+                                                        `bg-${dest.tag.color}-100 text-${dest.tag.color}-700`}`}>
+                                            {dest.tag.label}
+                                        </span>
+                                    )}
+                                    {dest.isTrending && (
+                                        <span className="flex-shrink-0 px-2 py-1 text-xs font-medium text-blue-700 bg-blue-50 rounded-full">
+                                            Trending
+                                        </span>
+                                    )}
+                                </div>
+                            </motion.button>
+                        ))}
+                    </div>
+                ) : (
+                    <div className="p-8 text-center text-gray-500">
+                        No destinations found for "{searchTerm}"
+                    </div>
+                )}
+            </div>
+        </div>
+    )
+
+    return (
+        <div className="relative min-h-[100svh] md:min-h-screen overflow-hidden">
+            {/* Background Video */}
+            <div className="absolute inset-0 h-[100svh] md:h-screen">
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="absolute top-0 left-0 w-full h-full object-cover z-0"
+                >
+                    <source src="https://res.cloudinary.com/dwwyljy3m/video/upload/v1735820545/bgVideoLoop_rszpwq.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+                <div className="absolute inset-0 bg-black opacity-50 z-[1]"></div>
+            </div>
 
             {/* Content */}
-            <div className="relative z-[2] flex flex-col items-center justify-center min-h-screen text-white px-4 sm:px-6 lg:px-8">
+            <div className="relative z-[2] flex flex-col items-center justify-center min-h-[100svh] md:min-h-screen text-white px-4 sm:px-6 lg:px-8">
                 <h1 className="text-xl sm:text-2xl md:text-3xl mb-2 text-center">
                     <span className='font-poppins font-semibold'>Discover Your Dream Vacation with</span>{' '}
                     <span className='font-poppins font-bold'>Truedeal</span>
@@ -70,47 +165,28 @@ export default function HeroSection() {
                     Search <span className="underline">your Holida</span>y
                 </h2>
 
-                <div className=" p-4 sm:p-6 w-full max-w-4xl mx-auto font-poppins rounded-lg">
-                    <div className="flex flex-col space-y-4">
-                        <div className="flex flex-col items-center">
-                            <div className="w-full max-w-xl">
-                                <Select onValueChange={handleDestinationChange} value={destination}>
-                                    <SelectTrigger
-                                        className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white border-0 rounded-full h-12 px-6 shadow-lg focus:ring-0 focus:ring-offset-0 hover:opacity-90 transition-all duration-300"
-                                    >
-                                        <Search className="mr-2 h-5 w-5 text-white" />
-                                        <SelectValue placeholder="Search countries, cities" />
-                                    </SelectTrigger>
-                                    <AnimatePresence>
-                                        <motion.div
-                                            initial={{ opacity: 0, y: -20 }}
-                                            animate={{ opacity: 1, y: 0 }}
-                                            exit={{ opacity: 0, y: -20 }}
-                                            transition={{ duration: 0.2 }}
-                                        >
-                                            <SelectContent
-                                                className="bg-white border-0 shadow-xl rounded-lg mt-2 p-2 backdrop-blur-sm bg-opacity-95"
-                                                position="popper"
-                                            >
-                                                {destinations.map((dest) => (
-                                                    <SelectItem
-                                                        key={dest}
-                                                        value={dest}
-                                                        className="text-gray-700 hover:bg-gradient-to-r hover:from-[#017ae3] hover:to-[#00f6ff] hover:text-white cursor-pointer py-3 px-4 rounded-md transition-all duration-200"
-                                                    >
-                                                        {dest}
-                                                    </SelectItem>
-                                                ))}
-                                            </SelectContent>
-                                        </motion.div>
-                                    </AnimatePresence>
-                                </Select>
+                <div className="w-full max-w-xl mx-auto font-poppins px-4">
+                    <button
+                        onClick={() => setIsSearchModalOpen(true)}
+                        className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white border-0 rounded-full h-12 px-6 shadow-lg hover:opacity-90 transition-all duration-300 flex items-center justify-between"
+                    >
+                        <span className="text-white/75">Search countries, cities</span>
+                        <Search className="h-5 w-5 text-white" />
+                    </button>
+
+                    {/* Search Modal for both Desktop and Mobile */}
+                    <Dialog open={isSearchModalOpen} onOpenChange={setIsSearchModalOpen}>
+                        <DialogContent className="sm:max-w-xl bg-white border-gray-800">
+                            <DialogTitle className="sr-only">
+                                Search Destinations
+                            </DialogTitle>
+                            <div className="pt-4">
+                                <SearchContent />
                             </div>
-                        </div>
-                    </div>
+                        </DialogContent>
+                    </Dialog>
                 </div>
             </div>
         </div>
-    )
+    );
 }
-
