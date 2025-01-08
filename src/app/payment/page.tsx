@@ -59,6 +59,13 @@ export default function PaymentPage() {
                             <p className="text-sm text-gray-600">UPI us at (Google Pay/BHIM/PhonePe):</p>
                             <p className="font-medium">9919111911.eazypay@icici</p>
                         </div>
+                        <Image
+                            src="/Assets/BankLogo/scanner.png"
+                            alt="UPI Logo"
+                            width={200}
+                            height={200}
+                            className="my-4"
+                        />
                         <div>
                             <p className="text-sm text-gray-600">UPI Name:</p>
                             <p className="font-medium">M S TRUEDEAL TRAVELS PRIVATE LIMITED</p>

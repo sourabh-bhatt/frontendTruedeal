@@ -753,7 +753,7 @@ const destinationData: { [key: string]: DestinationDetails } = {
     srilanka: {
         name: "Sri Lanka - The Jewel of the Indian Ocean",
         price: 17500,
-        image: "/webImage/Andaman/1/1.webp",
+        image: "/UGCImages/HD IMAGES/Sri Lanka/horizontal/6.png",
         packages: 2,
         description: "Explore the rich cultural heritage and stunning landscapes of Sri Lanka, from ancient temples to pristine beaches and scenic hills.",
         duration: { days: 4, nights: 3 },
@@ -802,10 +802,17 @@ const destinationData: { [key: string]: DestinationDetails } = {
             "No refund within 14 days of departure"
         ],
         galleryImages: [
-            "/webImage/Andaman/1/1.webp",
-            "/webImage/Andaman/1/2.webp",
-            "/webImage/Andaman/1/3.webp",
-            "/webImage/Andaman/1/4.webp",
+            "/UGCImages/HD IMAGES/Sri Lanka/horizontal/1.png",
+            "/UGCImages/HD IMAGES/Sri Lanka/horizontal/2.png",
+            "/UGCImages/HD IMAGES/Sri Lanka/horizontal/3.png",
+            "/UGCImages/HD IMAGES/Sri Lanka/horizontal/4.png",
+            "/UGCImages/HD IMAGES/Sri Lanka/horizontal/5.png",
+            "/UGCImages/HD IMAGES/Sri Lanka/horizontal/6.png",
+            "/UGCImages/HD IMAGES/Sri Lanka/horizontal/7.png",
+            "/UGCImages/HD IMAGES/Sri Lanka/vertical/1.png",
+            "/UGCImages/HD IMAGES/Sri Lanka/vertical/2.png",
+            "/UGCImages/HD IMAGES/Sri Lanka/vertical/3.png",
+            "/UGCImages/HD IMAGES/Sri Lanka/vertical/4.png",
         ]
     },
 
@@ -891,8 +898,8 @@ const destinationData: { [key: string]: DestinationDetails } = {
     bhutan: {
         name: "Bhutan - Phuentsholing, Thimphu, Punakha, Paro",
         price: 43300,
-        image: "/IMAGES/bhutan/1/1.webp",
-        packages: 3,
+        image: "/UGCImages/HD IMAGES/Bhutan/horizontal/1.png",
+        packages: 1,
         description: "Explore the Kingdom of Bhutan with its serene landscapes, rich cultural heritage, and majestic monasteries. This tour is designed for an unforgettable experience in the 'Land of Happiness.'",
         duration: { days: 7, nights: 6 },
         itinerary: [
@@ -955,10 +962,20 @@ const destinationData: { [key: string]: DestinationDetails } = {
             "No refund within 15 days of departure"
         ],
         galleryImages: [
-            "/IMAGES/bhutan/1/1.webp",
-            "/IMAGES/bhutan/1/2.webp",
-            "/IMAGES/bhutan/1/3.webp",
-            "/IMAGES/bhutan/1/4.webp"
+            "/UGCImages/HD IMAGES/Bhutan/horizontal/1.png",
+            "/UGCImages/HD IMAGES/Bhutan/horizontal/2.png",
+            "/UGCImages/HD IMAGES/Bhutan/horizontal/3.png",
+            "/UGCImages/HD IMAGES/Bhutan/horizontal/4.png",
+            "/UGCImages/HD IMAGES/Bhutan/horizontal/5.png",
+            "/UGCImages/HD IMAGES/Bhutan/horizontal/6.png",
+            "/UGCImages/HD IMAGES/Bhutan/horizontal/7.png",
+            "/UGCImages/HD IMAGES/Bhutan/horizontal/8.png",
+            "/UGCImages/HD IMAGES/Bhutan/vertical/1.png",
+            "/UGCImages/HD IMAGES/Bhutan/vertical/2.png",
+            "/UGCImages/HD IMAGES/Bhutan/vertical/3.png",
+            "/UGCImages/HD IMAGES/Bhutan/vertical/4.png",
+            "/UGCImages/HD IMAGES/Bhutan/vertical/5.png",
+            "/UGCImages/HD IMAGES/Bhutan/vertical/6.png",
         ]
     },
 
@@ -1206,8 +1223,8 @@ const destinationData: { [key: string]: DestinationDetails } = {
 
     finland: {
         name: "Finland - Arctic Adventures",
-        image: "/IMAGES/finland/1/1.webp",
-        baseImage: "/IMAGES/finland/1/1.webp",
+        image: "/UGCImages/HD IMAGES/Finland/horizontal/1.jpg",
+        baseImage: "/UGCImages/HD IMAGES/Finland/horizontal/1.jpg",
         packages: 4,
         description: "Experience the magic of the Arctic Circle with these enchanting Finnish adventures. Choose from various packages offering unique winter activities, Northern Lights viewing, and unforgettable Arctic experiences.",
         variants: [
@@ -1215,7 +1232,7 @@ const destinationData: { [key: string]: DestinationDetails } = {
                 id: "nature-escape",
                 name: "Nature Escape",
                 price: 85000, // 7600 SEK converted to INR approximately
-                image: "/IMAGES/finland/1/1.webp",
+                image: "/UGCImages/HD IMAGES/Finland/horizontal/2.jpg",
                 duration: { days: 4, nights: 3 },
                 description: "Perfect 4-day Arctic adventure for 10-14 persons with snowmobile rides and reindeer visits.",
                 itinerary: [
@@ -1245,7 +1262,7 @@ const destinationData: { [key: string]: DestinationDetails } = {
                 id: "nature-escape-xl",
                 name: "Nature Escape XL",
                 price: 99000, // 8900 SEK converted to INR approximately
-                image: "/IMAGES/finland/1/2.webp",
+                image: "/UGCImages/HD IMAGES/Finland/horizontal/3.jpg",
                 duration: { days: 5, nights: 4 },
                 description: "Extended 5-day Arctic experience for 10-14 persons featuring snowmobile, husky, and reindeer adventures.",
                 itinerary: [
@@ -1280,7 +1297,7 @@ const destinationData: { [key: string]: DestinationDetails } = {
                 id: "magic-lapland",
                 name: "Magic Lapland",
                 price: 98000, // 8850 SEK converted to INR approximately
-                image: "/IMAGES/finland/1/3.webp",
+                image: "/UGCImages/HD IMAGES/Finland/horizontal/4.jpg",
                 duration: { days: 5, nights: 4 },
                 description: "5-day magical Lapland experience for 10-14 persons including Northern Lights viewing.",
                 itinerary: [
@@ -1315,7 +1332,7 @@ const destinationData: { [key: string]: DestinationDetails } = {
                 id: "grand-arctic",
                 name: "Grand Arctic Week",
                 price: 152000, // 13700 SEK converted to INR approximately
-                image: "/IMAGES/finland/1/4.webp",
+                image: "/UGCImages/HD IMAGES/Finland/horizontal/4.jpg",
                 duration: { days: 8, nights: 7 },
                 description: "Complete 8-day Arctic experience for 10-14 persons featuring diverse winter activities.",
                 itinerary: [
@@ -1386,17 +1403,24 @@ const destinationData: { [key: string]: DestinationDetails } = {
             "No refund within 30 days of departure"
         ],
         galleryImages: [
-            "/IMAGES/finland/1/1.webp",
-            "/IMAGES/finland/1/2.webp",
-            "/IMAGES/finland/1/3.webp",
-            "/IMAGES/finland/1/4.webp"
+            "/UGCImages/HD IMAGES/Finland/horizontal/1.jpg",
+            "/UGCImages/HD IMAGES/Finland/horizontal/2.jpg",
+            "/UGCImages/HD IMAGES/Finland/horizontal/3.jpg",
+            "/UGCImages/HD IMAGES/Finland/horizontal/4.jpg",
+            "/UGCImages/HD IMAGES/Finland/horizontal/5.jpg",
+            "/UGCImages/HD IMAGES/Finland/horizontal/6.jpg",
+            "/UGCImages/HD IMAGES/Finland/vertical/1.jpg",
+            "/UGCImages/HD IMAGES/Finland/vertical/2.jpg",
+            "/UGCImages/HD IMAGES/Finland/vertical/3.jpg",
+            "/UGCImages/HD IMAGES/Finland/vertical/4.jpg",
+            "/UGCImages/HD IMAGES/Finland/vertical/5.jpg",
         ]
     },
 
     phillipines: {
         name: "Philippines - Tropical Paradise Explorer",
         price: 85000,
-        image: "/webImage/Philippines/1/1.webp",
+        image: "/UGCImages/HD IMAGES/Philippines/horizontal/1.png",
         packages: 5,
         description: "Embark on an unforgettable journey through the Philippines' most stunning destinations. Experience world-class beaches, vibrant marine life, historic sites, and the warmth of Filipino hospitality across Manila, Palawan, Cebu, and Boracay.",
         variants: [
@@ -1404,7 +1428,7 @@ const destinationData: { [key: string]: DestinationDetails } = {
                 id: "north-luzon",
                 name: "North Luzon",
                 price: 85000,
-                image: "/webImage/Philippines/1/1.webp",
+                image: "/UGCImages/HD IMAGES/Philippines/horizontal/3.png",
                 duration: { days: 3, nights: 2 },
                 description: "Explore the beautiful landscapes and cultural heritage of North Luzon.",
                 itinerary: [
@@ -1429,7 +1453,7 @@ const destinationData: { [key: string]: DestinationDetails } = {
                 id: "cordillera-cultural-trails",
                 name: "Cordillera Cultural Trails",
                 price: 99000,
-                image: "/webImage/Philippines/1/2.webp",
+                image: "/UGCImages/HD IMAGES/Philippines/horizontal/5.png",
                 duration: { days: 4, nights: 3 },
                 description: "Discover the cultural heritage and natural beauty of the Cordillera region.",
                 itinerary: [
@@ -1459,7 +1483,7 @@ const destinationData: { [key: string]: DestinationDetails } = {
                 id: "cordillera-round-trip",
                 name: "Cordillera Round Trip",
                 price: 106000,
-                image: "/webImage/Philippines/1/3.webp",
+                image: "/UGCImages/HD IMAGES/Philippines/horizontal/6.png",
                 duration: { days: 5, nights: 4 },
                 description: "Experience the full beauty of the Cordillera region with this comprehensive tour.",
                 itinerary: [
@@ -1579,6 +1603,17 @@ const destinationData: { [key: string]: DestinationDetails } = {
             "/webImage/Philippines/2/2.webp",
             "/webImage/Philippines/2/3.webp",
             "/webImage/Philippines/2/4.webp",
+            "/UGCImages/HD IMAGES/Philippines/horizontal/1.png",
+            "/UGCImages/HD IMAGES/Philippines/horizontal/2.png",
+            "/UGCImages/HD IMAGES/Philippines/horizontal/3.png",
+            "/UGCImages/HD IMAGES/Philippines/horizontal/4.png",
+            "/UGCImages/HD IMAGES/Philippines/horizontal/5.png",
+            "/UGCImages/HD IMAGES/Philippines/horizontal/6.png",
+            "/UGCImages/HD IMAGES/Philippines/vertical/1.png",
+            "/UGCImages/HD IMAGES/Philippines/vertical/2.png",
+            "/UGCImages/HD IMAGES/Philippines/vertical/3.png",
+            "/UGCImages/HD IMAGES/Philippines/vertical/4.png",
+            "/UGCImages/HD IMAGES/Philippines/vertical/5.png",
         ]
     },
 
@@ -2799,7 +2834,6 @@ export default function DestinationDetails() {
             </main>
             <Trending />
             <Destinations />
-            <HappyCustomers />
             <Domestic />
             <ExoticDestinations />
             <Europe />

@@ -154,7 +154,7 @@ export default function Component() {
                                     { name: "Foreign Currency", path: "/#forex" },
                                     { name: "Exchange Forex Card", path: "/#forex" },
                                     { name: "Remittance", path: "/#forex" },
-                                    { name: "VISA Services", path: "/contact" },
+                                    { name: "VISA Services", path: "/visaservices" },
                                 ].map((service) => (
                                     <li key={service.name}>
                                         <Link href={service.path} className="text-gray-500 hover:text-gray-700 text-sm">

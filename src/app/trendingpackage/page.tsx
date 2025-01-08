@@ -4,6 +4,8 @@ import Trending from "../components/homepage/Trending";
 import Destinations from "../components/homepage/Destinations";
 import ForexLive from "../components/forex/ForexLive";
 import HappyCustomers from "../components/Ad/HappyCustomers";
+import ExoticDestinations from "../components/homepage/Exotic";
+import Ugc from "../components/homepage/Ugc";
 
 export default function TrendingPackagePage() {
     return (
@@ -17,8 +19,10 @@ export default function TrendingPackagePage() {
                     <ForexLive />
                 </div>
 
+                <ExoticDestinations />
             </main>
             <HappyCustomers />
+            <Ugc />
         </div>
     );
 } 

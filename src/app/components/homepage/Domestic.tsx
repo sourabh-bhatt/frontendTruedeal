@@ -21,7 +21,7 @@ const destinations: Destination[] = [
     {
         name: 'Bhutan',
         price: '12,999',
-        image: '/IMAGES/Shimla/2/2.webp',
+        image: '/UGCImages/HD IMAGES/Bhutan/vertical/4.png',
         slug: 'bhutan'
     },
     {

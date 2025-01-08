@@ -9,21 +9,20 @@ type Destination = {
     name: string;
     price: number;
     image: string;
-    packages: number;
 };
 
 const destinations: { [key: string]: Destination[] } = {
     asia: [
-        { name: "Thailand", price: 25000, image: "/IMAGES/thailand/2/1.webp", packages: 4 },
-        { name: "Dubai", price: 54000, image: "/IMAGES/dubai/1080 x 1274/4.webp", packages: 3 },
-        { name: "Singapore", price: 66000, image: "/IMAGES/singapore/1/1.webp", packages: 5 },
-        { name: "Bali", price: 19500, image: "/IMAGES/bali/1/4.webp", packages: 4 },
+        { name: "Finland", price: 85000, image: "/UGCImages/HD IMAGES/Finland/vertical/2.jpg" },
+        { name: "Dubai", price: 54000, image: "/IMAGES/dubai/1080 x 1274/4.webp" },
+        { name: "Singapore", price: 66000, image: "/IMAGES/singapore/1/1.webp" },
+        { name: "Bhutan", price: 43300, image: "/UGCImages/HD IMAGES/Bhutan/vertical/1.png" },
     ],
     europe: [
-        { name: "Indonesia", price: 55500, image: "/IMAGES/Indonesia/2/4.webp", packages: 6 },
-        { name: "Japan", price: 170500, image: "/IMAGES/japan/2/3.webp", packages: 4 },
-        { name: "Hongkong", price: 74680, image: "/IMAGES/Hongkong/2/3.webp", packages: 5 },
-        { name: "China", price: 120000, image: "/IMAGES/china/1/3.webp", packages: 6 },
+        { name: "Phillipines", price: 85000, image: "/UGCImages/HD IMAGES/Philippines/vertical/1.png" },
+        { name: "Japan", price: 170500, image: "/IMAGES/japan/2/3.webp" },
+        { name: "Hongkong", price: 74680, image: "/IMAGES/Hongkong/2/3.webp" },
+        { name: "China", price: 120000, image: "/IMAGES/china/1/3.webp" },
     ]
 }
 
@@ -57,7 +56,7 @@ export default function Destination() {
 
             <div className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-8 lg:gap-16 px-4 lg:px-0">
                 <div className="flex flex-col md:flex-row lg:flex-nowrap gap-8 lg:gap-4">
-                    <DestinationCard continent="Asia" destinations={destinations.asia} currentIndex={asiaIndex} />
+                    <DestinationCard continent="Exotic Destinations" destinations={destinations.asia} currentIndex={asiaIndex} />
                     <div className="space-y-4">
                         {destinations.asia.map((dest) => (
                             <DestinationSubCard key={dest.name} {...dest} />
@@ -66,7 +65,7 @@ export default function Destination() {
                 </div>
 
                 <div className="flex flex-col md:flex-row lg:flex-nowrap gap-8 lg:gap-4">
-                    <DestinationCard continent="Europe" destinations={destinations.europe} currentIndex={europeIndex} />
+                    <DestinationCard continent="Trending Destinations" destinations={destinations.europe} currentIndex={europeIndex} />
                     <div className="space-y-4">
                         {destinations.europe.map((dest) => (
                             <DestinationSubCard key={dest.name} {...dest} />
@@ -100,12 +99,9 @@ function DestinationCard({ continent, destinations, currentIndex }: {
             <div className="absolute inset-0 bg-black opacity-30"></div>
             <div className="absolute bottom-4 left-4 text-white">
                 <div className="flex items-center space-x-2 mb-1">
-                    <span className="text-4xl absolute bottom-40 md:bottom-[20rem]">
-                        <Image src={"/Assets/Icons/gateway-of-india.webp"} alt='gateway of India' width={40} height={40} />
-                    </span>
+
                     <h3 className="text-xl font-bold">{continent}</h3>
                 </div>
-                <p className="text-sm">{currentDest.packages} Packages</p>
             </div>
         </div>
     )

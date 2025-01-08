@@ -60,14 +60,17 @@ Rate: ${currencyRates.find(c => c.code === formData.receivingCurrency)?.sellRate
 
   return (
     <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-lg modal-content relative">
-      <button
-        onClick={onClose}
-        className="absolute -top-2 -right-2 p-2 bg-white hover:bg-gray-100 rounded-full shadow-lg transition-all z-50"
-      >
-        <X className="w-5 h-5 text-gray-500" />
-      </button>
+      <div className="flex justify-end -mt-2 -mr-2">
+        <button
+          onClick={onClose}
+          className="p-2 hover:bg-gray-100 rounded-full transition-all"
+          aria-label="Close"
+        >
+          <X className="w-5 h-5 text-gray-500" />
+        </button>
+      </div>
 
-      <div className="space-y-6">
+      <div className="space-y-6 -mt-2">
         {/* City Selection */}
         <div className="relative">
           <label className="block text-sm font-medium text-gray-700 mb-1">Select City</label>

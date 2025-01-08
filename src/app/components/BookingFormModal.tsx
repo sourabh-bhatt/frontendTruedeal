@@ -67,9 +67,6 @@ export function BookingFormModal({ isOpen, onClose, destinationName }: BookingFo
             <DialogContent className="sm:max-w-[425px] bg-white">
                 <DialogHeader>
                     <DialogTitle>Book {destinationName}</DialogTitle>
-                    <button onClick={onClose} className="absolute top-2 right-2">
-                        <X className="w-6 h-6" aria-label="Close" />
-                    </button>
                 </DialogHeader>
                 {isSubmissionSuccessful && (
                     <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-90 z-10">

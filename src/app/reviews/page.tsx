@@ -697,14 +697,14 @@ export default function ReviewsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div className="relative w-full h-[300px] mb-12 rounded-lg overflow-hidden mt-10">
                 <Image
-                    src="/Assets/DestinationsImage/7.jpg"
+                    src="/UGCImages/HD IMAGES/Finland/horizontal/3.jpg"
                     alt="Reviews Banner"
                     fill
                     className="object-cover"
                     priority
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-40"></div>
-                <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-yellow-400">
                     <h1 className="text-4xl font-bold mb-4">TRUEDEAL REVIEWS</h1>
                     <p className="text-xl">Endless real stories from travellers like you</p>
                 </div>

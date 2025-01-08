@@ -31,6 +31,7 @@ const destinations: Destination[] = [
     { name: 'Shimla', isTrending: true },
     { name: 'Thailand', tag: { label: 'BUDGET', color: 'amber' } },
     { name: 'SriLanka' },
+    { name: 'Bhutan' },
     { name: 'Finland' },
     { name: 'Kenya' },
     { name: 'Phillipines' }, //phillipines
