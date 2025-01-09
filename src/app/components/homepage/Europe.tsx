@@ -15,7 +15,7 @@ const destinations: Destination[] = [
     {
         name: 'France',
         price: '29,999',
-        image: '/IMAGES/Shimla/2/1.webp',
+        image: '/UGCImages/folder3/france/vertical/1.webp',
         slug: 'france'
     },
     {

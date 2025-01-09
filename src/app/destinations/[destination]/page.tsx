@@ -1066,7 +1066,7 @@ const destinationData: { [key: string]: DestinationDetails } = {
     himachal: {
         name: "Himachal Pradesh - The Land of the Himalayas",
         price: 17500,
-        image: "/IMAGES/himachal/1/1.webp",
+        image: "/UGCImages/folder3/himachal pradesh/horizontal/1.webp",
         packages: 2,
         description: "Explore the majestic beauty of Himachal Pradesh, from the snow-capped mountains to the lush valleys and vibrant culture.",
         duration: { days: 4, nights: 3 },
@@ -1112,17 +1112,25 @@ const destinationData: { [key: string]: DestinationDetails } = {
             "No refund within 15 days of departure"
         ],
         galleryImages: [
-            "/IMAGES/himachal/1/1.webp",
-            "/IMAGES/himachal/1/2.webp",
-            "/IMAGES/himachal/1/3.webp",
-            "/IMAGES/himachal/1/4.webp"
+            "/UGCImages/folder3/himachal pradesh/horizontal/1.webp",
+            "/UGCImages/folder3/himachal pradesh/horizontal/2.webp",
+            "/UGCImages/folder3/himachal pradesh/horizontal/3.webp",
+            "/UGCImages/folder3/himachal pradesh/horizontal/4.webp",
+            "/UGCImages/folder3/himachal pradesh/horizontal/5.webp",
+            "/UGCImages/folder3/himachal pradesh/horizontal/6.webp",
+            "/UGCImages/folder3/himachal pradesh/vertical/1.webp",
+            "/UGCImages/folder3/himachal pradesh/vertical/2.webp",
+            "/UGCImages/folder3/himachal pradesh/vertical/3.webp",
+            "/UGCImages/folder3/himachal pradesh/vertical/4.webp",
+            "/UGCImages/folder3/himachal pradesh/vertical/5.webp",
+            "/UGCImages/folder3/himachal pradesh/vertical/6.webp",
         ]
     },
 
     punjab: {
         name: "Punjab - The Land of Five Rivers",
         price: 17500,
-        image: "/IMAGES/himachal/1/1.webp",
+        image: "/UGCImages/folder3/punjab/horizontal/5.webp",
         packages: 2,
         description: "Explore the rich culture and vibrant festivals of Punjab, from the Golden Temple to the vibrant bazaars and delicious cuisine.",
         duration: { days: 4, nights: 3 },
@@ -1168,10 +1176,16 @@ const destinationData: { [key: string]: DestinationDetails } = {
             "No refund within 15 days of departure"
         ],
         galleryImages: [
-            "/IMAGES/himachal/1/1.webp",
-            "/IMAGES/himachal/1/2.webp",
-            "/IMAGES/himachal/1/3.webp",
-            "/IMAGES/himachal/1/4.webp"
+            "/UGCImages/folder3/punjab/horizontal/1.webp",
+            "/UGCImages/folder3/punjab/horizontal/2.webp",
+            "/UGCImages/folder3/punjab/horizontal/3.webp",
+            "/UGCImages/folder3/punjab/horizontal/4.webp",
+            "/UGCImages/folder3/punjab/horizontal/5.webp",
+            "/UGCImages/folder3/punjab/vertical/1.webp",
+            "/UGCImages/folder3/punjab/vertical/2.webp",
+            "/UGCImages/folder3/punjab/vertical/3.webp",
+            "/UGCImages/folder3/punjab/vertical/4.webp",
+            "/UGCImages/folder3/punjab/vertical/5.webp",
         ]
     },
 
@@ -1723,7 +1737,7 @@ const destinationData: { [key: string]: DestinationDetails } = {
     france: {
         name: "France - Romance & Culture",
         price: 185000,
-        image: "/webImage/kashmir/2/1.webp",
+        image: "/UGCImages/folder3/france/horizontal/3.webp",
         packages: 3,
         description: "Experience the magic of France, from the iconic Eiffel Tower to the romantic streets of Paris, the stunning French Riviera, and the picturesque countryside of Provence.",
         duration: { days: 7, nights: 6 },
@@ -1787,10 +1801,20 @@ const destinationData: { [key: string]: DestinationDetails } = {
             "No refund within 30 days of departure"
         ],
         galleryImages: [
-            "/webImage/kashmir/2/1.webp",
-            "/webImage/kashmir/2/2.webp",
-            "/webImage/kashmir/1/3.webp",
-            "/webImage/kashmir/1/4.webp"
+            "/UGCImages/folder3/france/horizontal/1.webp",
+            "/UGCImages/folder3/france/horizontal/2.webp",
+            "/UGCImages/folder3/france/horizontal/3.webp",
+            "/UGCImages/folder3/france/horizontal/4.webp",
+            "/UGCImages/folder3/france/horizontal/5.webp",
+            "/UGCImages/folder3/france/horizontal/6.webp",
+            "/UGCImages/folder3/france/vertical/1.webp",
+            "/UGCImages/folder3/france/vertical/2.webp",
+            "/UGCImages/folder3/france/vertical/3.webp",
+            "/UGCImages/folder3/france/vertical/4.webp",
+            "/UGCImages/folder3/france/vertical/5.webp",
+            "/UGCImages/folder3/france/vertical/6.webp",
+            "/UGCImages/folder3/france/vertical/7.webp",
+
         ]
     },
 

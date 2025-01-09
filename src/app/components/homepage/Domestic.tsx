@@ -39,13 +39,13 @@ const destinations: Destination[] = [
     {
         name: 'Punjab',
         price: '12,999',
-        image: '/IMAGES/Shimla/2/1.webp',
+        image: '/UGCImages/folder3/punjab/vertical/3.webp',
         slug: 'punjab'
     },
     {
         name: 'Himanchal Pradesh',
         price: '12,999',
-        image: '/IMAGES/Shimla/2/2.webp',
+        image: '/UGCImages/folder3/himachal pradesh/vertical/3.webp',
         slug: 'himachal'
     },
 ]
