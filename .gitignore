@@ -29,7 +29,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# env files (can opt-in for commiting if needed)
+# env files (can opt-in for committing if needed)
 .env*
 
 # vercel
@@ -44,3 +44,9 @@ public/Videos/zoomoutSandView.MOV
 public/Videos/mouthFire.MOV
 public/Videos/dubaiMemories.MOV
 public/Videos/zoomoutSandView.MOV
+
+# Ignore large files
+*.psd
+*.psb
+*.tiff
+*.ai
