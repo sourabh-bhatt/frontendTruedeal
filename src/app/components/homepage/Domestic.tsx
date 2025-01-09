@@ -65,6 +65,9 @@ export default function Domestic() {
                         autoPlay
                         loop
                         muted
+                        playsInline
+                        webkit-playsinline="true"
+                        preload="auto"
                         className="absolute top-0 left-0 w-full h-full object-cover"
                     >
                         <source src="https://res.cloudinary.com/dwwyljy3m/video/upload/v1735911751/india_dooqfo.mp4" type="video/mp4" />

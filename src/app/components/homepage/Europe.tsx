@@ -84,6 +84,9 @@ export default function Europe() {
                         autoPlay
                         loop
                         muted
+                        playsInline
+                        webkit-playsinline="true"
+                        preload="auto"
                         className="absolute top-0 left-0 w-full h-full object-cover"
                     >
                         <source src="https://res.cloudinary.com/dwwyljy3m/video/upload/v1736239820/Europe_xfcadt.mp4" type="video/mp4" />
