@@ -6,7 +6,6 @@ import ForexLive from "../components/forex/ForexLive";
 import HappyCustomers from "../components/Ad/HappyCustomers";
 import Ugc from "../components/homepage/Ugc";
 import ExoticDestinations from "../components/homepage/Exotic";
-import Domestic from "../components/homepage/Domestic";
 
 export default function DestinationPackagePage() {
     return (
