@@ -2327,6 +2327,11 @@ const getDestinationDetails = (destinationSlug: string): DestinationDetails => {
     return destination;
 };
 
+// Update the type guard function
+function hasVariants(data: DestinationDetails | null): data is DestinationDetails & { variants: { id: string; name: string; }[] } {
+    return Boolean(data?.variants?.length);
+}
+
 export default function DestinationDetails() {
     const params = useParams();
     const { destination } = params;
@@ -2336,6 +2341,10 @@ export default function DestinationDetails() {
     const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
     const [selectedVariant, setSelectedVariant] = useState<string | null>(null);
     const [showScrollIndicator, setShowScrollIndicator] = useState(true);
+    // Add this new state for managing the packages dropdown
+    const [showPackages, setShowPackages] = useState(false);
+    // First, add a state to track the active tab value
+    const [activeTab, setActiveTab] = useState<string>('');
 
     useEffect(() => {
         try {
@@ -2367,6 +2376,13 @@ export default function DestinationDetails() {
             });
         };
     }, []);
+    useEffect(() => {
+        if (hasVariants(destinationData)) {
+            const initialTabId = destinationData.variants[0].id;
+            setActiveTab(initialTabId);
+            setSelectedVariant(initialTabId);
+        }
+    }, [destinationData]);
 
     if (error) {
         return <div>Error: {error}</div>;
@@ -2376,7 +2392,7 @@ export default function DestinationDetails() {
         return <Shimmer />;
     }
 
-    if (destination === 'finland' && destinationData.variants) {
+    if (destination === 'finland' && hasVariants(destinationData)) {
         return (
             <div className="min-h-screen bg-gray-50 mt-10">
                 <main className="container mx-auto px-4 py-8 max-w-7xl">
@@ -2385,31 +2401,84 @@ export default function DestinationDetails() {
                             <div className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white px-4 py-2 rounded-full text-sm font-medium">
                                 {destinationData.variants.length} Packages Available
                             </div>
-                            <div className="text-gray-500 text-sm block md:hidden">
-                                ← Swipe packages →
-                            </div>
                         </div>
                     </div>
 
                     <Tabs
+                        value={activeTab || destinationData.variants[0].id}
                         defaultValue={destinationData.variants[0].id}
                         className="mb-8"
-                        onValueChange={(value) => setSelectedVariant(value)}
+                        onValueChange={(value) => {
+                            setActiveTab(value);
+                            setSelectedVariant(value);
+                        }}
                     >
-                        <TabsList className="flex w-full overflow-x-auto scrollbar-hide space-x-2 p-1 bg-gray-100/80 rounded-full px-1">
-                            {destinationData.variants.map((variant, index) => (
-                                <TabsTrigger
-                                    key={variant.id}
-                                    value={variant.id}
-                                    className={`flex-none w-auto px-4 py-2 text-sm rounded-full data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#017ae3] data-[state=active]:to-[#00f6ff] data-[state=active]:text-white transition-all duration-300 hover:bg-gray-200 whitespace-nowrap ${index === 0 ? 'ml-1' : ''
-                                        }`}
-                                    style={{ minWidth: 'max-content' }}
+                        {/* Mobile View Packages Dropdown */}
+                        <div className="md:hidden relative mb-4">
+                            <Button
+                                onClick={() => setShowPackages(!showPackages)}
+                                className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white rounded-full flex items-center justify-between px-4 py-3"
+                            >
+                                <span>
+                                    {destinationData.variants.find(v => v.id === activeTab)?.name || 'Available Packages'}
+                                </span>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="20"
+                                    height="20"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    className={`transition-transform duration-300 ${showPackages ? 'rotate-180' : ''}`}
                                 >
-                                    {variant.name}
-                                </TabsTrigger>
-                            ))}
-                        </TabsList>
+                                    <path d="m6 9 6 6 6-6" />
+                                </svg>
+                            </Button>
 
+                            {showPackages && (
+                                <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl shadow-lg z-50 overflow-hidden">
+                                    {destinationData.variants.map((variant) => (
+                                        <button
+                                            key={variant.id}
+                                            onClick={() => {
+                                                setActiveTab(variant.id);
+                                                setSelectedVariant(variant.id);
+                                                setShowPackages(false);
+                                            }}
+                                            className={`w-full px-4 py-3 text-left text-sm transition-colors duration-200
+                                            ${activeTab === variant.id
+                                                    ? 'bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white'
+                                                    : 'hover:bg-gray-50 text-gray-700'
+                                                }
+                                        `}
+                                        >
+                                            {variant.name}
+                                        </button>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+
+                        {/* Desktop View Tabs */}
+                        <div className="hidden md:block">
+                            <TabsList className="flex w-full overflow-x-auto scrollbar-hide space-x-2 p-1 bg-gray-100/80 rounded-full px-1">
+                                {destinationData.variants.map((variant, index) => (
+                                    <TabsTrigger
+                                        key={variant.id}
+                                        value={variant.id}
+                                        className={`flex-none w-auto px-4 py-2 text-sm rounded-full data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#017ae3] data-[state=active]:to-[#00f6ff] data-[state=active]:text-white transition-all duration-300 hover:bg-gray-200 whitespace-nowrap ${index === 0 ? 'ml-1' : ''}`}
+                                        style={{ minWidth: 'max-content' }}
+                                    >
+                                        {variant.name}
+                                    </TabsTrigger>
+                                ))}
+                            </TabsList>
+                        </div>
+
+                        {/* Tab Content */}
                         {destinationData.variants.map((variant) => (
                             <TabsContent
                                 key={variant.id}
@@ -2681,6 +2750,42 @@ export default function DestinationDetails() {
                             scroll-snap-align: start;
                             scroll-snap-stop: always;
                             min-width: max-content;
+                        }
+                    }
+
+                    /* Add these new styles */
+                    .package-dropdown-enter {
+                        opacity: 0;
+                        transform: translateY(-10px);
+                    }
+
+                    .package-dropdown-enter-active {
+                        opacity: 1;
+                        transform: translateY(0);
+                        transition: opacity 200ms, transform 200ms;
+                    }
+
+                    .package-dropdown-exit {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+
+                    .package-dropdown-exit-active {
+                        opacity: 0;
+                        transform: translateY(-10px);
+                        transition: opacity 200ms, transform 200ms;
+                    }
+
+                    /* Overlay styles for mobile */
+                    @media (max-width: 768px) {
+                        .overlay {
+                            position: fixed;
+                            top: 0;
+                            left: 0;
+                            right: 0;
+                            bottom: 0;
+                            background-color: rgba(0, 0, 0, 0.5);
+                            z-index: 40;
                         }
                     }
                 `}</style>
@@ -2695,33 +2800,88 @@ export default function DestinationDetails() {
                     <div className="flex items-center justify-between mb-6">
                         <div className="flex items-center gap-3">
                             <div className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white px-4 py-2 rounded-full text-sm font-medium">
-                                {destinationData.variants.length} Packages Available
+                                {destinationData?.variants?.length || 0} Packages Available
                             </div>
-                            <div className="text-gray-500 text-sm block md:hidden">
-                                ← Swipe packages →
-                            </div>
+
                         </div>
                     </div>
 
                     <Tabs
-                        defaultValue={destinationData.variants[0].id}
+                        value={activeTab || (destinationData?.variants?.[0]?.id || '')}
+                        defaultValue={destinationData?.variants?.[0]?.id || ''}
                         className="mb-8"
-                        onValueChange={(value) => setSelectedVariant(value)}
+                        onValueChange={(value) => {
+                            setActiveTab(value);
+                            setSelectedVariant(value);
+                        }}
                     >
-                        <TabsList className="flex w-full overflow-x-auto scrollbar-hide space-x-2 p-1 bg-gray-100/80 rounded-full px-1">
-                            {destinationData.variants.map((variant, index) => (
-                                <TabsTrigger
-                                    key={variant.id}
-                                    value={variant.id}
-                                    className={`flex-none w-auto px-4 py-2 text-sm rounded-full data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#017ae3] data-[state=active]:to-[#00f6ff] data-[state=active]:text-white transition-all duration-300 hover:bg-gray-200 whitespace-nowrap ${index === 0 ? 'ml-8' : ''}`}
-                                    style={{ minWidth: 'max-content' }}
+                        {/* Mobile View Packages Dropdown */}
+                        <div className="md:hidden relative mb-4">
+                            <Button
+                                onClick={() => setShowPackages(!showPackages)}
+                                className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white rounded-full flex items-center justify-between px-4 py-3"
+                            >
+                                <span>
+                                    {destinationData?.variants?.find(v => v.id === activeTab)?.name || 'Available Packages'}
+                                </span>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="20"
+                                    height="20"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    className={`transition-transform duration-300 ${showPackages ? 'rotate-180' : ''}`}
                                 >
-                                    {variant.name}
-                                </TabsTrigger>
-                            ))}
-                        </TabsList>
+                                    <path d="m6 9 6 6 6-6" />
+                                </svg>
+                            </Button>
 
-                        {destinationData.variants.map((variant) => (
+                            {showPackages && destinationData?.variants && (
+                                <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl shadow-lg z-50 overflow-hidden">
+                                    {destinationData.variants.map((variant) => (
+                                        <button
+                                            key={variant.id}
+                                            onClick={() => {
+                                                setActiveTab(variant.id);  // Update the active tab
+                                                setSelectedVariant(variant.id);
+                                                setShowPackages(false);
+                                            }}
+                                            className={`w-full px-4 py-3 text-left text-sm transition-colors duration-200
+                                            ${activeTab === variant.id
+                                                    ? 'bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white'
+                                                    : 'hover:bg-gray-50 text-gray-700'
+                                                }
+                                        `}
+                                        >
+                                            {variant.name}
+                                        </button>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+
+                        {/* Desktop View Tabs */}
+                        <div className="hidden md:block">
+                            <TabsList className="flex w-full overflow-x-auto scrollbar-hide space-x-2 p-1 bg-gray-100/80 rounded-full px-1">
+                                {destinationData?.variants?.map((variant, index) => (
+                                    <TabsTrigger
+                                        key={variant.id}
+                                        value={variant.id}
+                                        className={`flex-none w-auto px-4 py-2 text-sm rounded-full data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#017ae3] data-[state=active]:to-[#00f6ff] data-[state=active]:text-white transition-all duration-300 hover:bg-gray-200 whitespace-nowrap ${index === 0 ? 'ml-1' : ''}`}
+                                        style={{ minWidth: 'max-content' }}
+                                    >
+                                        {variant.name}
+                                    </TabsTrigger>
+                                ))}
+                            </TabsList>
+                        </div>
+
+                        {/* Tab Content */}
+                        {destinationData?.variants?.map((variant) => (
                             <TabsContent
                                 key={variant.id}
                                 value={variant.id}
@@ -2991,6 +3151,42 @@ export default function DestinationDetails() {
                             scroll-snap-align: start;
                             scroll-snap-stop: always;
                             min-width: max-content;
+                        }
+                    }
+
+                    /* Add these new styles */
+                    .package-dropdown-enter {
+                        opacity: 0;
+                        transform: translateY(-10px);
+                    }
+
+                    .package-dropdown-enter-active {
+                        opacity: 1;
+                        transform: translateY(0);
+                        transition: opacity 200ms, transform 200ms;
+                    }
+
+                    .package-dropdown-exit {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+
+                    .package-dropdown-exit-active {
+                        opacity: 0;
+                        transform: translateY(-10px);
+                        transition: opacity 200ms, transform 200ms;
+                    }
+
+                    /* Overlay styles for mobile */
+                    @media (max-width: 768px) {
+                        .overlay {
+                            position: fixed;
+                            top: 0;
+                            left: 0;
+                            right: 0;
+                            bottom: 0;
+                            background-color: rgba(0, 0, 0, 0.5);
+                            z-index: 40;
                         }
                     }
                 `}</style>
