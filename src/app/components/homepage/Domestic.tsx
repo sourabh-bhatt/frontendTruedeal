@@ -15,7 +15,7 @@ const destinations: Destination[] = [
     {
         name: 'Shimla',
         price: '29,999',
-        image: '/IMAGES/Shimla/2/1.webp',
+        image: '/UGCImages/Hd images2/shimla/vertical/1.webp',
         slug: 'amritsar_to_shimla'
     },
     {
@@ -27,13 +27,13 @@ const destinations: Destination[] = [
     {
         name: 'Kashmir',
         price: '24,499',
-        image: '/IMAGES/Shimla/2/3.webp',
+        image: '/UGCImages/Hd images2/kashmir/vertical/3.webp',
         slug: 'kashmir'
     },
     {
         name: 'Sikkim',
         price: '7,999',
-        image: '/IMAGES/Shimla/2/4.webp',
+        image: '/UGCImages/Hd images2/sikkim/vertical/2.webp',
         slug: 'sikkim'
     },
     {

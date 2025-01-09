@@ -819,7 +819,7 @@ const destinationData: { [key: string]: DestinationDetails } = {
     amritsar_to_shimla: {
         name: "Amritsar to Shimla",
         price: 20000,
-        image: "/IMAGES/india/amritsar-to-shimla.webp",
+        image: "/UGCImages/Hd images2/shimla/horizontal/2.webp",
         packages: 9,
         description: "Discover the diverse beauty of North India with this captivating tour from Amritsar to Shimla, featuring iconic landmarks, serene temples, and breathtaking hill stations.",
         duration: { days: 9, nights: 8 },
@@ -888,10 +888,18 @@ const destinationData: { [key: string]: DestinationDetails } = {
             "No refund within 15 days of departure"
         ],
         galleryImages: [
-            "/IMAGES/india/amritsar.webp",
-            "/IMAGES/india/dalhousie.webp",
-            "/IMAGES/india/manali.webp",
-            "/IMAGES/india/shimla.webp"
+            "/UGCImages/Hd images2/shimla/horizontal/1.webp",
+            "/UGCImages/Hd images2/shimla/horizontal/2.webp",
+            "/UGCImages/Hd images2/shimla/horizontal/3.webp",
+            "/UGCImages/Hd images2/shimla/horizontal/4.webp",
+            "/UGCImages/Hd images2/shimla/horizontal/5.webp",
+            "/UGCImages/Hd images2/shimla/horizontal/6.webp",
+            "/UGCImages/Hd images2/shimla/vertical/1.webp",
+            "/UGCImages/Hd images2/shimla/vertical/2.webp",
+            "/UGCImages/Hd images2/shimla/vertical/3.webp",
+            "/UGCImages/Hd images2/shimla/vertical/4.webp",
+            "/UGCImages/Hd images2/shimla/vertical/5.webp",
+            "/UGCImages/Hd images2/shimla/vertical/6.webp",
         ]
     },
 
@@ -983,7 +991,7 @@ const destinationData: { [key: string]: DestinationDetails } = {
     kashmir: {
         name: "Kashmir - Srinagar, Pahalgam, Gulmarg & Sonmarg",
         price: 20000,
-        image: "/IMAGES/kashmir/1/1.webp",
+        image: "/UGCImages/Hd images2/kashmir/horizontal/6.webp",
         packages: 4,
         description: "Discover the enchanting beauty of Kashmir with our meticulously planned package. From serene houseboats to picturesque valleys, immerse yourself in the magical charm of this paradise on earth.",
         duration: { days: 5, nights: 4 },
@@ -1040,10 +1048,18 @@ const destinationData: { [key: string]: DestinationDetails } = {
             "No refund within 15 days of departure"
         ],
         galleryImages: [
-            "/IMAGES/kashmir/1/1.webp",
-            "/IMAGES/kashmir/1/2.webp",
-            "/IMAGES/kashmir/1/3.webp",
-            "/IMAGES/kashmir/1/4.webp"
+            '/UGCImages/Hd images2/kashmir/horizontal/1.webp',
+            '/UGCImages/Hd images2/kashmir/horizontal/2.webp',
+            '/UGCImages/Hd images2/kashmir/horizontal/3.webp',
+            '/UGCImages/Hd images2/kashmir/horizontal/4.webp',
+            '/UGCImages/Hd images2/kashmir/horizontal/5.webp',
+            '/UGCImages/Hd images2/kashmir/horizontal/6.webp',
+            '/UGCImages/Hd images2/kashmir/vertical/1.webp',
+            '/UGCImages/Hd images2/kashmir/vertical/2.webp',
+            '/UGCImages/Hd images2/kashmir/vertical/3.webp',
+            '/UGCImages/Hd images2/kashmir/vertical/4.webp',
+            '/UGCImages/Hd images2/kashmir/vertical/5.webp',
+            '/UGCImages/Hd images2/kashmir/vertical/6.webp',
         ]
     },
 
@@ -1162,7 +1178,7 @@ const destinationData: { [key: string]: DestinationDetails } = {
     sikkim: {
         name: "Sikkim - The Land of the Himalayas",
         price: 17500,
-        image: "/IMAGES/himachal/1/1.webp",
+        image: "/UGCImages/Hd images2/sikkim/horizontal/5.webp",
         packages: 2,
         description: "Explore the majestic beauty of Sikkim, from the snow-capped mountains to the lush valleys and vibrant culture.",
         duration: { days: 4, nights: 3 },
@@ -1214,10 +1230,18 @@ const destinationData: { [key: string]: DestinationDetails } = {
             "No refund within 15 days of departure"
         ],
         galleryImages: [
-            "/IMAGES/himachal/1/1.webp",
-            "/IMAGES/himachal/1/2.webp",
-            "/IMAGES/himachal/1/3.webp",
-            "/IMAGES/himachal/1/4.webp"
+            "/UGCImages/Hd images2/sikkim/horizontal/1.webp",
+            "/UGCImages/Hd images2/sikkim/horizontal/2.webp",
+            "/UGCImages/Hd images2/sikkim/horizontal/3.webp",
+            "/UGCImages/Hd images2/sikkim/horizontal/4.webp",
+            "/UGCImages/Hd images2/sikkim/horizontal/5.webp",
+            "/UGCImages/Hd images2/sikkim/horizontal/6.webp",
+            "/UGCImages/Hd images2/sikkim/vertical/1.webp",
+            "/UGCImages/Hd images2/sikkim/vertical/2.webp",
+            "/UGCImages/Hd images2/sikkim/vertical/3.webp",
+            "/UGCImages/Hd images2/sikkim/vertical/4.webp",
+            "/UGCImages/Hd images2/sikkim/vertical/5.webp",
+            "/UGCImages/Hd images2/sikkim/vertical/6.webp",
         ]
     },
 
