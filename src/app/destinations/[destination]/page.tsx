@@ -1575,7 +1575,7 @@ const destinationData: { [key: string]: DestinationDetails } = {
                         {
                             day: 3,
                             title: "Vigan - Sagada",
-                            description: "Early breakfast at the hotel then check-out. Travel to Sagada with sightseeing en route to Ilocos towns. Stop at Sta. Maria town for its UNESCO Heritage church. Continue to Sagada with lunch in Cervantes. Check-in at St. Joseph’s Inn. Dinner at Masferre Inn on a personal account."
+                            description: "Early breakfast at the hotel then check-out. Travel to Sagada with sightseeing en route to Ilocos towns. Stop at Sta. Maria town for its UNESCO Heritage church. Continue to Sagada with lunch in Cervantes. Check-in at St. Joseph's Inn. Dinner at Masferre Inn on a personal account."
                         },
                         {
                             day: 4,
@@ -2335,6 +2335,7 @@ export default function DestinationDetails() {
     const [error] = useState<string | null>(null);
     const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
     const [selectedVariant, setSelectedVariant] = useState<string | null>(null);
+    const [showScrollIndicator, setShowScrollIndicator] = useState(true);
 
     useEffect(() => {
         try {
@@ -2344,6 +2345,28 @@ export default function DestinationDetails() {
             // Handle the error appropriately without using the error object
         }
     }, [destination]);
+
+    useEffect(() => {
+        const handleScroll = (e: Event) => {
+            const target = e.target as HTMLElement;
+            if (target.scrollTop > 100) {
+                setShowScrollIndicator(false);
+            } else {
+                setShowScrollIndicator(true);
+            }
+        };
+
+        const scrollableElements = document.querySelectorAll('.custom-scrollbar');
+        scrollableElements.forEach(element => {
+            element.addEventListener('scroll', handleScroll);
+        });
+
+        return () => {
+            scrollableElements.forEach(element => {
+                element.removeEventListener('scroll', handleScroll);
+            });
+        };
+    }, []);
 
     if (error) {
         return <div>Error: {error}</div>;
@@ -2357,17 +2380,30 @@ export default function DestinationDetails() {
         return (
             <div className="min-h-screen bg-gray-50 mt-10">
                 <main className="container mx-auto px-4 py-8 max-w-7xl">
+                    <div className="flex items-center justify-between mb-6">
+                        <div className="flex items-center gap-3">
+                            <div className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white px-4 py-2 rounded-full text-sm font-medium">
+                                {destinationData.variants.length} Packages Available
+                            </div>
+                            <div className="text-gray-500 text-sm block md:hidden">
+                                ← Swipe packages →
+                            </div>
+                        </div>
+                    </div>
+
                     <Tabs
                         defaultValue={destinationData.variants[0].id}
                         className="mb-8"
                         onValueChange={(value) => setSelectedVariant(value)}
                     >
-                        <TabsList className="grid grid-cols-4 w-full">
-                            {destinationData.variants.map((variant) => (
+                        <TabsList className="flex w-full overflow-x-auto scrollbar-hide space-x-2 p-1 bg-gray-100/80 rounded-full px-1">
+                            {destinationData.variants.map((variant, index) => (
                                 <TabsTrigger
                                     key={variant.id}
                                     value={variant.id}
-                                    className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#017ae3] data-[state=active]:to-[#00f6ff] data-[state=active]:text-white"
+                                    className={`flex-none w-auto px-4 py-2 text-sm rounded-full data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#017ae3] data-[state=active]:to-[#00f6ff] data-[state=active]:text-white transition-all duration-300 hover:bg-gray-200 whitespace-nowrap ${index === 0 ? 'ml-1' : ''
+                                        }`}
+                                    style={{ minWidth: 'max-content' }}
                                 >
                                     {variant.name}
                                 </TabsTrigger>
@@ -2375,7 +2411,11 @@ export default function DestinationDetails() {
                         </TabsList>
 
                         {destinationData.variants.map((variant) => (
-                            <TabsContent key={variant.id} value={variant.id}>
+                            <TabsContent
+                                key={variant.id}
+                                value={variant.id}
+                                className="max-h-[85vh] overflow-y-auto custom-scrollbar relative"
+                            >
                                 <div className="relative rounded-3xl overflow-hidden mb-8 shadow-xl">
                                     <Image
                                         src={variant.image}
@@ -2392,15 +2432,15 @@ export default function DestinationDetails() {
                                         <Camera className="w-4 h-4" />
                                         View Gallery
                                     </button>
-                                    <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-2xl max-w-xs">
-                                        <div className="flex items-center gap-2 text-sm text-gray-600 mb-2">
+                                    <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm rounded-2xl p-4 md:p-6 shadow-2xl w-full max-w-[280px] md:max-w-xs mx-4 md:mx-0">
+                                        <div className="flex items-center gap-2 text-xs md:text-sm text-gray-600 mb-2">
                                             <Calendar className="w-4 h-4" />
                                             {variant.duration.days} Days / {variant.duration.nights} Nights
                                         </div>
-                                        <div className="text-2xl font-bold mb-1">₹{variant.price.toLocaleString()}</div>
-                                        <div className="text-sm text-gray-600 mb-4">Per Person</div>
+                                        <div className="text-xl md:text-2xl font-bold mb-1">₹{variant.price.toLocaleString()}</div>
+                                        <div className="text-xs md:text-sm text-gray-600 mb-4">Per Person</div>
                                         <Button
-                                            className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white mb-4 transition-all duration-500"
+                                            className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white mb-4 transition-all duration-500 text-sm md:text-base"
                                             onClick={() => {
                                                 setSelectedVariant(variant.id);
                                                 setIsBookingModalOpen(true);
@@ -2409,11 +2449,11 @@ export default function DestinationDetails() {
                                             Book Now
                                         </Button>
                                         <div className="text-center">
-                                            <div className="text-sm font-medium mb-1">Need Help?</div>
+                                            <div className="text-xs md:text-sm font-medium mb-1">Need Help?</div>
                                             <div className="text-xs text-gray-600 mb-2">
                                                 Our Destination expert will be happy to help resolve your queries
                                             </div>
-                                            <div className="flex items-center justify-center gap-2 text-[#017ae3] font-medium">
+                                            <div className="flex items-center justify-center gap-2 text-[#017ae3] font-medium text-sm">
                                                 <Phone className="w-4 h-4" />
                                                 +91 8447498498
                                             </div>
@@ -2421,11 +2461,11 @@ export default function DestinationDetails() {
                                     </div>
                                 </div>
 
-                                <div className="bg-white rounded-2xl shadow-lg p-8">
-                                    <h1 className="text-3xl font-bold mb-4 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] bg-clip-text text-transparent">
+                                <div className="bg-white rounded-2xl shadow-lg p-4 md:p-8">
+                                    <h1 className="text-2xl md:text-3xl font-bold mb-4 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] bg-clip-text text-transparent">
                                         {variant.name}
                                     </h1>
-                                    <div className="flex items-center gap-6 mb-8 text-sm">
+                                    <div className="flex flex-wrap items-center gap-3 md:gap-6 mb-6 md:mb-8 text-xs md:text-sm">
                                         <div className="flex items-center gap-2 text-gray-600">
                                             <MapPin className="w-4 h-4 text-[#017ae3]" />
                                             {variant.name}
@@ -2440,25 +2480,25 @@ export default function DestinationDetails() {
                                         </div>
                                     </div>
 
-                                    <div className="space-y-12">
+                                    <div className="space-y-6 md:space-y-8">
                                         <section>
-                                            <h2 className="text-xl font-bold mb-4">Overview</h2>
+                                            <h2 className="text-lg md:text-xl font-bold mb-4 md:mb-6">Overview</h2>
                                             <p className="text-gray-600 leading-relaxed">{variant.description}</p>
                                         </section>
 
                                         <section>
-                                            <h2 className="text-xl font-bold mb-6">Day Wise Itinerary</h2>
-                                            <div className="space-y-8">
+                                            <h2 className="text-lg md:text-xl font-bold mb-4 md:mb-6">Day Wise Itinerary</h2>
+                                            <div className="space-y-6 md:space-y-8">
                                                 {variant.itinerary.map((day) => (
-                                                    <div key={`${day.day}-${day.title}`} className="flex gap-4 group">
+                                                    <div key={`${day.day}-${day.title}`} className="flex gap-3 md:gap-4 group">
                                                         <div className="flex-shrink-0 relative">
-                                                            <div className="w-3 h-3 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] rounded-full mt-2 group-hover:shadow-lg transition-all duration-300"></div>
-                                                            <div className="absolute top-5 bottom-0 left-1.5 w-0.5 bg-gradient-to-b from-[#017ae3] to-transparent"></div>
+                                                            <div className="w-2.5 md:w-3 h-2.5 md:h-3 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] rounded-full mt-2 group-hover:shadow-lg transition-all duration-300"></div>
+                                                            <div className="absolute top-5 bottom-0 left-1 md:left-1.5 w-0.5 bg-gradient-to-b from-[#017ae3] to-transparent"></div>
                                                         </div>
                                                         <div className="group-hover:translate-x-2 transition-transform duration-300">
-                                                            <div className="text-sm text-gray-500">Day {day.day}</div>
-                                                            <div className="font-medium text-gray-900">{day.title}</div>
-                                                            <div className="text-sm text-gray-600 mt-1">{day.description}</div>
+                                                            <div className="text-xs md:text-sm text-gray-500">Day {day.day}</div>
+                                                            <div className="font-medium text-sm md:text-base text-gray-900">{day.title}</div>
+                                                            <div className="text-xs md:text-sm text-gray-600 mt-1">{day.description}</div>
                                                         </div>
                                                     </div>
                                                 ))}
@@ -2466,7 +2506,7 @@ export default function DestinationDetails() {
                                         </section>
 
                                         <section>
-                                            <h2 className="text-xl font-bold mb-6">Inclusions</h2>
+                                            <h2 className="text-lg md:text-xl font-bold mb-4 md:mb-6">Inclusions</h2>
                                             <div className="space-y-2">
                                                 {destinationData.inclusions.map((inclusion, index) => (
                                                     <div key={index} className="flex items-center gap-2 text-gray-600">
@@ -2478,7 +2518,7 @@ export default function DestinationDetails() {
                                         </section>
 
                                         <section>
-                                            <h2 className="text-xl font-bold mb-6">Exclusions</h2>
+                                            <h2 className="text-lg md:text-xl font-bold mb-4 md:mb-6">Exclusions</h2>
                                             <div className="space-y-2">
                                                 {destinationData.exclusions.map((exclusion, index) => (
                                                     <div key={index} className="flex items-center gap-2 text-gray-600">
@@ -2490,7 +2530,7 @@ export default function DestinationDetails() {
                                         </section>
 
                                         <section>
-                                            <h2 className="text-xl font-bold mb-6">Cancellation Policy</h2>
+                                            <h2 className="text-lg md:text-xl font-bold mb-4 md:mb-6">Cancellation Policy</h2>
                                             <div className="space-y-2">
                                                 {destinationData.cancellationPolicy.map((policy, index) => (
                                                     <div key={index} className="flex items-center gap-2 text-gray-600">
@@ -2501,6 +2541,23 @@ export default function DestinationDetails() {
                                             </div>
                                         </section>
                                     </div>
+                                </div>
+                                <div className={`scroll-indicator ${!showScrollIndicator ? 'fade-out' : ''}`}>
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        strokeWidth="2"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                    >
+                                        <path d="M7 13l5 5 5-5" />
+                                        <path d="M7 6l5 5 5-5" />
+                                    </svg>
+                                    Scroll for more
                                 </div>
                             </TabsContent>
                         ))}
@@ -2531,6 +2588,102 @@ export default function DestinationDetails() {
                 <Europe />
                 <HappyCustomers />
                 <Gallery />
+                <style jsx global>{`
+                    .custom-scrollbar {
+                        scrollbar-width: thin;
+                        scrollbar-color: #017ae3 #f3f4f6;
+                    }
+                    
+                    .custom-scrollbar::-webkit-scrollbar {
+                        width: 6px;
+                    }
+                    
+                    .custom-scrollbar::-webkit-scrollbar-track {
+                        background: #f3f4f6;
+                        border-radius: 10px;
+                    }
+                    
+                    .custom-scrollbar::-webkit-scrollbar-thumb {
+                        background: linear-gradient(to bottom, #017ae3, #00f6ff);
+                        border-radius: 10px;
+                    }
+                    
+                    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+                        background: linear-gradient(to bottom, #00f6ff, #017ae3);
+                    }
+
+                    @media (max-width: 768px) {
+                        .custom-scrollbar {
+                            max-height: 75vh;
+                        }
+                    }
+
+                    .scroll-indicator {
+                        position: absolute;
+                        bottom: 20px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        animation: bounce 2s infinite;
+                        background: linear-gradient(to right, #017ae3, #00f6ff);
+                        color: white;
+                        padding: 8px 16px;
+                        border-radius: 20px;
+                        font-size: 14px;
+                        display: flex;
+                        align-items: center;
+                        gap: 4px;
+                        opacity: 0.9;
+                        z-index: 10;
+                        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                    }
+
+                    @keyframes bounce {
+                        0%, 20%, 50%, 80%, 100% {
+                            transform: translateY(0) translateX(-50%);
+                        }
+                        40% {
+                            transform: translateY(-10px) translateX(-50%);
+                        }
+                        60% {
+                            transform: translateY(-5px) translateX(-50%);
+                        }
+                    }
+
+                    .scroll-indicator.fade-out {
+                        opacity: 0;
+                        transition: opacity 0.5s ease-out;
+                    }
+
+                    /* Ensure first tab is fully visible */
+                    .tabs-list {
+                        padding-left: 4px !important;
+                        padding-right: 4px !important;
+                        margin-left: -1px;
+                        margin-right: -1px;
+                        
+                    }
+
+                    .tabs-list > *:first-child {
+                        margin-left: 4px !important;
+                    }
+
+                    /* Improve scroll behavior */
+                    @media (max-width: 768px) {
+                        .tabs-list {
+                            -webkit-overflow-scrolling: touch;
+                            scroll-snap-type: x mandatory;
+                            scroll-behavior: smooth;
+                            -webkit-scroll-padding-left: 4px;
+                            scroll-padding-left: 4px;
+                        }
+                        
+                        .tabs-list > * {
+                            scroll-snap-align: start;
+                            scroll-snap-stop: always;
+                            min-width: max-content;
+                        }
+                    }
+                `}</style>
             </div>
         );
     }
@@ -2539,17 +2692,29 @@ export default function DestinationDetails() {
         return (
             <div className="min-h-screen bg-gray-50 mt-10">
                 <main className="container mx-auto px-4 py-8 max-w-7xl">
+                    <div className="flex items-center justify-between mb-6">
+                        <div className="flex items-center gap-3">
+                            <div className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white px-4 py-2 rounded-full text-sm font-medium">
+                                {destinationData.variants.length} Packages Available
+                            </div>
+                            <div className="text-gray-500 text-sm block md:hidden">
+                                ← Swipe packages →
+                            </div>
+                        </div>
+                    </div>
+
                     <Tabs
                         defaultValue={destinationData.variants[0].id}
                         className="mb-8"
                         onValueChange={(value) => setSelectedVariant(value)}
                     >
-                        <TabsList className="grid grid-cols-4 w-full">
-                            {destinationData.variants.map((variant) => (
+                        <TabsList className="flex w-full overflow-x-auto scrollbar-hide space-x-2 p-1 bg-gray-100/80 rounded-full px-1">
+                            {destinationData.variants.map((variant, index) => (
                                 <TabsTrigger
                                     key={variant.id}
                                     value={variant.id}
-                                    className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#017ae3] data-[state=active]:to-[#00f6ff] data-[state=active]:text-white"
+                                    className={`flex-none w-auto px-4 py-2 text-sm rounded-full data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#017ae3] data-[state=active]:to-[#00f6ff] data-[state=active]:text-white transition-all duration-300 hover:bg-gray-200 whitespace-nowrap ${index === 0 ? 'ml-8' : ''}`}
+                                    style={{ minWidth: 'max-content' }}
                                 >
                                     {variant.name}
                                 </TabsTrigger>
@@ -2557,7 +2722,11 @@ export default function DestinationDetails() {
                         </TabsList>
 
                         {destinationData.variants.map((variant) => (
-                            <TabsContent key={variant.id} value={variant.id}>
+                            <TabsContent
+                                key={variant.id}
+                                value={variant.id}
+                                className="max-h-[85vh] overflow-y-auto custom-scrollbar relative"
+                            >
                                 <div className="relative rounded-3xl overflow-hidden mb-8 shadow-xl">
                                     <Image
                                         src={variant.image}
@@ -2574,15 +2743,15 @@ export default function DestinationDetails() {
                                         <Camera className="w-4 h-4" />
                                         View Gallery
                                     </button>
-                                    <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-2xl max-w-xs">
-                                        <div className="flex items-center gap-2 text-sm text-gray-600 mb-2">
+                                    <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm rounded-2xl p-4 md:p-6 shadow-2xl w-full max-w-[280px] md:max-w-xs mx-4 md:mx-0">
+                                        <div className="flex items-center gap-2 text-xs md:text-sm text-gray-600 mb-2">
                                             <Calendar className="w-4 h-4" />
                                             {variant.duration.days} Days / {variant.duration.nights} Nights
                                         </div>
-                                        <div className="text-2xl font-bold mb-1">₹{variant.price.toLocaleString()}</div>
-                                        <div className="text-sm text-gray-600 mb-4">Per Person</div>
+                                        <div className="text-xl md:text-2xl font-bold mb-1">₹{variant.price.toLocaleString()}</div>
+                                        <div className="text-xs md:text-sm text-gray-600 mb-4">Per Person</div>
                                         <Button
-                                            className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white mb-4 transition-all duration-500"
+                                            className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white mb-4 transition-all duration-500 text-sm md:text-base"
                                             onClick={() => {
                                                 setSelectedVariant(variant.id);
                                                 setIsBookingModalOpen(true);
@@ -2591,11 +2760,11 @@ export default function DestinationDetails() {
                                             Book Now
                                         </Button>
                                         <div className="text-center">
-                                            <div className="text-sm font-medium mb-1">Need Help?</div>
+                                            <div className="text-xs md:text-sm font-medium mb-1">Need Help?</div>
                                             <div className="text-xs text-gray-600 mb-2">
                                                 Our Destination expert will be happy to help resolve your queries
                                             </div>
-                                            <div className="flex items-center justify-center gap-2 text-[#017ae3] font-medium">
+                                            <div className="flex items-center justify-center gap-2 text-[#017ae3] font-medium text-sm">
                                                 <Phone className="w-4 h-4" />
                                                 +91 8447498498
                                             </div>
@@ -2603,11 +2772,11 @@ export default function DestinationDetails() {
                                     </div>
                                 </div>
 
-                                <div className="bg-white rounded-2xl shadow-lg p-8">
-                                    <h1 className="text-3xl font-bold mb-4 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] bg-clip-text text-transparent">
+                                <div className="bg-white rounded-2xl shadow-lg p-4 md:p-8">
+                                    <h1 className="text-2xl md:text-3xl font-bold mb-4 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] bg-clip-text text-transparent">
                                         {variant.name}
                                     </h1>
-                                    <div className="flex items-center gap-6 mb-8 text-sm">
+                                    <div className="flex flex-wrap items-center gap-3 md:gap-6 mb-6 md:mb-8 text-xs md:text-sm">
                                         <div className="flex items-center gap-2 text-gray-600">
                                             <MapPin className="w-4 h-4 text-[#017ae3]" />
                                             {variant.name}
@@ -2622,25 +2791,25 @@ export default function DestinationDetails() {
                                         </div>
                                     </div>
 
-                                    <div className="space-y-12">
+                                    <div className="space-y-6 md:space-y-8">
                                         <section>
-                                            <h2 className="text-xl font-bold mb-4">Overview</h2>
+                                            <h2 className="text-lg md:text-xl font-bold mb-4 md:mb-6">Overview</h2>
                                             <p className="text-gray-600 leading-relaxed">{variant.description}</p>
                                         </section>
 
                                         <section>
-                                            <h2 className="text-xl font-bold mb-6">Day Wise Itinerary</h2>
-                                            <div className="space-y-8">
+                                            <h2 className="text-lg md:text-xl font-bold mb-4 md:mb-6">Day Wise Itinerary</h2>
+                                            <div className="space-y-6 md:space-y-8">
                                                 {variant.itinerary.map((day) => (
-                                                    <div key={`${day.day}-${day.title}`} className="flex gap-4 group">
+                                                    <div key={`${day.day}-${day.title}`} className="flex gap-3 md:gap-4 group">
                                                         <div className="flex-shrink-0 relative">
-                                                            <div className="w-3 h-3 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] rounded-full mt-2 group-hover:shadow-lg transition-all duration-300"></div>
-                                                            <div className="absolute top-5 bottom-0 left-1.5 w-0.5 bg-gradient-to-b from-[#017ae3] to-transparent"></div>
+                                                            <div className="w-2.5 md:w-3 h-2.5 md:h-3 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] rounded-full mt-2 group-hover:shadow-lg transition-all duration-300"></div>
+                                                            <div className="absolute top-5 bottom-0 left-1 md:left-1.5 w-0.5 bg-gradient-to-b from-[#017ae3] to-transparent"></div>
                                                         </div>
                                                         <div className="group-hover:translate-x-2 transition-transform duration-300">
-                                                            <div className="text-sm text-gray-500">Day {day.day}</div>
-                                                            <div className="font-medium text-gray-900">{day.title}</div>
-                                                            <div className="text-sm text-gray-600 mt-1">{day.description}</div>
+                                                            <div className="text-xs md:text-sm text-gray-500">Day {day.day}</div>
+                                                            <div className="font-medium text-sm md:text-base text-gray-900">{day.title}</div>
+                                                            <div className="text-xs md:text-sm text-gray-600 mt-1">{day.description}</div>
                                                         </div>
                                                     </div>
                                                 ))}
@@ -2648,7 +2817,7 @@ export default function DestinationDetails() {
                                         </section>
 
                                         <section>
-                                            <h2 className="text-xl font-bold mb-6">Inclusions</h2>
+                                            <h2 className="text-lg md:text-xl font-bold mb-4 md:mb-6">Inclusions</h2>
                                             <div className="space-y-2">
                                                 {destinationData.inclusions.map((inclusion, index) => (
                                                     <div key={index} className="flex items-center gap-2 text-gray-600">
@@ -2660,7 +2829,7 @@ export default function DestinationDetails() {
                                         </section>
 
                                         <section>
-                                            <h2 className="text-xl font-bold mb-6">Exclusions</h2>
+                                            <h2 className="text-lg md:text-xl font-bold mb-4 md:mb-6">Exclusions</h2>
                                             <div className="space-y-2">
                                                 {destinationData.exclusions.map((exclusion, index) => (
                                                     <div key={index} className="flex items-center gap-2 text-gray-600">
@@ -2672,7 +2841,7 @@ export default function DestinationDetails() {
                                         </section>
 
                                         <section>
-                                            <h2 className="text-xl font-bold mb-6">Cancellation Policy</h2>
+                                            <h2 className="text-lg md:text-xl font-bold mb-4 md:mb-6">Cancellation Policy</h2>
                                             <div className="space-y-2">
                                                 {destinationData.cancellationPolicy.map((policy, index) => (
                                                     <div key={index} className="flex items-center gap-2 text-gray-600">
@@ -2683,6 +2852,23 @@ export default function DestinationDetails() {
                                             </div>
                                         </section>
                                     </div>
+                                </div>
+                                <div className={`scroll-indicator ${!showScrollIndicator ? 'fade-out' : ''}`}>
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        strokeWidth="2"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                    >
+                                        <path d="M7 13l5 5 5-5" />
+                                        <path d="M7 6l5 5 5-5" />
+                                    </svg>
+                                    Scroll for more
                                 </div>
                             </TabsContent>
                         ))}
@@ -2713,6 +2899,101 @@ export default function DestinationDetails() {
                 <Europe />
                 <HappyCustomers />
                 <Gallery />
+                <style jsx global>{`
+                    .custom-scrollbar {
+                        scrollbar-width: thin;
+                        scrollbar-color: #017ae3 #f3f4f6;
+                    }
+                    
+                    .custom-scrollbar::-webkit-scrollbar {
+                        width: 6px;
+                    }
+                    
+                    .custom-scrollbar::-webkit-scrollbar-track {
+                        background: #f3f4f6;
+                        border-radius: 10px;
+                    }
+                    
+                    .custom-scrollbar::-webkit-scrollbar-thumb {
+                        background: linear-gradient(to bottom, #017ae3, #00f6ff);
+                        border-radius: 10px;
+                    }
+                    
+                    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+                        background: linear-gradient(to bottom, #00f6ff, #017ae3);
+                    }
+
+                    @media (max-width: 768px) {
+                        .custom-scrollbar {
+                            max-height: 75vh;
+                        }
+                    }
+
+                    .scroll-indicator {
+                        position: absolute;
+                        bottom: 20px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        animation: bounce 2s infinite;
+                        background: linear-gradient(to right, #017ae3, #00f6ff);
+                        color: white;
+                        padding: 8px 16px;
+                        border-radius: 20px;
+                        font-size: 14px;
+                        display: flex;
+                        align-items: center;
+                        gap: 4px;
+                        opacity: 0.9;
+                        z-index: 10;
+                        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                    }
+
+                    @keyframes bounce {
+                        0%, 20%, 50%, 80%, 100% {
+                            transform: translateY(0) translateX(-50%);
+                        }
+                        40% {
+                            transform: translateY(-10px) translateX(-50%);
+                        }
+                        60% {
+                            transform: translateY(-5px) translateX(-50%);
+                        }
+                    }
+
+                    .scroll-indicator.fade-out {
+                        opacity: 0;
+                        transition: opacity 0.5s ease-out;
+                    }
+
+                    /* Ensure first tab is fully visible */
+                    .tabs-list {
+                        padding-left: 4px !important;
+                        padding-right: 4px !important;
+                        margin-left: -1px;
+                        margin-right: -1px;
+                    }
+
+                    .tabs-list > *:first-child {
+                        margin-left: 4px !important;
+                    }
+
+                    /* Improve scroll behavior */
+                    @media (max-width: 768px) {
+                        .tabs-list {
+                            -webkit-overflow-scrolling: touch;
+                            scroll-snap-type: x mandatory;
+                            scroll-behavior: smooth;
+                            -webkit-scroll-padding-left: 4px;
+                            scroll-padding-left: 4px;
+                        }
+                        
+                        .tabs-list > * {
+                            scroll-snap-align: start;
+                            scroll-snap-stop: always;
+                            min-width: max-content;
+                        }
+                    }
+                `}</style>
             </div>
         );
     }
@@ -2854,6 +3135,23 @@ export default function DestinationDetails() {
                             </div>
                         </section>
                     </div>
+                </div>
+                <div className={`scroll-indicator ${!showScrollIndicator ? 'fade-out' : ''}`}>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                    >
+                        <path d="M7 13l5 5 5-5" />
+                        <path d="M7 6l5 5 5-5" />
+                    </svg>
+                    Scroll for more
                 </div>
             </main>
             <Trending />
