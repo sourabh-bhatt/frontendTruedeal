@@ -34,6 +34,7 @@ const destinations: Destination[] = [
     { name: 'Bhutan' },
     { name: 'Finland' },
     { name: 'Kenya' },
+    { name: 'Malaysia' },
     { name: 'Phillipines' }, //phillipines
     { name: 'Abu Dhabi', tag: { label: 'POPULAR', color: 'violet' } }
 ]

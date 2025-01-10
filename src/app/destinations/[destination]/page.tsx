@@ -191,6 +191,7 @@ const destinationData: { [key: string]: DestinationDetails } = {
             "/IMAGES/dubai/1282 x 814/4.webp",
         ]
     },
+    
 
     singapore: {
         name: "Singapore - A World of Wonders",

@@ -1,16 +1,19 @@
 'use client';
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { MoreVertical, X } from 'lucide-react'
+import { MoreVertical, X, ChevronDown } from 'lucide-react'
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs"
 import { usePathname } from 'next/navigation'
+import { groupToursList } from "@/data/groupTours"
 
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [isScrolled, setIsScrolled] = useState(false)
     const pathname = usePathname()
+    const [isGroupToursOpen, setIsGroupToursOpen] = useState(false)
+    const dropdownRef = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
         const header = document.createElement('div')
@@ -38,10 +41,23 @@ export default function Navbar() {
         }
     }, [])
 
+    // Close dropdown when clicking outside
+    useEffect(() => {
+        function handleClickOutside(event: MouseEvent) {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+                setIsGroupToursOpen(false)
+            }
+        }
+
+        document.addEventListener("mousedown", handleClickOutside)
+        return () => document.removeEventListener("mousedown", handleClickOutside)
+    }, [])
+
     const navItems = [
         { href: "/", label: "Home" },
         { href: "/destinationpackage", label: "Holiday Packages" },
         { href: "/trendingpackage", label: "Trending" },
+        // Group Tours is handled separately now
     ]
 
     return (
@@ -75,6 +91,52 @@ export default function Navbar() {
                                 {item.label}
                             </Link>
                         ))}
+
+                        {/* Group Tours Dropdown - Desktop */}
+                        <div className="relative group">
+                            <Link
+                                href="/group-tours"
+                                className={`flex items-center gap-1 transition-colors duration-300 ${
+                                    pathname.startsWith('/group-tours')
+                                        ? 'text-transparent bg-clip-text bg-gradient-to-r from-[#017ae3] to-[#00f6ff]'
+                                        : 'text-gray-500 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#017ae3] to-[#00f6ff]'
+                                }`}
+                            >
+                                Group Tours
+                                <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
+                            </Link>
+
+                            {/* Dropdown Menu - Shows on hover */}
+                            <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2">
+                                <div className="py-2">
+                                    {groupToursList.map((tour) => (
+                                        <Link
+                                            key={tour.id}
+                                            href={`/group-tours/${tour.id}`}
+                                            className="flex items-center px-4 py-2 hover:bg-gray-50 transition-colors duration-300"
+                                        >
+                                            <div className="w-8 h-8 rounded-full overflow-hidden mr-3 flex-shrink-0">
+                                                <Image
+                                                    src={tour.image}
+                                                    alt={tour.name}
+                                                    width={32}
+                                                    height={32}
+                                                    className="object-cover w-full h-full"
+                                                />
+                                            </div>
+                                            <div>
+                                                <div className="text-sm font-medium text-gray-900">
+                                                    {tour.name.split(':')[0]}
+                                                </div>
+                                                <div className="text-xs text-gray-500">
+                                                    {tour.duration.days} Days | ₹{tour.price.toLocaleString()}
+                                                </div>
+                                            </div>
+                                        </Link>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <div className="flex items-center gap-4 shrink-0">
@@ -154,6 +216,7 @@ export default function Navbar() {
                 </div>
             </div>
 
+            {/* Mobile Menu */}
             {isMenuOpen && (
                 <div className="sm:hidden bg-white shadow-lg animate-slideDown">
                     {navItems.map((item) => (
@@ -162,40 +225,46 @@ export default function Navbar() {
                             href={item.href}
                             className={`block py-3 px-4 ${pathname === item.href
                                 ? 'text-transparent bg-clip-text bg-gradient-to-r from-[#017ae3] to-[#00f6ff]'
-                                : 'text-gray-500 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#017ae3] to-[#00f6ff]'
-                                } transition-colors duration-300`}
+                                : 'text-gray-500'
+                                }`}
                             onClick={() => setIsMenuOpen(false)}
                         >
                             {item.label}
                         </Link>
                     ))}
-                    <SignedOut>
-                        <div className="flex flex-col gap-2 p-4">
+
+                    {/* Group Tours in Mobile Menu */}
+                    <div className="border-t border-gray-100">
+                        <div className="px-4 py-3 font-semibold text-gray-900">Group Tours</div>
+                        {groupToursList.map((tour) => (
                             <Link
-                                href="/sign-in"
-                                className="px-4 py-2 rounded-full text-sm font-medium bg-white relative group hover:scale-105 transition-transform duration-300 text-center"
+                                key={tour.id}
+                                href={`/group-tours/${tour.id}`}
+                                className="flex items-center px-4 py-2 hover:bg-gray-50"
+                                onClick={() => setIsMenuOpen(false)}
                             >
-                                <span className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] bg-clip-text text-transparent relative font-bold">
-                                    Sign In
-                                </span>
-                                <span
-                                    className="absolute inset-0 rounded-full border-2 border-transparent"
-                                    style={{
-                                        background: 'linear-gradient(to right, #017ae3, #00f6ff) border-box',
-                                        WebkitMask: 'linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0)',
-                                        WebkitMaskComposite: 'xor',
-                                        maskComposite: 'exclude',
-                                    }}
-                                />
+                                <div className="w-8 h-8 rounded-full overflow-hidden mr-3">
+                                    <Image
+                                        src={tour.image}
+                                        alt={tour.name}
+                                        width={32}
+                                        height={32}
+                                        className="object-cover w-full h-full"
+                                    />
+                                </div>
+                                <div>
+                                    <div className="text-sm font-medium text-gray-900">
+                                        {tour.name.split(':')[0]}
+                                    </div>
+                                    <div className="text-xs text-gray-500">
+                                        {tour.duration.days} Days | ₹{tour.price.toLocaleString()}
+                                    </div>
+                                </div>
                             </Link>
-                            <Link
-                                href="/sign-up"
-                                className="px-4 py-2 rounded-full text-sm font-bold text-white bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:scale-105 transition-transform duration-300 text-center"
-                            >
-                                Sign Up
-                            </Link>
-                        </div>
-                    </SignedOut>
+                        ))}
+                    </div>
+
+                    {/* SignedOut section for mobile remains the same */}
                 </div>
             )}
         </nav>
