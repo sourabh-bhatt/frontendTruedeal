@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { MoreVertical, X, ChevronDown } from 'lucide-react'
@@ -83,8 +83,8 @@ export default function Navbar() {
                             <Link
                                 href="/group-tours"
                                 className={`flex items-center gap-1 transition-colors duration-300 ${pathname.startsWith('/group-tours')
-                                        ? 'text-transparent bg-clip-text bg-gradient-to-r from-[#017ae3] to-[#00f6ff]'
-                                        : 'text-gray-500 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#017ae3] to-[#00f6ff]'
+                                    ? 'text-transparent bg-clip-text bg-gradient-to-r from-[#017ae3] to-[#00f6ff]'
+                                    : 'text-gray-500 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#017ae3] to-[#00f6ff]'
                                     }`}
                             >
                                 Group Tours
