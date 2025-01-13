@@ -214,7 +214,7 @@ Note: ${formData.note || 'No additional notes'}`
                         {/* Number of Travellers */}
                         <div>
                             <label className="block text-gray-700 mb-2">No. of travellers</label>
-                            <input
+                            000<input
                                 type="number"
                                 min="1"
                                 className="w-full p-3 border rounded-lg"
