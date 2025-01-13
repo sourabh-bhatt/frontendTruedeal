@@ -1,6 +1,11 @@
 import Image from "next/image"
 import Link from "next/link"
-import { Facebook, Twitter, Instagram, Linkedin, Phone, Mail, MapPin } from "lucide-react"
+import { InstagramIcon } from "../icons/social/Instagram"
+import { FacebookIcon } from "../icons/social/Facebook"
+import { TwitterIcon } from "../icons/social/Twitter"
+import { LinkedInIcon } from "../icons/social/LinkedIn"
+import { Phone, Mail, MapPin } from "lucide-react"
+import { YouTubeIcon } from "../icons/social/YouTube"
 
 export default function Component() {
 
@@ -60,32 +65,55 @@ export default function Component() {
             </section>
 
 
-            <footer className="bg-gray-200 py-12 px-4">
+            <footer className="bg-white py-12 px-4 border-t">
                 <div className="max-w-7xl mx-auto">
-                    {/* Newsletter Section */}
-                    <div className="mb-12 flex flex-col md:flex-row items-center justify-around">
-                        <div className="mb-4 md:mb-0">
-                            <h2 className="text-gray-900 text-sm tracking-wider mb-1 font-poppins font-bold">KEEP IN TOUCH</h2>
-                            <div className="flex items-center gap-2">
-                                <span className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-transparent bg-clip-text text-2xl font-poppins font-bold">
-                                    Subscribe
-                                </span>
-                                <span className="text-gray-400 text-2xl font-poppins font-semibold">to our Newsletter</span>
+                    {/* Blog Promotion Section */}
+                    <div className="mb-12 flex flex-col md:flex-row items-center justify-between bg-gradient-to-r from-[#017ae3] to-[#00f6ff] p-8 rounded-2xl">
+                        <div className="mb-6 md:mb-0 text-white md:max-w-xl">
+                            <h2 className="text-2xl font-bold mb-3">Explore Our Travel Blog</h2>
+                            <p className="text-white/90 mb-4">
+                                Discover travel tips, destination guides, and insider insights from our expert travelers.
+                            </p>
+                            <div className="flex flex-wrap gap-3">
+                                <Link
+                                    href="/blog/category/travel-tips"
+                                    className="px-4 py-2 bg-white/20 hover:bg-white/30 rounded-full text-sm font-medium transition-colors"
+                                >
+                                    Travel Tips
+                                </Link>
+                                <Link
+                                    href="/blog/category/destinations"
+                                    className="px-4 py-2 bg-white/20 hover:bg-white/30 rounded-full text-sm font-medium transition-colors"
+                                >
+                                    Destinations
+                                </Link>
+                                <Link
+                                    href="/blog/category/forex-guide"
+                                    className="px-4 py-2 bg-white/20 hover:bg-white/30 rounded-full text-sm font-medium transition-colors"
+                                >
+                                    Forex Guide
+                                </Link>
                             </div>
                         </div>
-                        <div className="relative w-full md:w-auto">
-                            <div className="relative flex">
-                                <div className=" md:w-80 p-[1px] rounded-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
-                                    <input
-                                        type="email"
-                                        placeholder="Enter your Email"
-                                        className="w-full px-6 py-3 rounded-full bg-white focus:outline-none"
-                                    />
-                                </div>
-                                <button className="absolute right-0 px-8 py-3 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white rounded-full hover:opacity-90 transition-opacity font-bold">
-                                    SUBSCRIBE
-                                </button>
-                            </div>
+                        <div className="flex flex-col items-center md:items-end">
+                            <Link
+                                href="/blog"
+                                className="px-6 py-3 bg-white text-[#017ae3] rounded-full font-bold hover:bg-opacity-90 transition-opacity flex items-center gap-2"
+                            >
+                                Read Our Blog
+                                <svg
+                                    width="20"
+                                    height="20"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                >
+                                    <path d="M5 12h14m-7-7 7 7-7 7" />
+                                </svg>
+                            </Link>
                         </div>
                     </div>
 
@@ -99,30 +127,37 @@ export default function Component() {
                                 height={45}
                                 className="mb-4"
                             />
-                            <h1 className="font-bold font-poppins mb-2">TRUEDEAL TRAVELS PRIVATE LIMITED</h1>
-                            <p className="text-gray-500 text-sm mb-4">
-
+                            <h1 className="font-bold font-poppins mb-2 text-[#017ae3]">TRUEDEAL TRAVELS PRIVATE LIMITED</h1>
+                            <p className="text-gray-700 text-sm mb-4">
                                 Truedeal is your trusted partner for seamless travel experiences, forex solutions, and comprehensive travel services since 2014.
                             </p>
                             <div className="flex gap-4">
-                                <Link href="https://www.instagram.com/itstruedeal/" target="_blank" className="text-gray-400 hover:text-gray-600">
-                                    <Instagram className="w-5 h-5" />
+                                <Link href="https://www.instagram.com/itstruedeal/" target="_blank"
+                                    className="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#F77737] text-white hover:opacity-90 transition-opacity">
+                                    <InstagramIcon />
                                 </Link>
-                                <Link href="https://x.com/truedeal4u" target="_blank" className="text-gray-400 hover:text-gray-600">
-                                    <Twitter className="w-5 h-5" />
+                                <Link href="https://x.com/truedeal4u" target="_blank"
+                                    className="w-10 h-10 flex items-center justify-center rounded-full bg-black text-white hover:opacity-90 transition-opacity">
+                                    <TwitterIcon />
                                 </Link>
-                                <Link href="https://facebook.com/truedeal4u/" target="_blank" className="text-gray-400 hover:text-gray-600">
-                                    <Facebook className="w-5 h-5" />
+                                <Link href="https://facebook.com/truedeal4u/" target="_blank"
+                                    className="w-10 h-10 flex items-center justify-center rounded-full bg-[#1877F2] text-white hover:opacity-90 transition-opacity">
+                                    <FacebookIcon />
                                 </Link>
-                                <Link href="https://www.linkedin.com/company/itstruedeal/" target="_blank" className="text-gray-400 hover:text-gray-600">
-                                    <Linkedin className="w-5 h-5" />
+                                <Link href="https://www.linkedin.com/company/itstruedeal/" target="_blank"
+                                    className="w-10 h-10 flex items-center justify-center rounded-full bg-[#0A66C2] text-white hover:opacity-90 transition-opacity">
+                                    <LinkedInIcon />
+                                </Link>
+                                <Link href="https://www.youtube.com/@Truedeal4u/shorts" target="_blank"
+                                    className="w-10 h-10 flex items-center justify-center rounded-full bg-[#FF0000] text-white hover:opacity-90 transition-opacity">
+                                    <YouTubeIcon />
                                 </Link>
                             </div>
                         </div>
 
                         {/* Quick Links */}
                         <div>
-                            <h3 className="font-medium text-gray-900 mb-4">Quick Links</h3>
+                            <h3 className="font-bold text-[#017ae3] mb-4 text-lg">Quick Links</h3>
                             <ul className="space-y-2">
                                 {[
                                     { name: "Home", path: "/" },
@@ -138,7 +173,7 @@ export default function Component() {
                                     { name: "Payment", path: "/payment" }
                                 ].map((link) => (
                                     <li key={link.name}>
-                                        <Link href={link.path} className="text-gray-500 hover:text-gray-700 text-sm">
+                                        <Link href={link.path} className="text-gray-700 hover:text-[#017ae3] text-sm transition-colors duration-200">
                                             {link.name}
                                         </Link>
                                     </li>
@@ -148,7 +183,7 @@ export default function Component() {
 
                         {/* Our Services Column 1 */}
                         <div>
-                            <h3 className="font-medium text-gray-900 mb-4">Our Services</h3>
+                            <h3 className="font-bold text-[#017ae3] mb-4 text-lg">Our Services</h3>
                             <ul className="space-y-2">
                                 {[
                                     { name: "Foreign Currency", path: "/#forex" },
@@ -157,7 +192,7 @@ export default function Component() {
                                     { name: "VISA Services", path: "/visaservices" },
                                 ].map((service) => (
                                     <li key={service.name}>
-                                        <Link href={service.path} className="text-gray-500 hover:text-gray-700 text-sm">
+                                        <Link href={service.path} className="text-gray-700 hover:text-[#017ae3] text-sm transition-colors duration-200">
                                             {service.name}
                                         </Link>
                                     </li>
@@ -167,7 +202,7 @@ export default function Component() {
 
                         {/* Our Services Column 2 */}
                         <div>
-                            <h3 className="font-medium text-gray-900 mb-4 invisible">Our Services</h3>
+                            <h3 className="font-bold text-[#017ae3] mb-4 text-lg">More Services</h3>
                             <ul className="space-y-2">
                                 {[
                                     { name: "Land Packages", path: "#" },
@@ -176,7 +211,7 @@ export default function Component() {
                                     { name: "Cruise Bookings", path: "#" },
                                 ].map((service) => (
                                     <li key={service.name}>
-                                        <Link href={service.path} className="text-gray-500 hover:text-gray-700 text-sm">
+                                        <Link href={service.path} className="text-gray-700 hover:text-[#017ae3] text-sm transition-colors duration-200">
                                             {service.name}
                                         </Link>
                                     </li>

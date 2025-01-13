@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef, TouchEvent } from 'react'
+import { useState, useEffect, useRef, TouchEvent, useCallback } from 'react'
 import Image from 'next/image'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 
@@ -35,19 +35,19 @@ export default function CurvedGallery() {
         return ((index % images.length) + images.length) % images.length
     }
 
-    const startAutoPlay = () => {
+    const startAutoPlay = useCallback(() => {
         if (autoPlayRef.current) clearInterval(autoPlayRef.current)
         autoPlayRef.current = setInterval(() => {
             setCurrentIndex(prev => wrappedIndex(prev + 1))
         }, 3000)
-    }
+    }, [wrappedIndex])
 
     useEffect(() => {
         startAutoPlay()
         return () => {
             if (autoPlayRef.current) clearInterval(autoPlayRef.current)
         }
-    }, [])
+    }, [startAutoPlay])
 
     const handleImageTransition = (newIndex: number) => {
         if (!isTransitioning) {
@@ -121,7 +121,6 @@ export default function CurvedGallery() {
                         {getVisibleImages().map((src, index) => {
                             const isMobile = typeof window !== 'undefined' && window.innerWidth < 768
                             const isCenter = isMobile ? index === 1 : index === 2
-                            const totalImages = isMobile ? 3 : 5
 
                             return (
                                 <div
