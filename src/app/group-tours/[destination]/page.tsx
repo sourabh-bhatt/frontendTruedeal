@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useParams } from 'next/navigation';
 import Image from 'next/image';
-import { Camera, Calendar, Phone, MapPin, Clock, CheckCircle, XCircle, AlertCircle, Users } from 'lucide-react';
+import { Camera, Calendar, Phone, Clock, CheckCircle, XCircle, AlertCircle, Users } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { GalleryModal } from '@/app/package/[id]/gallery-modal';
 import { BookingFormModal } from '@/app/components/BookingFormModal';

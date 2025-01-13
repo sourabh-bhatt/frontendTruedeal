@@ -12,8 +12,6 @@ export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [isScrolled, setIsScrolled] = useState(false)
     const pathname = usePathname()
-    const [isGroupToursOpen, setIsGroupToursOpen] = useState(false)
-    const dropdownRef = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
         const header = document.createElement('div')
@@ -39,18 +37,6 @@ export default function Navbar() {
             observer.disconnect()
             document.body.removeChild(header)
         }
-    }, [])
-
-    // Close dropdown when clicking outside
-    useEffect(() => {
-        function handleClickOutside(event: MouseEvent) {
-            if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-                setIsGroupToursOpen(false)
-            }
-        }
-
-        document.addEventListener("mousedown", handleClickOutside)
-        return () => document.removeEventListener("mousedown", handleClickOutside)
     }, [])
 
     const navItems = [
@@ -96,11 +82,10 @@ export default function Navbar() {
                         <div className="relative group">
                             <Link
                                 href="/group-tours"
-                                className={`flex items-center gap-1 transition-colors duration-300 ${
-                                    pathname.startsWith('/group-tours')
+                                className={`flex items-center gap-1 transition-colors duration-300 ${pathname.startsWith('/group-tours')
                                         ? 'text-transparent bg-clip-text bg-gradient-to-r from-[#017ae3] to-[#00f6ff]'
                                         : 'text-gray-500 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#017ae3] to-[#00f6ff]'
-                                }`}
+                                    }`}
                             >
                                 Group Tours
                                 <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
