@@ -97,7 +97,7 @@ export default function Component() {
                         </div>
                         <div className="flex flex-col items-center md:items-end">
                             <Link
-                                href="/blog"
+                                href="/blogs"
                                 className="px-6 py-3 bg-white text-[#017ae3] rounded-full font-bold hover:bg-opacity-90 transition-opacity flex items-center gap-2"
                             >
                                 Read Our Blog

@@ -124,9 +124,8 @@
 
 "use client";
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Image from 'next/image'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { currencies } from '../../types/currency'
 import MoneyTransfer from './MoneyTransfer'
 import CurrencyExchange from './CurrencyExchange'
@@ -213,8 +212,8 @@ const ForexLive = () => {
                         <div className="flex-1">
                             <div className="animate-slow-scroll flex gap-4">
                                 {duplicatedCurrencies.map((currency, index) => (
-                                    <div 
-                                        key={`${currency.code}-${index}`} 
+                                    <div
+                                        key={`${currency.code}-${index}`}
                                         className="flex flex-col items-center text-center min-w-[100px] flex-shrink-0"
                                     >
                                         <div className="w-12 h-12 rounded-full overflow-hidden mb-2">
