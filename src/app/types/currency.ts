@@ -17,15 +17,6 @@ export const currencies: CurrencyOption[] = [
     { name: 'Swedish Krona', code: 'SEK', flagUrl: '/Assets/Forex/currency/7.webp' },
     { name: 'New Zealand Dollar', code: 'NZD', flagUrl: '/Assets/Forex/currency/8.webp' },
     { name: 'South African Rand', code: 'ZAR', flagUrl: '/Assets/Forex/currency/9.webp' },
-    { name: 'UAE Dirham', code: 'AED', flagUrl: '/Assets/Forex/currency/14.webp' },
-    { name: 'Thai Baht', code: 'THB', flagUrl: '/Assets/Forex/currency/15.webp' },
-    { name: 'Malaysian Ringgit', code: 'MYR', flagUrl: '/Assets/Forex/currency/16.webp' },
-    { name: 'Kuwaiti Dinar', code: 'KWD', flagUrl: '/Assets/Forex/currency/17.webp' },
-    { name: 'Norwegian Krone', code: 'NOK', flagUrl: '/Assets/Forex/currency/18.webp' },
-    { name: 'Danish Krone', code: 'DKK', flagUrl: '/Assets/Forex/currency/19.webp' },
-    { name: 'Bahraini Dinar', code: 'BHD', flagUrl: '/Assets/Forex/currency/20.webp' },
-    { name: 'Qatari Riyal', code: 'QAR', flagUrl: '/Assets/Forex/currency/21.webp' },
-    { name: 'Omani Rial', code: 'OMR', flagUrl: '/Assets/Forex/currency/22.webp' },
 
 ];
 

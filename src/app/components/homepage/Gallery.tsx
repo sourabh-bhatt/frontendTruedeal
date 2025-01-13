@@ -31,9 +31,9 @@ export default function CurvedGallery() {
     const touchEndX = useRef(0)
     const autoPlayRef = useRef<NodeJS.Timeout | null>(null)
 
-    const wrappedIndex = (index: number) => {
+    const wrappedIndex = useCallback((index: number) => {
         return ((index % images.length) + images.length) % images.length
-    }
+    }, [])
 
     const startAutoPlay = useCallback(() => {
         if (autoPlayRef.current) clearInterval(autoPlayRef.current)

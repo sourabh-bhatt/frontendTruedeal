@@ -129,18 +129,16 @@ select::-webkit-listbox {
   0% {
     transform: translateX(0);
   }
-
   100% {
-    transform: translateX(var(--scroll-width));
+    transform: translateX(-50%);
   }
 }
 
 .animate-scroll {
-  animation: scroll var(--animation-duration) linear infinite;
-  will-change: transform;
+  animation: scroll 60s linear infinite;
 }
 
-/* Add hover pause functionality */
+/* Optional: Pause animation on hover */
 .animate-scroll:hover {
   animation-play-state: paused;
 }
