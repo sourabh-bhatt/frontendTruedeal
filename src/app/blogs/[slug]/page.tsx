@@ -120,14 +120,13 @@ const blogPosts: Record<string, BlogPost> = {
     }
 };
 
-type Props = {
+interface Props {
     params: {
         slug: string;
     };
-    searchParams: { [key: string]: string | string[] | undefined };
 }
 
-export default function BlogPostPage({ params }: Props) {
+const BlogPost = async ({ params }: Props) => {
     const post = blogPosts[params.slug]
 
     if (!post) {
@@ -175,4 +174,6 @@ export default function BlogPostPage({ params }: Props) {
             </div>
         </article>
     )
-} 
+}
+
+export default BlogPost; 
