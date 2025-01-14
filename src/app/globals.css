@@ -268,3 +268,94 @@ select::-webkit-listbox {
 *::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(45deg, #00f6ff, #017ae3);
 }
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 5px rgba(250, 204, 21, 0.2),
+      0 0 10px rgba(250, 204, 21, 0.2), 0 0 15px rgba(250, 204, 21, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 10px rgba(250, 204, 21, 0.5),
+      0 0 20px rgba(250, 204, 21, 0.3), 0 0 30px rgba(250, 204, 21, 0.3);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes shimmer-bright {
+  0% {
+    background-position: 200% 0;
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.3);
+  }
+  100% {
+    background-position: -200% 0;
+    filter: brightness(1);
+  }
+}
+
+@keyframes glow-bright {
+  0%,
+  100% {
+    box-shadow: 0 0 10px rgba(250, 204, 21, 0.4),
+      0 0 20px rgba(250, 204, 21, 0.4), 0 0 30px rgba(250, 204, 21, 0.4);
+    filter: brightness(1);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(250, 204, 21, 0.7),
+      0 0 30px rgba(250, 204, 21, 0.5), 0 0 45px rgba(250, 204, 21, 0.5);
+    filter: brightness(1.2);
+  }
+}
+
+@keyframes pulse-bright {
+  0%,
+  100% {
+    opacity: 1;
+    filter: brightness(1);
+  }
+  50% {
+    opacity: 0.8;
+    filter: brightness(1.3);
+  }
+}
+
+.animate-shimmer-bright {
+  animation: shimmer-bright 3s ease-in-out infinite;
+}
+
+.animate-glow-bright {
+  animation: glow-bright 2s ease-in-out infinite;
+}
+
+.animate-pulse-bright {
+  animation: pulse-bright 3s ease-in-out infinite;
+}
+
+/* Update the destination icon styles */
+.group:hover .animate-glow {
+  animation: glow-bright 1.5s ease-in-out infinite;
+  filter: brightness(1.2);
+}

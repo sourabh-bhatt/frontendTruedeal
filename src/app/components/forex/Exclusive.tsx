@@ -1,56 +1,149 @@
 "use client";
 
 import Link from 'next/link'
-import { Building2, Castle, Mountain } from 'lucide-react'
+import Image from 'next/image'
 
 export default function Exclusive() {
     return (
         <div className="w-full">
-            <div className="relative h-[200px] md:h-[200px] overflow-hidden bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
-                <div className="absolute inset-0 bg-[url('/Assets/Forex/forexBanner.webp')] bg-cover bg-center opacity-80" />
+            <div className="relative h-[400px] sm:h-[300px] md:h-[200px] overflow-hidden">
+                {/* Background image with subtle overlay */}
+                <div className="absolute inset-0">
+                    <div
+                        className="absolute inset-0 bg-[url('/Assets/Forex/currency/japanbaku.webp')] 
+                        bg-cover bg-center bg-no-repeat"
+                    />
+                    {/* Reduced overlay opacity */}
+                    <div className="absolute inset-0 bg-black/30" />
+                </div>
 
-                <div className="relative h-full max-w-7xl mx-auto px-4 py-8">
-                    <div className="flex flex-col md:flex-row items-center justify-between h-full">
-                        <div className="flex flex-col mb-4 md:mb-0 md:ml-[8rem] text-center md:text-left">
-                            <h1 className="text-white space-y-1">
-                                <span className="block text-2xl md:text-3xl font-poppins font-normal tracking-wider leading-3">LOOKING FOR</span>
-                                <span className="block text-3xl md:text-4xl font-bold font-poppins tracking-wide">EXCLUSIVE</span>
-                                <span className="block text-3xl md:text-4xl font-bold font-poppins tracking-wide leading-3 underline">DESTINATIONS?</span>
+                {/* Content */}
+                <div className="relative h-full max-w-7xl mx-auto px-4 py-6 sm:py-8">
+                    <div className="flex flex-col items-center justify-center sm:flex-row sm:items-center sm:justify-between h-full gap-8 sm:gap-0">
+                        {/* Text Section - Better mobile spacing */}
+                        <div className="flex flex-col sm:mb-0 sm:ml-[8rem] text-center sm:text-left">
+                            <h1 className="text-white mb-6 sm:mb-0">
+                                <div className="flex flex-col items-center sm:items-start gap-2 sm:gap-1">
+                                    <span className="text-2xl sm:text-2xl md:text-3xl font-poppins font-semibold tracking-wider text-white 
+                                                 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]
+                                                 animate-pulse-bright">
+                                        LOOKING FOR
+                                    </span>
+                                    <span className="text-3xl sm:text-3xl md:text-4xl font-bold font-poppins tracking-wide text-white 
+                                                 drop-shadow-[0_3px_4px_rgba(0,0,0,0.5)]
+                                                 animate-shimmer-bright">
+                                        EXCLUSIVE
+                                    </span>
+                                    <span className="text-3xl sm:text-3xl md:text-4xl font-bold font-poppins tracking-wide
+                                                 bg-gradient-to-r from-yellow-300 via-yellow-100 to-yellow-300 
+                                                 bg-clip-text text-transparent 
+                                                 drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]
+                                                 bg-[length:200%_100%] animate-shimmer-bright">
+                                        DESTINATIONS?
+                                    </span>
+                                </div>
                             </h1>
                         </div>
 
-                        <div className="flex flex-wrap justify-center md:justify-end gap-4 md:gap-8 md:mr-[16rem]">
+                        {/* Icons Section - Better mobile layout */}
+                        <div className="flex justify-center space-x-8 sm:space-x-6 md:space-x-8 sm:mr-[8rem] md:mr-[16rem]">
                             {/* Almaty */}
-                            <Link href="/trending/almaty" className="flex flex-col items-center justify-center w-28 md:w-40 h-24 md:h-32 text-white hover:scale-105 transition-transform cursor-pointer">
-                                <Mountain
-                                    className="mb-2 w-[40px] h-[40px] md:w-[60px] md:h-[60px]"
-                                    strokeWidth={1.5}
-                                />
-                                <p className="text-xs md:text-sm text-center font-poppins font-semibold leading-tight">
-                                    Almaty
-                                </p>
+                            <Link href="/trending/almaty" className="group relative">
+                                <div className="flex flex-col items-center">
+                                    <div className="relative w-[50px] h-[50px] sm:w-[45px] sm:h-[45px] md:w-[60px] md:h-[60px] 
+                                                  rounded-xl overflow-hidden 
+                                                  border-2 border-white/30 group-hover:border-yellow-300 transition-all duration-300
+                                                  shadow-lg group-hover:shadow-yellow-300/40
+                                                  bg-yellow-400/20 group-hover:bg-yellow-400/30
+                                                  animate-glow-bright">
+                                        <Image
+                                            src="/Assets/Forex/currency/almaty.webp"
+                                            alt="Almaty"
+                                            fill
+                                            className="object-cover transform group-hover:scale-110 transition-transform duration-300"
+                                            quality={100}
+                                            priority
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/40 group-hover:opacity-0 transition-opacity duration-300" />
+                                    </div>
+                                    <div className="mt-3 sm:mt-2 relative">
+                                        <p className="text-sm sm:text-sm md:text-base font-poppins font-medium
+                                                    text-white group-hover:text-yellow-300 
+                                                    transition-colors duration-300
+                                                    animate-pulse-bright">
+                                            Almaty
+                                        </p>
+                                        <div className="absolute -bottom-1 left-0 w-0 h-0.5 
+                                                      bg-gradient-to-r from-yellow-300 via-yellow-100 to-yellow-300
+                                                      group-hover:w-full transition-all duration-300" />
+                                    </div>
+                                </div>
                             </Link>
 
                             {/* Baku */}
-                            <Link href="/trending/baku" className="flex flex-col items-center justify-center w-28 md:w-40 h-24 md:h-32 text-white hover:scale-105 transition-transform cursor-pointer">
-                                <Castle
-                                    className="mb-2 w-[40px] h-[40px] md:w-[60px] md:h-[60px]"
-                                    strokeWidth={1.5}
-                                />
-                                <p className="text-xs md:text-sm text-center font-poppins font-semibold leading-tight">
-                                    Baku
-                                </p>
+                            <Link href="/trending/baku" className="group relative">
+                                <div className="flex flex-col items-center">
+                                    <div className="relative w-[50px] h-[50px] sm:w-[45px] sm:h-[45px] md:w-[60px] md:h-[60px] 
+                                                  rounded-xl overflow-hidden 
+                                                  border-2 border-white/30 group-hover:border-yellow-300 transition-all duration-300
+                                                  shadow-lg group-hover:shadow-yellow-300/40
+                                                  bg-yellow-400/20 group-hover:bg-yellow-400/30
+                                                  animate-glow-bright">
+                                        <Image
+                                            src="/Assets/Forex/currency/baku.png"
+                                            alt="Baku"
+                                            fill
+                                            className="object-cover transform group-hover:scale-110 transition-transform duration-300"
+                                            quality={100}
+                                            priority
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/40 group-hover:opacity-0 transition-opacity duration-300" />
+                                    </div>
+                                    <div className="mt-3 sm:mt-2 relative">
+                                        <p className="text-sm sm:text-sm md:text-base font-poppins font-medium
+                                                    text-white group-hover:text-yellow-300 
+                                                    transition-colors duration-300
+                                                    animate-pulse-bright">
+                                            Baku
+                                        </p>
+                                        <div className="absolute -bottom-1 left-0 w-0 h-0.5 
+                                                      bg-gradient-to-r from-yellow-300 via-yellow-100 to-yellow-300
+                                                      group-hover:w-full transition-all duration-300" />
+                                    </div>
+                                </div>
                             </Link>
 
                             {/* Japan */}
-                            <Link href="/destinations/japan" className="flex flex-col items-center justify-center w-28 md:w-40 h-24 md:h-32 text-white hover:scale-105 transition-transform cursor-pointer">
-                                <Building2
-                                    className="mb-2 w-[40px] h-[40px] md:w-[60px] md:h-[60px]"
-                                    strokeWidth={1.5}
-                                />
-                                <p className="text-xs md:text-sm text-center font-poppins font-semibold leading-tight">
-                                    Japan
-                                </p>
+                            <Link href="/destinations/japan" className="group relative">
+                                <div className="flex flex-col items-center">
+                                    <div className="relative w-[50px] h-[50px] sm:w-[45px] sm:h-[45px] md:w-[60px] md:h-[60px] 
+                                                  rounded-xl overflow-hidden 
+                                                  border-2 border-white/30 group-hover:border-yellow-300 transition-all duration-300
+                                                  shadow-lg group-hover:shadow-yellow-300/40
+                                                  bg-yellow-400/20 group-hover:bg-yellow-400/30
+                                                  animate-glow-bright">
+                                        <Image
+                                            src="/Assets/Forex/currency/japan.webp"
+                                            alt="Japan"
+                                            fill
+                                            className="object-cover transform group-hover:scale-110 transition-transform duration-300"
+                                            quality={100}
+                                            priority
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/40 group-hover:opacity-0 transition-opacity duration-300" />
+                                    </div>
+                                    <div className="mt-3 sm:mt-2 relative">
+                                        <p className="text-sm sm:text-sm md:text-base font-poppins font-medium
+                                                    text-white group-hover:text-yellow-300 
+                                                    transition-colors duration-300
+                                                    animate-pulse-bright">
+                                            Japan
+                                        </p>
+                                        <div className="absolute -bottom-1 left-0 w-0 h-0.5 
+                                                      bg-gradient-to-r from-yellow-300 via-yellow-100 to-yellow-300
+                                                      group-hover:w-full transition-all duration-300" />
+                                    </div>
+                                </div>
                             </Link>
                         </div>
                     </div>
