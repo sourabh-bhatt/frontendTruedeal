@@ -127,7 +127,7 @@ interface Props {
     searchParams: { [key: string]: string | string[] | undefined };
 }
 
-const BlogPost = async ({ params, searchParams }: Props) => {
+const BlogPost = async ({ params }: Props) => {
     const post = blogPosts[params.slug]
 
     if (!post) {
