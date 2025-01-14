@@ -242,3 +242,29 @@ select::-webkit-listbox {
 .animate-fadeIn {
   animation: fadeIn 0.2s ease-out;
 }
+
+/* Add these styles to globals.css */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #00f6ff #f3f4f6;
+}
+
+*::-webkit-scrollbar {
+  width: 4px; /* Made even thinner */
+}
+
+*::-webkit-scrollbar-track {
+  background: #f3f4f6;
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #017ae3, #00f6ff);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #00f6ff, #017ae3);
+}

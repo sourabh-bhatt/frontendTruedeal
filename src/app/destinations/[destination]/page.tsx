@@ -191,7 +191,7 @@ const destinationData: { [key: string]: DestinationDetails } = {
             "/IMAGES/dubai/1282 x 814/4.webp",
         ]
     },
-    
+
 
     singapore: {
         name: "Singapore - A World of Wonders",
@@ -2365,7 +2365,6 @@ export default function DestinationDetails() {
     const [error] = useState<string | null>(null);
     const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
     const [selectedVariant, setSelectedVariant] = useState<string | null>(null);
-    const [showScrollIndicator, setShowScrollIndicator] = useState(true);
     // Add this new state for managing the packages dropdown
     const [showPackages, setShowPackages] = useState(false);
     // First, add a state to track the active tab value
@@ -2380,27 +2379,6 @@ export default function DestinationDetails() {
         }
     }, [destination]);
 
-    useEffect(() => {
-        const handleScroll = (e: Event) => {
-            const target = e.target as HTMLElement;
-            if (target.scrollTop > 100) {
-                setShowScrollIndicator(false);
-            } else {
-                setShowScrollIndicator(true);
-            }
-        };
-
-        const scrollableElements = document.querySelectorAll('.custom-scrollbar');
-        scrollableElements.forEach(element => {
-            element.addEventListener('scroll', handleScroll);
-        });
-
-        return () => {
-            scrollableElements.forEach(element => {
-                element.removeEventListener('scroll', handleScroll);
-            });
-        };
-    }, []);
     useEffect(() => {
         if (hasVariants(destinationData)) {
             const initialTabId = destinationData.variants[0].id;
@@ -2636,23 +2614,6 @@ export default function DestinationDetails() {
                                         </section>
                                     </div>
                                 </div>
-                                <div className={`scroll-indicator ${!showScrollIndicator ? 'fade-out' : ''}`}>
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="16"
-                                        height="16"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        strokeWidth="2"
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                    >
-                                        <path d="M7 13l5 5 5-5" />
-                                        <path d="M7 6l5 5 5-5" />
-                                    </svg>
-                                    Scroll for more
-                                </div>
                             </TabsContent>
                         ))}
                     </Tabs>
@@ -2685,7 +2646,7 @@ export default function DestinationDetails() {
                 <style jsx global>{`
                     .custom-scrollbar {
                         scrollbar-width: thin;
-                        scrollbar-color: #017ae3 #f3f4f6;
+                        scrollbar-color: #00f6ff #f3f4f6;
                     }
                     
                     .custom-scrollbar::-webkit-scrollbar {
@@ -2698,83 +2659,18 @@ export default function DestinationDetails() {
                     }
                     
                     .custom-scrollbar::-webkit-scrollbar-thumb {
-                        background: linear-gradient(to bottom, #017ae3, #00f6ff);
+                        background: linear-gradient(45deg, #017ae3, #00f6ff);
                         border-radius: 10px;
+                        transition: all 0.3s ease;
                     }
                     
                     .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-                        background: linear-gradient(to bottom, #00f6ff, #017ae3);
+                        background: linear-gradient(45deg, #00f6ff, #017ae3);
                     }
 
                     @media (max-width: 768px) {
                         .custom-scrollbar {
                             max-height: 75vh;
-                        }
-                    }
-
-                    .scroll-indicator {
-                        position: absolute;
-                        bottom: 20px;
-                        left: 50%;
-                        transform: translateX(-50%);
-                        animation: bounce 2s infinite;
-                        background: linear-gradient(to right, #017ae3, #00f6ff);
-                        color: white;
-                        padding: 8px 16px;
-                        border-radius: 20px;
-                        font-size: 14px;
-                        display: flex;
-                        align-items: center;
-                        gap: 4px;
-                        opacity: 0.9;
-                        z-index: 10;
-                        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                    }
-
-                    @keyframes bounce {
-                        0%, 20%, 50%, 80%, 100% {
-                            transform: translateY(0) translateX(-50%);
-                        }
-                        40% {
-                            transform: translateY(-10px) translateX(-50%);
-                        }
-                        60% {
-                            transform: translateY(-5px) translateX(-50%);
-                        }
-                    }
-
-                    .scroll-indicator.fade-out {
-                        opacity: 0;
-                        transition: opacity 0.5s ease-out;
-                    }
-
-                    /* Ensure first tab is fully visible */
-                    .tabs-list {
-                        padding-left: 4px !important;
-                        padding-right: 4px !important;
-                        margin-left: -1px;
-                        margin-right: -1px;
-                        
-                    }
-
-                    .tabs-list > *:first-child {
-                        margin-left: 4px !important;
-                    }
-
-                    /* Improve scroll behavior */
-                    @media (max-width: 768px) {
-                        .tabs-list {
-                            -webkit-overflow-scrolling: touch;
-                            scroll-snap-type: x mandatory;
-                            scroll-behavior: smooth;
-                            -webkit-scroll-padding-left: 4px;
-                            scroll-padding-left: 4px;
-                        }
-                        
-                        .tabs-list > * {
-                            scroll-snap-align: start;
-                            scroll-snap-stop: always;
-                            min-width: max-content;
                         }
                     }
 
@@ -3038,23 +2934,6 @@ export default function DestinationDetails() {
                                         </section>
                                     </div>
                                 </div>
-                                <div className={`scroll-indicator ${!showScrollIndicator ? 'fade-out' : ''}`}>
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="16"
-                                        height="16"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        strokeWidth="2"
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                    >
-                                        <path d="M7 13l5 5 5-5" />
-                                        <path d="M7 6l5 5 5-5" />
-                                    </svg>
-                                    Scroll for more
-                                </div>
                             </TabsContent>
                         ))}
                     </Tabs>
@@ -3087,7 +2966,7 @@ export default function DestinationDetails() {
                 <style jsx global>{`
                     .custom-scrollbar {
                         scrollbar-width: thin;
-                        scrollbar-color: #017ae3 #f3f4f6;
+                        scrollbar-color: #00f6ff #f3f4f6;
                     }
                     
                     .custom-scrollbar::-webkit-scrollbar {
@@ -3100,82 +2979,18 @@ export default function DestinationDetails() {
                     }
                     
                     .custom-scrollbar::-webkit-scrollbar-thumb {
-                        background: linear-gradient(to bottom, #017ae3, #00f6ff);
+                        background: linear-gradient(45deg, #017ae3, #00f6ff);
                         border-radius: 10px;
+                        transition: all 0.3s ease;
                     }
                     
                     .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-                        background: linear-gradient(to bottom, #00f6ff, #017ae3);
+                        background: linear-gradient(45deg, #00f6ff, #017ae3);
                     }
 
                     @media (max-width: 768px) {
                         .custom-scrollbar {
                             max-height: 75vh;
-                        }
-                    }
-
-                    .scroll-indicator {
-                        position: absolute;
-                        bottom: 20px;
-                        left: 50%;
-                        transform: translateX(-50%);
-                        animation: bounce 2s infinite;
-                        background: linear-gradient(to right, #017ae3, #00f6ff);
-                        color: white;
-                        padding: 8px 16px;
-                        border-radius: 20px;
-                        font-size: 14px;
-                        display: flex;
-                        align-items: center;
-                        gap: 4px;
-                        opacity: 0.9;
-                        z-index: 10;
-                        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                    }
-
-                    @keyframes bounce {
-                        0%, 20%, 50%, 80%, 100% {
-                            transform: translateY(0) translateX(-50%);
-                        }
-                        40% {
-                            transform: translateY(-10px) translateX(-50%);
-                        }
-                        60% {
-                            transform: translateY(-5px) translateX(-50%);
-                        }
-                    }
-
-                    .scroll-indicator.fade-out {
-                        opacity: 0;
-                        transition: opacity 0.5s ease-out;
-                    }
-
-                    /* Ensure first tab is fully visible */
-                    .tabs-list {
-                        padding-left: 4px !important;
-                        padding-right: 4px !important;
-                        margin-left: -1px;
-                        margin-right: -1px;
-                    }
-
-                    .tabs-list > *:first-child {
-                        margin-left: 4px !important;
-                    }
-
-                    /* Improve scroll behavior */
-                    @media (max-width: 768px) {
-                        .tabs-list {
-                            -webkit-overflow-scrolling: touch;
-                            scroll-snap-type: x mandatory;
-                            scroll-behavior: smooth;
-                            -webkit-scroll-padding-left: 4px;
-                            scroll-padding-left: 4px;
-                        }
-                        
-                        .tabs-list > * {
-                            scroll-snap-align: start;
-                            scroll-snap-stop: always;
-                            min-width: max-content;
                         }
                     }
 
@@ -3276,7 +3091,7 @@ export default function DestinationDetails() {
                     destinationName={destinationData.name}
                 />
 
-                <div className="bg-white rounded-2xl shadow-lg p-8">
+                <div className="bg-white rounded-2xl shadow-lg p-8 max-h-[85vh] overflow-y-auto custom-scrollbar relative">
                     <h1 className="text-3xl font-bold mb-4 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] bg-clip-text text-transparent">
                         {destinationData.name}
                     </h1>
@@ -3356,23 +3171,6 @@ export default function DestinationDetails() {
                             </div>
                         </section>
                     </div>
-                </div>
-                <div className={`scroll-indicator ${!showScrollIndicator ? 'fade-out' : ''}`}>
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                    >
-                        <path d="M7 13l5 5 5-5" />
-                        <path d="M7 6l5 5 5-5" />
-                    </svg>
-                    Scroll for more
                 </div>
             </main>
             <Trending />
