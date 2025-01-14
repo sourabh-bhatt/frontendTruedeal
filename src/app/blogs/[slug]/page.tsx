@@ -124,9 +124,10 @@ interface BlogPostPageProps {
     params: {
         slug: string
     }
+    searchParams: { [key: string]: string | string[] | undefined }
 }
 
-export default function BlogPostPage({ params }: BlogPostPageProps) {
+export default async function BlogPostPage({ params, searchParams }: BlogPostPageProps) {
     const post = blogPosts[params.slug]
 
     if (!post) {
