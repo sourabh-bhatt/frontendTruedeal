@@ -239,27 +239,27 @@ const VisaServices = () => {
     }
 
     return (
-        <div className="max-w-6xl mx-auto p-4 sm:p-6">
-            {/* Progress Steps */}
-            <div className="mb-8">
-                <div className="flex items-center justify-center space-x-4">
+        <div className="max-w-6xl mx-auto p-2 sm:p-6 mt-8 sm:mt-12">
+            {/* Progress Steps - Made more compact on mobile */}
+            <div className="mb-6 sm:mb-8">
+                <div className="flex items-center justify-center space-x-2 sm:space-x-4">
                     {[1, 2, 3].map((step) => (
                         <div key={step} className="flex items-center">
-                            <div className={`w-8 h-8 rounded-full flex items-center justify-center ${currentStep >= step ? 'bg-cyan-600 text-white' : 'bg-gray-200'
+                            <div className={`w-6 h-6 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-sm sm:text-base ${currentStep >= step ? 'bg-cyan-600 text-white' : 'bg-gray-200'
                                 }`}>
                                 {step}
                             </div>
                             {step < 3 && (
-                                <div className={`w-20 h-1 mx-2 ${currentStep > step ? 'bg-cyan-600' : 'bg-gray-200'
+                                <div className={`w-12 sm:w-20 h-1 mx-1 sm:mx-2 ${currentStep > step ? 'bg-cyan-600' : 'bg-gray-200'
                                     }`} />
                             )}
                         </div>
                     ))}
                 </div>
-                <div className="flex justify-center mt-2 text-sm">
-                    <span className={`mx-4 ${currentStep === 1 ? 'text-cyan-600 font-bold' : ''}`}>Details</span>
-                    <span className={`mx-4 ${currentStep === 2 ? 'text-cyan-600 font-bold' : ''}`}>Documents</span>
-                    <span className={`mx-4 ${currentStep === 3 ? 'text-cyan-600 font-bold' : ''}`}>Review</span>
+                <div className="flex justify-center mt-2 text-xs sm:text-sm">
+                    <span className={`mx-2 sm:mx-4 ${currentStep === 1 ? 'text-cyan-600 font-bold' : ''}`}>Details</span>
+                    <span className={`mx-2 sm:mx-4 ${currentStep === 2 ? 'text-cyan-600 font-bold' : ''}`}>Documents</span>
+                    <span className={`mx-2 sm:mx-4 ${currentStep === 3 ? 'text-cyan-600 font-bold' : ''}`}>Review</span>
                 </div>
             </div>
 
@@ -267,67 +267,69 @@ const VisaServices = () => {
                 {/* Step 1: Country Selection and Details */}
                 {currentStep === 1 && (
                     <>
-                        {/* Visa Process Steps - Replace country list */}
-                        <div className="bg-gray-50 p-4 rounded-lg">
-                            <h2 className="text-2xl font-bold mb-6">Visa Process</h2>
-                            <div className="space-y-6">
+                        {/* Visa Process Steps */}
+                        <div className="bg-gray-50 p-3 sm:p-4 rounded-lg">
+                            <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Visa Process</h2>
+                            <div className="space-y-3 sm:space-y-6">
                                 {VISA_PROCESS_STEPS.map((step, index) => (
-                                    <div key={index} className="flex items-start space-x-4 p-4 bg-white rounded-lg shadow-sm">
-                                        <div className="text-3xl">{step.icon}</div>
+                                    <div key={index} className="flex items-start space-x-3 p-3 bg-white rounded-lg shadow-sm">
+                                        <div className="text-2xl sm:text-3xl">{step.icon}</div>
                                         <div>
-                                            <h3 className="font-semibold">{step.title}</h3>
-                                            <p className="text-gray-600 text-sm">{step.description}</p>
+                                            <h3 className="font-semibold text-sm sm:text-base">{step.title}</h3>
+                                            <p className="text-gray-600 text-xs sm:text-sm">{step.description}</p>
                                         </div>
                                     </div>
                                 ))}
                             </div>
                         </div>
 
-                        {/* Keep existing form but add contact info fields */}
-                        <div className="bg-white p-4 md:p-6 rounded-lg shadow">
-                            <h2 className="text-2xl font-bold mb-6">Visa Application Details</h2>
-                            <form className="space-y-6">
-                                {/* Add contact info fields */}
-                                <div>
-                                    <label className="block text-gray-700 mb-2">Your Name</label>
-                                    <input
-                                        type="text"
-                                        className="w-full p-3 border rounded-lg"
-                                        value={contactInfo.name}
-                                        onChange={(e) => setContactInfo({ ...contactInfo, name: e.target.value })}
-                                        required
-                                    />
-                                </div>
-                                <div>
-                                    <label className="block text-gray-700 mb-2">Email Address</label>
-                                    <input
-                                        type="email"
-                                        className="w-full p-3 border rounded-lg"
-                                        value={contactInfo.email}
-                                        onChange={(e) => setContactInfo({ ...contactInfo, email: e.target.value })}
-                                        required
-                                    />
-                                </div>
-                                <div>
-                                    <label className="block text-gray-700 mb-2">Phone Number</label>
-                                    <input
-                                        type="tel"
-                                        className="w-full p-3 border rounded-lg"
-                                        value={contactInfo.phone}
-                                        onChange={(e) => setContactInfo({ ...contactInfo, phone: e.target.value })}
-                                        required
-                                    />
+                        {/* Application Form */}
+                        <div className="bg-white p-3 sm:p-6 rounded-lg shadow">
+                            <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Visa Application Details</h2>
+                            <form className="space-y-4 sm:space-y-6">
+                                {/* Contact Info Grid */}
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label className="block text-gray-700 mb-1 text-sm">Your Name</label>
+                                        <input
+                                            type="text"
+                                            className="w-full p-2 sm:p-3 border rounded-lg text-sm"
+                                            value={contactInfo.name}
+                                            onChange={(e) => setContactInfo({ ...contactInfo, name: e.target.value })}
+                                            required
+                                        />
+                                    </div>
+                                    <div>
+                                        <label className="block text-gray-700 mb-1 text-sm">Email Address</label>
+                                        <input
+                                            type="email"
+                                            className="w-full p-2 sm:p-3 border rounded-lg text-sm"
+                                            value={contactInfo.email}
+                                            onChange={(e) => setContactInfo({ ...contactInfo, email: e.target.value })}
+                                            required
+                                        />
+                                    </div>
                                 </div>
 
-                                {/* Selected Country - Modified to allow typing */}
-                                <div>
-                                    <label className="block text-gray-700 mb-2">Selected Country</label>
-                                    <div className="relative">
+                                {/* Phone and Country Grid */}
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label className="block text-gray-700 mb-1 text-sm">Phone Number</label>
+                                        <input
+                                            type="tel"
+                                            className="w-full p-2 sm:p-3 border rounded-lg text-sm"
+                                            value={contactInfo.phone}
+                                            onChange={(e) => setContactInfo({ ...contactInfo, phone: e.target.value })}
+                                            required
+                                        />
+                                    </div>
+                                    <div>
+                                        <label className="block text-gray-700 mb-1 text-sm">Selected Country</label>
                                         <input
                                             type="text"
                                             value={formData.country}
                                             onChange={handleCountryChange}
-                                            className="w-full p-3 border rounded-lg"
+                                            className="w-full p-2 sm:p-3 border rounded-lg text-sm"
                                             placeholder="Type or select a country"
                                             list="countries-list"
                                         />
@@ -336,6 +338,30 @@ const VisaServices = () => {
                                                 <option key={country} value={country} />
                                             ))}
                                         </datalist>
+                                    </div>
+                                </div>
+
+                                {/* Travel Dates Grid */}
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label className="block text-gray-700 mb-1 text-sm">Start Date</label>
+                                        <input
+                                            type="date"
+                                            className="w-full p-2 sm:p-3 border rounded-lg text-sm"
+                                            value={formData.startDate}
+                                            onChange={(e) => setFormData({ ...formData, startDate: e.target.value })}
+                                            required
+                                        />
+                                    </div>
+                                    <div>
+                                        <label className="block text-gray-700 mb-1 text-sm">End Date</label>
+                                        <input
+                                            type="date"
+                                            className="w-full p-2 sm:p-3 border rounded-lg text-sm"
+                                            value={formData.endDate}
+                                            onChange={(e) => setFormData({ ...formData, endDate: e.target.value })}
+                                            required
+                                        />
                                     </div>
                                 </div>
 
@@ -361,27 +387,6 @@ const VisaServices = () => {
                                         >
                                             💼 Business
                                         </button>
-                                    </div>
-                                </div>
-
-                                {/* Travel Dates */}
-                                <div>
-                                    <label className="block text-gray-700 mb-2">Travel dates</label>
-                                    <div className="flex gap-4">
-                                        <input
-                                            type="date"
-                                            className="flex-1 p-3 border rounded-lg"
-                                            value={formData.startDate}
-                                            onChange={(e) => setFormData({ ...formData, startDate: e.target.value })}
-                                            required
-                                        />
-                                        <input
-                                            type="date"
-                                            className="flex-1 p-3 border rounded-lg"
-                                            value={formData.endDate}
-                                            onChange={(e) => setFormData({ ...formData, endDate: e.target.value })}
-                                            required
-                                        />
                                     </div>
                                 </div>
 
@@ -425,14 +430,14 @@ const VisaServices = () => {
                     </>
                 )}
 
-                {/* Step 2: Document Upload */}
+                {/* Step 2: Document Upload - Made more compact on mobile */}
                 {currentStep === 2 && (
                     <div className="col-span-2">
-                        <div className="bg-white p-4 md:p-6 rounded-lg shadow">
-                            <h2 className="text-2xl font-bold mb-6">Required Documents</h2>
-                            <div className="grid md:grid-cols-2 gap-4">
+                        <div className="bg-white p-3 sm:p-6 rounded-lg shadow">
+                            <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Required Documents</h2>
+                            <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
                                 {REQUIRED_DOCUMENTS.default.map((doc) => (
-                                    <div key={doc.name} className="border rounded-lg p-4">
+                                    <div key={doc.name} className="border rounded-lg p-3 sm:p-4">
                                         <div className="flex justify-between items-start mb-2">
                                             <div>
                                                 <h3 className="font-semibold">{doc.name}</h3>
@@ -483,13 +488,13 @@ const VisaServices = () => {
                     </div>
                 )}
 
-                {/* Step 3: Review and Submit */}
+                {/* Step 3: Review - Adjusted for better mobile display */}
                 {currentStep === 3 && (
                     <div className="col-span-2">
-                        <div className="bg-white p-4 md:p-6 rounded-lg shadow">
-                            <h2 className="text-2xl font-bold mb-6">Review Application</h2>
+                        <div className="bg-white p-3 sm:p-6 rounded-lg shadow">
+                            <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Review Application</h2>
                             <div className="space-y-4">
-                                <div className="grid md:grid-cols-2 gap-4">
+                                <div className="grid sm:grid-cols-2 gap-4">
                                     <div>
                                         <h3 className="font-semibold mb-2">Travel Details</h3>
                                         <div className="space-y-2">
