@@ -163,11 +163,6 @@ const VisaServices = () => {
         setFormData({ ...formData, country: e.target.value })
     }
 
-    // Handle country selection from the list
-    const handleCountryClick = (country: string) => {
-        setFormData({ ...formData, country })
-    }
-
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 

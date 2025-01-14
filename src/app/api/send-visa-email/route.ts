@@ -14,8 +14,8 @@ export async function POST(request: Request) {
             subject: `New Visa Application for ${body.country}`,
             html: generateVisaEmailHTML(body),
             attachments: Object.entries(body.documents)
-                .filter(([_, doc]) => doc.base64)
-                .map(([key, doc]) => ({
+                .filter(([, doc]) => doc.base64)
+                .map(([, doc]) => ({
                     content: doc.base64!.split(',')[1],
                     filename: doc.name,
                     type: 'application/octet-stream',
