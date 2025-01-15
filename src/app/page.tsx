@@ -12,6 +12,7 @@ import Europe from "./components/homepage/Europe";
 import Domestic from "./components/homepage/Domestic";
 import Gallery from "./components/homepage/Gallery";
 import WallOfLove from "./components/homepage/Ugc";
+import Indonesia from "./indonesia/page";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
       <AnimatedListDemo />
       <ExoticDestinations />
       <Europe />
+      <Indonesia />
       <Ad />
       <HappyCustomers />
       <CurrencyExchange />
