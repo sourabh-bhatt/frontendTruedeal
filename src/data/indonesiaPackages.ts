@@ -145,7 +145,7 @@ export const indonesiaPackages: { [key: string]: IndonesianPackage[] } = {
                 {
                     day: 1,
                     title: "ARRIVAL BALI - ULUWATU TEMPLE - NYANG - NYANG BEACH TEA TIME (D)",
-                    description: `Upon arrival, meet & greet by local representative. Transfer in to hotel for check in, Uluwatu temple: the holy ancient temple, this temple located at the level of 250 feet above sea level on the cliff south point or pura luhur. Nyang -Nyang beach tea time: top of the hill beach .the beach is a “secret paradise” for surfer,   We could see the high waves.  It could be a great great place for pro surfers. Dinner will be provide at local restaurant.`
+                    description: `Upon arrival, meet & greet by local representative. Transfer in to hotel for check in, Uluwatu temple: the holy ancient temple, this temple located at the level of 250 feet above sea level on the cliff south point or pura luhur. Nyang -Nyang beach tea time: top of the hill beach .the beach is a "secret paradise" for surfer,   We could see the high waves.  It could be a great great place for pro surfers. Dinner will be provide at local restaurant.`
                 },
                 {
                     day: 2,
@@ -618,43 +618,45 @@ On the way to Tanah Lot we will stop at Taman Ayun Temple. is a compound of Bali
             ]
         },
     ],
-    "bandung": [
+    "jakarta-packages": [
         {
-            id: "bandung-easy",
-            category: "BANDUNG PACKAGES",
-            name: "BANDUNG EASY PACKAGE",
-            price: 12999,
+            id: "jakarta-puncak-bandung-3d2n",
+            category: "JAKARTA PACKAGES",
+            name: "JAKARTA - PUNCAK - BANDUNG 3D/2N",
+            price: 23000,
             duration: { days: 3, nights: 2 },
             image: "/IMAGES/Indonesia/Bandung/easy-1.webp",
-            description: "Experience the charm of Bandung with our easy package, perfect for those who want to explore the city at their own pace...",
+            description: "Experience the charm of Jakarta, Puncak and Bandung with our easy package, perfect for those who want to explore the city at their own pace...",
             itinerary: [
                 {
                     day: 1,
-                    title: "Arrival in Bandung",
-                    description: "Airport pickup and transfer to hotel. Rest of day at leisure."
+                    title: "ARRIVAL  JAKARTA    (D)",
+                    description: `Arrival in Jakarta International Airport. Meet & greet with our tour guide Afterwards having Jakarta city tour by visiting Sunda Kelapa Old Harbour and Fatahillah Square and photo stop at National Monument . Dinner will be served at local restaurant. Check in at hotel Jakarta `
                 },
                 {
                     day: 2,
-                    title: "Bandung City Tour",
-                    description: "Visit key attractions including Tangkuban Perahu Volcano, Ciater Hot Spring, and shopping at factory outlets."
+                    title: "JAKARTA ART & CULTURE  (B/L/D)",
+                    description: `	Breakfast at hotel. Having Jakarta full day tour visiting TMII or Indonesia Miniature Park and proceeding to Museum Indonesia, afterward in late afternoon will shopping at ITC Mangga Dua Mall .Lunch and dinner will be served at local rest. Back to hotel and free program.	`
                 },
                 {
                     day: 3,
-                    title: "Departure",
-                    description: "Free time until transfer to airport for departure."
+                    title: "JAKARTA OUT   (B)",
+                    description: "Breakfast at the hotel then free program. At the appropriate time then check out from hotel and well drop you off to the airport for your next flight."
                 }
             ],
             inclusions: [
-                "Return airport transfers",
-                "2 nights accommodation",
-                "Daily breakfast",
+                "Transfers : Airport - Hotel - Airport",
+                "Accommodation at preferred hotel or similar class	",
+                "Tour program & Transfers(by Full AC Coach)as per itinerary 	",
                 "City tour with guide"
             ],
             exclusions: [
+                "Lunch & Dinner",
                 "Airfare",
                 "Personal expenses",
                 "Optional tours",
-                "Travel insurance"
+                "Travel insurance",
+                "Anything not mentioned in the inclusions"
             ],
             cancellationPolicy: [
                 "Free cancellation up to 7 days before arrival",
@@ -666,7 +668,437 @@ On the way to Tanah Lot we will stop at Taman Ayun Temple. is a compound of Bali
                 "/IMAGES/Indonesia/Bandung/easy-2.webp",
                 "/IMAGES/Indonesia/Bandung/easy-3.webp"
             ]
-        }
+        },
+        {
+            id: "jakarta-puncak-bandung-4d3n",
+            category: "JAKARTA PACKAGES",
+            name: "JAKARTA - PUNCAK - BANDUNG 4D/3N",
+            price: 30000,
+            duration: { days: 4, nights: 3 },
+            image: "/IMAGES/Indonesia/Bandung/easy-1.webp",
+            description: "Experience the charm of Bandung with our easy package, perfect for those who want to explore the city at their own pace...",
+            itinerary: [
+                {
+                    day: 1,
+                    title: "ARRIVAL  JAKARTA  (D)",
+                    description: `	Arrival in Jakarta International Airport. Meet & greet with our tour guide. Program in the afternoon Jakarta city tour by visiting Sunda Kelapa Old Harbour and Fatahillah Museum, Glodok China Town and Photostop at National Monument. Dinner will be served at local restaurant. Transfer to the hotel								`
+                },
+                {
+                    day: 2,
+                    title: "JAKARTA – BOGOR - SAFARI  - JAKARTA (B/L/D)",
+                    description: `	In the morning breakfast at hotel. Our first destination for today is Bogor city for shopping at Tajur factory outlet enjoy the most beautiful Panorama of Gede mountain at Gunung Mas Tea Plantation.Having Lunch at local restaurant. Proceeding the tour to Cisarua for visiting Safari Park with its various of tame and wild animals. Driving back to Jakarta. Dinner at local restaurant				`
+                },
+                {
+                    day: 3,
+                    title: "JAKARTA ART & CULTURE (B/L/D)",
+                    description: "Breakfast at the hotel. Having Jakarta fullday tour visiting TMII or Indonesia Miniature Park and proceeding to Museum Indonesia, shopping program at  ITC Mangga Dua Mall. Lunch and dinner will be served at local restaurant. Back to the hotel."
+                },
+                {
+                    day: 4,
+                    title: "JAKARTA OUT (B)",
+                    description: "Breakfast at the hotel then free program. At the appropriate time then check out from hotel and well drop you off to the airport for your next flight."
+                }
+            ],
+            inclusions: [
+                "Private AC transportation",
+                "Accommodation as your choice",
+                "Guide service, admission fees, donations",
+                "Parking fee",
+                "Toll road",
+                "Meals per itinerary"
+            ],
+            exclusions: [
+                "Return transfers from Airport - Hotel - Airport",
+                "Airport tax",
+                "Porter fees at airport & hotels",
+                "Personal expenses",
+                "Optional tours",
+                "Travel insurance",
+                "Anything not mentioned in the inclusions"
+            ],
+            cancellationPolicy: [
+                "Free cancellation up to 7 days before arrival",
+                "50% charge for cancellation within 7 days",
+                "100% charge for cancellation within 48 hours"
+            ],
+            galleryImages: [
+                "/IMAGES/Indonesia/Bandung/easy-1.webp",
+                "/IMAGES/Indonesia/Bandung/easy-2.webp",
+                "/IMAGES/Indonesia/Bandung/easy-3.webp"
+            ]
+        },
+        {
+            id: "jakarta-puncak-bandung-5d4n",
+            category: "JAKARTA PACKAGES",
+            name: "JAKARTA - PUNCAK - SAFARI 5D/4N",
+            price: 45223,
+            duration: { days: 5, nights: 4 },
+            image: "/IMAGES/Indonesia/Bandung/easy-1.webp",
+            description: "Experience the charm of Jakarta, Puncak and Bandung with our easy package, perfect for those who want to explore the city at their own pace...",
+            itinerary: [
+                {
+                    day: 1,
+                    title: "ARRIVAL  JAKARTA  (D)",
+                    description: `Arrival in Jakarta International Airport. Meet & greet with our tour guide. Afterwards having Jakarta city tour by visiting Sunda Kelapa Old Harbor and Fatahillah Square then photo stop at National Monument. Dinner will be served at local Restaurant. Check in at hotel Jakarta.							`
+                },
+                {
+                    day: 2,
+                    title: "JAKARTA - PUNCAK - SAFARI   (B/L/D)",
+                    description: `In the morning breakfast at hotel. Our first destination for today is Bogor city for shopping at Tajur factory outlet. Enjoy the most beautiful Panorama of Gede mountain at Gunung Mas Tea Plantation .Having lunch at local restaurant. Proceeding the tour to Cisarua for visiting Safari Park with its various of tame and wild animals. Driving back to Jakarta. Dinner at local restaurant.	`
+                },
+                {
+                    day: 3,
+                    title: "JAKARTA ART & CULTURE (B/L/D)",
+                    description: "Breakfast at hotel. Having Jakarta full day tour visiting TMII or Indonesia Miniature Park and proceeding to Indonesia Museum , afterward  shopping program at ITC Mangga dua Mall. Lunch & dinner will be served at local rest. Back to hotel and free program."
+                },
+                {
+                    day: 4,
+                    title: "JAKARTA SHOPPING (B)",
+                    description: "Breakfast at the hotel. Afterward visiting Plaza Indonesia and proceeding to Mangga Dua Shopping Center and Grand Indonesia Mall for full day shopping program. Back to hotel and free program "
+                },
+                {
+                    day: 5,
+                    title: "JAKARTA OUT (B)",
+                    description: "Breakfast at the hotel. Afterward free program. At the appropriate time then check out from hotel and well drop you off to the airport for your next flight."
+                }
+            ],
+            inclusions: [
+                "Private AC transportation",
+                "Accommodation as your choice",
+                "Guide service, admission fees, donations",
+                "Parking fee",
+                "Toll road",
+                "Meals per itinerary"
+            ],
+            exclusions: [
+                "Return transfers from Airport - Hotel - Airport",
+                "Airport tax",
+                "Porter fees at airport & hotels",
+                "Personal expenses",
+                "Optional tours",
+                "Travel insurance",
+                "Anything not mentioned in the inclusions"
+            ],
+            cancellationPolicy: [
+                "Free cancellation up to 7 days before arrival",
+                "50% charge for cancellation within 7 days",
+                "100% charge for cancellation within 48 hours"
+            ],
+            galleryImages: [
+                "/IMAGES/Indonesia/Bandung/easy-1.webp",
+                "/IMAGES/Indonesia/Bandung/easy-2.webp",
+                "/IMAGES/Indonesia/Bandung/easy-3.webp"
+            ]
+        },
+        {
+            id: "jakarta-puncak-bandung-fullday-4d3n",
+            category: "JAKARTA PACKAGES",
+            name: "JAKARTA - PUNCAK - SAFARI 4D/3N",
+            price: 38225,
+            duration: { days: 4, nights: 3 },
+            image: "/IMAGES/Indonesia/Bandung/easy-1.webp",
+            description: "Experience the charm of Jakarta, Puncak and Bandung with our easy package, perfect for those who want to explore the city at their own pace...",
+            itinerary: [
+                {
+                    day: 1,
+                    title: "ARRIVAL  JAKARTA  (D)",
+                    description: `Arrival in Jakarta International Airport. Meet & greet with our tour guide. Program in the afternoon Jakarta city tour by visiting Sunda Kelapa Old Harbour and Fatahillah Museum, Glodok China Town and Photostop at National Monument. Dinner will be served at local restaurant. Transfer to the hotel.							`
+                },
+                {
+                    day: 2,
+                    title: "JAKARTA BANDUNG      (B/L/D)",
+                    description: `In the morning breakfast at the hotel. Afterward direct transfer to Bandung via new Highway toll, on the way will visit Miniature Indonesia Park, Lunch at local rest. Arrive Bandung, shopping program to some Factory Outlet, such as, Rumah Mode, Heritage, Summit, etc and dinner at local restaurant. Back to hotel`
+                },
+                {
+                    day: 3,
+                    title: "BANDUNG FULLDAY (B/L/D)",
+                    description: "Breakfast at the hotel. Today will continue to fullday Bandung, visiting White Crater volcano and Ranca Upas Hotspring + Ciwidey strawberry farm. lunch at local rest. Back to Bandung  well shopping at Factory Outlet or Cihampelas jeans centre, afterwards dinner at local rest then free program"
+                },
+                {
+                    day: 4,
+                    title: "BANDUNG  OUT or  to JAKARTA OUT   (B)",
+                    description: "Breakfast at the hotel. Afterward free program. At the appropriate time then check out from hotel and well drop you off to the airport for your next flight."
+                }
+            ],
+            inclusions: [
+                "Private AC transportation",
+                "Accommodation as your choice",
+                "Guide service, admission fees, donations",
+                "Parking fee",
+                "Toll road",
+                "Meals per itinerary"
+            ],
+            exclusions: [
+                "Return transfers from Airport - Hotel - Airport",
+                "Airport tax",
+                "Porter fees at airport & hotels",
+                "Personal expenses",
+                "Optional tours",
+                "Travel insurance",
+                "Anything not mentioned in the inclusions"
+            ],
+            cancellationPolicy: [
+                "Free cancellation up to 7 days before arrival",
+                "50% charge for cancellation within 7 days",
+                "100% charge for cancellation within 48 hours"
+            ],
+            galleryImages: [
+                "/IMAGES/Indonesia/Bandung/easy-1.webp",
+                "/IMAGES/Indonesia/Bandung/easy-2.webp",
+                "/IMAGES/Indonesia/Bandung/easy-3.webp"
+            ]
+        },
     ],
-    // Add other categories...
+    "jogja tour packages": [
+        {
+            id: "yogyakarta-3d2n",
+            category: "YOGYAKARTA PACKAGES",
+            name: "YOGYAKARTA 3D/2N",
+            price: 29421,
+            duration: { days: 3, nights: 2 },
+            image: "/IMAGES/Indonesia/Bandung/easy-1.webp",
+            description: "Experience the charm of Yogyakarta with our easy package, perfect for those who want to explore the city at their own pace...",
+            itinerary: [
+                {
+                    day: 1,
+                    title: "ARRIVAL YOGYAKARTA",
+                    description: `Upon arrival, meet & greet by local representative. Transfer in to hotel for check in.`
+                },
+                {
+                    day: 2,
+                    title: "KERATON - BOROBUDUR TEMPLE - MALIOBORO (B/L/D)",
+                    description: `Visit Keraton, the Palace of Yogyakarta which is also the official residence of the Sultan of Yogyakarta. Head to Taman Sari Water Castle, the former royal garden of the Sultanate of Yogyakarta built in the 18th century originally used as a resting, defense, meditation, and working area by the Sultan and his family. 							
+							
+Afterwards, visit Borobudur Temple, one of the largest Buddhist temple in the world built in the 8th and 9th century and a designated UNESCO world heritage site that is shaped like a step pyramid. We will also visit Pawon Temple and Mendut Temple, two Buddhist temples that was built around the same time as  Borobudur Temple and located in a straight line, signifying a mutual religious relationship between the three temples.							
+Later, visit Malioboro Street, a major shopping street in Yogyakarta surrounded by many hotels, restaurants, and shops selling unique Yogyakarta souvenirs from batik to local delicacies. 								`
+                },
+                {
+                    day: 3,
+                    title: "PRAMBANAN TEMPLE - DEPARTURE YOGYAKARTA (B)",
+                    description: "After breakfast at your hotel, visit Prambanan Temple, the second largest Hindu Temple in Southeast Asia dated from the 9th century. This temple complex consists of 240 temple structures, with the tallest central building at 47 meters high, and is dedicated to Brahma, Vishnu, and Shiva. Transfer to airport. End of program"
+                }
+            ],
+            inclusions: [
+                "Transfers : Airport - Hotel - Airport",
+                "Accommodation at preferred hotel or similar class	",
+                "Tour program & Transfers(by Full AC Coach)as per itinerary 	",
+                "City tour with guide"
+            ],
+            exclusions: [
+                "Lunch & Dinner",
+                "Airfare",
+                "Personal expenses",
+                "Optional tours",
+                "Travel insurance",
+                "Anything not mentioned in the inclusions"
+            ],
+            cancellationPolicy: [
+                "Free cancellation up to 7 days before arrival",
+                "50% charge for cancellation within 7 days",
+                "100% charge for cancellation within 48 hours"
+            ],
+            galleryImages: [
+                "/IMAGES/Indonesia/Bandung/easy-1.webp",
+                "/IMAGES/Indonesia/Bandung/easy-2.webp",
+                "/IMAGES/Indonesia/Bandung/easy-3.webp"
+            ]
+        },
+        {
+            id: "yogyakarta-jogja-classic-4d3n",
+            category: "YOGYAKARTA PACKAGES",
+            name: "YOGYAKARTA JOGJA CLASSIC 4D/3N",
+            price: 41000,
+            duration: { days: 4, nights: 3 },
+            image: "/IMAGES/Indonesia/Bandung/easy-1.webp",
+            description: "Experience the charm of Yogyakarta with our easy package, perfect for those who want to explore the city at their own pace...",
+            itinerary: [
+                {
+                    day: 1,
+                    title: "ARRIVAL YOGYAKARTA",
+                    description: `Upon arrival, meet & greet by local representative. Transfer in to hotel for check in.						`
+                },
+                {
+                    day: 2,
+                    title: "BOROBUDUR TEMPLE - PRAMBANAN TEMPLE - MALIOBORO (B/L/D)",
+                    description: `	Afterwards, visit Borobudur Temple, one of the largest Buddhist temple in the world built in the 8th and 9th century and a designated UNESCO world heritage site that is shaped like a step pyramid. We will also visit Pawon Temple and Mendut Temple, two Buddhist temples that was built around the same time as  Borobudur Temple and located in a straight line, signifying a mutual religious relationship between the three temples.							
+	"Visit Prambanan Temple, the second largest Hindu Temple in Southeast Asia dated from the 9th century. This temple complex consists of 240 temple structures, with the tallest central building at 47 meters high, and is dedicated to Brahma, Vishnu, and Shiva. Afterwards, visit Tebing Breksi, a former mining site turned protected geoheritage site where the natural rocks were formed by the activities of Purba Semilir Volcano. 													"							
+								
+	Later, visit Malioboro Street, a major shopping street in Yogyakarta surrounded by many hotels, restaurants, and shops selling unique Yogyakarta souvenirs from batik to local delicacies. 							`
+                },
+                {
+                    day: 3,
+                    title: "KERATON - YOGYAKARTA CLASSIC VW CITY TOUR (B/L/D)",
+                    description: `	Visit Keraton, the Palace of Yogyakarta which is also the official residence of the Sultan of Yogyakarta. Head to Taman Sari Water Castle, the former royal garden of the Sultanate of Yogyakarta built in the 18th century originally used as a resting, defense, meditation, and working area by the Sultan and his family.							
+								
+	In the afternoon, go on a Yogyakarta city tour riding colorful classic Volkswagon cars while wearing traditional Javanese costumes.							
+								`
+                },
+                {
+                    day: 4,
+                    title: "DEPARTURE YOGYAKARTA (B)",
+                    description: "After breakfast at your hotel, free at own leisure or optional tour until time for hotel check out. Transfer to airport. End of program."
+                }
+            ],
+            inclusions: [
+                "Private AC transportation",
+                "Accommodation as your choice",
+                "Guide service, admission fees, donations",
+                "Parking fee",
+                "Toll road",
+                "Meals per itinerary"
+            ],
+            exclusions: [
+                "Return transfers from Airport - Hotel - Airport",
+                "Airport tax",
+                "Porter fees at airport & hotels",
+                "Personal expenses",
+                "Optional tours",
+                "Travel insurance",
+                "Anything not mentioned in the inclusions"
+            ],
+            cancellationPolicy: [
+                "Free cancellation up to 7 days before arrival",
+                "50% charge for cancellation within 7 days",
+                "100% charge for cancellation within 48 hours"
+            ],
+            galleryImages: [
+                "/IMAGES/Indonesia/Bandung/easy-1.webp",
+                "/IMAGES/Indonesia/Bandung/easy-2.webp",
+                "/IMAGES/Indonesia/Bandung/easy-3.webp"
+            ]
+        },
+        {
+            id: "borobudur-4d3n",
+            category: "YOGYAKARTA PACKAGES",
+            name: "BOROBUDUR 4D/3N",
+            price: 45223,
+            duration: { days: 5, nights: 4 },
+            image: "/IMAGES/Indonesia/Bandung/easy-1.webp",
+            description: "Experience the charm of Jakarta, Puncak and Bandung with our easy package, perfect for those who want to explore the city at their own pace...",
+            itinerary: [
+                {
+                    day: 1,
+                    title: "ARRIVAL  JAKARTA  (D)",
+                    description: `Arrival, dinner at local restaurant and check in hotel (D)						`
+                },
+                {
+                    day: 2,
+                    title: "BOROBUDUR TEMPLE PILGRIM (B/L/D)",
+                    description: `Borobudur Temple Pilgrim (unassisted prayer at top pagoda), Visits Pawon and Mendut Temple. Lunch and dinner at local restaurant (B/L/D).`
+                },
+                {
+                    day: 3,
+                    title: "JAKARTA ART & CULTURE (B/L/D)",
+                    description: "Breakfast at hotel. Having Jakarta full day tour visiting TMII or Indonesia Miniature Park and proceeding to Indonesia Museum , afterward  shopping program at ITC Mangga dua Mall. Lunch & dinner will be served at local rest. Back to hotel and free program."
+                },
+                {
+                    day: 4,
+                    title: "BOROBUDUR TEMPLE PILGRIM (B/L/D)",
+                    description: "Borobudur Temple Pilgrim (unassisted prayer at top pagoda), Visits Pawon and Mendut Temple. Lunch and dinner at local restaurant (B/L/D)."
+                },
+                {
+                    day: 5,
+                    title: " Departure (B)",
+                    description: "Transfer out from hotel to airport (B). "
+                }
+            ],
+            inclusions: [
+                "Private AC transportation",
+                "Accommodation as your choice",
+                "Guide service, admission fees, donations",
+                "Parking fee",
+                "Toll road",
+                "Meals per itinerary"
+            ],
+            exclusions: [
+                "Return transfers from Airport - Hotel - Airport",
+                "Airport tax",
+                "Porter fees at airport & hotels",
+                "Personal expenses",
+                "Optional tours",
+                "Travel insurance",
+                "Anything not mentioned in the inclusions"
+            ],
+            cancellationPolicy: [
+                "Free cancellation up to 7 days before arrival",
+                "50% charge for cancellation within 7 days",
+                "100% charge for cancellation within 48 hours"
+            ],
+            galleryImages: [
+                "/IMAGES/Indonesia/Bandung/easy-1.webp",
+                "/IMAGES/Indonesia/Bandung/easy-2.webp",
+                "/IMAGES/Indonesia/Bandung/easy-3.webp"
+            ]
+        },
+        {
+            id: "yogya-jogja-5d4n",
+            category: "YOGYAKARTA PACKAGES",
+            name: "YOGYAKARTA JOGJA CLASSIC 5D/4N",
+            price: 46218,
+            duration: { days: 5, nights: 4 },
+            image: "/IMAGES/Indonesia/Bandung/easy-1.webp",
+            description: "Experience the charm of Jakarta, Puncak and Bandung with our easy package, perfect for those who want to explore the city at their own pace...",
+            itinerary: [
+                {
+                    day: 1,
+                    title: "ARRIVAL YOGYAKARTA",
+                    description: `Upon arrival, meet & greet by local representative. Transfer in to hotel for check in.												`
+                },
+                {
+                    day: 2,
+                    title: "MT. MERAPI - PRAMBANAN TEMPLE (B/L/D)",
+                    description: `	Go on a Mt. Merapi Jeep Tour and visit four iconic places at the area. Museum Sisa Hartaku showcases belongings left behind by the villagers living nearby duing the eruption of Mt. Merapi in 2020. Batu Alien is a huge rock which resembles an alien face that was spewed out by Mount Merapi during the 2010 eruption. Discover the Bunker, built to protect and provide shelter for the nearby villagers when there is a volcanic eruption. End the Mt. Merapi Jeep Tour with a splashing Manuver Sungai Kali Kuning ride across the Kali Kuning River.							
+								
+	Visit Prambanan Temple, the second largest Hindu Temple in Southeast Asia dated from the 9th century. This temple complex consists of 240 temple structures, with the tallest central building at 47 meters high, and is dedicated to Brahma, Vishnu, and Shiva. Afterwards, visit Tebing Breksi, a former mining site turned protected geoheritage site where the natural rocks were formed by the activities of Purba Semilir Volcano. 							`
+                },
+                {
+                    day: 3,
+                    title: "KERATON - PARANGTRITIS BEACH (B/L/D)",
+                    description: `	Visit Keraton, the Palace of Yogyakarta which is also the official residence of the Sultan of Yogyakarta. Head to Taman Sari Water Castle, the former royal garden of the Sultanate of Yogyakarta built in the 18th century originally used as a resting, defense, meditation, and working area by the Sultan and his family. Discover Kotagede, the first capital city of the Mataram Sultanate, where remains of the palace, royal cemetery, royal mosque, and defensive walls still exist. Kotagede is presently famous for its silver crafting.							
+								
+	In the afternoon, head over to Parangtritis Beach famous for its big waves, black sand beach, and picturesque sunset views. Visit Parangkusumo Sand Dune for its sandy hills formed by the wind breeze and rain blowing sand in the area.  							
+								`
+                },
+                {
+                    day: 4,
+                    title: "BOROBUDUR TEMPLE - MALIOBORO (B/L/D) ",
+                    description: `	Visit Borobudur Temple, one of the largest Buddhist temple in the world built in the 8th and 9th century and a designated UNESCO world heritage site that is shaped like a step pyramid. We will also visit Pawon Temple and Mendut Temple, two Buddhist temples that was built around the same time as  Borobudur Temple and located in a straight line, signifying a mutual religious relationship between the three temples. Transfer in to hotel for check in. 							
+								
+	Later, visit Malioboro Street, a major shopping street in Yogyakarta surrounded by many hotels, restaurants, and shops selling unique Yogyakarta souvenirs from batik to local delicacies. 							`
+                },
+                {
+                    day: 5,
+                    title: "DEPARTURE YOGYAKARTA (B)",
+                    description: "After breakfast at your hotel, free at own leisure or optional tour until time for hotel check out. Transfer to airport. End of program."
+                }
+            ],
+            inclusions: [
+                "Private AC transportation",
+                "Accommodation as your choice",
+                "Guide service, admission fees, donations",
+                "Parking fee",
+                "Toll road",
+                "Meals per itinerary"
+            ],
+            exclusions: [
+                "Return transfers from Airport - Hotel - Airport",
+                "Airport tax",
+                "Porter fees at airport & hotels",
+                "Personal expenses",
+                "Optional tours",
+                "Travel insurance",
+                "Anything not mentioned in the inclusions"
+            ],
+            cancellationPolicy: [
+                "Free cancellation up to 7 days before arrival",
+                "50% charge for cancellation within 7 days",
+                "100% charge for cancellation within 48 hours"
+            ],
+            galleryImages: [
+                "/IMAGES/Indonesia/Bandung/easy-1.webp",
+                "/IMAGES/Indonesia/Bandung/easy-2.webp",
+                "/IMAGES/Indonesia/Bandung/easy-3.webp"
+            ]
+        },
+    ],
 }; 

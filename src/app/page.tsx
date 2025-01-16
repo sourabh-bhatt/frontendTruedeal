@@ -5,7 +5,7 @@ import Sponsors from "./components/Ad/Sponsers";
 import Trending from "./components/homepage/Trending";
 import CurrencyExchange from "./components/forex/ForexLive";
 import Exclusive from "./components/forex/Exclusive";
-import { AnimatedListDemo } from "./components/CardsSwap";
+// import { AnimatedListDemo } from "./components/CardsSwap";
 import HappyCustomers from "./components/Ad/HappyCustomers";
 import ExoticDestinations from "./components/homepage/Exotic"
 import Europe from "./components/homepage/Europe";
@@ -22,7 +22,7 @@ export default function Home() {
       <Domestic />
       <Trending />
       <Exclusive />
-      <AnimatedListDemo />
+      {/* <AnimatedListDemo /> */}
       <ExoticDestinations />
       <Europe />
       <Indonesia />

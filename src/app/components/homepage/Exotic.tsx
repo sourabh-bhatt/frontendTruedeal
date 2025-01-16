@@ -21,7 +21,7 @@ const exoticDestinations = [
     {
         name: "Kenya",
         tagline: "Wildlife & Safari Experience",
-        image: "/webImage/kenya/2/1.webp",
+        image: "/webImage/kenya/1/2.webp",
         link: "/destinations/kenya"
     },
     {
