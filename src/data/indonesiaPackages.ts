@@ -28,7 +28,7 @@ export const indonesiaPackages: { [key: string]: IndonesianPackage[] } = {
             name: "BALI DELIGHT 2N/3D",
             price: 18134,
             duration: { days: 3, nights: 2 },
-            image: "/IMAGES/Indonesia/Bali/free-easy.webp",
+            image: "/IMAGES/bali/1/1.webp",
             description: "Experience the freedom to explore Bali at your own pace with our Free & Easy package...",
             itinerary: [
                 {
@@ -81,7 +81,7 @@ export const indonesiaPackages: { [key: string]: IndonesianPackage[] } = {
             name: "BALI DELIGHT 3N/4D",
             price: 25820,
             duration: { days: 4, nights: 3 },
-            image: "/IMAGES/Indonesia/Bali/free-easy.webp",
+            image: "/IMAGES/bali/1/2.webp",
             description: "Experience the freedom to explore Bali at your own pace with our Free & Easy package...",
             itinerary: [
                 {
@@ -139,7 +139,7 @@ export const indonesiaPackages: { [key: string]: IndonesianPackage[] } = {
             name: "BALI DOLPHIN TOUR 3N/4D",
             price: 28753,
             duration: { days: 3, nights: 3 },
-            image: "/IMAGES/Indonesia/Bali/free-easy.webp",
+            image: "/IMAGES/bali/1/3.webp",
             description: "Experience the freedom to explore Bali at your own pace with our Free & Easy package...",
             itinerary: [
                 {
@@ -207,7 +207,7 @@ Tanah lot Temple: This temple is very famous among tourist destinations in Bali 
             name: "BALI WEST PENIDA TOUR 3N/4D",
             price: 28840,
             duration: { days: 4, nights: 3 },
-            image: "/IMAGES/Indonesia/Bali/free-easy.webp",
+            image: "/IMAGES/bali/1/4.webp",
             description: "Experience the freedom to explore Bali at your own pace with our Free & Easy package...",
             itinerary: [
                 {
