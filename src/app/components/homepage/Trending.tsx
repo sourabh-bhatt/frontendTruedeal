@@ -58,7 +58,7 @@ const TrendingOffers = () => {
     };
 
     return (
-        <div className="max-w-7xl mx-auto px-4 py-8 mt-10">
+        <div className="max-w-7xl mx-auto px-4 py-8 relative top-6">
             <div className="text-center mb-8">
                 <div className="relative">
                     <h1 className="text-3xl font-bold mt-2">TRENDING OFFERS</h1>

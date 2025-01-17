@@ -1,11 +1,12 @@
 'use client';
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Search, MapPin, Globe } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
 import { Input } from "@/components/ui/input"
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
+import TypingAnimation from '../../../components/ui/typing-animation'
 
 interface Destination {
     name: string;
@@ -43,6 +44,39 @@ export default function HeroSection() {
     const [searchTerm, setSearchTerm] = useState<string>('')
     const [isSearchModalOpen, setIsSearchModalOpen] = useState<boolean>(false)
     const router = useRouter()
+    const [placeholderText, setPlaceholderText] = useState('');
+    const placeholderDestinations = ['Almaty', 'Bali', 'Thailand', 'Philippines', 'Kashmir'];
+    const [currentPlaceholderIndex, setCurrentPlaceholderIndex] = useState(0);
+    const [isTypingPlaceholder, setIsTypingPlaceholder] = useState(true);
+
+    // Placeholder typing animation effect
+    useEffect(() => {
+        const currentDestination = placeholderDestinations[currentPlaceholderIndex];
+        let timer: NodeJS.Timeout;
+
+        if (isTypingPlaceholder) {
+            if (placeholderText.length < currentDestination.length) {
+                timer = setTimeout(() => {
+                    setPlaceholderText(currentDestination.slice(0, placeholderText.length + 1));
+                }, 150); // Typing speed
+            } else {
+                timer = setTimeout(() => {
+                    setIsTypingPlaceholder(false);
+                }, 2000); // Wait before erasing
+            }
+        } else {
+            if (placeholderText.length > 0) {
+                timer = setTimeout(() => {
+                    setPlaceholderText(currentDestination.slice(0, placeholderText.length - 1));
+                }, 100); // Erasing speed
+            } else {
+                setCurrentPlaceholderIndex((prev) => (prev + 1) % placeholderDestinations.length);
+                setIsTypingPlaceholder(true);
+            }
+        }
+
+        return () => clearTimeout(timer);
+    }, [placeholderText, isTypingPlaceholder, currentPlaceholderIndex]);
 
     const filteredDestinations = destinations.filter(dest =>
         dest.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -77,7 +111,7 @@ export default function HeroSection() {
             <div className="relative">
                 <Input
                     type="text"
-                    placeholder="Search countries, cities"
+                    placeholder=""
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                     className="w-full bg-gradient-to-r from-[#e7e9ec] to-[#00f6ff] text-black border-0 rounded-full h-12 px-6 pr-12 shadow-lg focus:ring-0 focus:ring-offset-0 hover:opacity-90 transition-all duration-300 placeholder-white"
@@ -163,8 +197,10 @@ export default function HeroSection() {
                 <p className="text-xs sm:text-sm md:text-md mb-2 md:mb-4 text-center font-poppins font-semibold">
                     GET READY FOR TAKE OFF
                 </p>
-                <h2 className="text-2xl sm:text-3xl md:text-3xl mb-6 md:mb-8 text-center font-poppins font-bold">
-                    Search <span className="underline">your Holida</span>y
+                <h2 className="text-2xl sm:text-3xl md:text-3xl mb-6 md:mb-8 text-center font-poppins font-bold text-yellow-500">
+                    <TypingAnimation>
+                        Search your holiday
+                    </TypingAnimation>
                 </h2>
 
                 <div className="w-full max-w-xl mx-auto font-poppins px-4">
@@ -172,16 +208,16 @@ export default function HeroSection() {
                         onClick={() => setIsSearchModalOpen(true)}
                         className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white border-0 rounded-full h-12 px-6 shadow-lg hover:opacity-90 transition-all duration-300 flex items-center justify-between"
                     >
-                        <span className="text-white/75">Search countries, cities</span>
+                        <span className="text-white/75">
+                            {placeholderText ? `Search ${placeholderText}...` : 'Search countries, cities...'}
+                        </span>
                         <Search className="h-5 w-5 text-white" />
                     </button>
 
-                    {/* Search Modal for both Desktop and Mobile */}
+                    {/* Search Modal */}
                     <Dialog open={isSearchModalOpen} onOpenChange={setIsSearchModalOpen}>
                         <DialogContent className="sm:max-w-xl bg-white border-gray-800">
-                            <DialogTitle className="sr-only">
-                                Search Destinations
-                            </DialogTitle>
+                            <DialogTitle className="sr-only">Search Destinations</DialogTitle>
                             <div className="pt-4">
                                 <SearchContent />
                             </div>

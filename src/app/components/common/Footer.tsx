@@ -140,7 +140,7 @@ export default function Component() {
                                     className="w-10 h-10 flex items-center justify-center rounded-full bg-black text-white hover:opacity-90 transition-opacity">
                                     <TwitterIcon />
                                 </Link>
-                                <Link href="https://facebook.com/truedeal4u/" target="_blank"
+                                <Link href="https://www.facebook.com/itstruedeal/" target="_blank"
                                     className="w-10 h-10 flex items-center justify-center rounded-full bg-[#1877F2] text-white hover:opacity-90 transition-opacity">
                                     <FacebookIcon />
                                 </Link>

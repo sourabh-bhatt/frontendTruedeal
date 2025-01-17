@@ -142,10 +142,7 @@ export default function Indonesia() {
                                             <MapPin className="w-4 h-4" />
                                             <span className="line-clamp-1 font-bold text-yellow-400">₹{pkg.price.toLocaleString()}</span>
                                         </div>
-                                        <div className="flex items-center gap-2 text-white/90 text-sm md:text-base">
-                                            <Calendar className="w-4 h-4" />
-                                            Any date of your choice
-                                        </div>
+
                                     </div>
                                 </div>
                             </Link>
