@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { MoreVertical, X, ChevronDown } from 'lucide-react'
+import { MoreVertical, X, ChevronDown, Phone } from 'lucide-react'
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs"
 import { usePathname } from 'next/navigation'
 import { groupToursList } from "@/data/groupTours"
@@ -129,7 +129,7 @@ export default function Navbar() {
                         {/* Mobile layout adjustments */}
                         <div className="flex items-center md:hidden">
                             <div className="flex items-center hover:scale-105 transition-transform duration-300">
-
+                                <Phone className="h-4 w-4 text-gray-500" />
                                 <a
                                     href="tel:+918447498498"
                                     className="bg-gradient-to-r from-[#343232] to-[#000000] text-transparent bg-clip-text font-poppins text-xs md:text-sm font-semibold ml-1"
@@ -152,7 +152,7 @@ export default function Navbar() {
 
                         {/* Desktop and Tablet layout */}
                         <div className="hidden md:flex items-center hover:scale-105 transition-transform duration-300">
-
+                            <Phone className="h-4 w-4 text-gray-500" />
                             <a
                                 href="tel:+918447498498"
                                 className="bg-gradient-to-r from-[#3f3e3e] to-[#4f4e4e] text-transparent bg-clip-text font-poppins text-xs md:text-sm font-semibold ml-1"

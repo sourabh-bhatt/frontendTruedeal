@@ -20,7 +20,7 @@ export default function Component() {
         {
             src: "/Assets/Forex/4.webp",
             title: "One Stop Hassle Free Experience",
-            description: "Comfortable stays, trained drivers, hospitable staff and friendly trip leaders put together that one memorable trip for you!"
+            description: "Comfortable stays, trained drivers, hospitable staff and friendly trip leaders."
         }
     ];
 
