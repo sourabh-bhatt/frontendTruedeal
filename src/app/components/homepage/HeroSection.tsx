@@ -76,7 +76,7 @@ export default function HeroSection() {
         }
 
         return () => clearTimeout(timer);
-    }, [placeholderText, isTypingPlaceholder, currentPlaceholderIndex]);
+    }, [placeholderText, isTypingPlaceholder, currentPlaceholderIndex, placeholderDestinations]);
 
     const filteredDestinations = destinations.filter(dest =>
         dest.name.toLowerCase().includes(searchTerm.toLowerCase())

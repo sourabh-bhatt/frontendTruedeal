@@ -9,7 +9,7 @@ const phrases = [
   'Search your ultimate destination'
 ];
 
-export default function TypingAnimation({ children }: { children: React.ReactNode }) {
+export default function TypingAnimation({ }: { children: React.ReactNode }) {
   const [displayText, setDisplayText] = useState('');
   const [phraseIndex, setPhraseIndex] = useState(0);
   const [isTyping, setIsTyping] = useState(true);

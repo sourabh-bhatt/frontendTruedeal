@@ -6,13 +6,14 @@ import Trending from "./components/homepage/Trending";
 import CurrencyExchange from "./components/forex/ForexLive";
 import Exclusive from "./components/forex/Exclusive";
 // import { AnimatedListDemo } from "./components/CardsSwap";
-import HappyCustomers from "./components/Ad/HappyCustomers";
+// import HappyCustomers from "./components/Ad/HappyCustomers";
 import ExoticDestinations from "./components/homepage/Exotic"
 import Europe from "./components/homepage/Europe";
 import Domestic from "./components/homepage/Domestic";
 import Gallery from "./components/homepage/Gallery";
 import WallOfLove from "./components/homepage/Ugc";
 import Indonesia from "./indonesia/page";
+import ReviewsGlimpse from './components/homepage/ReviewsGlimpse'
 
 export default function Home() {
   return (
@@ -27,11 +28,12 @@ export default function Home() {
       <Europe />
       <Indonesia />
       <Ad />
-      <HappyCustomers />
+      {/* <HappyCustomers /> */}
       <CurrencyExchange />
       <Gallery />
       <WallOfLove />
       <Sponsors />
+      <ReviewsGlimpse />
     </main>
   );
 }
