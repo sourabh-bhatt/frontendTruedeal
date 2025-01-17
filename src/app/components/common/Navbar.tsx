@@ -56,9 +56,10 @@ export default function Navbar() {
                             <Image
                                 src="/Assets/NavbarImages/logo.png"
                                 alt="Truedeal Logo"
-                                width={100}
-                                height={20}
-                                className="w-18 md:w-[150px] "
+                                width={200}
+                                height={80}
+                                className="w-[140px] md:w-[180px] h-[45px] md:h-[60px] object-contain"
+                                quality={100}
                                 priority
                             />
                         </Link>

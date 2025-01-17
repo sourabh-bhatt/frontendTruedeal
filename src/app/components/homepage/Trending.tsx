@@ -14,7 +14,7 @@ const TrendingOffers = () => {
             days: 6,
             originalPrice: 55980,
             discountedPrice: 44275,
-            image: "/IMAGES/Almaty/2/1.webp",
+            image: "/UGCImages/Images4/almaty/vertical/5.webp",
             discount: 18,
             amenities: ["Stay", "Transfers"]
         },
@@ -25,7 +25,7 @@ const TrendingOffers = () => {
             days: 5,
             originalPrice: 46390,
             discountedPrice: 30100,
-            image: "/IMAGES/Baku/2/1.webp",
+            image: "/UGCImages/Images4/baku/vertical/5.webp",
             discount: 18,
             amenities: ["Activities", "Transfers"]
         },
@@ -47,7 +47,7 @@ const TrendingOffers = () => {
             days: 4,
             originalPrice: 28000,
             discountedPrice: 12000,
-            image: "/IMAGES/Shimla/1/1.webp",
+            image: "/UGCImages/Hd images2/shimla/vertical/1.webp",
             discount: 37,
             amenities: ["Sightseeing", "Transfers"]
         }

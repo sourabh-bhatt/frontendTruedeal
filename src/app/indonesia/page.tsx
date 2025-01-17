@@ -66,8 +66,8 @@ export default function Indonesia() {
                             setCurrentPage(0);
                         }}
                         className={`px-6 py-2.5 rounded-full whitespace-nowrap transition-all flex-shrink-0 ${!selectedCategory
-                                ? 'bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white shadow-lg'
-                                : 'bg-white text-gray-600 hover:shadow-md'
+                            ? 'bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white shadow-lg'
+                            : 'bg-white text-gray-600 hover:shadow-md'
                             }`}
                     >
                         All Packages
@@ -80,8 +80,8 @@ export default function Indonesia() {
                                 setCurrentPage(0);
                             }}
                             className={`px-6 py-2.5 rounded-full whitespace-nowrap transition-all flex-shrink-0 ${selectedCategory === category
-                                    ? 'bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white shadow-lg'
-                                    : 'bg-white text-gray-600 hover:shadow-md'
+                                ? 'bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white shadow-lg'
+                                : 'bg-white text-gray-600 hover:shadow-md'
                                 }`}
                         >
                             {category.replace(/-/g, ' ').toUpperCase()}
@@ -140,7 +140,7 @@ export default function Indonesia() {
                                         </div>
                                         <div className="flex items-center gap-2 text-white/90 text-sm md:text-base">
                                             <MapPin className="w-4 h-4" />
-                                            <span className="line-clamp-1">Denpasar Airport - Denpasar Airport</span>
+                                            <span className="line-clamp-1 font-bold text-yellow-400">₹{pkg.price.toLocaleString()}</span>
                                         </div>
                                         <div className="flex items-center gap-2 text-white/90 text-sm md:text-base">
                                             <Calendar className="w-4 h-4" />
