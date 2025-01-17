@@ -169,7 +169,7 @@ export default function Component() {
                                     { name: "Careers", path: "/careers" },
                                     { name: "Terms & conditions", path: "/terms&conditions" },
                                     { name: "Reviews", path: "/reviews" },
-                                    { name: "Refund & Cancelation", path: "/refund&cancellation" },
+                                    { name: "Refund & Cancellation", path: "/refund&cancellation" },
                                     { name: "Payment", path: "/payment" }
                                 ].map((link) => (
                                     <li key={link.name}>

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { Search, MapPin, Globe } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
@@ -45,7 +45,7 @@ export default function HeroSection() {
     const [isSearchModalOpen, setIsSearchModalOpen] = useState<boolean>(false)
     const router = useRouter()
     const [placeholderText, setPlaceholderText] = useState('');
-    const placeholderDestinations = ['Almaty', 'Bali', 'Thailand', 'Philippines', 'Kashmir'];
+    const placeholderDestinations = useMemo(() => ['Almaty', 'Bali', 'Thailand', 'Philippines', 'Kashmir'], []);
     const [currentPlaceholderIndex, setCurrentPlaceholderIndex] = useState(0);
     const [isTypingPlaceholder, setIsTypingPlaceholder] = useState(true);
 
