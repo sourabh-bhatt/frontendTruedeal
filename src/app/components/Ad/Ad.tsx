@@ -19,7 +19,7 @@ export default function Component() {
         },
         {
             src: "/Assets/Forex/4.webp",
-            title: "One Stop Hassle Free Experience",
+            title: "Hassle Free Experience",
             description: "Comfortable stays, trained drivers, hospitable staff and friendly trip leaders."
         }
     ];
@@ -44,7 +44,7 @@ export default function Component() {
                                 alt={feature.title}
                                 width={94}
                                 height={64}
-                                className="object-contain"
+                                className="object-contain flex justify-between"
                             />
                         </div>
                         <h3 className="font-semibold text-xl mb-2 mt-4 font-poppins">{feature.title}</h3>

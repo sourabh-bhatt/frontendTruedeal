@@ -2369,6 +2369,8 @@ export default function DestinationDetails() {
     const [showPackages, setShowPackages] = useState(false);
     // First, add a state to track the active tab value
     const [activeTab, setActiveTab] = useState<string>('');
+    // Inside your component, add this new state
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
     useEffect(() => {
         try {
@@ -2386,6 +2388,19 @@ export default function DestinationDetails() {
             setSelectedVariant(initialTabId);
         }
     }, [destinationData]);
+
+    // Add this useEffect for auto-sliding
+    useEffect(() => {
+        if (!destinationData?.galleryImages?.length) return;
+
+        const interval = setInterval(() => {
+            setCurrentImageIndex((prevIndex) =>
+                prevIndex === (destinationData?.galleryImages?.length - 1) ? 0 : prevIndex + 1
+            );
+        }, 3000);
+
+        return () => clearInterval(interval);
+    }, [destinationData?.galleryImages?.length]);
 
     if (error) {
         return <div>Error: {error}</div>;
@@ -2489,14 +2504,21 @@ export default function DestinationDetails() {
                                 className="max-h-[85vh] overflow-y-auto custom-scrollbar relative"
                             >
                                 <div className="relative rounded-3xl overflow-hidden mb-8 shadow-xl">
-                                    <Image
-                                        src={variant.image}
-                                        alt={variant.name}
-                                        width={1400}
-                                        height={400}
-                                        className="w-full h-[400px] object-cover"
-                                        priority
-                                    />
+                                    <div className="relative w-full h-[400px]">
+                                        {destinationData.galleryImages.map((image, index) => (
+                                            <Image
+                                                key={image}
+                                                src={image}
+                                                alt={`${destinationData.name} - Image ${index + 1}`}
+                                                fill
+                                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
+                                                className={`object-cover transition-opacity duration-1000 ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                                                    }`}
+                                                priority={index === 0}
+                                                quality={100}
+                                            />
+                                        ))}
+                                    </div>
                                     <button
                                         onClick={() => setIsGalleryOpen(true)}
                                         className="absolute bottom-4 left-4 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white px-6 py-2.5 rounded-full flex items-center gap-2 hover:shadow-lg transition-all duration-300"
@@ -2708,6 +2730,22 @@ export default function DestinationDetails() {
                             background-color: rgba(0, 0, 0, 0.5);
                             z-index: 40;
                         }
+                    }
+
+                    /* Add these new styles for the image transition */
+                    .image-transition-enter {
+                        opacity: 0;
+                    }
+                    .image-transition-enter-active {
+                        opacity: 1;
+                        transition: opacity 1000ms ease-in-out;
+                    }
+                    .image-transition-exit {
+                        opacity: 1;
+                    }
+                    .image-transition-exit-active {
+                        opacity: 0;
+                        transition: opacity 1000ms ease-in-out;
                     }
                 `}</style>
             </div>
@@ -2809,14 +2847,20 @@ export default function DestinationDetails() {
                                 className="max-h-[85vh] overflow-y-auto custom-scrollbar relative"
                             >
                                 <div className="relative rounded-3xl overflow-hidden mb-8 shadow-xl">
-                                    <Image
-                                        src={variant.image}
-                                        alt={variant.name}
-                                        width={1400}
-                                        height={400}
-                                        className="w-full h-[400px] object-cover"
-                                        priority
-                                    />
+                                    <div className="relative w-full h-[400px]">
+                                        {destinationData.galleryImages.map((image, index) => (
+                                            <Image
+                                                key={image}
+                                                src={image}
+                                                alt={`${destinationData.name} - Image ${index + 1}`}
+                                                fill
+                                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
+                                                className={`object-cover transition-opacity duration-1000 ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                                                    }`}
+                                                priority={index === 0}
+                                            />
+                                        ))}
+                                    </div>
                                     <button
                                         onClick={() => setIsGalleryOpen(true)}
                                         className="absolute bottom-4 left-4 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white px-6 py-2.5 rounded-full flex items-center gap-2 hover:shadow-lg transition-all duration-300"
@@ -3029,6 +3073,22 @@ export default function DestinationDetails() {
                             z-index: 40;
                         }
                     }
+
+                    /* Add these new styles for the image transition */
+                    .image-transition-enter {
+                        opacity: 0;
+                    }
+                    .image-transition-enter-active {
+                        opacity: 1;
+                        transition: opacity 1000ms ease-in-out;
+                    }
+                    .image-transition-exit {
+                        opacity: 1;
+                    }
+                    .image-transition-exit-active {
+                        opacity: 0;
+                        transition: opacity 1000ms ease-in-out;
+                    }
                 `}</style>
             </div>
         );
@@ -3038,14 +3098,20 @@ export default function DestinationDetails() {
         <div className="min-h-screen bg-gray-50 mt-10">
             <main className="container mx-auto px-4 py-8 max-w-7xl">
                 <div className="relative rounded-3xl overflow-hidden mb-8 shadow-xl">
-                    <Image
-                        src={destinationData.image}
-                        alt={destinationData.name}
-                        width={1400}
-                        height={400}
-                        className="w-full h-[400px] object-cover"
-                        priority
-                    />
+                    <div className="relative w-full h-[400px]">
+                        {destinationData.galleryImages.map((image, index) => (
+                            <Image
+                                key={image}
+                                src={image}
+                                alt={`${destinationData.name} - Image ${index + 1}`}
+                                width={1400}
+                                height={400}
+                                className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                                    }`}
+                                priority={index === 0}
+                            />
+                        ))}
+                    </div>
                     <button
                         onClick={() => setIsGalleryOpen(true)}
                         className="absolute bottom-4 left-4 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white px-6 py-2.5 rounded-full flex items-center gap-2 hover:shadow-lg transition-all duration-300"

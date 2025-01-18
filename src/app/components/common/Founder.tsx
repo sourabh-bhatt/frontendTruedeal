@@ -1,35 +1,50 @@
-import Image from "next/image"
+import Image from 'next/image'
 
 export default function Founder() {
     return (
-        <div className="container mx-auto px-4 py-12">
-            <div className="flex flex-col md:flex-row items-center gap-8 max-w-6xl mx-auto">
-                <div className="w-full md:w-1/2 relative left-10">
-                    <Image
-                        src="/ceo/Aman_Arora_CEO_Standing_At_Travel_Tech_Asia.jpeg"
-                        alt="Founder portrait"
-                        width={100}
-                        height={150}
-                        className="w-96 object-cover rounded-lg relative left-10"
-                    />
-                </div>
-                <div className="w-full md:w-1/2 space-y-4 relative pl-6">
-                    <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#017ae3] to-[#00f6ff]" />
-                    <h2 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-[#017ae3] to-[#00f6ff] bg-clip-text text-transparent font-poppins">
-                        FOUNDER MESSAGE
+        <section className="py-16 bg-gray-50">
+            <div className="container mx-auto px-4">
+                <div className="text-center mb-12">
+                    <h2 className="text-4xl font-bold mb-4 font-poppins">
+                        OUR FOUNDER
+                        <div className="h-1 w-48 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] mx-auto mt-2" />
                     </h2>
-                    <h3 className="text-2xl md:text-3xl font-bold font-poppins">
-                        Founder & CEO
-                    </h3>
-                    <p className="text-gray-600 text-lg font-poppins">
-                        Travel and travel until you earn and learn yourself with us.
-                    </p>
-                    <p className="text-gray-600 text-lg font-poppins">
-                        Because when you travel... You learn so much.
-                    </p>
+                </div>
+
+                <div className="max-w-6xl mx-auto">
+                    <div className="grid md:grid-cols-2 gap-8 items-center">
+                        <div className="relative w-full h-[500px] rounded-2xl overflow-hidden shadow-xl">
+                            <Image
+                                src="/Assets/Founder/FounderandCeoofTruedeal.jfif"
+                                alt="Founder and ceo of Truedeal"
+                                fill
+                                className="object-cover object-center hover:scale-105 transition-transform duration-700"
+                                quality={100}
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                                priority
+                            />
+                        </div>
+
+                        <div className="relative bg-white p-8 rounded-xl shadow-lg">
+                            <div className="absolute top-0 left-0 w-20 h-20 -translate-x-3 -translate-y-3">
+                                <svg className="text-[#017ae3] w-full h-full opacity-50" viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 0 1-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 0 1-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z" />
+                                </svg>
+                            </div>
+                            <blockquote className="relative z-10 mt-8 italic text-xl text-gray-700 font-poppins">
+                                "Our vision is to redefine travel experiences by combining innovation with tradition.
+                                We believe in creating journeys that not only take you to destinations but also create
+                                lasting memories and meaningful connections."
+                            </blockquote>
+                            <div className="mt-8 border-t pt-4">
+                                <h3 className="text-2xl font-bold text-gray-900 font-poppins">Mr. Aman Arora</h3>
+                                <p className="text-gray-600 font-poppins">Founder & CEO, TrueDeal</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 

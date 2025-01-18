@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import Image from 'next/image';
 import { Camera, Calendar, Phone, MapPin, Clock, CheckCircle, XCircle, AlertCircle } from 'lucide-react';
@@ -15,11 +15,25 @@ export default function PackageDetails() {
     const { packageId } = params;
     const [isGalleryOpen, setIsGalleryOpen] = useState(false);
     const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
     // Find the package in the data
     const selectedPackage = Object.values(indonesiaPackages)
         .flat()
         .find((pkg) => pkg.id === packageId);
+
+    // Add this useEffect for auto-sliding
+    useEffect(() => {
+        if (!selectedPackage?.galleryImages?.length) return;
+
+        const interval = setInterval(() => {
+            setCurrentImageIndex((prevIndex) =>
+                prevIndex === (selectedPackage.galleryImages.length - 1) ? 0 : prevIndex + 1
+            );
+        }, 3000);
+
+        return () => clearInterval(interval);
+    }, [selectedPackage?.galleryImages?.length]);
 
     if (!selectedPackage) {
         return <Shimmer />;
@@ -29,14 +43,21 @@ export default function PackageDetails() {
         <div className="min-h-screen bg-gray-50 mt-10">
             <main className="container mx-auto px-4 py-8 max-w-7xl">
                 <div className="relative rounded-3xl overflow-hidden mb-8 shadow-xl">
-                    <Image
-                        src={selectedPackage.image}
-                        alt={selectedPackage.name}
-                        width={1400}
-                        height={400}
-                        className="w-full h-[400px] object-cover"
-                        priority
-                    />
+                    <div className="relative w-full h-[400px]">
+                        {selectedPackage.galleryImages.map((image, index) => (
+                            <Image
+                                key={image}
+                                src={image}
+                                alt={`${selectedPackage.name} - Image ${index + 1}`}
+                                fill
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
+                                className={`object-cover transition-opacity duration-1000 ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                                    }`}
+                                priority={index === 0}
+                                quality={100}
+                            />
+                        ))}
+                    </div>
                     <button
                         onClick={() => setIsGalleryOpen(true)}
                         className="absolute bottom-4 left-4 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white px-6 py-2.5 rounded-full flex items-center gap-2 hover:shadow-lg transition-all duration-300"

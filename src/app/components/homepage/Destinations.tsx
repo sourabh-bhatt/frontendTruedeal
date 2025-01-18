@@ -42,16 +42,16 @@ export default function Destination() {
     return (
         <div className="py-8 md:py-16 bg-white text-center font-poppins">
             <div className="mb-8 md:mb-12 px-4">
-                <h3 className="text-sm font-semibold uppercase tracking-wide text-gray-500">
+                <p className="text-sm font-semibold uppercase tracking-wide text-gray-500">
                     Our Proposals
-                </h3>
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mt-2">
+                </p>
+                <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mt-2">
                     OUR{" "}
                     <span className="relative inline-block">
                         <span>DESTINATIONS</span>
                         <span className="absolute left-0 bottom-0 w-full h-1 bg-gradient-to-r from-[#017ae3] to-[#00f6ff]"></span>
                     </span>
-                </h2>
+                </h1>
             </div>
 
             <div className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-8 lg:gap-16 px-4 lg:px-0">

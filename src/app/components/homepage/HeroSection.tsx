@@ -7,6 +7,8 @@ import { motion } from 'framer-motion'
 import { Input } from "@/components/ui/input"
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
 import TypingAnimation from '../../../components/ui/typing-animation'
+import { NeonGradientCard } from "@/components/ui/neon-gradient-card";
+import FirstTimeTravelMessage from "./FirstTimeTravelMessage"
 
 interface Destination {
     name: string;
@@ -172,59 +174,62 @@ export default function HeroSection() {
     )
 
     return (
-        <div className="relative min-h-[70svh] md:min-h-screen overflow-hidden">
-            {/* Background Video */}
-            <div className="absolute inset-0 h-[70svh] md:h-screen">
-                <video
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="absolute top-0 left-0 w-full h-full object-cover z-0"
-                >
-                    <source src="https://res.cloudinary.com/dwwyljy3m/video/upload/v1735820545/bgVideoLoop_rszpwq.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                </video>
-                <div className="absolute inset-0 bg-black opacity-50 z-[1]"></div>
-            </div>
-
-            {/* Content */}
-            <div className="relative z-[2] flex flex-col items-center justify-center min-h-[70svh] md:min-h-screen text-white px-4 sm:px-6 lg:px-8">
-                <h1 className="text-xl sm:text-2xl md:text-3xl mb-2 text-center">
-                    <span className='font-poppins font-semibold'>Discover Your Dream Vacation with</span>{' '}
-                    <span className='font-poppins font-bold'>Truedeal</span>
-                </h1>
-                <p className="text-xs sm:text-sm md:text-md mb-2 md:mb-4 text-center font-poppins font-semibold">
-                    GET READY FOR TAKE OFF
-                </p>
-                <h2 className="text-2xl sm:text-3xl md:text-3xl mb-6 md:mb-8 text-center font-poppins font-bold text-yellow-500">
-                    <TypingAnimation>
-                        Search your holiday
-                    </TypingAnimation>
-                </h2>
-
-                <div className="w-full max-w-xl mx-auto font-poppins px-4">
-                    <button
-                        onClick={() => setIsSearchModalOpen(true)}
-                        className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white border-0 rounded-full h-12 px-6 shadow-lg hover:opacity-90 transition-all duration-300 flex items-center justify-between"
+        <>
+            <div className="relative min-h-[70svh] md:min-h-screen overflow-hidden">
+                {/* Background Video */}
+                <div className="absolute inset-0 h-[70svh] md:h-screen">
+                    <video
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="absolute top-0 left-0 w-full h-full object-cover z-0"
                     >
-                        <span className="text-white/75">
-                            {placeholderText ? `Search ${placeholderText}...` : 'Search countries, cities...'}
-                        </span>
-                        <Search className="h-5 w-5 text-white" />
-                    </button>
+                        <source src="https://res.cloudinary.com/dwwyljy3m/video/upload/v1735820545/bgVideoLoop_rszpwq.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                    <div className="absolute inset-0 bg-black opacity-50 z-[1]"></div>
+                </div>
 
-                    {/* Search Modal */}
-                    <Dialog open={isSearchModalOpen} onOpenChange={setIsSearchModalOpen}>
-                        <DialogContent className="sm:max-w-xl bg-white border-gray-800">
-                            <DialogTitle className="sr-only">Search Destinations</DialogTitle>
-                            <div className="pt-4">
-                                <SearchContent />
-                            </div>
-                        </DialogContent>
-                    </Dialog>
+                {/* Content */}
+                <div className="relative z-[2] flex flex-col items-center justify-center min-h-[70svh] md:min-h-screen text-white px-4 sm:px-6 lg:px-8">
+                    <h1 className="text-xl sm:text-2xl md:text-3xl mb-2 text-center">
+                        <span className='font-poppins font-semibold'>Discover Your Dream Vacation with</span>{' '}
+                        <span className='font-poppins font-bold'>Truedeal</span>
+                    </h1>
+                    <p className="text-xs sm:text-sm md:text-md mb-2 md:mb-4 text-center font-poppins font-semibold">
+                        GET READY FOR TAKE OFF
+                    </p>
+                    <h2 className="text-2xl sm:text-3xl md:text-3xl mb-6 md:mb-8 text-center font-poppins font-bold text-yellow-500">
+                        <TypingAnimation>
+                            Search your holiday
+                        </TypingAnimation>
+                    </h2>
+
+                    <div className="w-full max-w-xl mx-auto font-poppins px-4">
+                        <button
+                            onClick={() => setIsSearchModalOpen(true)}
+                            className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white border-0 rounded-full h-12 px-6 shadow-lg hover:opacity-90 transition-all duration-300 flex items-center justify-between"
+                        >
+                            <span className="text-white/75">
+                                {placeholderText ? `Search ${placeholderText}...` : 'Search countries, cities...'}
+                            </span>
+                            <Search className="h-5 w-5 text-white" />
+                        </button>
+
+                        {/* Search Modal */}
+                        <Dialog open={isSearchModalOpen} onOpenChange={setIsSearchModalOpen}>
+                            <DialogContent className="sm:max-w-xl bg-white border-gray-800">
+                                <DialogTitle className="sr-only">Search Destinations</DialogTitle>
+                                <div className="pt-4">
+                                    <SearchContent />
+                                </div>
+                            </DialogContent>
+                        </Dialog>
+                    </div>
                 </div>
             </div>
-        </div>
+            <FirstTimeTravelMessage />
+        </>
     );
 }

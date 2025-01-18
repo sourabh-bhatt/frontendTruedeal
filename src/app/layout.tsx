@@ -106,6 +106,7 @@ const poppins = localFont({
 export const metadata: Metadata = {
   title: "Truedeal: For Your Ultimate Travel Experience",
   description: "Truedeal is a travel agency that offers the best travel experience.",
+  
 };
 
 export default function RootLayout({

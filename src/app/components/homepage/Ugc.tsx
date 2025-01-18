@@ -64,27 +64,37 @@ export default function WallOfLove() {
 
                     <div className="flex items-center gap-6">
                         <div className="flex items-center gap-3">
-                            <div className="bg-white rounded-full p-1.5">
+                            <a
+                                href="https://www.google.com/search?q=truedeal&rlz=1C1CHZN_enIN1143IN1144&oq=truedeal&gs_lcrp=EgZjaHJvbWUqCggAEAAY4wIYgAQyCggAEAAY4wIYgAQyBggBEEUYPDINCAIQLhivARjHARiABDIGCAMQRRg8MgYIBBBFGDwyBggFEEUYQTIGCAYQRRhBMgYIBxBFGEHSAQgyMjc4ajBqN6gCALACAA&sourceid=chrome&ie=UTF-8"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="bg-white rounded-full p-1.5 hover:opacity-80 transition-opacity"
+                            >
                                 <Image
                                     src="/Assets/Icons/icons8-google.svg"
                                     alt="Google"
                                     width={20}
                                     height={20}
                                 />
-                            </div>
-                            <div className="bg-white rounded-full p-1.5">
+                            </a>
+                            <a
+                                href="https://www.instagram.com/itstruedeal/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="bg-white rounded-full p-1.5 hover:opacity-80 transition-opacity"
+                            >
                                 <Image
                                     src="/Assets/Icons/icons8-instagram.svg"
                                     alt="Instagram"
                                     width={20}
                                     height={20}
                                 />
-                            </div>
+                            </a>
                         </div>
                         <div className="flex items-center gap-2">
                             <span className="text-2xl font-bold">4.6</span>
                             <Star className="w-5 h-5 fill-current text-yellow-400" />
-                            <span className="text-base text-white/90">7400+ reviews</span>
+                            <span className="text-base text-white/90">100+ authentic reviews</span>
                         </div>
                     </div>
                 </div>

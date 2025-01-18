@@ -14,43 +14,43 @@ interface Destination {
 const destinations: Destination[] = [
     {
         name: 'France',
-        price: '29,999',
+        price: '185000',
         image: '/UGCImages/folder3/france/vertical/1.webp',
         slug: 'france'
     },
     {
         name: 'Austria',
-        price: '12,999',
+        price: '165000',
         image: '/IMAGES/Shimla/2/2.webp',
         slug: 'austria'
     },
     {
         name: 'Netherlands',
-        price: '24,499',
+        price: '155000',
         image: '/IMAGES/Shimla/2/3.webp',
         slug: 'netherlands'
     },
     {
         name: 'Germany',
-        price: '7,999',
+        price: '175000',
         image: '/IMAGES/Shimla/2/4.webp',
         slug: 'germany'
     },
     {
         name: 'Greece',
-        price: '12,999',
+        price: '145000',
         image: '/IMAGES/Shimla/2/1.webp',
         slug: 'greece'
     },
     {
         name: 'Switzerland',
-        price: '12,999',
+        price: '195000',
         image: '/IMAGES/Shimla/2/2.webp',
         slug: 'switzerland'
     },
     {
         name: 'Spain',
-        price: '12,999',
+        price: '165000',
         image: '/IMAGES/Shimla/2/3.webp',
         slug: 'spain'
     },
