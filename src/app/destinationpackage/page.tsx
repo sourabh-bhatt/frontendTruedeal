@@ -5,7 +5,6 @@ import Trending from "../components/homepage/Trending";
 import ForexLive from "../components/forex/ForexLive";
 // import HappyCustomers from "../components/Ad/HappyCustomers";
 import Ugc from "../components/homepage/Ugc";
-import ExoticDestinations from "../components/homepage/Exotic";
 import Sponsors from "../components/Ad/Sponsers"
 import Gallery from "../components/homepage/Gallery";
 import ReviewsGlimpse from "../components/homepage/ReviewsGlimpse";

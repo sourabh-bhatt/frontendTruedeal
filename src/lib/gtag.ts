@@ -1,10 +1,27 @@
 // Google Analytics measurement ID
 export const GA_MEASUREMENT_ID = 'G-JSZ8M226ZH'
 
+// Define types for gtag
+type GtagEvent = {
+    action: string
+    category: string
+    label: string
+    value?: number
+}
+
+type Gtag = {
+    (command: 'config', targetId: string, config?: { page_path?: string }): void
+    (command: 'event', action: string, params: {
+        event_category: string
+        event_label: string
+        value?: number
+    }): void
+}
+
 // Initialize gtag function
 declare global {
     interface Window {
-        gtag: (...args: any[]) => void
+        gtag: Gtag
     }
 }
 
@@ -16,12 +33,7 @@ export const pageview = (url: string) => {
 }
 
 // Log specific events
-export const event = ({ action, category, label, value }: {
-    action: string
-    category: string
-    label: string
-    value?: number
-}) => {
+export const event = ({ action, category, label, value }: GtagEvent) => {
     window.gtag('event', action, {
         event_category: category,
         event_label: label,

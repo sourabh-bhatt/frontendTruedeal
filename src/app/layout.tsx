@@ -9,6 +9,7 @@ import { Chatbot } from "./components/chatbot/Chatbot";
 import Script from 'next/script'
 import { GA_MEASUREMENT_ID } from '@/lib/gtag'
 import { useGoogleAnalytics } from '@/hooks/useGoogleAnalytics'
+import { Analytics } from "@vercel/analytics/react"
 
 const poppins = localFont({
   src: [
@@ -153,6 +154,7 @@ export default function RootLayout({
           <SpeedInsights />
           <Chatbot />
           <Footer />
+          <Analytics />
         </body>
       </html>
     </ClerkProvider>
