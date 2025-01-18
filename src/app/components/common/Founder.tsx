@@ -32,9 +32,9 @@ export default function Founder() {
                                 </svg>
                             </div>
                             <blockquote className="relative z-10 mt-8 italic text-xl text-gray-700 font-poppins">
-                                "Our vision is to redefine travel experiences by combining innovation with tradition.
+                                &ldquo;Our vision is to redefine travel experiences by combining innovation with tradition.
                                 We believe in creating journeys that not only take you to destinations but also create
-                                lasting memories and meaningful connections."
+                                lasting memories and meaningful connections.&rdquo;
                             </blockquote>
                             <div className="mt-8 border-t pt-4">
                                 <h3 className="text-2xl font-bold text-gray-900 font-poppins">Mr. Aman Arora</h3>

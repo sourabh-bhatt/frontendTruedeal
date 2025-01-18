@@ -1,4 +1,3 @@
-import { NeonGradientCard } from "@/components/ui/neon-gradient-card";
 
 export default function FirstTimeTravelMessage() {
     return (
