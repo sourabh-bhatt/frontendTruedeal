@@ -104,6 +104,10 @@ const NeonGradientCard: React.FC<NeonGradientCardProps> = ({
     }
   }, [children]);
 
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    // ... existing code ...
+  };
+
   return (
     <div
       ref={containerRef}

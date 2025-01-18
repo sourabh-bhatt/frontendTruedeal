@@ -7,7 +7,6 @@ import { motion } from 'framer-motion'
 import { Input } from "@/components/ui/input"
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
 import TypingAnimation from '../../../components/ui/typing-animation'
-import { NeonGradientCard } from "@/components/ui/neon-gradient-card";
 import FirstTimeTravelMessage from "./FirstTimeTravelMessage"
 
 interface Destination {

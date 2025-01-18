@@ -10,68 +10,67 @@ const tagColors = [
     { bg: "from-[#017ae3]/10 to-[#00f6ff]/10", text: "text-[#017ae3]" }
 ];
 
+const offers = [
+    {
+        title: "Almaty: City of Apples & Mountains",
+        slug: "almaty",
+        nights: 5,
+        days: 6,
+        originalPrice: 55980,
+        discountedPrice: 44275,
+        images: [
+            "/UGCImages/Images4/almaty/vertical/4.webp",
+            "/UGCImages/Images4/almaty/vertical/2.webp",
+            "/UGCImages/Images4/almaty/vertical/3.webp"
+        ],
+        amenities: ["Stay", "Transfers"]
+    },
+    {
+        title: "Baku: The City of Winds & Fire Temples",
+        slug: "baku",
+        nights: 4,
+        days: 5,
+        originalPrice: 46390,
+        discountedPrice: 30100,
+        images: [
+            "/UGCImages/Images4/baku/vertical/5.webp",
+            "/UGCImages/Images4/baku/vertical/2.webp",
+            "/UGCImages/Images4/baku/vertical/3.webp"
+        ],
+        amenities: ["Activities", "Transfers"]
+    },
+    {
+        title: "Vietnam: A City of Eternal Charm & Beauty",
+        slug: "vietnam",
+        nights: 5,
+        days: 6,
+        originalPrice: 58798,
+        discountedPrice: 46000,
+        images: [
+            "/IMAGES/Vietnam/1/1.webp",
+            "/IMAGES/Vietnam/1/2.webp",
+            "/IMAGES/Vietnam/1/3.webp"
+        ],
+        amenities: ["Stay", "Transfers"]
+    },
+    {
+        title: "Shimla: The Queen of Hills & Snow",
+        slug: "shimla",
+        nights: 3,
+        days: 4,
+        originalPrice: 28000,
+        discountedPrice: 12000,
+        images: [
+            "/UGCImages/Hd images2/shimla/vertical/1.webp",
+            "/UGCImages/Hd images2/shimla/vertical/2.webp",
+            "/UGCImages/Hd images2/shimla/vertical/3.webp"
+        ],
+        amenities: ["Sightseeing", "Transfers"]
+    }
+];
+
 const TrendingOffers = () => {
     const router = useRouter();
-
-    const offers = [
-        {
-            title: "Almaty: City of Apples & Mountains",
-            slug: "almaty",
-            nights: 5,
-            days: 6,
-            originalPrice: 55980,
-            discountedPrice: 44275,
-            images: [
-                "/UGCImages/Images4/almaty/vertical/4.webp",
-                "/UGCImages/Images4/almaty/vertical/2.webp",
-                "/UGCImages/Images4/almaty/vertical/3.webp"
-            ],
-            amenities: ["Stay", "Transfers"]
-        },
-        {
-            title: "Baku: The City of Winds & Fire Temples",
-            slug: "baku",
-            nights: 4,
-            days: 5,
-            originalPrice: 46390,
-            discountedPrice: 30100,
-            images: [
-                "/UGCImages/Images4/baku/vertical/5.webp",
-                "/UGCImages/Images4/baku/vertical/2.webp",
-                "/UGCImages/Images4/baku/vertical/3.webp"
-            ],
-            amenities: ["Activities", "Transfers"]
-        },
-        {
-            title: "Vietnam: A City of Eternal Charm & Beauty",
-            slug: "vietnam",
-            nights: 5,
-            days: 6,
-            originalPrice: 58798,
-            discountedPrice: 46000,
-            images: [
-                "/IMAGES/Vietnam/1/1.webp",
-                "/IMAGES/Vietnam/1/2.webp",
-                "/IMAGES/Vietnam/1/3.webp"
-            ],
-            amenities: ["Stay", "Transfers"]
-        },
-        {
-            title: "Shimla: The Queen of Hills & Snow",
-            slug: "shimla",
-            nights: 3,
-            days: 4,
-            originalPrice: 28000,
-            discountedPrice: 12000,
-            images: [
-                "/UGCImages/Hd images2/shimla/vertical/1.webp",
-                "/UGCImages/Hd images2/shimla/vertical/2.webp",
-                "/UGCImages/Hd images2/shimla/vertical/3.webp"
-            ],
-            amenities: ["Sightseeing", "Transfers"]
-        }
-    ];
-
     const [currentImages, setCurrentImages] = useState(offers.map(() => 0));
 
     useEffect(() => {
@@ -114,8 +113,7 @@ const TrendingOffers = () => {
                                     alt={`${offer.title} - Image ${imgIndex + 1}`}
                                     width={400}
                                     height={300}
-                                    className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-500 ${currentImages[index] === imgIndex ? 'opacity-100' : 'opacity-0'
-                                        }`}
+                                    className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-500 ${currentImages[index] === imgIndex ? 'opacity-100' : 'opacity-0'}`}
                                 />
                             ))}
                         </div>

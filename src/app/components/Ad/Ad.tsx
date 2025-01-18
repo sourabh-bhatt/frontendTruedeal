@@ -5,22 +5,22 @@ export default function Component() {
         {
             src: "/Assets/Forex/1.webp",
             title: "No Third Party Mess",
-            description: "100 percent in-house operations for all trips! No third parties involved, hence no fishy claims!"
+            description: "We handle everything in-house for all our trips, ensuring 100% transparency and efficiency. With no third parties involved, you can trust us for genuine services and no hidden surprises."
         },
         {
             src: "/Assets/Forex/2.webp",
             title: "Transparency & Security",
-            description: "Real-time monitoring of all trips by ground team! All routes and weather conditions are accurately updated!"
+            description: "Your safety is our top priority. We provide real-time monitoring for all trips through our dedicated ground team. With accurate updates on routes and weather conditions, you can travel stress-free."
         },
         {
             src: "/Assets/Forex/3.webp",
             title: "Co-Travelers Filtering",
-            description: "Multi-step filtering to bring only like-minded people together! That's our key to have fuss-free trips!"
+            description: "Enjoy your journey with like-minded travelers! Our multi-step filtering process ensures you are traveling with people who share similar vibes, making your trips more enjoyable and fuss-free."
         },
         {
             src: "/Assets/Forex/4.webp",
             title: "Hassle Free Experience",
-            description: "Comfortable stays, trained drivers, hospitable staff and friendly trip leaders."
+            description: "From comfortable stays to trained drivers, hospitable staff, and friendly trip leaders, we focus on providing a seamless experience so you can focus on creating memories."
         }
     ];
 
