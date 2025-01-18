@@ -8,8 +8,8 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Chatbot } from "./components/chatbot/Chatbot";
 import Script from 'next/script'
 import { GA_MEASUREMENT_ID } from '@/lib/gtag'
-import { useGoogleAnalytics } from '@/hooks/useGoogleAnalytics'
 import { Analytics } from "@vercel/analytics/react"
+import GoogleAnalytics from '../components/GoogleAnalytics';
 
 const poppins = localFont({
   src: [
@@ -123,8 +123,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  useGoogleAnalytics()
-
   return (
     <ClerkProvider>
       <html lang="en">
@@ -149,6 +147,7 @@ export default function RootLayout({
         <body
           className={poppins.variable}
         >
+          <GoogleAnalytics />
           <Navbar />
           {children}
           <SpeedInsights />
