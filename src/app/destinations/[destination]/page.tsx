@@ -267,7 +267,7 @@ const destinationData: { [key: string]: DestinationDetails } = {
     },
 
     bali: {
-        name: "Bali - A Tropical Getaway",
+        name: "Bali - A Tropical Gateway",
         price: 19500,
         image: "/IMAGES/bali/2/1.webp",
         packages: 5,

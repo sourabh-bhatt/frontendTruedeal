@@ -1,27 +1,36 @@
 'use client';
 
-import Trending from "../components/homepage/Trending";
 import Destinations from "../components/homepage/Destinations";
+import Trending from "../components/homepage/Trending";
 import ForexLive from "../components/forex/ForexLive";
-import HappyCustomers from "../components/Ad/HappyCustomers";
-import ExoticDestinations from "../components/homepage/Exotic";
+// import HappyCustomers from "../components/Ad/HappyCustomers";
 import Ugc from "../components/homepage/Ugc";
+import ExoticDestinations from "../components/homepage/Exotic";
+import Sponsors from "../components/Ad/Sponsers"
+import Gallery from "../components/homepage/Gallery";
+import ReviewsGlimpse from "../components/homepage/ReviewsGlimpse";
+import Europe from "../components/homepage/Europe";
 
-export default function TrendingPackagePage() {
+export default function DestinationPackagePage() {
     return (
         <div>
-
-
-            <main className="space-y-12">
+            <main className="space-y-8 mt-8">
                 <Trending />
-                <Destinations />
-                <div className="bg-gray-50 py-12">
-                    <ForexLive />
-                </div>
-
                 <ExoticDestinations />
+                <div className=" relative bottom-16">
+                    <Destinations />
+
+                </div>
+                <div className="bg-gray-50 py-12 relative bottom-16">
+                    <Europe />
+
+                </div>
             </main>
-            <HappyCustomers />
+            {/* <HappyCustomers /> */}
+            <Gallery />
+            <Sponsors />
+            <ReviewsGlimpse />
+            <ForexLive />
             <Ugc />
         </div>
     );

@@ -6,6 +6,9 @@ import Footer from "./components/common/Footer";
 import { ClerkProvider } from "@clerk/nextjs";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Chatbot } from "./components/chatbot/Chatbot";
+import Script from 'next/script'
+import { GA_MEASUREMENT_ID } from '@/lib/gtag'
+import { useGoogleAnalytics } from '@/hooks/useGoogleAnalytics'
 
 const poppins = localFont({
   src: [
@@ -119,22 +122,39 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  useGoogleAnalytics()
+
   return (
     <ClerkProvider>
       <html lang="en">
-
+        <head>
+          <Script
+            strategy="afterInteractive"
+            src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          />
+          <Script
+            id="google-analytics"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${GA_MEASUREMENT_ID}');
+              `,
+            }}
+          />
+        </head>
         <body
           className={poppins.variable}
         >
-
           <Navbar />
           {children}
           <SpeedInsights />
           <Chatbot />
           <Footer />
         </body>
-      </html >
+      </html>
     </ClerkProvider>
-
   );
 }

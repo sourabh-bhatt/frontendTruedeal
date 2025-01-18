@@ -52,6 +52,7 @@
     "react-toastify": "^11.0.2",
     "resend": "^4.0.1",
     "shadcn": "^2.1.8",
+    "swiper": "^11.2.1",
     "tailwind-merge": "^2.5.4",
     "toast": "^0.5.4"
   },

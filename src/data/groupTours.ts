@@ -23,7 +23,7 @@ export const groupToursData: { [key: string]: GroupTour } = {
         id: 'malaysia',
         name: "Malaysia Group Tour: Kuala Lumpur & Genting",
         price: 27500,
-        image: "/webImage/mauritius/1/1.webp",
+        image: "/UGCImages/Images4/malashia/vertical/2.webp",
         description: "Experience the best of Malaysia with our exclusive group tour package...",
         duration: { days: 4, nights: 3 },
         startDate: "As per availability",
@@ -82,17 +82,25 @@ parts of Malaysia.`
             "No refund within 30 days of departure"
         ],
         galleryImages: [
-            "/webImage/mauritius/1/1.webp",
-            "/webImage/mauritius/1/2.webp",
-            "/webImage/mauritius/1/3.webp",
-            "/webImage/mauritius/1/4.webp"
+            "/UGCImages/Images4/malashia/horizontal/1.webp",
+            "/UGCImages/Images4/malashia/horizontal/2.webp",
+            "/UGCImages/Images4/malashia/horizontal/3.webp",
+            "/UGCImages/Images4/malashia/horizontal/4.webp",
+            "/UGCImages/Images4/malashia/horizontal/5.webp",
+            "/UGCImages/Images4/malashia/horizontal/6.webp",
+            "/UGCImages/Images4/malashia/vertical/1.webp",
+            "/UGCImages/Images4/malashia/vertical/2.webp",
+            "/UGCImages/Images4/malashia/vertical/3.webp",
+            "/UGCImages/Images4/malashia/vertical/4.webp",
+            "/UGCImages/Images4/malashia/vertical/5.webp",
+            "/UGCImages/Images4/malashia/vertical/6.webp",
         ]
     },
     uttrakhand: {
         id: 'uttrakhand',
         name: "Uttarakhand Group Tour",
         price: 13650,
-        image: "/webImage/uttrakhand/1/1.webp",
+        image: "/UGCImages/Images4/uttrakhand/horizontal/1.webp",
         description: "Explore the breathtaking landscapes and rich spiritual heritage of Uttarakhand...",
         duration: { days: 5, nights: 4 },
         startDate: "As per availability",
@@ -169,17 +177,25 @@ of Uttarakhands breathtaking landscapes, rich spiritual heritage, and warm hospi
             "No refund within 30 days of departure"
         ],
         galleryImages: [
-            "/webImage/hongkong/1/1.webp",
-            "/webImage/hongkong/1/2.webp",
-            "/webImage/hongkong/1/3.webp",
-            "/webImage/hongkong/1/4.webp"
+            "/UGCImages/Images4/uttrakhand/horizontal/1.webp",
+            "/UGCImages/Images4/uttrakhand/horizontal/2.webp",
+            "/UGCImages/Images4/uttrakhand/horizontal/3.webp",
+            "/UGCImages/Images4/uttrakhand/horizontal/4.webp",
+            "/UGCImages/Images4/uttrakhand/horizontal/5.webp",
+            "/UGCImages/Images4/uttrakhand/horizontal/6.webp",
+            "/UGCImages/Images4/uttrakhand/vertical/1.webp",
+            "/UGCImages/Images4/uttrakhand/vertical/2.webp",
+            "/UGCImages/Images4/uttrakhand/vertical/3.webp",
+            "/UGCImages/Images4/uttrakhand/vertical/4.webp",
+            "/UGCImages/Images4/uttrakhand/vertical/5.webp",
+            "/UGCImages/Images4/uttrakhand/vertical/6.webp",
         ]
     },
     almaty: {
         id: 'almaty',
         name: "Best of Almaty Tour Package",
         price: 32000,
-        image: "/webImage/almaty/1/1.webp",
+        image: "/UGCImages/Images4/almaty/horizontal/5.webp",
         description: "Discover the beauty of Almaty with our exclusive 4 Nights / 5 Days tour package, including breathtaking natural landscapes and cultural experiences.",
         duration: { days: 5, nights: 4 },
         startDate: "As per availability",
@@ -246,10 +262,17 @@ of Uttarakhands breathtaking landscapes, rich spiritual heritage, and warm hospi
             "No refund within 30 days of departure"
         ],
         galleryImages: [
-            "/webImage/almaty/1/1.webp",
-            "/webImage/almaty/1/2.webp",
-            "/webImage/almaty/1/3.webp",
-            "/webImage/almaty/1/4.webp"
+            "/UGCImages/Images4/almaty/horizontal/1.webp",
+            "/UGCImages/Images4/almaty/horizontal/2.webp",
+            "/UGCImages/Images4/almaty/horizontal/3.webp",
+            "/UGCImages/Images4/almaty/horizontal/4.webp",
+            "/UGCImages/Images4/almaty/horizontal/5.webp",
+            "/UGCImages/Images4/almaty/horizontal/6.webp",
+            "/UGCImages/Images4/almaty/vertical/1.webp",
+            "/UGCImages/Images4/almaty/vertical/2.webp",
+            "/UGCImages/Images4/almaty/vertical/3.webp",
+            "/UGCImages/Images4/almaty/vertical/4.webp",
+            "/UGCImages/Images4/almaty/vertical/5.webp",
         ]
     }
 

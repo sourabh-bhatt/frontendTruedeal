@@ -14,6 +14,11 @@ import HappyCustomers from '@/app/components/Ad/HappyCustomers';
 import Gallery from '@/app/components/homepage/Gallery';
 import WallOfLove from '@/app/components/homepage/Ugc';
 import Sponsors from '@/app/components/Ad/Sponsers';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 export default function GroupTourDetails() {
     const params = useParams();
@@ -30,26 +35,42 @@ export default function GroupTourDetails() {
     return (
         <div className="min-h-screen bg-gray-50 mt-10">
             <main className="container mx-auto px-4 py-8 max-w-7xl">
-                {/* Hero Image Section */}
+                {/* Hero Image Section - Replace the single Image with Swiper */}
                 <div className="relative rounded-3xl overflow-hidden mb-8 shadow-xl">
-                    <Image
-                        src={tourData.image}
-                        alt={tourData.name}
-                        width={1400}
-                        height={400}
-                        className="w-full h-[400px] object-cover"
-                        priority
-                    />
+                    <Swiper
+                        modules={[Navigation, Pagination, Autoplay]}
+                        navigation
+                        pagination={{ clickable: true }}
+                        autoplay={{
+                            delay: 3000,
+                            disableOnInteraction: false,
+                        }}
+                        loop={true}
+                        className="w-full h-[400px]"
+                    >
+                        {tourData.galleryImages.map((image, index) => (
+                            <SwiperSlide key={index}>
+                                <Image
+                                    src={image}
+                                    alt={`${tourData.name} - Image ${index + 1}`}
+                                    width={1400}
+                                    height={400}
+                                    className="w-full h-[400px] object-cover"
+                                    priority={index === 0}
+                                />
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
                     <button
                         onClick={() => setIsGalleryOpen(true)}
-                        className="absolute bottom-4 left-4 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white px-6 py-2.5 rounded-full flex items-center gap-2 hover:shadow-lg transition-all duration-300"
+                        className="absolute bottom-4 left-4 z-10 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white px-6 py-2.5 rounded-full flex items-center gap-2 hover:shadow-lg transition-all duration-300"
                     >
                         <Camera className="w-4 h-4" />
                         View Gallery
                     </button>
 
-                    {/* Booking Card */}
-                    <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-2xl max-w-xs">
+                    {/* Booking Card - Add z-index to keep it above the slider */}
+                    <div className="absolute top-4 right-4 z-10 bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-2xl max-w-xs">
                         <div className="flex items-center gap-2 text-sm text-gray-600 mb-2">
                             <Calendar className="w-4 h-4" />
                             Start Date: {tourData.startDate}

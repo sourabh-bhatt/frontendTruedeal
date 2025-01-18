@@ -399,3 +399,25 @@ select::-webkit-listbox {
 .image-fade-in {
   animation: fadeIn 0.5s ease-out forwards;
 }
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: white !important;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 2rem;
+  border-radius: 50%;
+  transform: scale(0.5);
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.swiper-pagination-bullet {
+  background: white !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #017ae3 !important;
+}

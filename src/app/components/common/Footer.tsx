@@ -164,7 +164,6 @@ export default function Component() {
                                     { name: "About", path: "/about" },
                                     { name: "Destination Package", path: "/destinationpackage" },
                                     { name: "Trending Package", path: "/trendingpackage" },
-                                    { name: "Exclusive", path: "/exclusive" },
                                     { name: "Contact Us", path: "/contact-us" },
                                     { name: "Careers", path: "/careers" },
                                     { name: "Terms & conditions", path: "/terms&conditions" },
