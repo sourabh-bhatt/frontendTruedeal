@@ -9,7 +9,7 @@ export const useGoogleAnalytics = () => {
     const searchParams = useSearchParams()
 
     useEffect(() => {
-        if (pathname) {
+        if (pathname) {                                                                                                                     
             const url = pathname + searchParams.toString()
             pageview(url)
         }
