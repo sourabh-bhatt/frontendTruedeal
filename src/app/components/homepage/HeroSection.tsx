@@ -241,7 +241,7 @@
 import { useState, useEffect, useMemo, useCallback, useRef } from "react"
 import { Search, MapPin, Globe } from "lucide-react"
 import { useRouter } from "next/navigation"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 import { Input } from "@/components/ui/input"
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
 import TypingAnimation from "../../../components/ui/typing-animation"
