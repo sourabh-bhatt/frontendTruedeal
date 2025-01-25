@@ -15,11 +15,13 @@ import WallOfLove from "./components/homepage/Ugc";
 import Indonesia from "./indonesia/page";
 import ReviewsGlimpse from './components/homepage/ReviewsGlimpse'
 import NoCostEMIPage from "./no-cost-emi/page";
+import FixedDepartures from "./components/fd/page";
 
 export default function Home() {
   return (
     <main className="min-h-screen">
       <HeroSection />
+      <FixedDepartures />
       <Destination />
       <Domestic />
       <Trending />

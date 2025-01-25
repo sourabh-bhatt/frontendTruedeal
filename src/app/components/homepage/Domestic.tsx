@@ -70,7 +70,7 @@ export default function Domestic() {
                         preload="auto"
                         className="absolute top-0 left-0 w-full h-full object-cover"
                     >
-                        <source src="https://res.cloudinary.com/dwwyljy3m/video/upload/v1735911751/india_dooqfo.mp4" type="video/mp4" />
+                        <source src="/Assets/HeroSectionImages/india.mp4" type="video/mp4" />
                     </video>
 
                     <div className="absolute top-0 left-0 w-full h-full bg-black/40" />

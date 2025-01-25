@@ -444,7 +444,7 @@ export default function HeroSection() {
                 <div className="absolute inset-0 h-[70svh] md:h-screen">
                     <video autoPlay loop muted playsInline className="absolute top-0 left-0 w-full h-full object-cover z-0">
                         <source
-                            src="https://res.cloudinary.com/dwwyljy3m/video/upload/v1735820545/bgVideoLoop_rszpwq.mp4"
+                            src="/Assets/HeroSectionImages/bgg.mp4"
                             type="video/mp4"
                         />
                         Your browser does not support the video tag.

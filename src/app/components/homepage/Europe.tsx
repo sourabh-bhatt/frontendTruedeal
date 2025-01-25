@@ -89,7 +89,7 @@ export default function Europe() {
                         preload="auto"
                         className="absolute top-0 left-0 w-full h-full object-cover"
                     >
-                        <source src="https://res.cloudinary.com/dwwyljy3m/video/upload/v1736239820/Europe_xfcadt.mp4" type="video/mp4" />
+                        <source src="/Assets/HeroSectionImages/europe.mp4" type="video/mp4" />
                     </video>
 
                     <div className="absolute top-0 left-0 w-full h-full bg-black/40" />
