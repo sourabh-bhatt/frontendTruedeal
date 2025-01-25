@@ -1,3 +1,4 @@
+import React from 'react';
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Target, Eye } from 'lucide-react'
@@ -6,7 +7,7 @@ import Founder from "../components/common/Founder";
 // import NumberTicker from "@/components/magicui/number-ticker";
 import NumberTicker from "../../components/ui/number-ticker"
 
-export default function TravelWebsite() {
+const AboutPage: React.FC = () => {
     return (
         <div>
             <section className="relative h-96">
@@ -147,6 +148,8 @@ export default function TravelWebsite() {
             <Services />
             <Founder />
         </div>
-    )
-}
+    );
+};
+
+export default AboutPage;
 

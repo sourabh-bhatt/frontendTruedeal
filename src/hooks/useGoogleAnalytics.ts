@@ -1,17 +1,17 @@
 'use client';
 
-import { usePathname, useSearchParams } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 import { useEffect } from 'react'
 import { pageview } from '@/lib/gtag'
 
 export const useGoogleAnalytics = () => {
     const pathname = usePathname()
-    const searchParams = useSearchParams()
 
     useEffect(() => {
         if (pathname) {
-            const url = pathname + searchParams.toString()
+            const searchParams = new URLSearchParams(window.location.search)
+            const url = pathname + (searchParams.toString() ? '?' + searchParams.toString() : '')
             pageview(url)
         }
-    }, [pathname, searchParams])
+    }, [pathname])
 } 
