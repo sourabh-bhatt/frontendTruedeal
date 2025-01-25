@@ -1,5 +1,8 @@
+'use client';
 
-export default function FirstTimeTravelMessage() {
+import { Suspense } from 'react';
+
+function FirstTimeTravelMessageContent() {
     return (
         <div className="relative w-full min-h-[150px] px-2 py-6 overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-cyan-500/10 animate-pulse" />
@@ -15,5 +18,13 @@ export default function FirstTimeTravelMessage() {
                 </div>
             </div>
         </div>
+    );
+}
+
+export default function FirstTimeTravelMessage() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <FirstTimeTravelMessageContent />
+        </Suspense>
     );
 }
