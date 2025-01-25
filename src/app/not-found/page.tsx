@@ -1,20 +1,14 @@
 "use client"
 
-import { Suspense } from "react"
-import NotFoundContent from "./not-found-content"
+import AnalyticsSuspense from "@/app/components/AnalyticsWrapper"
 
-export default function NotFound() {
+export default function NotFoundPage() {
     return (
-        <div className="min-h-screen flex items-center justify-center bg-background">
-            <Suspense
-                fallback={
-                    <div className="text-center">
-                        <h2 className="text-2xl font-semibold">Loading...</h2>
-                    </div>
-                }
-            >
-                <NotFoundContent />
-            </Suspense>
+        <div className="text-center space-y-4">
+            <h1 className="text-4xl font-bold">404</h1>
+            <h2 className="text-2xl font-semibold">Page Not Found</h2>
+            <p className="text-muted-foreground">Sorry, the page you are looking for does not exist.</p>
+            <AnalyticsSuspense />
         </div>
     )
 }
