@@ -163,7 +163,13 @@ export const fixedDeparturesData = {
             }
         ],
         images: [
-            "/UGCImages/images5/VIETNAM/VERTICAL/1.webp",
+            "/UGCImages/images5/VIETNAM/HORIZONTAL/3.webp",
+            "/UGCImages/images5/VIETNAM/HORIZONTAL/4.webp",
+            "/UGCImages/images5/VIETNAM/HORIZONTAL/5.webp",
+            "/UGCImages/images5/VIETNAM/HORIZONTAL/6.webp",
+            "/UGCImages/images5/VIETNAM/HORIZONTAL/7.webp",
+            "/UGCImages/images5/VIETNAM/HORIZONTAL/1.webp",
+            "/UGCImages/images5/VIETNAM/HORIZONTAL/2.webp",
             "/UGCImages/images5/VIETNAM/VERTICAL/2.webp",
             "/UGCImages/images5/VIETNAM/VERTICAL/3.webp",
             "/UGCImages/images5/VIETNAM/VERTICAL/4.webp",
@@ -174,37 +180,288 @@ export const fixedDeparturesData = {
     europe: {
         id: "TDWF002",
         country: "Europe",
-        days: 11,
-        nights: 12,
-        amount: 150000,
+        days: 12,
+        nights: 11,
+        amount: 395000,
         dateStart: "16 May",
         dateEnd: "28 May",
-        flightFrom: "Raipur via Delhi",
+        flightFrom: "Delhi",
         groupDetails: {
             pax: "Group Departure From Raipur",
             rooms: "12 Rooms on Double/Twin Sharing",
             arrivalDate: "16th May 2025 Raipur Departure",
-            duration: "12N11D Europe",
+            duration: "11N12D Europe",
             costBasis: "Cost Based On Double Sharing"
         },
-        description: "Discover the charm of Europe with our comprehensive tour package...",
+        description: "Experience the best of Europe with our comprehensive 12-day tour package covering France, Switzerland, and Austria. Visit iconic destinations including Paris, Lausanne, Interlaken, Zurich, Innsbruck, Salzburg, and Vienna.",
         hotelDetails: [
-            // Add hotel details for each city
-        ],
-        itinerary: [
-            // Add day-wise itinerary
-        ],
-        inclusions: [
-            // Add inclusions
-        ],
-        exclusions: [
-            // Add exclusions
+            {
+                city: "Paris",
+                hotel: "4 Star Hotel",
+                roomType: "Standard Room"
+            },
+            {
+                city: "Lausanne",
+                hotel: "4 Star Hotel",
+                roomType: "Standard Room"
+            },
+            {
+                city: "Interlaken",
+                hotel: "3 Star Hotel",
+                roomType: "Standard Room"
+            },
+            {
+                city: "Zurich",
+                hotel: "4 Star Hotel",
+                roomType: "Standard Room"
+            },
+            {
+                city: "Innsbruck",
+                hotel: "4 Star Hotel",
+                roomType: "Standard Room"
+            },
+            {
+                city: "Vienna",
+                hotel: "4 Star Hotel",
+                roomType: "Standard Room"
+            }
         ],
         tourSummary: [
-            // Add tour summary
+            "Day 1: Raipur – Delhi – Paris",
+            "Day 2: Paris City Tour",
+            "Day 3: Full Day Disneyland Paris",
+            "Day 4: Paris to Lausanne via Geneva",
+            "Day 5: Glacier 3000 and Gstaad Excursion",
+            "Day 6: Lausanne to Vevey by CGN Cruise, Transfer to Interlaken",
+            "Day 7: Jungfrau/Mt. Titlis Excursion",
+            "Day 8: Rhine Falls, Zurich City Tour, Lindt Chocolate Factory",
+            "Day 9: Transfer to Innsbruck via Vaduz, Swarovski Crystal Garden",
+            "Day 10: Salzburg Day Trip, Transfer to Vienna",
+            "Day 11: Vienna City Tour",
+            "Day 12: Shopping at Outlet Mall, Departure"
+        ],
+        inclusions: [
+            "Return Economy Class Airfare with Airport Taxes Ex-Raipur",
+            "Schengen Visa Fees",
+            "11 Nights Accommodation in 3/4 Star Hotels",
+            "Daily Continental Breakfast",
+            "Indian Lunches & Dinners as per itinerary",
+            "All Sightseeing and transfers by deluxe Coach",
+            "Eiffel Tower Level 2 visit",
+            "Seine River Cruise",
+            "Disneyland Entry",
+            "Visit to Gstaad",
+            "Golden Pass Train Ticket",
+            "Glacier 3000 with Cable Car",
+            "Jungfrau or Mt. Titlis excursion",
+            "Swarovski Crystal Garden visit",
+            "Salt Mine Visit",
+            "Lausanne to Vevey Cruise",
+            "Rhine falls and Zurich City Tour",
+            "Lindt Chocolate Museum visit",
+            "Overseas Travel Insurance (up to age 60)",
+            "Services of tour manager",
+            "Tips to Coach Driver (Euro 30 per person)"
+        ],
+        exclusions: [
+            "Any increase in Air Fare or Forex (calculated @ 90/- Per euro)",
+            "Any Increase in Airport Taxes & Visa Fees",
+            "Any expenses of personal nature",
+            "Portages at hotels, Airport and Train Stations",
+            "GST (currently 5%)",
+            "TCS on foreign tour package (currently 5%)",
+            "Travel Insurance for passengers above 60 years",
+            "Any services not specifically mentioned in inclusions"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Raipur – Delhi – Paris",
+                description: "Departure from Raipur in the morning and arrival in Paris via Delhi. Arrival Paris at 1940 Hrs. Complete immigration formalities and proceed for dinner. Transfer to hotel for check-in."
+            },
+            {
+                day: 2,
+                title: "Paris City Tour",
+                description: "Visit the spectacular Eiffel Tower, enjoy Seine river cruise and city sightseeing including Notre Dame, Opera Garnier, Arc de Triomphe, Champs Elysees, Alexander Bridge, and Concords Square."
+            },
+            {
+                day: 3,
+                title: "Full Day Disneyland Paris",
+                description: "Enjoy a full day at Disneyland Paris with access to all parks and attractions."
+            },
+            {
+                day: 4,
+                title: "Paris to Lausanne via Geneva",
+                description: "Travel from Paris to Lausanne via Geneva. Enjoy the scenic route and visit the city of Lausanne."
+            },
+            {
+                day: 5,
+                title: "Glacier 3000 and Gstaad Excursion",
+                description: "Visit the breathtaking Glacier 3000 and enjoy a day trip to Gstaad."
+            },
+            {
+                day: 6,
+                title: "Lausanne to Vevey by CGN Cruise, Transfer to Interlaken",
+                description: "Travel from Lausanne to Vevey by CGN Cruise and transfer to Interlaken."
+            },
+            {
+                day: 7,
+                title: "Jungfrau/Mt. Titlis Excursion",
+                description: "Enjoy a day trip to Jungfrau or Mt. Titlis."
+            },
+            {
+                day: 8,
+                title: "Rhine Falls, Zurich City Tour, Lindt Chocolate Factory",
+                description: "Visit the Rhine Falls, enjoy a city tour of Zurich, and visit the Lindt Chocolate Factory."
+            },
+            {
+                day: 9,
+                title: "Transfer to Innsbruck via Vaduz, Swarovski Crystal Garden",
+                description: "Travel from Zurich to Innsbruck via Vaduz and visit the Swarovski Crystal Garden."
+            },
+            {
+                day: 10,
+                title: "Salzburg Day Trip, Transfer to Vienna",
+                description: "Visit Salzburg and transfer to Vienna."
+            },
+            {
+                day: 11,
+                title: "Vienna City Tour",
+                description: "Enjoy a city tour of Vienna and visit iconic landmarks."
+            },
+            {
+                day: 12,
+                title: "Vienna - Delhi",
+                description: "After breakfast, check out and visit Parndorf Fashion Outlet for shopping. After lunch, transfer to Vienna airport for departure at 2030 HRS."
+            }
         ],
         images: [
-            "/UGCImages/images5/VIETNAM/VERTICAL/5.webp",
+            "/UGCImages/Images4/germany/horizontal/3.webp",
+            "/UGCImages/Images4/germany/horizontal/4.webp",
+            "/UGCImages/Images4/germany/horizontal/5.webp",
+            "/UGCImages/Images4/germany/horizontal/6.webp",
+            "/UGCImages/Images4/germany/horizontal/1.webp",
+            "/UGCImages/Images4/germany/horizontal/2.webp",
+
+        ]
+    },
+    vietnam2: {
+        id: "TDWF003",
+        country: "Vietnam",
+        days: 8,
+        nights: 7,
+        amount: 95000,
+        dateStart: "Multiple Dates",
+        dateEnd: "May 2025",
+        flightFrom: "Multiple Cities",
+        description: "Experience the best of Vietnam in 8 days covering Hanoi, Danang, and Ho Chi Minh. Explore natural beauty including Ha Long Bay, cultural treasures like ancient temples, and historic sites across Vietnam's most vibrant cities.",
+        groupDetails: {
+            pax: "Group Departure",
+            rooms: "Twin Sharing Basis",
+            arrivalDate: "Available Dates: Jan 23 | Feb 9,16,23 | Mar 2,7,14,21 | Apr 4,11,18,25 | May 2,9,16,23,30",
+            duration: "7N8D Vietnam",
+            costBasis: "Cost Based On Double Sharing"
+        },
+        hotelDetails: [
+            {
+                city: "Hanoi",
+                hotel: "Muong Thanh/Beryl Charm/Anise Hotel",
+                roomType: "Standard Room"
+            },
+            {
+                city: "Danang",
+                hotel: "Cosmos/Grand Gold/Grand Sunrise Hotel",
+                roomType: "Standard Room"
+            },
+            {
+                city: "Ho Chi Minh",
+                hotel: "First Hotel/Harmony Hotel/Palace Hotel",
+                roomType: "Standard Room"
+            }
+        ],
+        tourSummary: [
+            "Day 1: Hanoi Arrival – City Tour (L, D)",
+            "Day 2: Hanoi – Nimb Binh – Hoa Lu – Tam Coc (B, L, D)",
+            "Day 3: Hanoi – Halong Bay Day Cruise (B, L, D)",
+            "Day 4: Hanoi – Danang – Evening Tour (B, L, D)",
+            "Day 5: Danang – Bana Hills & Golden Bridge (B, L, D)",
+            "Day 6: Danang – Ho Chi Minh – City Tour (B, L, D)",
+            "Day 7: Ho Chi Minh – Chu Chi Tunnel & Mekong Delta (B, L, D)",
+            "Day 8: Ho Chi Minh – Departure (B)"
+        ],
+        inclusions: [
+            "Vietnam Visa Fees",
+            "Return Economy Class Airlines",
+            "Baggage Allowance as per airline policy",
+            "Tour Manager/Guide Services throughout",
+            "A/C coach transfers as per itinerary",
+            "All entrance fees",
+            "Accommodation in comfortable hotels (twin sharing)",
+            "All Meals – Breakfast, Lunch, Dinner as per itinerary",
+            "Internal airfare",
+            "GST & TCS"
+        ],
+        exclusions: [
+            "Travel Insurance",
+            "Mandatory tips (USD 3 per person per day)",
+            "Any increase in Airfare, Visa fees, Taxes",
+            "Hotel/Airline upgrades",
+            "Air ticket deviation charges",
+            "Exchange rate fluctuations",
+            "Pre/post tour accommodation",
+            "Insurance for 60+ years",
+            "Personal expenses (laundry, telephone, shopping)",
+            "Optional tours and activities"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Hanoi Arrival – City Tour",
+                description: "Welcome to Vietnam! Visit Ho Chi Minh complex, Temple of Literature, Hoan Kiem lake, and Ngoc Son Temple. Evening at leisure."
+            },
+            {
+                day: 2,
+                title: "Hanoi – Nimb Binh – Hoa Lu – Tam Coc",
+                description: "Explore Ninh Binh province, visit Hoa Lu ancient capital, and enjoy bamboo boat ride through Tam Coc's three caves."
+            },
+            {
+                day: 3,
+                title: "Hanoi – Halong Bay Day Cruise",
+                description: "Full day cruise in Halong Bay visiting Sung Sot cave, floating village, and Ti Top peak. Optional overnight cruise available."
+            },
+            {
+                day: 4,
+                title: "Hanoi – Danang – Evening Tour",
+                description: "Fly to Danang. Evening tour of Son Tra Peninsula, Linh Ung Pagoda, and city bridges."
+            },
+            {
+                day: 5,
+                title: "Danang – Bana Hills & Golden Bridge",
+                description: "Visit Sun World Ba Na Hills, Golden Bridge, French Village, and Marble Mountains. Optional Hoi An tour available."
+            },
+            {
+                day: 6,
+                title: "Danang – Ho Chi Minh – City Tour",
+                description: "Fly to Ho Chi Minh. Visit War Crime Museum, Reunification Palace, Notre Dame Cathedral, and other landmarks."
+            },
+            {
+                day: 7,
+                title: "Ho Chi Minh – Chu Chi Tunnel & Mekong Delta",
+                description: "Explore Cu Chi Tunnels and Mekong Delta including My Tho city and local villages."
+            },
+            {
+                day: 8,
+                title: "Ho Chi Minh – Departure",
+                description: "Breakfast at hotel followed by departure transfer."
+            }
+        ],
+        images: [
+            "/UGCImages/images5/VIETNAM/HORIZONTAL/6.webp",
+            "/UGCImages/images5/VIETNAM/HORIZONTAL/1.webp",
+            "/UGCImages/images5/VIETNAM/HORIZONTAL/2.webp",
+            "/UGCImages/images5/VIETNAM/HORIZONTAL/3.webp",
+            "/UGCImages/images5/VIETNAM/HORIZONTAL/4.webp",
+            "/UGCImages/images5/VIETNAM/HORIZONTAL/5.webp",
 
         ]
     }

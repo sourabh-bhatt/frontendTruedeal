@@ -15,9 +15,17 @@ interface BookingFormModalProps {
     isOpen: boolean;
     onClose: () => void;
     destinationName: string;
+    price?: number;
+    dates?: string;
 }
 
-export function BookingFormModal({ isOpen, onClose, destinationName }: BookingFormModalProps) {
+export function BookingFormModal({ 
+    isOpen, 
+    onClose, 
+    destinationName,
+    price,
+    dates 
+}: BookingFormModalProps) {
     const [formData, setFormData] = useState({
         destination: destinationName,
         departureCity: '',

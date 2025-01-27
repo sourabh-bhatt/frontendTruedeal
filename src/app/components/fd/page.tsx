@@ -33,17 +33,18 @@ export default function FixedDepartures() {
                         {/* Price Tag */}
                         <div className="absolute top-3 left-0 z-10">
                             <div className="bg-yellow-400 px-4 py-1.5 rounded-full shadow-lg">
-                                <span className="line-through text-sm mr-2">₹{(departure.amount * 1.2).toLocaleString()}/-</span>
-                                <span className="font-bold">₹{departure.amount.toLocaleString()}/-</span>
+                                <span className="line-through text-sm mr-2">
+                                    ₹{(departure.amount * 1.2).toLocaleString('en-IN')}/-
+                                </span>
+                                <span className="font-bold">
+                                    ₹{departure.amount.toLocaleString('en-IN')}/-
+                                </span>
                                 <span className="text-sm ml-1">onwards</span>
                             </div>
                         </div>
 
                         {/* Content */}
                         <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                            <div className="bg-yellow-400 text-black px-3 py-1 rounded-full text-sm w-fit mb-4">
-                                Recommended
-                            </div>
 
                             {/* Title */}
                             <h2 className="text-2xl font-bold mb-2">
@@ -81,13 +82,6 @@ export default function FixedDepartures() {
                                 </div>
                             </div>
 
-                            {/* Bottom Info */}
-                            <div className="flex justify-between items-center text-sm border-t border-white/20 pt-3 mb-4">
-                                <span>+1 batch</span>
-                                <span className="text-yellow-400">
-                                    {departure.flightFrom} - {departure.hotelDetails?.[departure.hotelDetails.length - 1]?.city}
-                                </span>
-                            </div>
 
                             {/* View Details Button */}
                             <Link href={`/components/fd/${departure.id}`}>
