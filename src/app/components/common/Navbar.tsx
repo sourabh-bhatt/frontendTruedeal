@@ -14,28 +14,20 @@ export default function Navbar() {
     const pathname = usePathname()
 
     useEffect(() => {
-        const header = document.createElement('div')
-        header.style.position = 'absolute'
-        header.style.top = '0'
-        header.style.left = '0'
-        header.style.right = '0'
-        header.style.height = '1px'
-        document.body.appendChild(header)
-
+        const header = document.querySelector('header')
         const observer = new IntersectionObserver(
-            ([entry]) => {
-                setIsScrolled(!entry.isIntersecting)
-            },
-            {
-                threshold: [1],
-            }
+            ([entry]) => setIsScrolled(!entry.isIntersecting)
         )
 
-        observer.observe(header)
+        if (header) {
+            observer.observe(header)
+        }
 
         return () => {
             observer.disconnect()
-            document.body.removeChild(header)
+            if (header && header.parentNode) {
+                header.parentNode.removeChild(header)
+            }
         }
     }, [])
 

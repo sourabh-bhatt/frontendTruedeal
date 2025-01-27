@@ -18,30 +18,37 @@ export interface ItineraryDay {
     description: string;
 }
 
-export interface FixedDeparture {
+export interface BaseDestination {
     id: string;
     country: string;
     days: number;
     nights: number;
-    amount: number;
+    amount?: number;
     dateStart: string;
     dateEnd: string;
-    flightFrom: string;
     description: string;
-    groupDetails: GroupDetails;
-    hotelDetails: HotelDetail[];
-    itinerary: ItineraryDay[];
-    inclusions: string[];
-    exclusions: string[];
-    tourSummary: string[];
-    images: string[];
+    groupDetails?: GroupDetails;
+    hotelDetails?: HotelDetail[];
+    tourSummary?: string[];
+    inclusions?: string[];
+    exclusions?: string[];
+    itinerary?: ItineraryDay[];
+    images?: string[];
+}
+
+export interface FixedDeparture extends BaseDestination {
+    flightFrom: string;
+}
+
+export interface DestinationWithoutFlight extends BaseDestination {
+    // Any additional properties specific to destinations without flight
 }
 
 export const fixedDepartures: FixedDeparture[] = [
     // Your Vietnam departure data here
 ];
 
-export const fixedDeparturesData = {
+export const fixedDeparturesData: Record<string, FixedDeparture> = {
     vietnam: {
         id: "TDWF001",
         country: "Vietnam",
@@ -465,4 +472,360 @@ export const fixedDeparturesData = {
 
         ]
     }
+};
+
+export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight> = {
+    miniEurope: {
+        id: "TDWOF001",
+        country: "Mini Europe",
+        days: 7,
+        nights: 6,
+        amount: 990000,
+        dateStart: "24 Oct",
+        dateEnd: "25 March",
+        description: "Experience the best of Europe with our specially curated 6-night itinerary, covering iconic destinations across Italy, Switzerland, and France. Perfectly planned for travelers who seek an effortless, all-inclusive journey with fixed departures.",
+        groupDetails: {
+            pax: "Group Tour (10-40 pax)",
+            rooms: "Twin Sharing Basis",
+            arrivalDate: "Multiple dates available between Oct 24 - Mar 25 and Apr 25 - Sep 25",
+            duration: "6N7D Mini Europe (Italy, Switzerland, France)",
+            costBasis: "Cost Based On Group Size and Hotel Category"
+        },
+        hotelDetails: [
+            {
+                city: "Milan",
+                hotel: "3* Options: B&B/Idea/Ibis | 4* Options: Holiday Inn/Da Vinci/Una/Crown Plaza",
+                roomType: "Standard Room"
+            },
+            {
+                city: "Zurich",
+                hotel: "3* Options: Ibis/Holiday Inn Express/B&B Belair | 4* Options: DoubleTree/Hilton/Airport Hotels",
+                roomType: "Standard Room"
+            },
+            {
+                city: "Paris",
+                hotel: "3* Options: Ibis/Kyriad/Campanile | 4* Options: Mercure/Pen/Best Western",
+                roomType: "Standard Room"
+            }
+        ],
+        tourSummary: [
+            "Day 1: Arrival in Milan - City Orientation Tour",
+            "Day 2: Como - Lugano - Zurich Tour",
+            "Day 3: Mount Titlis & Lucerne Excursion",
+            "Day 4: Bern & Interlaken Discovery",
+            "Day 5: Travel to Paris",
+            "Day 6: Paris City Tour & Seine River Cruise",
+            "Day 7: Departure"
+        ],
+        inclusions: [
+            "6 Nights Accommodation in 3 Star or 4 Star Hotels (as per selection)",
+            "Daily Hot Buffet Breakfast",
+            "Dinners (Local/Chinese/Indian/Muslim Meal options)",
+            "All Sightseeing and excursions as per itinerary",
+            "Mount Titlis return journey",
+            "1-way train ticket from Meiringen to Lungern (2nd Class)",
+            "Transportation via LDC Coach",
+            "Seine River Cruise in Paris",
+            "Professional Tour Guide Services"
+        ],
+        exclusions: [
+            "Airfare",
+            "Visa Fees",
+            "Personal Expenses",
+            "Any item not mentioned under Inclusions",
+            "Travel Insurance",
+            "City Tourist Tax (if applicable)"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrival in Milan, Italy",
+                description: "Meet & Greet Services at Milan International Airport. Start your European adventure with an LDC Coach at disposal for 6 days. Orientation Tour of Milan to explore the highlights of this fashion capital. Enjoy dinner and overnight stay."
+            },
+            {
+                day: 2,
+                title: "Explore Como, Lugano & Zurich",
+                description: "Begin with breakfast, check out and transfer to Como (50 km) for a scenic tour. Continue to Lugano, Switzerland (40 km) for city orientation. Travel to Zurich via Gotthard Tunnel (210 km). Dinner and overnight stay."
+            },
+            {
+                day: 3,
+                title: "Mount Titlis & Lucerne Excursion",
+                description: "Full-day excursion to Mount Titlis & Lucerne. Travel to Engelberg (85 km) and experience Mount Titlis with return journey. Orientation Tour of Lucerne. Return to Zurich for dinner and overnight stay."
+            },
+            {
+                day: 4,
+                title: "Discover Bern & Interlaken",
+                description: "Proceed to Bern for orientation tour. Continue to Interlaken for sightseeing. Journey to Meiringen for scenic train to Lungern. Return to Zurich for dinner and overnight stay."
+            },
+            {
+                day: 5,
+                title: "Travel to Paris, France",
+                description: "Long drive to Paris, France (650 km | 8 hr). Arrive in the evening for dinner and overnight stay."
+            },
+            {
+                day: 6,
+                title: "Guided City Tour of Paris",
+                description: "Half-day guided city tour of Paris. Free time for shopping. Seine River Cruise included. Dinner and overnight stay in Paris."
+            },
+            {
+                day: 7,
+                title: "Departure",
+                description: "After breakfast, transfer to CDG Airport for departure."
+            }
+        ],
+        images: [
+            "/UGCImages/Images4/europe/horizontal/1.webp",
+            "/UGCImages/Images4/europe/horizontal/2.webp",
+            "/UGCImages/Images4/europe/horizontal/3.webp",
+            "/UGCImages/Images4/europe/horizontal/4.webp",
+            "/UGCImages/Images4/europe/horizontal/5.webp",
+            "/UGCImages/Images4/europe/horizontal/6.webp"
+        ]
+    },
+    almaty: {
+        id: "TDWOF002",
+        country: "Almaty",
+        days: 3,
+        nights: 4,
+        description: "Experience the beauty of Kazakhstan's largest city with its stunning mountain backdrop and modern culture.",
+        groupDetails: {
+            pax: "Group Tour",
+            rooms: "Twin Sharing Basis",
+            arrivalDate: "Multiple dates available",
+            duration: "4N3D Almaty",
+            costBasis: "Cost Based On Double Sharing"
+        },
+        dateStart: "Contact for dates",
+        dateEnd: "Contact for dates",
+        hotelDetails: [
+            {
+                city: "Almaty",
+                hotel: "4 Star Hotel",
+                roomType: "Standard Room"
+            }
+        ],
+        // ... rest of the structure
+        images: [
+            "/UGCImages/almaty/1.webp",
+            "/UGCImages/almaty/2.webp"
+        ]
+    },
+    dubai: {
+        id: "TDWOF003",
+        country: "Dubai",
+        days: 5,
+        nights: 4,
+        amount: 35000,
+        dateStart: "Feb 2025",
+        dateEnd: "April 2025",
+        description: "Explore the modern marvel of Dubai with its stunning architecture, desert adventures, and luxury shopping.",
+        groupDetails: {
+            pax: "Group Tour",
+            rooms: "Twin Sharing Basis",
+            arrivalDate: "Multiple dates: Feb 2025 / March 2025 / April 2025",
+            duration: "4N5D Dubai",
+            costBasis: "Cost Based On Double Sharing"
+        },
+        hotelDetails: [
+            {
+                city: "Dubai",
+                hotel: "4 Star Hotel",
+                roomType: "Standard Room"
+            }
+        ],
+        // ... rest of the structure
+        images: [
+            "/UGCImages/dubai/1.webp",
+            "/UGCImages/dubai/2.webp"
+        ]
+    },
+    hongKongMacau: {
+        id: "TDWOF004",
+        country: "Hong Kong & Macau",
+        days: 5,
+        nights: 4,
+        amount: 85494,
+        dateStart: "May 2025",
+        dateEnd: "June 2025",
+        description: "Experience the best of two unique destinations - Hong Kong's vibrant city life and Macau's entertainment scene.",
+        groupDetails: {
+            pax: "Group Tour",
+            rooms: "Twin Sharing Basis",
+            arrivalDate: "Multiple dates in May and June 2025",
+            duration: "4N5D Hong Kong & Macau",
+            costBasis: "Cost Based On Double Sharing"
+        },
+        hotelDetails: [
+            {
+                city: "Hong Kong",
+                hotel: "4 Star Hotel",
+                roomType: "Standard Room"
+            },
+            {
+                city: "Macau",
+                hotel: "4 Star Hotel",
+                roomType: "Standard Room"
+            }
+        ],
+        tourSummary: [
+            "Day 1: Hong Kong Arrival",
+            "Day 2: Hong Kong City Tour",
+            "Day 3: Transfer to Macau",
+            "Day 4: Macau City Tour",
+            "Day 5: Departure"
+        ],
+        inclusions: [
+            "Hotel Accommodation",
+            "Daily Breakfast",
+            "City Tours",
+            "Ferry Transfers"
+        ],
+        exclusions: [
+            "Flights",
+            "Visa Fees",
+            "Personal Expenses"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Hong Kong Arrival",
+                description: "Arrival and transfer to hotel"
+            }
+        ],
+        images: [
+            "/UGCImages/hongkong/1.webp",
+            "/UGCImages/hongkong/2.webp"
+        ]
+    },
+    sriLanka: {
+        id: "TDWOF005",
+        country: "Sri Lanka",
+        days: 3,
+        nights: 2,
+        dateStart: "11 Jan 2025",
+        dateEnd: "31 March 2025",
+        description: "Discover the pearl of Indian Ocean with its rich culture, wildlife, and beautiful beaches.",
+        groupDetails: {
+            pax: "Group Tour",
+            rooms: "Twin Sharing Basis",
+            arrivalDate: "Multiple dates available",
+            duration: "2N3D Sri Lanka",
+            costBasis: "Cost Based On Double Sharing"
+        },
+        hotelDetails: [
+            {
+                city: "Colombo",
+                hotel: "4 Star Hotel",
+                roomType: "Standard Room"
+            }
+        ],
+        tourSummary: ["Day 1: Arrival", "Day 2: City Tour", "Day 3: Departure"],
+        inclusions: ["Hotel", "Breakfast", "Transfers"],
+        exclusions: ["Flights", "Visa", "Personal Expenses"],
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrival Day",
+                description: "Welcome to Sri Lanka"
+            }
+        ]
+    },
+    malaysia: {
+        id: "TDWOF008",
+        country: "Malaysia",
+        days: 4,
+        nights: 3,
+        amount: 20000,
+        dateStart: "1 Feb 2025",
+        dateEnd: "1 April 2025",
+        description: "Experience Malaysia's diverse culture, modern cities, and natural wonders.",
+        // ... rest of the structure
+    },
+    southKorea: {
+        id: "TDWOF009",
+        country: "South Korea",
+        days: 7,
+        nights: 6,
+        dateStart: "Contact for dates",
+        dateEnd: "Contact for dates",
+        description: "Explore the land of K-pop, ancient temples, and modern technology.",
+        // ... rest of the structure
+    },
+    bali: {
+        id: "TDWOF010",
+        country: "Bali",
+        days: 7,
+        nights: 6,
+        dateStart: "Contact for dates",
+        dateEnd: "31 March 2025",
+        description: "Experience the island of gods with its beautiful beaches, rich culture, and spiritual atmosphere.",
+        // ... rest of the structure
+    },
+    bhutan: {
+        id: "TDWOF011",
+        country: "Bhutan",
+        days: 5,
+        nights: 6,
+        dateStart: "23 Feb 2025",
+        dateEnd: "10 August 2025",
+        description: "Visit the last Shangri-La and experience its unique culture and pristine nature.",
+        groupDetails: {
+            pax: "Group Tour",
+            rooms: "Twin Sharing Basis",
+            arrivalDate: "Multiple dates: 23 Feb, 16 & 30 March, 6,13,20,27 April, 4,11,18,25 May, 1,8,15,22 June, 20 July, 10 Aug",
+            duration: "6N5D Bhutan",
+            costBasis: "Cost Based On Double Sharing"
+        },
+        // ... rest of the structure
+    },
+    himachal: {
+        id: "TDWOF012",
+        country: "Himachal",
+        days: 2,
+        nights: 3,
+        amount: 28000,
+        dateStart: "1 Feb",
+        dateEnd: "31 March",
+        description: "Explore the beauty of Himachal Pradesh with its snow-capped mountains and peaceful valleys.",
+        // ... rest of the structure
+    }
+};
+
+export function isFixedDeparture(destination: FixedDeparture | DestinationWithoutFlight): destination is FixedDeparture {
+    return 'flightFrom' in destination;
+}
+
+export function isDestinationWithoutFlight(destination: FixedDeparture | DestinationWithoutFlight): destination is DestinationWithoutFlight {
+    return !('flightFrom' in destination);
+}
+
+// Create groups of destinations for pagination
+export const destinationGroups = [
+    {
+        miniEurope: destinationsWithoutFlight.miniEurope,
+        almaty: destinationsWithoutFlight.almaty,
+        dubai: destinationsWithoutFlight.dubai
+    },
+    {
+        hongKongMacau: destinationsWithoutFlight.hongKongMacau,
+        sriLanka: destinationsWithoutFlight.sriLanka,
+        malaysia: destinationsWithoutFlight.malaysia
+    },
+    {
+        southKorea: destinationsWithoutFlight.southKorea,
+        bali: destinationsWithoutFlight.bali,
+        bhutan: destinationsWithoutFlight.bhutan,
+        himachal: destinationsWithoutFlight.himachal
+    }
+];
+
+// Helper function to get total number of pages
+export const getTotalPages = (): number => destinationGroups.length;
+
+// Helper function to get destinations for a specific page
+export const getDestinationsForPage = (page: number) => {
+    if (page < 0 || page >= destinationGroups.length) {
+        return {};
+    }
+    return destinationGroups[page];
 }; 

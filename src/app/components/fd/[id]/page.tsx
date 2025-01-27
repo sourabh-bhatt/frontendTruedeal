@@ -1,6 +1,12 @@
 'use client';
 
-import { fixedDeparturesData } from '../data';
+import { 
+    fixedDeparturesData, 
+    destinationsWithoutFlight, 
+    FixedDeparture, 
+    DestinationWithoutFlight,
+    isFixedDeparture 
+} from '../data';
 import { notFound } from 'next/navigation';
 import { FaPlane, FaCalendarAlt } from 'react-icons/fa';
 import { use, useState, useEffect, useRef } from 'react';
@@ -30,11 +36,18 @@ function formatIndianPrice(price: number): string {
 
 export default function FixedDeparturePage({ params }: PageProps) {
     const { id } = use(params);
-    const destination = Object.values(fixedDeparturesData).find(dest => dest.id === id);
+    
+    // Look for the destination in both data objects
+    const destination: FixedDeparture | DestinationWithoutFlight | undefined = 
+        Object.values(fixedDeparturesData).find(dest => dest.id === id) || 
+        Object.values(destinationsWithoutFlight).find(dest => dest.id === id);
     
     if (!destination) {
         notFound();
     }
+
+    // Check if it's a fixed departure using the type guard
+    const isFixedDep = isFixedDeparture(destination);
 
     const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
     const [activeTab, setActiveTab] = useState("overview");
@@ -90,12 +103,12 @@ export default function FixedDeparturePage({ params }: PageProps) {
     useEffect(() => {
         const timer = setInterval(() => {
             setCurrentImageIndex((prev) => 
-                prev === destination.images.length - 1 ? 0 : prev + 1
+                prev === (destination?.images?.length || 1) - 1 ? 0 : prev + 1
             );
-        }, 5000); // Change image every 5 seconds
+        }, 5000);
 
         return () => clearInterval(timer);
-    }, [destination.images.length]);
+    }, [destination?.images?.length]);
 
     const scrollToSection = (sectionRef: React.RefObject<HTMLDivElement>, tabId: string) => {
         sectionRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -109,7 +122,7 @@ export default function FixedDeparturePage({ params }: PageProps) {
                 <AnimatePresence mode='wait'>
                     <motion.img 
                         key={currentImageIndex}
-                        src={destination.images[currentImageIndex]}
+                        src={destination?.images?.[currentImageIndex] || '/default-image.jpg'}
                         alt={destination.country}
                         className="absolute w-full h-full object-cover object-center"
                         initial={{ opacity: 0 }}
@@ -134,10 +147,12 @@ export default function FixedDeparturePage({ params }: PageProps) {
                                 <FaCalendarAlt className="text-[#00f6ff] text-2xl" /> 
                                 <span className="text-gray-100">{destination.dateStart} - {destination.dateEnd}</span>
                             </span>
-                            <span className="flex items-center gap-3">
-                                <FaPlane className="text-[#00f6ff] text-2xl" /> 
-                                <span className="text-gray-100">{destination.flightFrom}</span>
-                            </span>
+                            {isFixedDep && (
+                                <span className="flex items-center gap-3">
+                                    <FaPlane className="text-[#00f6ff] text-2xl" /> 
+                                    <span className="text-gray-100">{destination.flightFrom}</span>
+                                </span>
+                            )}
                         </div>
                     </motion.div>
                 </div>
@@ -203,7 +218,7 @@ export default function FixedDeparturePage({ params }: PageProps) {
                                 <div className="bg-blue-50 rounded-lg p-4 mb-6">
                                     <h3 className="text-lg font-semibold mb-4">Tour Overview</h3>
                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                        {destination.tourSummary.map((day, index) => (
+                                        {destination.tourSummary?.map((day, index) => (
                                             <div key={index} className="flex gap-2">
                                                 <span className="text-[#017ae3] font-medium whitespace-nowrap">Day {index + 1}:</span>
                                                 <span className="text-gray-600">{day.replace(/^Day \d+: /, '')}</span>
@@ -213,7 +228,7 @@ export default function FixedDeparturePage({ params }: PageProps) {
                                 </div>
 
                                 {/* Departure Dates Section */}
-                                {destination.groupDetails.arrivalDate.includes('Available Dates:') && (
+                                {destination.groupDetails?.arrivalDate?.includes('Available Dates:') && (
                                     <div className="mb-6">
                                         <h3 className="text-xl font-semibold mb-4">Available Departure Dates</h3>
                                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -231,22 +246,26 @@ export default function FixedDeparturePage({ params }: PageProps) {
 
                                 {/* Tour Details Grid */}
                                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                                    <div className="bg-gray-50 p-4 rounded-lg">
-                                        <h4 className="font-semibold mb-2">Duration</h4>
-                                        <p>{destination.groupDetails.duration}</p>
-                                    </div>
-                                    <div className="bg-gray-50 p-4 rounded-lg">
-                                        <h4 className="font-semibold mb-2">Accommodation</h4>
-                                        <p>{destination.groupDetails.rooms}</p>
-                                    </div>
-                                    <div className="bg-gray-50 p-4 rounded-lg">
-                                        <h4 className="font-semibold mb-2">Group Size</h4>
-                                        <p>{destination.groupDetails.pax}</p>
-                                    </div>
-                                    <div className="bg-gray-50 p-4 rounded-lg">
-                                        <h4 className="font-semibold mb-2">Cost Basis</h4>
-                                        <p>{destination.groupDetails.costBasis}</p>
-                                    </div>
+                                    {destination.groupDetails && (
+                                        <>
+                                            <div className="bg-gray-50 p-4 rounded-lg">
+                                                <h4 className="font-semibold mb-2">Duration</h4>
+                                                <p>{destination.groupDetails.duration}</p>
+                                            </div>
+                                            <div className="bg-gray-50 p-4 rounded-lg">
+                                                <h4 className="font-semibold mb-2">Accommodation</h4>
+                                                <p>{destination.groupDetails.rooms}</p>
+                                            </div>
+                                            <div className="bg-gray-50 p-4 rounded-lg">
+                                                <h4 className="font-semibold mb-2">Group Size</h4>
+                                                <p>{destination.groupDetails.pax}</p>
+                                            </div>
+                                            <div className="bg-gray-50 p-4 rounded-lg">
+                                                <h4 className="font-semibold mb-2">Cost Basis</h4>
+                                                <p>{destination.groupDetails.costBasis}</p>
+                                            </div>
+                                        </>
+                                    )}
                                 </div>
                             </div>
                         </div>
@@ -255,8 +274,12 @@ export default function FixedDeparturePage({ params }: PageProps) {
                         <div className="space-y-4">
                             <div className="bg-white rounded-lg shadow-sm p-6">
                                 <div className="text-center mb-4">
-                                    <p className="text-gray-500 line-through">₹{formatIndianPrice(destination.amount * 1.2)}/-</p>
-                                    <p className="text-3xl font-bold text-[#017ae3]">₹{formatIndianPrice(destination.amount)}/-</p>
+                                    {destination.amount && (
+                                        <>
+                                            <p className="text-gray-500 line-through">₹{formatIndianPrice(destination.amount * 1.2)}/-</p>
+                                            <p className="text-3xl font-bold text-[#017ae3]">₹{formatIndianPrice(destination.amount)}/-</p>
+                                        </>
+                                    )}
                                     <p className="text-sm text-gray-500">per person</p>
                                 </div>
                                 <Button 
@@ -271,66 +294,68 @@ export default function FixedDeparturePage({ params }: PageProps) {
                 </div>
 
                 {/* Updated Itinerary Section */}
-                <div ref={itineraryRef} className="scroll-mt-16 mt-8">
-                    <div className="bg-white rounded-lg shadow-sm p-6">
-                        <h2 className="text-2xl font-bold mb-6 text-[#017ae3] border-b pb-4">Detailed Itinerary</h2>
-                        <div className="space-y-6">
-                            {destination.itinerary.map((day, index) => (
-                                <div key={index} className="group">
-                                    <div 
-                                        className="flex items-center gap-4 cursor-pointer bg-gradient-to-r from-[#017ae3]/5 to-[#00f6ff]/5 p-4 rounded-lg hover:from-[#017ae3]/10 hover:to-[#00f6ff]/10 transition-colors"
-                                        onClick={() => setOpenDay(openDay === index ? null : index)}
-                                    >
-                                        <div className="flex-shrink-0 w-24">
-                                            <div className="text-sm text-[#017ae3]">Day {day.day}</div>
+                {destination.itinerary && (
+                    <div ref={itineraryRef} className="scroll-mt-16 mt-8">
+                        <div className="bg-white rounded-lg shadow-sm p-6">
+                            <h2 className="text-2xl font-bold mb-6 text-[#017ae3] border-b pb-4">Detailed Itinerary</h2>
+                            <div className="space-y-6">
+                                {destination.itinerary.map((day, index) => (
+                                    <div key={index} className="group">
+                                        <div 
+                                            className="flex items-center gap-4 cursor-pointer bg-gradient-to-r from-[#017ae3]/5 to-[#00f6ff]/5 p-4 rounded-lg hover:from-[#017ae3]/10 hover:to-[#00f6ff]/10 transition-colors"
+                                            onClick={() => setOpenDay(openDay === index ? null : index)}
+                                        >
+                                            <div className="flex-shrink-0 w-24">
+                                                <div className="text-sm text-[#017ae3]">Day {day.day}</div>
+                                            </div>
+                                            <div className="flex-grow">
+                                                <h3 className="text-lg font-semibold text-gray-800">{day.title}</h3>
+                                            </div>
+                                            <div className="flex-shrink-0">
+                                                <svg 
+                                                    className={`w-6 h-6 text-[#017ae3] transform transition-transform duration-300 ${
+                                                        openDay === index ? 'rotate-180' : ''
+                                                    }`}
+                                                    fill="none" 
+                                                    stroke="currentColor" 
+                                                    viewBox="0 0 24 24"
+                                                >
+                                                    <path 
+                                                        strokeLinecap="round" 
+                                                        strokeLinejoin="round" 
+                                                        strokeWidth={2} 
+                                                        d="M19 9l-7 7-7-7" 
+                                                    />
+                                                </svg>
+                                            </div>
                                         </div>
-                                        <div className="flex-grow">
-                                            <h3 className="text-lg font-semibold text-gray-800">{day.title}</h3>
-                                        </div>
-                                        <div className="flex-shrink-0">
-                                            <svg 
-                                                className={`w-6 h-6 text-[#017ae3] transform transition-transform duration-300 ${
-                                                    openDay === index ? 'rotate-180' : ''
-                                                }`}
-                                                fill="none" 
-                                                stroke="currentColor" 
-                                                viewBox="0 0 24 24"
-                                            >
-                                                <path 
-                                                    strokeLinecap="round" 
-                                                    strokeLinejoin="round" 
-                                                    strokeWidth={2} 
-                                                    d="M19 9l-7 7-7-7" 
-                                                />
-                                            </svg>
-                                        </div>
+                                        <AnimatePresence>
+                                            {openDay === index && (
+                                                <motion.div 
+                                                    initial={{ height: 0, opacity: 0 }}
+                                                    animate={{ height: "auto", opacity: 1 }}
+                                                    exit={{ height: 0, opacity: 0 }}
+                                                    transition={{ duration: 0.3 }}
+                                                    className="overflow-hidden"
+                                                >
+                                                    <div className="mt-2 pl-28 pr-4 py-4">
+                                                        <p className="text-gray-600">{day.description}</p>
+                                                    </div>
+                                                </motion.div>
+                                            )}
+                                        </AnimatePresence>
                                     </div>
-                                    <AnimatePresence>
-                                        {openDay === index && (
-                                            <motion.div 
-                                                initial={{ height: 0, opacity: 0 }}
-                                                animate={{ height: "auto", opacity: 1 }}
-                                                exit={{ height: 0, opacity: 0 }}
-                                                transition={{ duration: 0.3 }}
-                                                className="overflow-hidden"
-                                            >
-                                                <div className="mt-2 pl-28 pr-4 py-4">
-                                                    <p className="text-gray-600">{day.description}</p>
-                                                </div>
-                                            </motion.div>
-                                        )}
-                                    </AnimatePresence>
-                                </div>
-                            ))}
+                                ))}
+                            </div>
                         </div>
                     </div>
-                </div>
+                )}
 
                 <div ref={inclusionsRef} className="scroll-mt-16">
                     <div className="bg-white rounded-lg shadow-sm p-6">
                         <h2 className="text-2xl font-bold mb-6 text-primary border-b pb-4">Tour Inclusions</h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            {destination.inclusions.map((item, index) => (
+                            {destination.inclusions?.map((item, index) => (
                                 <div key={index} className="flex items-start gap-2 bg-gray-50 p-4 rounded-lg">
                                     <span className="text-green-500 text-xl">✓</span>
                                     <span className="text-gray-700">{item}</span>
@@ -344,7 +369,7 @@ export default function FixedDeparturePage({ params }: PageProps) {
                     <div className="bg-white rounded-lg shadow-sm p-6">
                         <h2 className="text-2xl font-bold mb-6 text-primary border-b pb-4">Tour Exclusions</h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            {destination.exclusions.map((item, index) => (
+                            {destination.exclusions?.map((item, index) => (
                                 <div key={index} className="flex items-start gap-2 bg-gray-50 p-4 rounded-lg">
                                     <span className="text-red-500 text-xl">✕</span>
                                     <span className="text-gray-700">{item}</span>
@@ -359,18 +384,20 @@ export default function FixedDeparturePage({ params }: PageProps) {
                         <h2 className="text-2xl font-bold mb-6 text-primary border-b pb-4">Other Information</h2>
                         {/* Add other relevant information here */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <h3 className="text-xl font-semibold mb-4">Hotels</h3>
-                                <div className="space-y-4">
-                                    {destination.hotelDetails.map((hotel, index) => (
-                                        <div key={index} className="bg-gray-50 p-4 rounded-lg">
-                                            <h4 className="font-bold text-lg mb-1">{hotel.city}</h4>
-                                            <p className="text-gray-600">{hotel.hotel}</p>
-                                            <p className="text-gray-500 text-sm">{hotel.roomType}</p>
-                                        </div>
-                                    ))}
+                            {destination.hotelDetails && (
+                                <div>
+                                    <h3 className="text-xl font-semibold mb-4">Hotels</h3>
+                                    <div className="space-y-4">
+                                        {destination.hotelDetails.map((hotel, index) => (
+                                            <div key={index} className="bg-gray-50 p-4 rounded-lg">
+                                                <h4 className="font-bold text-lg mb-1">{hotel.city}</h4>
+                                                <p className="text-gray-600">{hotel.hotel}</p>
+                                                <p className="text-gray-500 text-sm">{hotel.roomType}</p>
+                                            </div>
+                                        ))}
+                                    </div>
                                 </div>
-                            </div>
+                            )}
                         </div>
                     </div>
                 </div>
@@ -382,7 +409,7 @@ export default function FixedDeparturePage({ params }: PageProps) {
 
             {/* Floating CTA Button - Shows on scroll */}
             <AnimatePresence>
-                {showFloatingCTA && (
+                {showFloatingCTA && destination.amount && (
                     <motion.div 
                         className="fixed bottom-28 right-4 md:bottom-24 md:right-6 z-30"
                         initial={{ opacity: 0, scale: 0.5, y: 50 }}
@@ -421,6 +448,14 @@ export default function FixedDeparturePage({ params }: PageProps) {
                 price={destination.amount}
                 dates={`${destination.dateStart} - ${destination.dateEnd}`}
             />
+
+            {/* Conditionally render flight-specific information */}
+            {isFixedDep && (
+                <div className="bg-white rounded-lg shadow-sm p-6">
+                    <h2 className="text-2xl font-bold mb-6 text-primary border-b pb-4">Flight Information</h2>
+                    {/* Add flight-specific details here */}
+                </div>
+            )}
 
             {/* Add some CSS to handle scrollbar */}
             <style jsx global>{`
