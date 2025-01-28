@@ -52,8 +52,8 @@ export default function Indonesia() {
     };
 
     return (
-        <div className="min-h-screen bg-gray-50 pt-5">
-            <div className="container mx-auto px-4 py-8">
+        <div className="min-h-screen bg-gray-50 pt-5 ">
+            <div className="container mx-auto px-4 py-8 ">
                 <h1 className="text-4xl font-bold text-center mb-8 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] bg-clip-text text-transparent">
                     Indonesia Packages
                 </h1>
@@ -90,7 +90,7 @@ export default function Indonesia() {
                 </div>
 
                 {/* Package Cards Carousel */}
-                <div className="relative px-12">
+                <div className="relative px-12 ">
                     {/* Navigation Buttons - Always visible */}
                     {totalPages > 1 && (
                         <>
@@ -111,38 +111,53 @@ export default function Indonesia() {
                         </>
                     )}
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                         {currentPackages.map((pkg) => (
                             <Link
                                 href={`/indonesia/${pkg.id}`}
                                 key={pkg.id}
-                                className="group relative bg-black rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+                                className="relative group h-[450px] w-[300px] md:w-auto rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex-shrink-0"
                             >
-                                <div className="relative h-[300px] sm:h-[350px] md:h-[400px]">
-                                    <Image
-                                        src={pkg.image}
-                                        alt={pkg.name}
-                                        fill
-                                        className="object-cover group-hover:scale-110 transition-transform duration-300 opacity-80"
-                                    />
-                                    <div className="absolute top-4 right-4">
-                                        <div className="bg-yellow-400 text-black px-4 py-1 rounded-full text-sm font-medium">
-                                            Customised
-                                        </div>
+                                {/* Background Image */}
+                                <Image
+                                    src={pkg.image}
+                                    alt={pkg.name}
+                                    fill
+                                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                                />
+                                
+                                {/* Gradient Overlay */}
+                                <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/50 to-black" />
+
+                                {/* Customised Tag */}
+                                <div className="absolute top-3 left-0 z-10">
+                                    <div className="bg-yellow-400 px-4 py-1.5 rounded-full shadow-lg">
+                                        <span className="font-medium">Customised</span>
                                     </div>
                                 </div>
-                                <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 bg-gradient-to-t from-black via-black/80 to-transparent">
-                                    <h3 className="font-bold text-xl md:text-2xl mb-2 md:mb-4 text-white line-clamp-2">{pkg.name}</h3>
-                                    <div className="space-y-2 mb-4">
-                                        <div className="flex items-center gap-2 text-white/90 text-sm md:text-base">
-                                            <Clock className="w-4 h-4" />
-                                            {pkg.duration.nights}N/{pkg.duration.days}D
-                                        </div>
-                                        <div className="flex items-center gap-2 text-white/90 text-sm md:text-base">
-                                            <MapPin className="w-4 h-4" />
-                                            <span className="line-clamp-1 font-bold text-yellow-400">₹{pkg.price.toLocaleString()}</span>
-                                        </div>
 
+                                {/* Content */}
+                                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                    <h2 className="text-2xl font-bold mb-2">
+                                        {pkg.name}
+                                    </h2>
+
+                                    {/* Details Grid */}
+                                    <div className="grid grid-cols-2 gap-y-2 text-sm mb-4">
+                                        <div className="flex items-center gap-2">
+                                            <Clock className="w-4 h-4 text-yellow-400" />
+                                            <span>{pkg.duration.nights}N/{pkg.duration.days}D</span>
+                                        </div>
+                                        <div className="flex items-center gap-2">
+                                            <MapPin className="w-4 h-4 text-yellow-400" />
+                                            <span className="font-bold text-yellow-400">₹{pkg.price.toLocaleString()}</span>
+                                        </div>
+                                    </div>
+
+                                    {/* View Details Button */}
+                                    <div className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white transition-all duration-500 py-2.5 rounded-md text-center">
+                                        View Details
                                     </div>
                                 </div>
                             </Link>
