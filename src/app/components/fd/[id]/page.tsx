@@ -51,7 +51,6 @@ export default function FixedDeparturePage({ params }: PageProps) {
 
     const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
     const [activeTab, setActiveTab] = useState("overview");
-    const [isTabsSticky, setIsTabsSticky] = useState(false);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [openDay, setOpenDay] = useState<number | null>(null);
     const [showFloatingCTA, setShowFloatingCTA] = useState(false);
@@ -63,7 +62,7 @@ export default function FixedDeparturePage({ params }: PageProps) {
     const otherRef = useRef<HTMLDivElement>(null);
     const tabsRef = useRef<HTMLDivElement>(null);
 
-    const { scrollY } = useScroll();
+    useScroll();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -77,12 +76,6 @@ export default function FixedDeparturePage({ params }: PageProps) {
 
             // Show floating CTA after scrolling 200px
             setShowFloatingCTA(window.scrollY > 200);
-
-            // Check if tabs should be sticky
-            if (tabsRef.current) {
-                const tabsPosition = tabsRef.current.getBoundingClientRect().top;
-                setIsTabsSticky(tabsPosition <= 0);
-            }
 
             // Find the current section in view
             for (const section of sections) {

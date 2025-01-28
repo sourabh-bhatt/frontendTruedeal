@@ -23,8 +23,8 @@ export function BookingFormModal({
     isOpen, 
     onClose, 
     destinationName,
-    price,
-    dates 
+    // price,
+    // dates 
 }: BookingFormModalProps) {
     const [formData, setFormData] = useState({
         destination: destinationName,

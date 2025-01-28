@@ -2,10 +2,11 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { fixedDeparturesData, destinationsWithoutFlight, FixedDeparture, DestinationWithoutFlight, destinationGroups, getTotalPages } from './data';
+import { fixedDeparturesData, FixedDeparture, DestinationWithoutFlight, destinationGroups, getTotalPages } from './data';
 import { FaPlane, FaCalendarAlt, FaClock, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { IoLocationSharp } from 'react-icons/io5';
 import { Button } from "@/components/ui/button";
+import Image from 'next/image';
 
 export default function FixedDepartures() {
     const [currentPage, setCurrentPage] = useState(0);
@@ -34,10 +35,12 @@ export default function FixedDepartures() {
                         className="relative group h-[500px] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
                     >
                         {/* Background Image */}
-                        <img 
+                        <Image 
                             src={departure.images?.[0] || '/default-destination-image.jpg'} 
                             alt={departure.country}
-                            className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            fill
+                            className="object-cover group-hover:scale-105 transition-transform duration-500"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
                         />
                         
                         {/* Gradient Overlay */}
@@ -148,10 +151,12 @@ export default function FixedDepartures() {
                             className="relative group h-[500px] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
                         >
                             {/* Background Image */}
-                            <img 
+                            <Image 
                                 src={destination.images?.[0] || '/default-destination-image.jpg'} 
                                 alt={destination.country}
-                                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                fill
+                                className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                             />
                             
                             {/* Gradient Overlay */}

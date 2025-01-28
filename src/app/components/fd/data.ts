@@ -41,7 +41,9 @@ export interface FixedDeparture extends BaseDestination {
 }
 
 export interface DestinationWithoutFlight extends BaseDestination {
-    // Any additional properties specific to destinations without flight
+    packageType?: 'land-only' | 'customizable';
+    visaRequired?: boolean;
+    minGroupSize?: number;
 }
 
 export const fixedDepartures: FixedDeparture[] = [
