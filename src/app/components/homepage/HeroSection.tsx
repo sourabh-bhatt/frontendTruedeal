@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useMemo, useCallback, useRef } from "react"
-import { Search, MapPin, Globe, Instagram, Shield, Users, Award, Briefcase, CreditCard, Plane, Gift, Clock, Wallet, Star, Building, Phone } from "lucide-react"
+import { Search, MapPin, Globe, Shield, Award, Briefcase, CreditCard, Star, Phone } from "lucide-react"
 import { useRouter } from "next/navigation"
 import { motion } from "framer-motion"
 import { Input } from "@/components/ui/input"

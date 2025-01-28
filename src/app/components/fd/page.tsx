@@ -26,6 +26,7 @@ export default function FixedDepartures() {
             <h1 className="text-3xl font-bold mb-8 text-center">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
                     Fixed Departures
+                    <p className="text-sm text-gray-500 mt-1 underline">With Flights</p>
                 </span>
             </h1>
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-16">
@@ -50,8 +51,12 @@ export default function FixedDepartures() {
                         {departure.amount && (
                             <div className="absolute top-3 left-0 z-10">
                                 <div className="bg-yellow-400 px-4 py-1.5 rounded-full shadow-lg">
-                                    <span className="line-through text-sm mr-2">₹{(departure.amount * 1.2).toLocaleString()}/-</span>
-                                    <span className="font-bold">₹{departure.amount.toLocaleString()}/-</span>
+                                    <span className="line-through text-sm mr-2">
+                                        ₹{departure.amount * 1.2 >= 1000 ? (departure.amount * 1.2).toLocaleString('en-IN') : departure.amount * 1.2}/-
+                                    </span>
+                                    <span className="font-bold">
+                                        ₹{departure.amount >= 1000 ? departure.amount.toLocaleString('en-IN') : departure.amount}/-
+                                    </span>
                                     <span className="text-sm ml-1">onwards</span>
                                 </div>
                             </div>
@@ -116,31 +121,42 @@ export default function FixedDepartures() {
             <div className="mb-16">
                 <h2 className="text-3xl font-bold mb-8 text-center">
                     <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
-                        Tour Packages
+                        Fixed Departures
+                        <p className="text-sm text-gray-500 mt-1 underline">Without Flights</p>
                     </span>
                 </h2>
                 
                 {/* Navigation Controls */}
-                <div className="flex justify-between items-center mb-6">
-                    <Button 
-                        onClick={handlePrevPage} 
-                        disabled={currentPage === 0}
-                        variant="outline"
-                        className="flex items-center gap-2"
-                    >
-                        <FaChevronLeft /> Previous
-                    </Button>
-                    <span className="text-sm text-gray-500">
-                        Page {currentPage + 1} of {totalPages}
-                    </span>
-                    <Button 
-                        onClick={handleNextPage} 
-                        disabled={currentPage === totalPages - 1}
-                        variant="outline"
-                        className="flex items-center gap-2"
-                    >
-                        Next <FaChevronRight />
-                    </Button>
+                <div className="relative mb-6">
+                    <div className="absolute left-0 top-1/2 -translate-y-1/2 z-10">
+                        <Button 
+                            onClick={handlePrevPage} 
+                            disabled={currentPage === 0}
+                            variant="outline"
+                            className="rounded-full w-10 h-10 p-0 hover:bg-gray-100"
+                            aria-label="Previous page"
+                        >
+                            <FaChevronLeft className="w-4 h-4" />
+                        </Button>
+                    </div>
+
+                    <div className="text-center">
+                        <span className="text-sm text-gray-500">
+                            Page {currentPage + 1} of {totalPages}
+                        </span>
+                    </div>
+
+                    <div className="absolute right-0 top-1/2 -translate-y-1/2 z-10">
+                        <Button 
+                            onClick={handleNextPage} 
+                            disabled={currentPage === totalPages - 1}
+                            variant="outline"
+                            className="rounded-full w-10 h-10 p-0 hover:bg-gray-100"
+                            aria-label="Next page"
+                        >
+                            <FaChevronRight className="w-4 h-4" />
+                        </Button>
+                    </div>
                 </div>
 
                 {/* Destinations Grid */}
@@ -166,8 +182,12 @@ export default function FixedDepartures() {
                             {destination.amount && (
                                 <div className="absolute top-3 left-0 z-10">
                                     <div className="bg-yellow-400 px-4 py-1.5 rounded-full shadow-lg">
-                                        <span className="line-through text-sm mr-2">₹{(destination.amount * 1.2).toLocaleString()}/-</span>
-                                        <span className="font-bold">₹{destination.amount.toLocaleString()}/-</span>
+                                        <span className="line-through text-sm mr-2">
+                                            ₹{destination.amount * 1.2 >= 1000 ? (destination.amount * 1.2).toLocaleString('en-IN') : destination.amount * 1.2}/-
+                                        </span>
+                                        <span className="font-bold">
+                                            ₹{destination.amount >= 1000 ? destination.amount.toLocaleString('en-IN') : destination.amount}/-
+                                        </span>
                                         <span className="text-sm ml-1">onwards</span>
                                     </div>
                                 </div>

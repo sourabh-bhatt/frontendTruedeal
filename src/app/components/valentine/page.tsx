@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 const bannerImages = [
   '/valentine/1.webp',
@@ -39,13 +40,14 @@ export default function BannerCarousel() {
           {/* First set of images */}
           {bannerImages.map((image, index) => (
             <div key={`first-${index}`} className="flex-shrink-0 w-full h-[280px] sm:h-[200px] md:h-[180px]">
-              <img
+              <Image
                 src={image}
                 alt={`Banner ${index + 1}`}
                 className="w-full h-full object-cover"
                 width={900}
                 height={180}
-                loading="eager"
+                priority={index === 0}
+                quality={85}
               />
             </div>
           ))}

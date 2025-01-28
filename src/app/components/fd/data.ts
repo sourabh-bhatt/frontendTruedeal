@@ -57,8 +57,8 @@ export const fixedDeparturesData: Record<string, FixedDeparture> = {
         days: 8,
         nights: 7,
         amount: 120500,
-        dateStart: "28 May",
-        dateEnd: "04 June",
+        dateStart: "28 May 2025",
+        dateEnd: "04 June 2025",
         flightFrom: "Mumbai",
         groupDetails: {
             pax: "Group Departure From Mumbai",
@@ -192,8 +192,8 @@ export const fixedDeparturesData: Record<string, FixedDeparture> = {
         days: 12,
         nights: 11,
         amount: 395000,
-        dateStart: "16 May",
-        dateEnd: "28 May",
+        dateStart: "16 May 2025",
+        dateEnd: "28 May 2025",
         flightFrom: "Delhi",
         groupDetails: {
             pax: "Group Departure From Raipur",
@@ -351,7 +351,6 @@ export const fixedDeparturesData: Record<string, FixedDeparture> = {
             "/UGCImages/Images4/germany/horizontal/6.webp",
             "/UGCImages/Images4/germany/horizontal/1.webp",
             "/UGCImages/Images4/germany/horizontal/2.webp",
-
         ]
     },
     vietnam2: {
@@ -360,9 +359,9 @@ export const fixedDeparturesData: Record<string, FixedDeparture> = {
         days: 8,
         nights: 7,
         amount: 95000,
-        dateStart: "Multiple Dates",
+        dateStart: "Multiple",
         dateEnd: "May 2025",
-        flightFrom: "Multiple Cities",
+        flightFrom: "Multiple",
         description: "Experience the best of Vietnam in 8 days covering Hanoi, Danang, and Ho Chi Minh. Explore natural beauty including Ha Long Bay, cultural treasures like ancient temples, and historic sites across Vietnam's most vibrant cities.",
         groupDetails: {
             pax: "Group Departure",
@@ -471,7 +470,6 @@ export const fixedDeparturesData: Record<string, FixedDeparture> = {
             "/UGCImages/images5/VIETNAM/HORIZONTAL/3.webp",
             "/UGCImages/images5/VIETNAM/HORIZONTAL/4.webp",
             "/UGCImages/images5/VIETNAM/HORIZONTAL/5.webp",
-
         ]
     }
 };
@@ -606,7 +604,6 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
                 roomType: "Standard Room"
             }
         ],
-        // ... rest of the structure
         images: [
             "/UGCImages/almaty/1.webp",
             "/UGCImages/almaty/2.webp"
@@ -635,7 +632,6 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
                 roomType: "Standard Room"
             }
         ],
-        // ... rest of the structure
         images: [
             "/UGCImages/dubai/1.webp",
             "/UGCImages/dubai/2.webp"
@@ -741,7 +737,6 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
         dateStart: "1 Feb 2025",
         dateEnd: "1 April 2025",
         description: "Experience Malaysia's diverse culture, modern cities, and natural wonders.",
-        // ... rest of the structure
     },
     southKorea: {
         id: "TDWOF009",
@@ -751,7 +746,6 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
         dateStart: "Contact for dates",
         dateEnd: "Contact for dates",
         description: "Explore the land of K-pop, ancient temples, and modern technology.",
-        // ... rest of the structure
     },
     bali: {
         id: "TDWOF010",
@@ -761,7 +755,6 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
         dateStart: "Contact for dates",
         dateEnd: "31 March 2025",
         description: "Experience the island of gods with its beautiful beaches, rich culture, and spiritual atmosphere.",
-        // ... rest of the structure
     },
     bhutan: {
         id: "TDWOF011",
@@ -778,7 +771,6 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
             duration: "6N5D Bhutan",
             costBasis: "Cost Based On Double Sharing"
         },
-        // ... rest of the structure
     },
     himachal: {
         id: "TDWOF012",
@@ -789,7 +781,6 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
         dateStart: "1 Feb",
         dateEnd: "31 March",
         description: "Explore the beauty of Himachal Pradesh with its snow-capped mountains and peaceful valleys.",
-        // ... rest of the structure
     }
 };
 
