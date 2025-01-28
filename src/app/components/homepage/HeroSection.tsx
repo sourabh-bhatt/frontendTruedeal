@@ -275,7 +275,7 @@ export default function HeroSection() {
 
     // Add new mobile stats section
     const MobileStatsSection = () => (
-        <div className="mt-4 mb-8 md:hidden block">
+        <div className="mt-8 mb-8 md:hidden block">
             <div className="container mx-auto px-4">
                 <div className="grid grid-cols-3 gap-2">
                     {/* MICE Services */}
@@ -364,7 +364,7 @@ export default function HeroSection() {
                 </div>
 
                 {/* Content */}
-                <div className="relative z-[2] flex flex-col items-center justify-start md:justify-center min-h-[80svh] md:min-h-screen text-white px-4 sm:px-6 lg:px-8 pt-20 md:py-0">
+                <div className="relative z-[2] flex flex-col items-center justify-start md:justify-center min-h-[80svh] md:min-h-screen text-white px-4 sm:px-6 lg:px-8 pt-32 md:pt-0 md:py-0">
                     <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-2 text-center">
                         <span className="font-poppins font-semibold">Discover Your Dream Vacation with</span>{" "}
                         <span className="font-poppins font-bold">Truedeal</span>
