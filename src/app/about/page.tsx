@@ -42,12 +42,14 @@ const AboutPage: React.FC = () => {
                             <div className="h-1 w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff]" />
                         </div>
                         <p className="text-gray-600 leading-relaxed max-w-xl font-poppins">
-                            We, at TrueDeal are committed to providing exceptional travel services and ensuring that
-                            every customer has an unforgettable and trouble-free trip. Our travel packages are
-                            tailored to meet all of your travel needs and we manage your trips from start to finish.
-                            We specialise in designing personalised itineraries and experiences for individuals,
-                            groups, and travel agents. So, we promise to provide you with a trip full of memories,
-                            fun, and adventure!
+                        Welcome to TrueDeal, your ultimate travel companion for 
+                        unforgettable journeys and unbeatable deals. As a premier 
+                        travel agency, we specialize in providing customized vacation 
+                        packages, unforgettable travel experiences, and exceptional 
+                        customer service to adventurers of all types. Whether you are 
+                        planning a luxurious getaway, a family vacation, or a 
+                        thrilling solo Journey, we have the perfect travel solutions 
+                        for you.
                         </p>
                     </div>
 
@@ -111,14 +113,18 @@ const AboutPage: React.FC = () => {
                         </div>
                         <div>
                             <h2 className="text-3xl font-bold mb-4 font-poppins">
-                                MISSION
+                                OUR MISSION
                                 <div className="h-1 w-24 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] mt-2" />
                             </h2>
                             <p className="text-gray-600 leading-relaxed font-poppins">
-                                TrueDeal is dedicated to providing exceptional travel experiences in Thailand and hassle free foreign
-                                exchange services through personalised services for everyone and in-depth knowledge in the business. With
-                                our DMC, we strive to create memorable and authentic travel experiences that exceed your expectations while
-                                making sure everything is tailored to fit your needs. Also we promote sustainable tourism practices.
+                            Our mission at TrueDeal is simple to provide 
+                            you with affordable, hassle-free, and personalized 
+                            travel experiences. We believe that travel should be 
+                            accessible to everyone, and thats why we focus on 
+                            delivering cost-effective solutions without compromising 
+                            quality. We are dedicated to helping you find the best 
+                            travel deals, discounted vacation packages, and tailored 
+                            travel plans that meet your unique preferences.
                             </p>
                         </div>
                     </div>
@@ -132,14 +138,11 @@ const AboutPage: React.FC = () => {
                         </div>
                         <div>
                             <h2 className="text-3xl font-bold mb-4 font-poppins">
-                                VISION
+                                OUR VISION
                                 <div className="h-1 w-24 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] mt-2" />
                             </h2>
                             <p className="text-gray-600 leading-relaxed font-poppins">
-                                TrueDeal aims to be nothing less than the best Thailand-based travel DMC, known for delivering
-                                unparalleled travel experiences that are customized to each client&apos;s unique needs and interests. We envision a
-                                future where we are recognized as a trusted partner for those looking to explore the beauty and culture of
-                                Thailand, while also making a positive impact on the local communities we visit.
+                            We are committed to delivering top-tier travel packages, hotels to excursions and local experiences, all while maintaining the highest level of customer satisfaction. With a strong focus on quality, reliability, and integrity, TrueDeal continues to grow as a leader in the travel industry, shaping the future of travel one experience at a time.
                             </p>
                         </div>
                     </div>

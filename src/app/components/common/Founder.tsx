@@ -32,9 +32,8 @@ export default function Founder() {
                                 </svg>
                             </div>
                             <blockquote className="relative z-10 mt-8 italic text-xl text-gray-700 font-poppins">
-                                &ldquo;Our vision is to redefine travel experiences by combining innovation with tradition.
-                                We believe in creating journeys that not only take you to destinations but also create
-                                lasting memories and meaningful connections.&rdquo;
+                                &ldquo;At TrueDeal, we believe travel is not just about reaching a destination; it’s about the journey of learning, growth, and discovery. Travel until you earn the knowledge, memories, and experiences that last a lifetime. With every trip you take, you broaden your horizons, connect with new cultures, and transform your perspective. We are here to make your travel dreams come true, providing you with unforgettable experiences, personalized services, and exceptional value. Join us and let your adventure begin with TrueDeal!
+                                &rdquo;
                             </blockquote>
                             <div className="mt-8 border-t pt-4">
                                 <h3 className="text-2xl font-bold text-gray-900 font-poppins">Mr. Aman Arora</h3>

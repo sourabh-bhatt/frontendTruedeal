@@ -9,7 +9,7 @@ export default function Services() {
             icon: "📤"
         },
         {
-            title: "T-Flex Card",
+            title: "Forex Card",
             icon: "💳"
         },
         {
@@ -59,7 +59,9 @@ export default function Services() {
                         <div className="h-1 w-48 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] mx-auto mt-2" />
                     </h2>
                     <p className="text-gray-600 text-lg font-poppins font-bold">
-                        Comprehensive travel and financial services at your fingertips
+                    At Truedeal, we offer personalized travel packages, hassle-free bookings, and exceptional customer service. From flights and hotels to tours and experiences, we ensure seamless travel for all.
+
+
                     </p>
                 </div>
 
