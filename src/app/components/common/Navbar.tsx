@@ -1,17 +1,142 @@
 'use client';
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useCallback, useMemo, useRef } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { MoreVertical, X, ChevronDown, Phone } from 'lucide-react'
+import { MoreVertical, X, ChevronDown, Phone, Search, Globe, MapPin } from 'lucide-react'
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs"
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { groupToursList } from "@/data/groupTours"
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
+import { Input } from "@/components/ui/input"
+import { motion } from "framer-motion"
 
+// Replace the hardcoded destinations with the full list from HeroSection
+const destinations = [
+    { name: "Maldives", tag: { label: "HONEYMOON", color: "pink" } },
+    { name: "Dubai", tag: { label: "IN SEASON", color: "green" } },
+    { name: "Singapore" },
+    { name: "Bali", tag: { label: "POPULAR", color: "rose" } },
+    { name: "Indonesia" },
+    { name: "Japan" },
+    { name: "Hongkong" },
+    { name: "China" },
+    { name: "Almaty", isTrending: true },
+    { name: "Baku", isTrending: true },
+    { name: "Vietnam", isTrending: true },
+    { name: "Shimla", isTrending: true },
+    { name: "Thailand", tag: { label: "BUDGET", color: "amber" } },
+    { name: "SriLanka" },
+    { name: "Bhutan" },
+    { name: "Finland" },
+    { name: "Kenya" },
+    { name: "Malaysia" },
+    { name: "Phillipines" },
+    { name: "Abu Dhabi", tag: { label: "POPULAR", color: "violet" } },
+]
+
+// SearchModal Component
+function SearchModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
+    const [searchTerm, setSearchTerm] = useState("")
+    const router = useRouter()
+    const inputRef = useRef<HTMLInputElement>(null)
+
+    const filteredDestinations = useMemo(
+        () => destinations.filter((dest) => 
+            dest.name.toLowerCase().includes(searchTerm.toLowerCase())
+        ),
+        [searchTerm]
+    )
+
+    const handleDestinationSelect = useCallback((destination: any) => {
+        onClose()
+        if (destination.isTrending) {
+            router.push(`/trending/${destination.name.toLowerCase()}`)
+        } else {
+            router.push(`/destinations/${destination.name.toLowerCase()}`)
+        }
+    }, [router, onClose])
+
+    useEffect(() => {
+        if (isOpen && inputRef.current) {
+            const timer = setTimeout(() => {
+                inputRef.current?.focus()
+            }, 100)
+            return () => clearTimeout(timer)
+        }
+    }, [isOpen])
+
+    if (!isOpen) return null
+
+    return (
+        <Dialog open={isOpen} onOpenChange={onClose}>
+            <DialogContent className="sm:max-w-[90vw] md:max-w-[70vw] lg:max-w-[50vw] xl:max-w-[40vw] bg-white border-gray-800 w-[90vw] h-[80vh] max-h-[600px] overflow-hidden flex flex-col">
+                <DialogTitle className="sr-only">Search Destinations</DialogTitle>
+                <div className="w-full flex flex-col h-full">
+                    {/* Search Input */}
+                    <div className="p-4 border-b flex-shrink-0">
+                        <div className="relative">
+                            <Input
+                                ref={inputRef}
+                                type="text"
+                                placeholder="Search countries, cities..."
+                                value={searchTerm}
+                                onChange={(e) => setSearchTerm(e.target.value)}
+                                className="w-full bg-gradient-to-r from-[#e7e9ec] to-[#00f6ff] text-black border-0 rounded-full h-12 px-6 pr-12 shadow-lg focus:ring-0 focus:ring-offset-0 hover:opacity-90 transition-all duration-300 placeholder-gray-500"
+                                autoComplete="off"
+                                autoFocus
+                            />
+                            <Search className="absolute right-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-500 pointer-events-none" />
+                        </div>
+                    </div>
+
+                    {/* Search Results */}
+                    <div className="flex-1 overflow-y-auto">
+                        {filteredDestinations.length > 0 ? (
+                            <div className="p-2 space-y-2">
+                                {filteredDestinations.map((dest, index) => (
+                                    <motion.button
+                                        key={dest.name}
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        transition={{ duration: 0.15, delay: index * 0.03 }}
+                                        onClick={() => handleDestinationSelect(dest)}
+                                        className="w-full flex items-center gap-3 px-4 py-3 text-left text-gray-700 rounded-xl transition-all hover:bg-gray-50"
+                                    >
+                                        <span className="flex-shrink-0">
+                                            {dest.isTrending ? (
+                                                <Globe className="h-5 w-5 text-blue-500" />
+                                            ) : (
+                                                <MapPin className="h-5 w-5 text-gray-400" />
+                                            )}
+                                        </span>
+                                        <span className="flex-grow font-medium">{dest.name}</span>
+                                        {dest.tag && (
+                                            <span className={`px-2 py-1 text-xs font-medium rounded-full bg-${dest.tag.color}-100 text-${dest.tag.color}-700`}>
+                                                {dest.tag.label}
+                                            </span>
+                                        )}
+                                    </motion.button>
+                                ))}
+                            </div>
+                        ) : (
+                            <div className="p-8 text-center text-gray-500">
+                                No destinations found for "{searchTerm}"
+                            </div>
+                        )}
+                    </div>
+                </div>
+            </DialogContent>
+        </Dialog>
+    )
+}
+
+// Main Navbar Component
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [isScrolled, setIsScrolled] = useState(false)
     const pathname = usePathname()
+    const [isSearchModalOpen, setIsSearchModalOpen] = useState(false)
 
     useEffect(() => {
         const header = document.querySelector('header')
@@ -33,7 +158,7 @@ export default function Navbar() {
 
     const navItems = [
         { href: "/", label: "Home" },
-        { href: "/destinationpackage", label: "Holiday Packages" },
+        { href: "/destinationpackage", label: "International" },
         { href: "/trendingpackage", label: "Trending" },
         // Group Tours is handled separately now
     ]
@@ -129,6 +254,13 @@ export default function Navbar() {
                                     +91 8447498498
                                 </a>
                             </div>
+
+                            <button
+                                className="text-gray-500 focus:outline-none ml-4"
+                                onClick={() => setIsSearchModalOpen(true)}
+                            >
+                                <Search className="h-5 w-5" />
+                            </button>
 
                             <button
                                 className="text-gray-500 focus:outline-none ml-4"
@@ -245,6 +377,12 @@ export default function Navbar() {
                     {/* SignedOut section for mobile remains the same */}
                 </div>
             )}
+
+            {/* Add Search Modal */}
+            <SearchModal 
+                isOpen={isSearchModalOpen} 
+                onClose={() => setIsSearchModalOpen(false)} 
+            />
         </nav>
     )
 }

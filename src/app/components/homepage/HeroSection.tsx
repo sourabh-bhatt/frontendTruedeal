@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useMemo, useCallback, useRef } from "react"
-import { Search, MapPin, Globe, Shield, Award, Briefcase, CreditCard, Star, Phone } from "lucide-react"
+import { Search, MapPin, Globe, Award, Briefcase, CreditCard } from "lucide-react"
 import { useRouter } from "next/navigation"
 import { motion } from "framer-motion"
 import { Input } from "@/components/ui/input"
@@ -37,11 +37,11 @@ const destinations: Destination[] = [
     { name: "Finland" },
     { name: "Kenya" },
     { name: "Malaysia" },
-    { name: "Philippines" },
+    { name: "Phillipines" },
     { name: "Abu Dhabi", tag: { label: "POPULAR", color: "violet" } },
 ]
 
-const placeholderDestinations = ["Almaty", "Bali", "Thailand", "Philippines", "Kashmir"]
+const placeholderDestinations = ["Almaty", "Bali", "Thailand", "Phillipines", "Kashmir"]
 
 export default function HeroSection() {
     const [isSearchModalOpen, setIsSearchModalOpen] = useState<boolean>(false)
@@ -200,9 +200,9 @@ export default function HeroSection() {
     )
 
     const StatsSection = () => (
-        <div className="absolute bottom-8 left-0 right-0 z-[2] md:block hidden">
+        <div className="z-[2] md:block hidden">
             <div className="container mx-auto px-4">
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 max-w-6xl mx-auto">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-12 max-w-3xl mx-auto">
                     {/* MICE Services */}
                     <div className="flex flex-col items-center text-white">
                         <div className="mb-2">
@@ -225,16 +225,6 @@ export default function HeroSection() {
                         </div>
                     </div>
 
-                    {/* Insurance */}
-                    <div className="flex flex-col items-center text-white">
-                        <div className="mb-2">
-                            <Shield className="w-8 h-8 text-green-400" />
-                        </div>
-                        <div className="text-center">
-                            <p className="font-bold text-sm">Travel</p>
-                            <p className="text-xs">Insurance</p>
-                        </div>
-                    </div>
 
                     {/* EMI */}
                     <div className="flex flex-col items-center text-white">
@@ -247,37 +237,17 @@ export default function HeroSection() {
                         </div>
                     </div>
 
-                    {/* Services */}
-                    <div className="flex flex-col items-center text-white">
-                        <div className="mb-2">
-                            <Star className="w-8 h-8 text-orange-400" />
-                        </div>
-                        <div className="text-center">
-                            <p className="font-bold text-sm">12+ Services</p>
-                            <p className="text-xs">One Platform</p>
-                        </div>
-                    </div>
 
-                    {/* Support */}
-                    <div className="flex flex-col items-center text-white">
-                        <div className="mb-2">
-                            <Phone className="w-8 h-8 text-red-400" />
-                        </div>
-                        <div className="text-center">
-                            <p className="font-bold text-sm">24/7</p>
-                            <p className="text-xs">Support</p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
     )
 
-    // Add new mobile stats section
+    // Mobile stats section
     const MobileStatsSection = () => (
-        <div className="mt-8 mb-8 md:hidden block">
+        <div className="md:hidden block">
             <div className="container mx-auto px-4">
-                <div className="grid grid-cols-3 gap-2">
+                <div className="grid grid-cols-3 gap-6 max-w-sm mx-auto">
                     {/* MICE Services */}
                     <div className="flex flex-col items-center text-white">
                         <div className="mb-1">
@@ -300,16 +270,6 @@ export default function HeroSection() {
                         </div>
                     </div>
 
-                    {/* Insurance */}
-                    <div className="flex flex-col items-center text-white">
-                        <div className="mb-1">
-                            <Shield className="w-5 h-5 text-green-400" />
-                        </div>
-                        <div className="text-center">
-                            <p className="font-bold text-xs">Travel</p>
-                            <p className="text-[10px]">Insurance</p>
-                        </div>
-                    </div>
 
                     {/* EMI */}
                     <div className="flex flex-col items-center text-white">
@@ -322,27 +282,7 @@ export default function HeroSection() {
                         </div>
                     </div>
 
-                    {/* Services */}
-                    <div className="flex flex-col items-center text-white">
-                        <div className="mb-1">
-                            <Star className="w-5 h-5 text-orange-400" />
-                        </div>
-                        <div className="text-center">
-                            <p className="font-bold text-xs">12+ Services</p>
-                            <p className="text-[10px]">One Platform</p>
-                        </div>
-                    </div>
-
-                    {/* Support */}
-                    <div className="flex flex-col items-center text-white">
-                        <div className="mb-1">
-                            <Phone className="w-5 h-5 text-red-400" />
-                        </div>
-                        <div className="text-center">
-                            <p className="font-bold text-xs">24/7</p>
-                            <p className="text-[10px]">Support</p>
-                        </div>
-                    </div>
+                
                 </div>
             </div>
         </div>
@@ -350,10 +290,18 @@ export default function HeroSection() {
 
     return (
         <>
-            <div className="relative min-h-[80svh] md:min-h-screen overflow-hidden">
+            <div className="relative min-h-[65svh] md:min-h-[85vh] overflow-hidden">
                 {/* Background Video */}
-                <div className="absolute inset-0 h-[80svh] md:h-screen">
-                    <video autoPlay loop muted playsInline className="absolute top-0 left-0 w-full h-full object-cover z-0">
+                <div className="absolute inset-0 h-[65svh] md:h-[85vh]">
+                    <video 
+                        autoPlay 
+                        loop 
+                        muted 
+                        playsInline 
+                        preload="auto"
+                        className="absolute top-0 left-0 w-full h-full object-cover object-center z-0"
+                        poster="/Assets/HeroSectionImages/video-poster.jpg"
+                    >
                         <source
                             src="/Assets/HeroSectionImages/bgg.mp4"
                             type="video/mp4"
@@ -364,15 +312,15 @@ export default function HeroSection() {
                 </div>
 
                 {/* Content */}
-                <div className="relative z-[2] flex flex-col items-center justify-start md:justify-center min-h-[80svh] md:min-h-screen text-white px-4 sm:px-6 lg:px-8 pt-32 md:pt-0 md:py-0">
-                    <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-2 text-center">
+                <div className="relative z-[2] flex flex-col items-center justify-start md:justify-center min-h-[65svh] md:min-h-[85vh] text-white px-4 sm:px-6 lg:px-8 pt-32 md:pt-0 md:py-0">
+                    <h1 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl mb-2 text-center mt-0 md:mt-8">
                         <span className="font-poppins font-semibold">Discover Your Dream Vacation with</span>{" "}
                         <span className="font-poppins font-bold">Truedeal</span>
                     </h1>
-                    <p className="text-xs sm:text-sm md:text-base mb-2 md:mb-4 text-center font-poppins font-semibold">
+                    <p className="text-xs sm:text-sm md:text-sm mb-2 md:mb-4 text-center font-poppins font-semibold">
                         GET READY FOR TAKE OFF
                     </p>
-                    <h2 className="text-1xl sm:text-3xl md:text-4xl lg:text-5xl mb-6 md:mb-8 text-center font-poppins font-bold text-yellow-500">
+                    <h2 className="text-1xl sm:text-2xl md:text-3xl lg:text-4xl mb-6 md:mb-8 text-center font-poppins font-bold text-yellow-500">
                         <TypingAnimation>Search your holiday</TypingAnimation>
                     </h2>
 
@@ -396,8 +344,11 @@ export default function HeroSection() {
                         </Dialog>
                     </div>
 
-                    <MobileStatsSection />
-                    <StatsSection />
+                    {/* Move stats sections here, right after the search bar */}
+                    <div className="mt-10">
+                        <MobileStatsSection />
+                        <StatsSection />
+                    </div>
                 </div>
             </div>
             <FirstTimeTravelMessage />
