@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { indonesiaPackages } from '@/data/indonesiaPackages';
-import { ChevronLeft, ChevronRight, Clock, MapPin, Briefcase, Award, CreditCard } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Clock, MapPin} from 'lucide-react';
 
 export default function Indonesia() {
     const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
@@ -168,3 +168,4 @@ export default function Indonesia() {
         </div>
     );
 }
+ 

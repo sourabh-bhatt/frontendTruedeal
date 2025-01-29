@@ -28,7 +28,7 @@ export const indonesiaPackages: { [key: string]: IndonesianPackage[] } = {
             name: "BALI DELIGHT 2N/3D",
             price: 18134,
             duration: { days: 3, nights: 2 },
-            image: "/IMAGES/bali/1/1.webp",
+            image: "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/2.webp",
             description: "Experience the freedom to explore Bali at your own pace with our Free & Easy package...",
             itinerary: [
                 {
@@ -71,8 +71,11 @@ export const indonesiaPackages: { [key: string]: IndonesianPackage[] } = {
                 "100% charge for cancellation within 48 hours"
             ],
             galleryImages: [
-                "/IMAGES/Indonesia/Bali/free-easy-1.webp",
-                "/IMAGES/Indonesia/Bali/free-easy-2.webp"
+                "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/2.webp",
+                "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/3.webp",
+                "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/4.webp",
+                "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/5.webp",
+                "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/6.webp",
             ]
         },
         {
@@ -81,7 +84,7 @@ export const indonesiaPackages: { [key: string]: IndonesianPackage[] } = {
             name: "BALI DELIGHT 3N/4D",
             price: 25820,
             duration: { days: 4, nights: 3 },
-            image: "/IMAGES/bali/1/2.webp",
+            image: "/UGCImages/bali/BALI DELIGHT PACKAGE/horizontal/2.webp",
             description: "Experience the freedom to explore Bali at your own pace with our Free & Easy package...",
             itinerary: [
                 {
@@ -129,9 +132,13 @@ export const indonesiaPackages: { [key: string]: IndonesianPackage[] } = {
                 "100% charge for cancellation within 48 hours"
             ],
             galleryImages: [
-                "/IMAGES/Indonesia/Bali/free-easy-1.webp",
-                "/IMAGES/Indonesia/Bali/free-easy-2.webp"
+                "/UGCImages/bali/BALI DELIGHT PACKAGE/horizontal/2.webp",
+                "/UGCImages/bali/BALI DELIGHT PACKAGE/horizontal/3.webp",
+                "/UGCImages/bali/BALI DELIGHT PACKAGE/horizontal/4.webp",
+                "/UGCImages/bali/BALI DELIGHT PACKAGE/horizontal/5.webp",
+                "/UGCImages/bali/BALI DELIGHT PACKAGE/horizontal/6.webp",
             ]
+
         },
         {
             id: "bali-dolphin-tour-3N4D",
@@ -139,8 +146,9 @@ export const indonesiaPackages: { [key: string]: IndonesianPackage[] } = {
             name: "BALI DOLPHIN TOUR 3N/4D",
             price: 28753,
             duration: { days: 3, nights: 3 },
-            image: "/IMAGES/bali/1/3.webp",
+            image: "/UGCImages/bali/BALI DOLPHIN/horizontal/5.webp",
             description: "Experience the freedom to explore Bali at your own pace with our Free & Easy package...",
+
             itinerary: [
                 {
                     day: 1,
@@ -197,9 +205,15 @@ Tanah lot Temple: This temple is very famous among tourist destinations in Bali 
                 "100% charge for cancellation within 48 hours"
             ],
             galleryImages: [
-                "/IMAGES/Indonesia/Bali/free-easy-1.webp",
-                "/IMAGES/Indonesia/Bali/free-easy-2.webp"
+               "/UGCImages/bali/BALI DOLPHIN/horizontal/5.webp",
+               "/UGCImages/bali/BALI DOLPHIN/horizontal/6.webp",
+               "/UGCImages/bali/BALI DOLPHIN/horizontal/1.webp",
+               "/UGCImages/bali/BALI DOLPHIN/horizontal/2.webp",
+               "/UGCImages/bali/BALI DOLPHIN/horizontal/3.webp",
+               "/UGCImages/bali/BALI DOLPHIN/horizontal/4.webp",
             ]
+
+
         },
         {
             id: "bali-west-penida-3N4D",
@@ -260,8 +274,13 @@ On the way to Tanah Lot we will stop at Taman Ayun Temple. is a compound of Bali
                 "100% charge for cancellation within 48 hours"
             ],
             galleryImages: [
-                "/IMAGES/Indonesia/Bali/free-easy-1.webp",
-                "/IMAGES/Indonesia/Bali/free-easy-2.webp"
+                "/UGCImages/bali/BALI FREE & EASY/horizontal/1.webp",
+                "/UGCImages/bali/BALI FREE & EASY/horizontal/2.webp",
+                "/UGCImages/bali/BALI FREE & EASY/horizontal/3.webp",
+                "/UGCImages/bali/BALI FREE & EASY/horizontal/4.webp",
+                "/UGCImages/bali/BALI FREE & EASY/horizontal/5.webp",
+                "/UGCImages/bali/BALI FREE & EASY/horizontal/6.webp",
+                
             ]
         },
         {
@@ -270,8 +289,9 @@ On the way to Tanah Lot we will stop at Taman Ayun Temple. is a compound of Bali
             name: "BALI LEMBONGAN TOUR 3N/4D",
             price: 31000,
             duration: { days: 4, nights: 3 },
-            image: "/IMAGES/Indonesia/Bali/free-easy.webp",
+            image: "/UGCImages/bali/BALI LEMBONGAN PACKAGE/horizontal/1.webp",
             description: "Experience the freedom to explore Bali at your own pace with our Free & Easy package...",
+
             itinerary: [
                 {
                     day: 1,
@@ -323,9 +343,14 @@ On the way to Tanah Lot we will stop at Taman Ayun Temple. is a compound of Bali
                 "100% charge for cancellation within 48 hours"
             ],
             galleryImages: [
-                "/IMAGES/Indonesia/Bali/free-easy-1.webp",
-                "/IMAGES/Indonesia/Bali/free-easy-2.webp"
+                "/UGCImages/bali/BALI LEMBONGAN PACKAGE/horizontal/1.webp",
+                "/UGCImages/bali/BALI LEMBONGAN PACKAGE/horizontal/2.webp",
+                "/UGCImages/bali/BALI LEMBONGAN PACKAGE/horizontal/3.webp",
+                "/UGCImages/bali/BALI LEMBONGAN PACKAGE/horizontal/4.webp",
+                "/UGCImages/bali/BALI LEMBONGAN PACKAGE/horizontal/5.webp",
+                "/UGCImages/bali/BALI LEMBONGAN PACKAGE/horizontal/6.webp",
             ]
+
         },
         {
             id: "bali-golf-3N4D",
@@ -333,8 +358,9 @@ On the way to Tanah Lot we will stop at Taman Ayun Temple. is a compound of Bali
             name: "BALI GOLF TOUR 3N/4D",
             price: 38440,
             duration: { days: 4, nights: 3 },
-            image: "/IMAGES/Indonesia/Bali/free-easy.webp",
+            image: "/UGCImages/bali/BALI GOLF PACKAGE/H/1.webp",
             description: "Experience the freedom to explore Bali at your own pace with our Free & Easy package...",
+
             itinerary: [
                 {
                     day: 1,
@@ -386,9 +412,13 @@ On the way to Tanah Lot we will stop at Taman Ayun Temple. is a compound of Bali
                 "100% charge for cancellation within 48 hours"
             ],
             galleryImages: [
-                "/IMAGES/Indonesia/Bali/free-easy-1.webp",
-                "/IMAGES/Indonesia/Bali/free-easy-2.webp"
+                "/UGCImages/bali/BALI GOLF PACKAGE/H/1.webp",
+                "/UGCImages/bali/BALI GOLF PACKAGE/H/2.webp",
+                "/UGCImages/bali/BALI GOLF PACKAGE/H/3.webp",
+                "/UGCImages/bali/BALI GOLF PACKAGE/H/4.webp",
+                "/UGCImages/bali/BALI GOLF PACKAGE/H/5.webp",
             ]
+
         },
         {
             id: "bali-delight-4N5D",
@@ -396,8 +426,9 @@ On the way to Tanah Lot we will stop at Taman Ayun Temple. is a compound of Bali
             name: "BALI DELIGHT 4N/5D",
             price: 33605,
             duration: { days: 5, nights: 4 },
-            image: "/IMAGES/Indonesia/Bali/free-easy.webp",
+            image: "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/1.webp", 
             description: "Experience the freedom to explore Bali at your own pace with our Free & Easy package...",
+
             itinerary: [
                 {
                     day: 1,
@@ -456,8 +487,12 @@ On the way to Tanah Lot we will stop at Taman Ayun Temple. is a compound of Bali
                 "100% charge for cancellation within 48 hours"
             ],
             galleryImages: [
-                "/IMAGES/Indonesia/Bali/free-easy-1.webp",
-                "/IMAGES/Indonesia/Bali/free-easy-2.webp"
+                "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/1.webp",
+                "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/2.webp",
+                "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/3.webp",
+                "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/4.webp",
+                "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/5.webp",
+
             ]
         },
         {
@@ -466,7 +501,7 @@ On the way to Tanah Lot we will stop at Taman Ayun Temple. is a compound of Bali
             name: "BALI DELIGHT 5N/6D",
             price: 42159,
             duration: { days: 6, nights: 5 },
-            image: "/IMAGES/Indonesia/Bali/free-easy.webp",
+            image: "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/5.webp",
             description: "Experience the freedom to explore Bali at your own pace with our Free & Easy package...",
             itinerary: [
                 {
@@ -534,8 +569,12 @@ And proceed to Tirta Gangga is a former royal palace in eastern Bali, Indonesia,
                 "100% charge for cancellation within 48 hours"
             ],
             galleryImages: [
-                "/IMAGES/Indonesia/Bali/free-easy-1.webp",
-                "/IMAGES/Indonesia/Bali/free-easy-2.webp"
+                "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/5.webp",
+                "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/1.webp",
+                "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/2.webp",
+                "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/3.webp",
+                "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/4.webp",
+                
             ]
         },
         {
@@ -544,7 +583,7 @@ And proceed to Tirta Gangga is a former royal palace in eastern Bali, Indonesia,
             name: "BALI DELIGHT 6N/7D",
             price: 58553,
             duration: { days: 7, nights: 6 },
-            image: "/IMAGES/Indonesia/Bali/free-easy.webp",
+            image: "/UGCImages/bali/BALI WEST PENIDA PACKAGE/horizontal/1.webp",
             description: "Experience the freedom to explore Bali at your own pace with our Free & Easy package...",
             itinerary: [
                 {
@@ -613,8 +652,13 @@ On the way to Tanah Lot we will stop at Taman Ayun Temple. is a compound of Bali
                 "100% charge for cancellation within 48 hours"
             ],
             galleryImages: [
-                "/IMAGES/Indonesia/Bali/free-easy-1.webp",
-                "/IMAGES/Indonesia/Bali/free-easy-2.webp"
+                "/UGCImages/bali/BALI WEST PENIDA PACKAGE/horizontal/1.webp",
+                "/UGCImages/bali/BALI WEST PENIDA PACKAGE/horizontal/2.webp",
+                "/UGCImages/bali/BALI WEST PENIDA PACKAGE/horizontal/3.webp",
+                "/UGCImages/bali/BALI WEST PENIDA PACKAGE/horizontal/4.webp",
+                "/UGCImages/bali/BALI WEST PENIDA PACKAGE/horizontal/5.webp",
+                "/UGCImages/bali/BALI WEST PENIDA PACKAGE/horizontal/6.webp",
+                
             ]
         },
     ],
@@ -625,7 +669,7 @@ On the way to Tanah Lot we will stop at Taman Ayun Temple. is a compound of Bali
             name: "JAKARTA - PUNCAK - BANDUNG 3D/2N",
             price: 23000,
             duration: { days: 3, nights: 2 },
-            image: "/IMAGES/Indonesia/Bandung/easy-1.webp",
+            image: "/UGCImages/bali/JKT BDG FB PACKAGES/vertical/1.webp",
             description: "Experience the charm of Jakarta, Puncak and Bandung with our easy package, perfect for those who want to explore the city at their own pace...",
             itinerary: [
                 {
@@ -664,9 +708,10 @@ On the way to Tanah Lot we will stop at Taman Ayun Temple. is a compound of Bali
                 "100% charge for cancellation within 48 hours"
             ],
             galleryImages: [
-                "/IMAGES/Indonesia/Bandung/easy-1.webp",
-                "/IMAGES/Indonesia/Bandung/easy-2.webp",
-                "/IMAGES/Indonesia/Bandung/easy-3.webp"
+                "/UGCImages/bali/JKT BDG FB PACKAGES/vertical/1.webp",
+                "/UGCImages/bali/JKT BDG FB PACKAGES/vertical/2.webp",
+                "/UGCImages/bali/JKT BDG FB PACKAGES/vertical/3.webp",
+                "/UGCImages/bali/JKT BDG FB PACKAGES/vertical/4.webp"
             ]
         },
         {
@@ -675,7 +720,7 @@ On the way to Tanah Lot we will stop at Taman Ayun Temple. is a compound of Bali
             name: "JAKARTA - PUNCAK - BANDUNG 4D/3N",
             price: 30000,
             duration: { days: 4, nights: 3 },
-            image: "/IMAGES/Indonesia/Bandung/easy-1.webp",
+            image: "/UGCImages/bali/JKT FB PACKAGES/HORIZONTAL/1.webp",
             description: "Experience the charm of Bandung with our easy package, perfect for those who want to explore the city at their own pace...",
             itinerary: [
                 {
@@ -722,9 +767,12 @@ On the way to Tanah Lot we will stop at Taman Ayun Temple. is a compound of Bali
                 "100% charge for cancellation within 48 hours"
             ],
             galleryImages: [
-                "/IMAGES/Indonesia/Bandung/easy-1.webp",
-                "/IMAGES/Indonesia/Bandung/easy-2.webp",
-                "/IMAGES/Indonesia/Bandung/easy-3.webp"
+                "/UGCImages/bali/JKT FB PACKAGES/HORIZONTAL/1.webp",
+                "/UGCImages/bali/JKT FB PACKAGES/HORIZONTAL/2.webp",
+                "/UGCImages/bali/JKT FB PACKAGES/HORIZONTAL/3.webp",
+                "/UGCImages/bali/JKT FB PACKAGES/HORIZONTAL/4.webp",
+                "/UGCImages/bali/JKT FB PACKAGES/HORIZONTAL/5.webp",
+
             ]
         },
         {
@@ -733,7 +781,7 @@ On the way to Tanah Lot we will stop at Taman Ayun Temple. is a compound of Bali
             name: "JAKARTA - PUNCAK - SAFARI 5D/4N",
             price: 45223,
             duration: { days: 5, nights: 4 },
-            image: "/IMAGES/Indonesia/Bandung/easy-1.webp",
+            image: "/UGCImages/bali/JKT FB PACKAGES/HORIZONTAL/5.webp",
             description: "Experience the charm of Jakarta, Puncak and Bandung with our easy package, perfect for those who want to explore the city at their own pace...",
             itinerary: [
                 {
@@ -785,9 +833,13 @@ On the way to Tanah Lot we will stop at Taman Ayun Temple. is a compound of Bali
                 "100% charge for cancellation within 48 hours"
             ],
             galleryImages: [
-                "/IMAGES/Indonesia/Bandung/easy-1.webp",
-                "/IMAGES/Indonesia/Bandung/easy-2.webp",
-                "/IMAGES/Indonesia/Bandung/easy-3.webp"
+                "/UGCImages/bali/JKT FB PACKAGES/HORIZONTAL/3.webp",
+                "/UGCImages/bali/JKT FB PACKAGES/HORIZONTAL/4.webp",
+                "/UGCImages/bali/JKT FB PACKAGES/HORIZONTAL/5.webp",
+                "/UGCImages/bali/JKT FB PACKAGES/HORIZONTAL/1.webp",
+                "/UGCImages/bali/JKT FB PACKAGES/HORIZONTAL/2.webp",
+                
+
             ]
         },
         {
@@ -796,7 +848,7 @@ On the way to Tanah Lot we will stop at Taman Ayun Temple. is a compound of Bali
             name: "JAKARTA - PUNCAK - SAFARI 4D/3N",
             price: 38225,
             duration: { days: 4, nights: 3 },
-            image: "/IMAGES/Indonesia/Bandung/easy-1.webp",
+            image: "/UGCImages/bali/JKT FB PACKAGES/HORIZONTAL/4.webp",
             description: "Experience the charm of Jakarta, Puncak and Bandung with our easy package, perfect for those who want to explore the city at their own pace...",
             itinerary: [
                 {
@@ -843,9 +895,11 @@ On the way to Tanah Lot we will stop at Taman Ayun Temple. is a compound of Bali
                 "100% charge for cancellation within 48 hours"
             ],
             galleryImages: [
-                "/IMAGES/Indonesia/Bandung/easy-1.webp",
-                "/IMAGES/Indonesia/Bandung/easy-2.webp",
-                "/IMAGES/Indonesia/Bandung/easy-3.webp"
+                "/UGCImages/bali/JKT FB PACKAGES/HORIZONTAL/5.webp",
+                "/UGCImages/bali/JKT FB PACKAGES/HORIZONTAL/6.webp",
+                "/UGCImages/bali/JKT FB PACKAGES/HORIZONTAL/3.webp",
+                "/UGCImages/bali/JKT FB PACKAGES/HORIZONTAL/2.webp",
+                
             ]
         },
     ],
@@ -856,7 +910,7 @@ On the way to Tanah Lot we will stop at Taman Ayun Temple. is a compound of Bali
             name: "YOGYAKARTA 3D/2N",
             price: 29421,
             duration: { days: 3, nights: 2 },
-            image: "/IMAGES/Indonesia/Bandung/easy-1.webp",
+            image: "/UGCImages/bali/JOGJA PACKAGE/horizontal/1.webp",
             description: "Experience the charm of Yogyakarta with our easy package, perfect for those who want to explore the city at their own pace...",
             itinerary: [
                 {
@@ -898,9 +952,11 @@ Later, visit Malioboro Street, a major shopping street in Yogyakarta surrounded 
                 "100% charge for cancellation within 48 hours"
             ],
             galleryImages: [
-                "/IMAGES/Indonesia/Bandung/easy-1.webp",
-                "/IMAGES/Indonesia/Bandung/easy-2.webp",
-                "/IMAGES/Indonesia/Bandung/easy-3.webp"
+                "/UGCImages/bali/JOGJA PACKAGE/horizontal/6.webp",
+                "/UGCImages/bali/JOGJA PACKAGE/horizontal/2.webp",
+                "/UGCImages/bali/JOGJA PACKAGE/horizontal/4.webp",
+                "/UGCImages/bali/JOGJA PACKAGE/horizontal/1.webp",
+                "/UGCImages/bali/JOGJA PACKAGE/horizontal/5.webp",
             ]
         },
         {
@@ -909,7 +965,7 @@ Later, visit Malioboro Street, a major shopping street in Yogyakarta surrounded 
             name: "YOGYAKARTA JOGJA CLASSIC 4D/3N",
             price: 41000,
             duration: { days: 4, nights: 3 },
-            image: "/IMAGES/Indonesia/Bandung/easy-1.webp",
+            image: "/UGCImages/bali/JOGJA PACKAGE/horizontal/2.webp",
             description: "Experience the charm of Yogyakarta with our easy package, perfect for those who want to explore the city at their own pace...",
             itinerary: [
                 {
@@ -962,9 +1018,9 @@ Later, visit Malioboro Street, a major shopping street in Yogyakarta surrounded 
                 "100% charge for cancellation within 48 hours"
             ],
             galleryImages: [
-                "/IMAGES/Indonesia/Bandung/easy-1.webp",
-                "/IMAGES/Indonesia/Bandung/easy-2.webp",
-                "/IMAGES/Indonesia/Bandung/easy-3.webp"
+                "/UGCImages/bali/JOGJA PACKAGE/horizontal/1.webp",
+                "/UGCImages/bali/JOGJA PACKAGE/horizontal/2.webp",
+                "/UGCImages/bali/JOGJA PACKAGE/horizontal/3.webp",
             ]
         },
         {
@@ -973,7 +1029,7 @@ Later, visit Malioboro Street, a major shopping street in Yogyakarta surrounded 
             name: "BOROBUDUR 4D/3N",
             price: 45223,
             duration: { days: 5, nights: 4 },
-            image: "/IMAGES/Indonesia/Bandung/easy-1.webp",
+            image: "/UGCImages/bali/JOGJA PACKAGE/horizontal/3.webp",
             description: "Experience the charm of Jakarta, Puncak and Bandung with our easy package, perfect for those who want to explore the city at their own pace...",
             itinerary: [
                 {
@@ -1025,9 +1081,9 @@ Later, visit Malioboro Street, a major shopping street in Yogyakarta surrounded 
                 "100% charge for cancellation within 48 hours"
             ],
             galleryImages: [
-                "/IMAGES/Indonesia/Bandung/easy-1.webp",
-                "/IMAGES/Indonesia/Bandung/easy-2.webp",
-                "/IMAGES/Indonesia/Bandung/easy-3.webp"
+                "/UGCImages/bali/JOGJA PACKAGE/horizontal/4.webp",
+                "/UGCImages/bali/JOGJA PACKAGE/horizontal/5.webp",
+                "/UGCImages/bali/JOGJA PACKAGE/horizontal/3.webp",
             ]
         },
         {
@@ -1036,7 +1092,7 @@ Later, visit Malioboro Street, a major shopping street in Yogyakarta surrounded 
             name: "YOGYAKARTA JOGJA CLASSIC 5D/4N",
             price: 46218,
             duration: { days: 5, nights: 4 },
-            image: "/IMAGES/Indonesia/Bandung/easy-1.webp",
+            image: "/UGCImages/bali/JOGJA PACKAGE/horizontal/4.webp",
             description: "Experience the charm of Jakarta, Puncak and Bandung with our easy package, perfect for those who want to explore the city at their own pace...",
             itinerary: [
                 {
@@ -1095,9 +1151,10 @@ Later, visit Malioboro Street, a major shopping street in Yogyakarta surrounded 
                 "100% charge for cancellation within 48 hours"
             ],
             galleryImages: [
-                "/IMAGES/Indonesia/Bandung/easy-1.webp",
-                "/IMAGES/Indonesia/Bandung/easy-2.webp",
-                "/IMAGES/Indonesia/Bandung/easy-3.webp"
+                "/UGCImages/bali/JOGJA PACKAGE/horizontal/6.webp",
+                "/UGCImages/bali/JOGJA PACKAGE/horizontal/4.webp",
+                "/UGCImages/bali/JOGJA PACKAGE/horizontal/2.webp",
+                "/UGCImages/bali/JOGJA PACKAGE/horizontal/1.webp",
             ]
         },
     ],

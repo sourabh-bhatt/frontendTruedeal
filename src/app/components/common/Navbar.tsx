@@ -11,6 +11,16 @@ import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { motion } from "framer-motion"
 
+// First, let's define an interface for the destination type
+interface Destination {
+    name: string;
+    tag?: {
+        label: string;
+        color: string;
+    };
+    isTrending?: boolean;
+}
+
 // Replace the hardcoded destinations with the full list from HeroSection
 const destinations = [
     { name: "Maldives", tag: { label: "HONEYMOON", color: "pink" } },
@@ -48,7 +58,7 @@ function SearchModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void
         [searchTerm]
     )
 
-    const handleDestinationSelect = useCallback((destination: any) => {
+    const handleDestinationSelect = useCallback((destination: Destination) => {
         onClose()
         if (destination.isTrending) {
             router.push(`/trending/${destination.name.toLowerCase()}`)
@@ -121,7 +131,7 @@ function SearchModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void
                             </div>
                         ) : (
                             <div className="p-8 text-center text-gray-500">
-                                No destinations found for "{searchTerm}"
+                                No destinations found for &quot;{searchTerm}&quot;
                             </div>
                         )}
                     </div>
