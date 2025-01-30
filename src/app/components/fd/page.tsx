@@ -29,7 +29,7 @@ export default function FixedDepartures() {
                     <p className="text-sm text-gray-500 mt-1 underline">With Flights</p>
                 </span>
             </h1>
-            
+            0
             {/* With Flights Cards - Horizontal scroll on mobile */}
             <div className="overflow-x-auto -mx-4 px-4 mb-8">
                 <div className="flex md:grid md:grid-cols-2 xl:grid-cols-3 gap-6 min-w-min md:min-w-0 max-w-6xl mx-auto">

@@ -1,0 +1,155 @@
+import { NextResponse } from 'next/server'
+
+export async function GET() {
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+<url>
+  <loc>https://www.truedeal4u.com/</loc>
+  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/destinationpackage</loc>
+  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/trendingpackage</loc>
+  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/group-tours</loc>
+  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/group-tours/malaysia</loc>
+  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/group-tours/uttrakhand</loc>
+  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/group-tours/almaty</loc>
+  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/trending/almaty</loc>
+  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/trending/baku</loc>
+  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/destinations/japan</loc>
+  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/destinations/maldives</loc>
+  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/destinations/finland</loc>
+  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/destinations/kenya</loc>
+  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/indonesia/bali-free-easy</loc>
+  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/indonesia/bali-delight-3N4D</loc>
+  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/indonesia/bali-dolphin-tour-3N4D</loc>
+  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/indonesia/bali-west-penida-3N4D</loc>
+  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/reviews</loc>
+  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/blogs</loc>
+  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/about</loc>
+  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/exclusive</loc>
+  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/contact-us</loc>
+  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/careers</loc>
+  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/terms&amp;conditions</loc>
+  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/refund&amp;cancellation</loc>
+  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/payment</loc>
+  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/visaservices</loc>
+  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+</urlset>`
+
+  return new NextResponse(sitemap, {
+    headers: {
+      'Content-Type': 'application/xml',
+      'Cache-Control': 'public, max-age=3600',
+    },
+  })
+} 
