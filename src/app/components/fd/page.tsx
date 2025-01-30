@@ -29,14 +29,14 @@ export default function FixedDepartures() {
                     <p className="text-sm text-gray-500 mt-1 underline">With Flights</p>
                 </span>
             </h1>
-            0
+            
             {/* With Flights Cards - Horizontal scroll on mobile */}
             <div className="overflow-x-auto -mx-4 px-4 mb-8">
-                <div className="flex md:grid md:grid-cols-2 xl:grid-cols-3 gap-6 min-w-min md:min-w-0 max-w-6xl mx-auto">
+                <div className="flex md:flex md:justify-center xl:grid xl:grid-cols-2 gap-6 min-w-min md:min-w-0 max-w-4xl mx-auto">
                     {Object.values(fixedDeparturesData).map((departure: FixedDeparture) => (
                         <div 
                             key={departure.id}
-                            className="relative group h-[450px] w-[300px] md:w-auto rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex-shrink-0"
+                            className="relative group h-[450px] w-[300px] md:w-[350px] xl:w-auto rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex-shrink-0"
                         >
                             {/* Background Image */}
                             <Image 
@@ -122,7 +122,7 @@ export default function FixedDepartures() {
             </div>
 
             {/* Destinations Without Flight Section */}
-            <div className="mb-8">
+            <div className="mb-8 mt-10">
                 <h2 className="text-3xl font-bold mb-6 text-center">
                     <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
                         Fixed Departures
@@ -131,7 +131,7 @@ export default function FixedDepartures() {
                 </h2>
                 
                 {/* Container for cards and navigation */}
-                <div className="relative">
+                <div className="relative top-10">
                     {/* Navigation Controls - Only visible on desktop */}
                     <div className="absolute top-1/2 -translate-y-1/2 left-0 z-10 hidden md:block">
                         <Button 
@@ -159,7 +159,7 @@ export default function FixedDepartures() {
 
                     {/* Without Flights Cards - Horizontal scroll on mobile */}
                     <div className="overflow-x-auto -mx-4 px-4">
-                        <div className="flex md:grid md:grid-cols-2 xl:grid-cols-3 gap-6 min-w-min md:min-w-0">
+                        <div className="flex md:grid md:grid-cols-3 gap-6 min-w-min md:min-w-0">
                             {Object.values(destinationGroups[currentPage])
                                 .slice(0, 3)
                                 .map((destination: DestinationWithoutFlight) => (
@@ -236,7 +236,7 @@ export default function FixedDepartures() {
                                             </Link>
                                         </div>
                                     </div>
-                            ))}
+                                ))}
                         </div>
                     </div>
 
