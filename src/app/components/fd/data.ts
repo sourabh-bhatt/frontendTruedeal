@@ -588,7 +588,7 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
         country: "Almaty",
         days: 5,
         nights: 4,
-        amount: 85000,
+        amount: 39999,
         dateStart: "Contact for dates",
         dateEnd: "Contact for dates",
         description: "Experience the wonders of Almaty with our meticulously designed 4-night itinerary. This fixed-departure package offers the perfect balance of cultural exploration, natural beauty, and leisure activities, making it an ideal choice for all travelers.",

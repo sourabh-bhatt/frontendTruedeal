@@ -200,8 +200,8 @@ export default function HeroSection() {
     )
 
     const StatsSection = () => (
-        <div className="z-[2] md:block hidden">
-            <div className="container mx-auto px-4">
+        <div className="z-[2] md:block hidden ">
+            <div className="container mx-auto px-4 relative top-[60px]">
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-12 max-w-3xl mx-auto">
                     {/* MICE Services */}
                     <div className="flex flex-col items-center text-white">

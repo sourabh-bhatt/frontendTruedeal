@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
 
 const tagColors = [
-    { bg: "from-[#FF6B6B]/10 to-[#FF8787]/10", text: "text-[#FF6B6B]" },
+    { bg: "from-[#8B5CF6]/10 to-[#A78BFA]/10", text: "text-[#7C3AED]" },
     { bg: "from-[#4ECDC4]/10 to-[#45B7AF]/10", text: "text-[#45B7AF]" },
     { bg: "from-[#017ae3]/10 to-[#00f6ff]/10", text: "text-[#017ae3]" }
 ];
@@ -65,7 +65,7 @@ const offers = [
             "/UGCImages/Hd images2/shimla/vertical/2.webp",
             "/UGCImages/Hd images2/shimla/vertical/3.webp"
         ],
-        amenities: ["Sightseeing", "Transfers"]
+        amenities: ["Activities", "Transfers"]
     }
 ];
 
