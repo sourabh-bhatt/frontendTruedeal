@@ -480,7 +480,7 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
         country: "Mini Europe",
         days: 7,
         nights: 6,
-        amount: 990000,
+        amount: 99000,
         dateStart: "25 April, 24 Oct",
         dateEnd: "25 March, 25 Sep",
         description: "Experience the best of Europe with our specially curated 6-night itinerary, covering iconic destinations across Italy, Switzerland, and France. Perfectly planned for travelers who seek an effortless, all-inclusive journey with fixed departures.",
