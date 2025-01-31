@@ -26,6 +26,14 @@ export const metadata: Metadata = {
     description: "Plan your next adventure with TrueDeal, a trusted tour and travel agency. Explore custom packages, affordable deals, and expert guidance for a hassle-free journey.",
     images: "/Assets/NavbarImages/logo.png",
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
 };
 
 export default function RootLayout({
