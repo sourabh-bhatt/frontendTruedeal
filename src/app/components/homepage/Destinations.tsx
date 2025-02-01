@@ -110,6 +110,10 @@ function DestinationCard({ continent, destinations, currentIndex }: {
 function DestinationSubCard({ name, price, image }: Destination) {
     const router = useRouter()
 
+    const formatPrice = (price: number) => {
+        return price.toLocaleString('en-IN');
+    }
+
     return (
         <div
             className="flex items-center rounded-lg shadow-lg w-full md:w-72 h-20 bg-white cursor-pointer hover:shadow-xl transition-shadow"
@@ -127,7 +131,7 @@ function DestinationSubCard({ name, price, image }: Destination) {
             <div className="flex-grow px-4">
                 <h4 className="text-gray-800 font-semibold">{name}</h4>
                 <div className="text-white text-sm font-semibold rounded-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] px-3 py-1 inline-block mt-1">
-                    FROM {price} ₹
+                    FROM ₹ {formatPrice(price)}
                 </div>
             </div>
             <ChevronRight className="text-gray-400 mr-4" />

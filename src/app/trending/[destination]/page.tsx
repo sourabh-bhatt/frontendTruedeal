@@ -248,7 +248,7 @@ const trendingData: { [key: string]: TrendingDestinationDetails } = {
             {
                 day: 2,
                 title: "Shimla Local Sightseeing",
-                description: "After breakfast, start a full-day tour of Shimla. Visit Jakhoo Temple for panoramic views, the historic Viceregal Lodge for its British-era architecture, and Christ Church. Spend the evening exploring Mall Road’s vibrant atmosphere and local eateries. Overnight stay at the hotel."
+                description: "After breakfast, start a full-day tour of Shimla. Visit Jakhoo Temple for panoramic views, the historic Viceregal Lodge for its British-era architecture, and Christ Church. Spend the evening exploring Mall Road's vibrant atmosphere and local eateries. Overnight stay at the hotel."
             },
             {
                 day: 3,
@@ -421,7 +421,9 @@ export default function TrendingDestinationDetails() {
                             <Calendar className="w-4 h-4" />
                             Available Packages: {destinationData.packages}
                         </div>
-                        <div className="text-2xl font-bold mb-1">₹{destinationData.price.toLocaleString()}</div>
+                        <div className="text-2xl font-bold mb-1">
+                            {destinationData.price.toLocaleString('en-IN')} ₹
+                        </div>
                         <div className="text-sm text-gray-600 mb-4">Per Person</div>
                         <Button
                             className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white mb-4 transition-all duration-500"
