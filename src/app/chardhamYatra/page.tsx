@@ -1,5 +1,6 @@
 'use client';
 
+import React from 'react';
 import Link from 'next/link';
 import { FaPlane, FaCalendarAlt, FaClock } from 'react-icons/fa';
 import { Button } from "@/components/ui/button";
