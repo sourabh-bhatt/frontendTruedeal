@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import { FaPlane, FaCalendarAlt, FaClock } from 'react-icons/fa';
-import { IoLocationSharp } from 'react-icons/io5';
 import { Button } from "@/components/ui/button";
 import Image from 'next/image';
 import { chardhamData, ChardhamPackage } from './data';

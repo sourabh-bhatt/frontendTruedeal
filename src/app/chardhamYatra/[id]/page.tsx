@@ -1,9 +1,8 @@
 'use client';
 
-import { chardhamData, ChardhamPackage } from '../data';
+import { chardhamData } from '../data';
 import { notFound } from 'next/navigation';
-import { FaPlane, FaCalendarAlt, FaClock } from 'react-icons/fa';
-import { IoLocationSharp } from 'react-icons/io5';
+import { FaPlane, FaCalendarAlt} from 'react-icons/fa';
 import { use, useState, useEffect, useRef } from 'react';
 import { Button } from "@/components/ui/button";
 import { BookingFormModal } from '@/app/components/BookingFormModal';
