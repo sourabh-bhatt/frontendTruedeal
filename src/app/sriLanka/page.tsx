@@ -1,16 +1,16 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { FaPlane, FaClock } from 'react-icons/fa';
 import { Button } from "@/components/ui/button";
 import Image from 'next/image';
 import { sriLankaData, SriLankaPackage } from './data';
-import { useState } from 'react';
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 export default function SriLanka() {
     const [currentPage, setCurrentPage] = useState(0);
+    const [windowWidth, setWindowWidth] = useState(768); // Default to desktop breakpoint
     const packages = Object.values(sriLankaData);
     
     // Calculate items per page based on screen size
@@ -36,6 +36,26 @@ export default function SriLanka() {
         const start = currentPage * perPage;
         return packages.slice(start, start + perPage);
     };
+
+    // Add window resize handler
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            const handleResize = () => {
+                setWindowWidth(window.innerWidth);
+            };
+            
+            // Set initial width
+            setWindowWidth(window.innerWidth);
+            
+            // Add event listener
+            window.addEventListener('resize', handleResize);
+            
+            // Cleanup
+            return () => {
+                window.removeEventListener('resize', handleResize);
+            };
+        }
+    }, []);
 
     return (
         <div className="container mx-auto px-4 py-6">
@@ -207,7 +227,7 @@ export default function SriLanka() {
 
                 {/* Pagination Indicators */}
                 <div className="flex justify-center mt-6 gap-2">
-                    {[...Array(window.innerWidth >= 768 ? totalPages : mobileTotalPages)].map((_, index) => (
+                    {[...Array(windowWidth >= 768 ? totalPages : mobileTotalPages)].map((_, index) => (
                         <button
                             key={index}
                             className={`h-2 rounded-full transition-all ${
