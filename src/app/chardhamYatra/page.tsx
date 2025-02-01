@@ -11,6 +11,7 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 export default function ChardhamYatra() {
     const [currentPage, setCurrentPage] = useState(0);
+    const [isMobile, setIsMobile] = useState(false);
     const packages = Object.values(chardhamData);
     
     // Calculate items per page based on screen size
@@ -21,6 +22,22 @@ export default function ChardhamYatra() {
 
     const totalPages = Math.ceil(packages.length / itemsPerPage.desktop);
     const mobileTotalPages = Math.ceil(packages.length / itemsPerPage.mobile);
+
+    // Add useEffect to handle window resize
+    React.useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+        
+        // Set initial value
+        handleResize();
+        
+        // Add event listener
+        window.addEventListener('resize', handleResize);
+        
+        // Cleanup
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     const handleNext = () => {
         setCurrentPage((prev) => (prev + 1) % totalPages);
@@ -215,7 +232,7 @@ export default function ChardhamYatra() {
 
                 {/* Pagination Indicators */}
                 <div className="flex justify-center mt-6 gap-2">
-                    {[...Array(window.innerWidth >= 768 ? totalPages : mobileTotalPages)].map((_, index) => (
+                    {[...Array(isMobile ? mobileTotalPages : totalPages)].map((_, index) => (
                         <button
                             key={index}
                             className={`h-2 rounded-full transition-all ${
