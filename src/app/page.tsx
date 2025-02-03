@@ -11,7 +11,7 @@ import ExoticDestinations from "./components/homepage/Exotic"
 import Europe from "./components/homepage/Europe";
 import Domestic from "./components/homepage/Domestic";
 import Gallery from "./components/homepage/Gallery";
-import WallOfLove from "./components/homepage/Ugc";
+// import WallOfLove from "./components/homepage/Ugc";
 import Indonesia from "./indonesia/page";
 import ReviewsGlimpse from './components/homepage/ReviewsGlimpse'
 import NoCostEMIPage from "./no-cost-emi/page";
@@ -41,7 +41,8 @@ export default function Home() {
       {/* <HappyCustomers /> */}
       <CurrencyExchange />
       <Gallery />
-      <WallOfLove />
+      
+      {/* <WallOfLove /> */}
       <Sponsors />
       <ReviewsGlimpse />
     </main>
