@@ -17,7 +17,7 @@ import ReviewsGlimpse from './components/homepage/ReviewsGlimpse'
 import NoCostEMIPage from "./no-cost-emi/page";
 import FixedDepartures from "./components/fd/page";
 import BannerCarousel from "./components/valentine/page";
-// import ChardhamYatra from './chardhamYatra/page';
+import ChardhamYatra from './chardhamYatra/page';
 // import SriLanka from './sriLanka/page';
 
 export default function Home() {
@@ -26,7 +26,7 @@ export default function Home() {
       <HeroSection />
       <BannerCarousel />  
       <FixedDepartures />
-      {/* <ChardhamYatra /> */}
+      <ChardhamYatra />
       {/* <SriLanka /> */}
       <Destination />
       <Domestic />

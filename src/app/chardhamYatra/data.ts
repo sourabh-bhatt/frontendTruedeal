@@ -46,7 +46,7 @@ export const chardhamData: Record<string, ChardhamPackage> = {
         name: "Chardham Yatra by Helicopter",
         days: 6,
         nights: 5,
-        amount: 90000,
+        amount: 230000,
         dateStart: "01 May",
         dateEnd: "30 June",
         description: "Embark on a once-in-a-lifetime spiritual journey with our Fixed Departure Chardham Yatra by helicopter. Our meticulously planned itinerary ensures a seamless, comfortable, and spiritually enriching experience, covering all four sacred shrines—Yamunotri, Gangotri, Kedarnath, and Badrinath.",
@@ -79,10 +79,12 @@ export const chardhamData: Record<string, ChardhamPackage> = {
             "Force majeure costs"
         ],
         images: [
-            "/UGCImages/chardham/1.webp",
-            "/UGCImages/chardham/2.webp",
-            "/UGCImages/chardham/3.webp",
-            "/UGCImages/chardham/4.webp"
+            "/UGCImages/chardham/Chardham/1.webp",
+            "/UGCImages/chardham/Chardham/2.webp",
+            "/UGCImages/chardham/Chardham/3.webp",
+            "/UGCImages/chardham/Chardham/4.webp",
+            "/UGCImages/chardham/Chardham/5.webp",
+            "/UGCImages/chardham/Chardham/6.webp",
         ],
         tourSummary: [
             "Premium package with VIP darshans",
@@ -129,7 +131,7 @@ export const chardhamData: Record<string, ChardhamPackage> = {
         name: "Dodham Helicopter Tour",
         days: 1,
         nights: 0,
-        amount: 75000,
+        amount: 115000,
         dateStart: "05 May",
         dateEnd: "30 June",
         flightFrom: "Sahastradhara Helidrome",
@@ -175,6 +177,14 @@ Return to Badrinath helipad for departure
 
                 `
             }
+        ],
+        images: [
+            "/UGCImages/chardham/Chardham/7.webp",
+            "/UGCImages/chardham/Chardham/8.webp",
+            "/UGCImages/chardham/Chardham/9.webp",
+            "/UGCImages/chardham/Chardham/10.webp",
+            "/UGCImages/chardham/Chardham/11.webp",
+            "/UGCImages/chardham/Chardham/12.webp",
         ]
     },
     dodhamSersi: {
@@ -182,7 +192,7 @@ Return to Badrinath helipad for departure
         name: "Dodham Ex-Sersi Helicopter Tour",
         days: 1,
         nights: 0,
-        amount: 65000,
+        amount: 350000,
         dateStart: "05 May",
         dateEnd: "30 June",
         flightFrom: "SERSI HELIPAD",
@@ -210,6 +220,15 @@ Return to Badrinath helipad for departure
             "Personal expenses, tips, donations",
             "Additional services or accommodation",
             "Sudden tax increases"
+        ],
+        images: [
+            "/UGCImages/chardham/dodham/14.webp",
+            "/UGCImages/chardham/dodham/12.webp",
+            "/UGCImages/chardham/Chardham/13.webp",
+            "/UGCImages/chardham/Chardham/14.webp",
+            "/UGCImages/chardham/Chardham/15.webp",
+            "/UGCImages/chardham/dodham/13.webp",
+            "/UGCImages/chardham/dodham/15.webp",
         ]
     },
     dodham4Days: {
@@ -217,7 +236,7 @@ Return to Badrinath helipad for departure
         name: "Dodham 4 Days Helicopter Tour",
         days: 4,
         nights: 3,
-        amount: 95000,
+        amount: 135000,
         dateStart: "05 May",
         dateEnd: "30 June",
         flightFrom: "Dehradun",
@@ -269,13 +288,21 @@ Return to Badrinath helipad for departure
             "Network connectivity-related expenses (BSNL & Jio work best in these regions).",
             "Any additional transfers apart from the ones included."
         ],
+        images: [
+            "/UGCImages/chardham/dodham/5.webp",
+            "/UGCImages/chardham/dodham/4.webp",
+            "/UGCImages/chardham/dodham/3.webp",
+            "/UGCImages/chardham/dodham/2.webp",
+            "/UGCImages/chardham/dodham/1.webp",
+            "/UGCImages/chardham/dodham/6.webp",
+        ]
     },
     ekdham: {
         id: "ekdham-same-day-tour",
         name: "Ekdham Same Day Tour",
         days: 1,
         nights: 0,
-        amount: 45000,
+        amount: 115000,
         dateStart: "Available on request",
         dateEnd: "Available on request",
         flightFrom: "Dehradun",
@@ -318,6 +345,14 @@ Return to Badrinath helipad for departure
             "Airport or hotel transfers in Dehradun.",
             "Sightseeing and personal expenses."
         ],
+        images: [
+            "/UGCImages/chardham/dodham/7.webp",
+            "/UGCImages/chardham/dodham/8.webp",
+            "/UGCImages/chardham/dodham/9.webp",
+            "/UGCImages/chardham/dodham/10.webp",
+            "/UGCImages/chardham/dodham/11.webp",
+            "/UGCImages/chardham/dodham/12.webp",
+        ]
     }
 };
 
