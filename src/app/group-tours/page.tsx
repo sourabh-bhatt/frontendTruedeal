@@ -5,6 +5,13 @@ import Link from 'next/link';
 import { Calendar, Users, Clock } from 'lucide-react';
 import { groupToursList } from '@/data/groupTours';
 
+import ChardhamYatra from '@/app/chardhamYatra/page';
+import FixedDepartures from '@/app/components/fd/page';
+import Gallery from '@/app/components/homepage/Gallery';
+// import WallOfLove from '@/app/components/homepage/Ugc';
+import Sponsors from '@/app/components/Ad/Sponsers';
+import ReviewsGlimpse from '@/app/components/homepage/ReviewsGlimpse';
+
 export default function GroupTours() {
     return (
         <div className="min-h-screen bg-gray-50 mt-20">
@@ -56,6 +63,14 @@ export default function GroupTours() {
                         </Link>
                     ))}
                 </div>
+
+                
+                <ChardhamYatra />
+                <FixedDepartures />
+                <Gallery />
+                {/* <WallOfLove /> */}
+                <Sponsors />
+                <ReviewsGlimpse />
             </main>
         </div>
     );

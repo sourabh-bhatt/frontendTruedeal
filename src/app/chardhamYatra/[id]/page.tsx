@@ -10,6 +10,20 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { motion, useScroll, AnimatePresence } from "framer-motion";
 import { Poppins } from 'next/font/google';
 import ChardhamYatra from '../page';
+import FixedDepartures from '@/app/components/fd/page';
+import Domestic from '@/app/components/homepage/Domestic';
+import Indonesia from '@/app/indonesia/page';
+import BannerCarousel from '@/app/components/valentine/page';
+import Destinations from '@/app/components/homepage/Destinations';
+import Trending from '@/app/components/homepage/Trending';
+import ReviewsGlimpse from '@/app/components/homepage/ReviewsGlimpse';
+import Europe from '@/app/components/homepage/Europe';
+import ExoticDestinations from '@/app/components/homepage/Exotic';
+import Gallery from '@/app/components/homepage/Gallery';
+import Sponsors from '@/app/components/Ad/Sponsers';
+import HappyCustomers from '@/app/components/Ad/HappyCustomers';
+import WallOfLove from '@/app/components/homepage/Ugc';
+
 
 interface PageProps {
     params: Promise<{ id: string; }>
@@ -392,6 +406,19 @@ export default function ChardhamYatraPage({ params }: PageProps) {
             {/* Other Packages Section */}
             <div className="mt-12">
                 <ChardhamYatra />
+                <FixedDepartures />
+                <Destinations />        
+                <Trending />
+                <BannerCarousel />  
+                <Indonesia />
+                <Domestic />
+                <ExoticDestinations />
+                <Europe />
+                <HappyCustomers />   
+                <Gallery />
+                <WallOfLove />
+                <Sponsors /> 
+                <ReviewsGlimpse />
             </div>
 
             {/* Floating CTA Button */}

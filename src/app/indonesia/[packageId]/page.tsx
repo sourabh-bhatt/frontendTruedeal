@@ -9,6 +9,18 @@ import { GalleryModal } from '@/app/package/[id]/gallery-modal';
 import { BookingFormModal } from '@/app/components/BookingFormModal';
 import { indonesiaPackages } from '@/data/indonesiaPackages';
 import Shimmer from '@/components/ui/shimmer';
+import ChardhamYatra from '@/app/chardhamYatra/page';   
+import FixedDepartures from '@/app/components/fd/page';
+import Destinations from '@/app/components/homepage/Destinations';  
+import Trending from '@/app/components/homepage/Trending';
+import BannerCarousel from '@/app/components/valentine/page';
+import Indonesia from '@/app/indonesia/page';
+import Domestic from '@/app/components/homepage/Domestic';
+import Europe from '@/app/components/homepage/Europe';  
+import Gallery from '@/app/components/homepage/Gallery';
+import Sponsors from '@/app/components/Ad/Sponsers';
+import ReviewsGlimpse from '@/app/components/homepage/ReviewsGlimpse';
+  
 
 export default function PackageDetails() {
     const params = useParams();
@@ -183,6 +195,21 @@ export default function PackageDetails() {
                             </div>
                         </section>
                     </div>
+                </div>
+
+                {/* Adding the additional components */}
+                <div className="mt-16 space-y-16">
+                    <ChardhamYatra />
+                    <FixedDepartures />
+                    <Destinations />        
+                    <Trending />
+                    <BannerCarousel />  
+                    <Indonesia />
+                    <Domestic />
+                    <Europe />
+                    <Gallery />
+                    <Sponsors /> 
+                    <ReviewsGlimpse />
                 </div>
             </main>
         </div>

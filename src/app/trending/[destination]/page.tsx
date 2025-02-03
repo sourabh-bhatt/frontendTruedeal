@@ -18,6 +18,11 @@ import Gallery from '@/app/components/homepage/Gallery';
 import WallOfLove from '@/app/components/homepage/Ugc';
 import CurrencyExchange from '@/app/components/forex/ForexLive';
 import Sponsors from '@/app/components/Ad/Sponsers';
+import ReviewsGlimpse from '@/app/components/homepage/ReviewsGlimpse';
+import Indonesia from '@/app/indonesia/page';
+import BannerCarousel from '@/app/components/valentine/page';
+import FixedDepartures from '@/app/components/fd/page';
+import ChardhamYatra from '@/app/chardhamYatra/page';
 interface TrendingDestinationDetails {
     name: string;
     price: number;
@@ -539,15 +544,20 @@ export default function TrendingDestinationDetails() {
                 </div>
             </main>
             <Destinations />
+                <Trending />
+            <BannerCarousel />      
+            <FixedDepartures />
+            <ChardhamYatra />
+            <Indonesia />
             <Domestic />
-            <Trending />
             <ExoticDestinations />
             <Europe />
-            <HappyCustomers />
-            <Gallery />
+            {/* <HappyCustomers /> */}
             <CurrencyExchange />
-            <WallOfLove />
+            <Gallery />
+            {/* <WallOfLove /> */}
             <Sponsors />
+            <ReviewsGlimpse />
 
         </div>
     );

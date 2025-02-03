@@ -10,15 +10,18 @@ import { BookingFormModal } from '../../components/BookingFormModal';
 import Trending from '@/app/components/homepage/Trending';
 import Destinations from '@/app/components/homepage/Destinations';
 import Shimmer from '@/components/ui/shimmer';
-import HappyCustomers from '@/app/components/Ad/HappyCustomers';
 import Domestic from '@/app/components/homepage/Domestic';
 import Europe from '@/app/components/homepage/Europe';
 import Gallery from '@/app/components/homepage/Gallery';
 import ExoticDestinations from '@/app/components/homepage/Exotic';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import CurrencyExchange from '../../components/forex/ForexLive';
-import WallOfLove from '@/app/components/homepage/Ugc';
 import Sponsors from "../../components/Ad/Sponsers";
+import ReviewsGlimpse from '@/app/components/homepage/ReviewsGlimpse';
+import FixedDepartures from '@/app/components/fd/page';
+import ChardhamYatra from '@/app/chardhamYatra/page';
+import BannerCarousel from '../../components/valentine/page';
+import Indonesia from '@/app/indonesia/page';
 
 
 interface DestinationDetails {
@@ -1447,7 +1450,6 @@ const destinationData: { [key: string]: DestinationDetails } = {
             "/UGCImages/HD IMAGES/Finland/horizontal/3.jpg",
             "/UGCImages/HD IMAGES/Finland/horizontal/4.jpg",
             "/UGCImages/HD IMAGES/Finland/horizontal/5.jpg",
-            "/UGCImages/HD IMAGES/Finland/horizontal/6.jpg",
             "/UGCImages/HD IMAGES/Finland/vertical/1.jpg",
             "/UGCImages/HD IMAGES/Finland/vertical/2.jpg",
             "/UGCImages/HD IMAGES/Finland/vertical/3.jpg",
@@ -2416,7 +2418,7 @@ export default function DestinationDetails() {
                 <main className="container mx-auto px-4 py-8 max-w-7xl">
                     <div className="flex items-center justify-between mb-6">
                         <div className="flex items-center gap-3">
-                            <div className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white px-4 py-2 rounded-full text-sm font-medium">
+                            <div className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white px-4 py-2 rounded-full text-sm font-medium mt-2">
                                 {destinationData.variants.length} Packages Available
                             </div>
                         </div>
@@ -2659,11 +2661,11 @@ export default function DestinationDetails() {
 
                 <Trending />
                 <Destinations />
-                <HappyCustomers />
+                {/* <HappyCustomers /> */}
                 <Domestic />
                 <ExoticDestinations />
                 <Europe />
-                <HappyCustomers />
+                {/* <HappyCustomers /> */}
                 <Gallery />
                 <style jsx global>{`
                     .custom-scrollbar {
@@ -2999,14 +3001,22 @@ export default function DestinationDetails() {
                     />
                 </main>
 
+            <Destinations />
                 <Trending />
-                <Destinations />
-                <HappyCustomers />
-                <Domestic />
-                <ExoticDestinations />
-                <Europe />
-                <HappyCustomers />
-                <Gallery />
+            <BannerCarousel />  
+            <FixedDepartures />
+            <ChardhamYatra />
+            <Indonesia />
+            <Domestic />
+            <ExoticDestinations />
+            <Europe />
+            {/* <HappyCustomers /> */}
+            <CurrencyExchange />
+            <Gallery />
+            {/* <WallOfLove /> */}
+            <Sponsors />
+            <ReviewsGlimpse />
+                
                 <style jsx global>{`
                     .custom-scrollbar {
                         scrollbar-width: thin;
@@ -3241,14 +3251,19 @@ export default function DestinationDetails() {
             </main>
             <Trending />
             <Destinations />
+            <BannerCarousel />  
+            <FixedDepartures />
+            <ChardhamYatra />
             <Domestic />
             <ExoticDestinations />
             <Europe />
-            <HappyCustomers />
+            {/* <HappyCustomers /> */}
             <CurrencyExchange />
             <Gallery />
-            <WallOfLove />
+            {/* <WallOfLove /> */}
             <Sponsors />
+            <ReviewsGlimpse />
+
         </div>
     );
 }

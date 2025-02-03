@@ -16,6 +16,17 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { motion, useScroll, AnimatePresence } from "framer-motion";
 import { Poppins } from 'next/font/google';
 import  FixedDepartures  from '../page'
+import BannerCarousel from '../../valentine/page';
+import Indonesia from '@/app/indonesia/page';
+import ChardhamYatra from '@/app/chardhamYatra/page';
+import Destinations from '../../homepage/Destinations';
+import Trending from '../../homepage/Trending';
+import Domestic from '../../homepage/Domestic';
+import Europe from '../../homepage/Europe';
+import ExoticDestinations from '../../homepage/Exotic';
+import Gallery from '../../homepage/Gallery';
+import ReviewsGlimpse from '../../homepage/ReviewsGlimpse';
+import Sponsors from '../../Ad/Sponsers';
 
 interface PageProps {
     params: Promise<{ id: string; }>
@@ -398,6 +409,19 @@ export default function FixedDeparturePage({ params }: PageProps) {
 
             <div className="">
                 <FixedDepartures />
+                <ChardhamYatra />   
+                <Destinations />        
+                <Trending />
+            <BannerCarousel />  
+            <Indonesia />
+            <Domestic />                
+            <ExoticDestinations />
+            <Europe />
+            {/* <HappyCustomers /> */}   
+            <Gallery />
+            {/* <WallOfLove /> */}
+            <Sponsors /> 
+            <ReviewsGlimpse />
             </div>
 
             {/* Floating CTA Button - Shows on scroll */}
@@ -443,12 +467,12 @@ export default function FixedDeparturePage({ params }: PageProps) {
             />
 
             {/* Conditionally render flight-specific information */}
-            {isFixedDep && (
+            {/* {isFixedDep && (
                 <div className="bg-white rounded-lg shadow-sm p-6">
                     <h2 className="text-2xl font-bold mb-6 text-primary border-b pb-4">Flight Information</h2>
-                    {/* Add flight-specific details here */}
+                    
                 </div>
-            )}
+            )} */}
 
             {/* Add some CSS to handle scrollbar */}
             <style jsx global>{`

@@ -19,6 +19,14 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import BannerCarousel from '@/app/components/valentine/page';
+import Indonesia from '@/app/indonesia/page';
+import Domestic from '@/app/components/homepage/Domestic';
+import ExoticDestinations from '@/app/components/homepage/Exotic';
+import Europe from '@/app/components/homepage/Europe';
+import ReviewsGlimpse from '@/app/components/homepage/ReviewsGlimpse';
+import FixedDepartures from '@/app/components/fd/page';
+import ChardhamYatra from '@/app/chardhamYatra/page';
 
 export default function GroupTourDetails() {
     const params = useParams();
@@ -201,12 +209,20 @@ export default function GroupTourDetails() {
             </main>
 
             {/* Additional Components */}
-            <Destinations />
+            <ChardhamYatra />
+            <FixedDepartures />
+            <Destinations />        
             <Trending />
-            <HappyCustomers />
+            <BannerCarousel />  
+            <Indonesia />
+            <Domestic />
+            <ExoticDestinations />
+            <Europe />
+            <HappyCustomers />   
             <Gallery />
             <WallOfLove />
-            <Sponsors />
+            <Sponsors /> 
+            <ReviewsGlimpse />
         </div>
     );
 } 
