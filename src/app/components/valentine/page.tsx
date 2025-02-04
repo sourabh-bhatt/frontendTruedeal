@@ -10,10 +10,10 @@ const bannerImages = [
 ];
 
 const mobileBannerImages = [
-  '/mobile/1.svg',
-  '/mobile/2.svg',
-  '/mobile/3.svg',
-  '/mobile/4.svg'
+  '/mobile/1.webp',
+  '/mobile/2.webp',
+  '/mobile/3.webp',
+  '/mobile/4.webp'
 ];
 
 export default function BannerCarousel() {
