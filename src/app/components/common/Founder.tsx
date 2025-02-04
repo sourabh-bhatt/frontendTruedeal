@@ -13,14 +13,14 @@ export default function Founder() {
 
                 <div className="max-w-6xl mx-auto">
                     <div className="grid md:grid-cols-2 gap-8 items-center">
-                        <div className="relative w-full h-[500px] rounded-2xl overflow-hidden shadow-xl">
+                        <div className="relative aspect-[694/844] w-full max-w-[694px] mx-auto rounded-2xl overflow-hidden shadow-xl">
                             <Image
-                                src="/Assets/Founder/FounderandCeoofTruedeal.jfif"
-                                alt="Founder and ceo of Truedeal"
+                                src="/Assets/Founder/founderceo.png"
+                                alt="Founder and CEO of TrueDeal"
                                 fill
                                 className="object-cover object-center hover:scale-105 transition-transform duration-700"
                                 quality={100}
-                                sizes="(max-width: 768px) 100vw, 50vw"
+                                sizes="(max-width: 768px) 90vw, (max-width: 1200px) 45vw, 694px"
                                 priority
                             />
                         </div>
@@ -32,7 +32,7 @@ export default function Founder() {
                                 </svg>
                             </div>
                             <blockquote className="relative z-10 mt-8 italic text-xl text-gray-700 font-poppins">
-                                &ldquo;At TrueDeal, we believe travel is not just about reaching a destination; it’s about the journey of learning, growth, and discovery. Travel until you earn the knowledge, memories, and experiences that last a lifetime. With every trip you take, you broaden your horizons, connect with new cultures, and transform your perspective. We are here to make your travel dreams come true, providing you with unforgettable experiences, personalized services, and exceptional value. Join us and let your adventure begin with TrueDeal!
+                                &ldquo;At TrueDeal, we believe travel is not just about reaching a destination; it's about the journey of learning, growth, and discovery. Travel until you earn the knowledge, memories, and experiences that last a lifetime. With every trip you take, you broaden your horizons, connect with new cultures, and transform your perspective. We are here to make your travel dreams come true, providing you with unforgettable experiences, personalized services, and exceptional value. Join us and let your adventure begin with TrueDeal!
                                 &rdquo;
                             </blockquote>
                             <div className="mt-8 border-t pt-4">
