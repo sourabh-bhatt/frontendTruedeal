@@ -39,9 +39,11 @@
     "embla-carousel-react": "^8.3.1",
     "framer-motion": "^10.18.0",
     "heroicons": "^2.2.0",
+    "jsonwebtoken": "^9.0.2",
     "lucide-react": "^0.460.0",
     "motion": "^11.18.2",
     "next": "15.0.3",
+    "nodemailer": "^6.10.0",
     "phosphor-react": "^1.4.1",
     "radix-ui": "^1.0.1",
     "react": "18.2.0",
@@ -58,7 +60,9 @@
     "toast": "^0.5.4"
   },
   "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.8",
     "@types/node": "^22",
+    "@types/nodemailer": "^6.4.17",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@typescript-eslint/eslint-plugin": "^8.14.0",
