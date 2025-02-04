@@ -47,7 +47,8 @@ Sitemap: https://www.truedeal4u.com/sitemap.xml`
     headers: {
       'Content-Type': 'text/plain',
       'Cache-Control': 'public, max-age=3600',
-      'X-Robots-Tag': 'index,follow'
+      'X-Robots-Tag': 'all',
+      'X-Content-Type-Options': 'nosniff'
     },
   })
 } 
