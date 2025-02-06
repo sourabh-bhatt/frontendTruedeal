@@ -336,6 +336,115 @@ export const fixedDeparturesData: Record<string, FixedDeparture> = {
             "/UGCImages/images5/VIETNAM/HORIZONTAL/4.webp",
             "/UGCImages/images5/VIETNAM/HORIZONTAL/5.webp",
         ]
+    },
+    turkey: {
+        id: "TDWF004",
+        country: "Turkey",
+        days: 9,
+        nights: 8,
+        amount: 122400,
+        dateStart: "27 May 2025",
+        dateEnd: "4 June 2025",
+        flightFrom: "Multiple",
+        description: "Embark on an unforgettable 8-night, 9-day adventure across Turkey, exploring the stunning cities of Istanbul, Cappadocia, and Antalya. From ancient landmarks to breathtaking landscapes, luxurious stays, and authentic local experiences—this fixed departure package is crafted for ultimate comfort and discovery!",
+        groupDetails: {
+            pax: "Group Departure",
+            rooms: "Twin Sharing Basis",
+            arrivalDate: "27th May 2025",
+            duration: "8N9D Turkey",
+            costBasis: "Cost Based On Room Type"
+        },
+        hotelDetails: [
+            {
+                city: "Istanbul",
+                hotel: "Avantgarde Hotel",
+                roomType: "4 Star or similar"
+            },
+            {
+                city: "Cappadocia",
+                hotel: "MDC Cave Hotel",
+                roomType: "4 Star or similar"
+            },
+            {
+                city: "Antalya",
+                hotel: "Best Western Khan Hotel",
+                roomType: "4 Star or similar"
+            }
+        ],
+        tourSummary: [
+            "Day 1-3: Istanbul - Blue Mosque, Topkapi Palace, Grand Bazaar & Bosphorus Dinner Cruise",
+            "Day 4-6: Cappadocia - Surreal landscapes, Hot Air Balloon Ride (Optional), Devrent & Pasabag Valleys, Goreme Open-Air Museum",
+            "Day 7-9: Antalya - Duden Waterfalls, Old City Marina, Hadrian's Gate, and Pamukkale excursion"
+        ],
+        inclusions: [
+            "8 Nights' accommodation in premium hotels",
+            "Daily Breakfast, 5 Lunches & 5 Dinners",
+            "Airport Transfers & Private Sightseeing Tours",
+            "All entrance tickets as per itinerary",
+            "English-speaking professional tour guide",
+            "Air-conditioned private vehicle for all sightseeing"
+        ],
+        exclusions: [
+            "International & Domestic Flights",
+            "Visa Charges & Travel Insurance",
+            "Personal expenses & optional activities (e.g., Hot Air Balloon Ride – €195 PP)",
+            "Meals not mentioned in the itinerary"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrival in Istanbul",
+                description: "Welcome to Turkey! Arrive in Istanbul and transfer to your hotel. Rest of the day at leisure to explore the vibrant city."
+            },
+            {
+                day: 2,
+                title: "Istanbul City Tour",
+                description: "Visit the iconic Blue Mosque, Topkapi Palace, and explore the Grand Bazaar. Evening Bosphorus Dinner Cruise."
+            },
+            {
+                day: 3,
+                title: "Istanbul Exploration",
+                description: "Continue exploring Istanbul's historic sites and cultural attractions."
+            },
+            {
+                day: 4,
+                title: "Istanbul to Cappadocia",
+                description: "Transfer to Cappadocia. Begin exploring the unique landscape and cave formations."
+            },
+            {
+                day: 5,
+                title: "Cappadocia Adventures",
+                description: "Optional Hot Air Balloon Ride. Visit Devrent & Pasabag Valleys, and Goreme Open-Air Museum."
+            },
+            {
+                day: 6,
+                title: "Cappadocia Exploration",
+                description: "Continue discovering Cappadocia's unique attractions and underground cities."
+            },
+            {
+                day: 7,
+                title: "Cappadocia to Antalya",
+                description: "Transfer to Antalya. Visit Duden Waterfalls and the Old City Marina."
+            },
+            {
+                day: 8,
+                title: "Pamukkale Excursion",
+                description: "Full-day excursion to the stunning white travertine terraces of Pamukkale."
+            },
+            {
+                day: 9,
+                title: "Departure",
+                description: "Transfer to the airport for your departure flight."
+            }
+        ],
+        images: [
+            "/UGCImages/Images4/turkey/horizontal/1.webp",
+            "/UGCImages/Images4/turkey/horizontal/2.webp",
+            "/UGCImages/Images4/turkey/horizontal/3.webp",
+            "/UGCImages/Images4/turkey/horizontal/4.webp",
+            "/UGCImages/Images4/turkey/horizontal/5.webp",
+            "/UGCImages/Images4/turkey/horizontal/6.webp"
+        ]
     }
 };
 
