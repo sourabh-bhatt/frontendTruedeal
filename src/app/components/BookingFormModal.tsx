@@ -10,6 +10,16 @@ import {
     DialogHeader,
     DialogTitle,
 } from "@/components/ui/dialog"
+import { toast } from 'react-hot-toast';
+import { z } from 'zod';
+
+// Add form schema
+const formSchema = z.object({
+    name: z.string().min(1, "Name is required"),
+    email: z.string().email("Invalid email"),
+    phone: z.string().min(10, "Invalid phone number"),
+    departureCity: z.string().min(1, "Departure city is required")
+});
 
 interface BookingFormModalProps {
     isOpen: boolean;
@@ -23,6 +33,7 @@ export function BookingFormModal({
     isOpen, 
     onClose, 
     destinationName,
+    price = 0,
 }: BookingFormModalProps) {
     const [formData, setFormData] = useState({
         destination: destinationName,
@@ -33,7 +44,6 @@ export function BookingFormModal({
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitError, setSubmitError] = useState<string | null>(null);
-    const [isSubmissionSuccessful, setIsSubmissionSuccessful] = useState(false);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -41,31 +51,47 @@ export function BookingFormModal({
         setSubmitError(null);
 
         try {
-            const response = await fetch('/api/send-booking-email', {
+            // Initiate payment
+            const response = await fetch('/api/payu', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    amount: price,
+                    productinfo: destinationName,
+                    firstname: formData.name,
+                    email: formData.email,
+                    phone: formData.phone
+                })
             });
 
-            if (!response.ok) {
-                throw new Error('Failed to send email');
+            const data = await response.json();
+            
+            if (!data.success) {
+                throw new Error('Payment initiation failed');
             }
 
-            console.log("Form submitted successfully");
-            setIsSubmissionSuccessful(true);
-            setTimeout(() => {
-                onClose();
-                setIsSubmissionSuccessful(false);
-            }, 3000);
+            // Create form and submit to PayU
+            const form = document.createElement('form');
+            form.method = 'POST';
+            form.action = data.payuUrl;
 
-            // Redirect to thank you page with encoded package name
-            const encodedName = encodeURIComponent(destinationName);
-            window.location.href = `/thankyou-query?name=${encodedName}`;
+            // Add all payment parameters as hidden fields
+            Object.entries(data.paymentData).forEach(([key, value]) => {
+                const input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = key;
+                input.value = value as string;
+                form.appendChild(input);
+            });
+
+            // Append form to body and submit
+            document.body.appendChild(form);
+            form.submit();
+
         } catch (error) {
-            console.error("Error submitting form:", error);
-            setSubmitError('Failed to send email. Please try again.');
+            console.error("Error:", error);
+            setSubmitError('Failed to process payment. Please try again.');
+            toast.error('Payment initiation failed. Please try again.');
         } finally {
             setIsSubmitting(false);
         }
@@ -76,17 +102,12 @@ export function BookingFormModal({
             <DialogContent className="sm:max-w-[425px] bg-white">
                 <DialogHeader>
                     <DialogTitle>Book {destinationName}</DialogTitle>
+                    {price > 0 && (
+                        <p className="text-sm text-gray-500">
+                            Amount to pay: ₹{price.toLocaleString('en-IN')}
+                        </p>
+                    )}
                 </DialogHeader>
-                {isSubmissionSuccessful && (
-                    <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-90 z-10">
-                        <div className="text-green-600 text-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            <p className="text-xl font-semibold">Enquiry submitted successfully!</p>
-                        </div>
-                    </div>
-                )}
                 <form onSubmit={handleSubmit} className="space-y-4">
                     <div className="space-y-2">
                         <Label htmlFor="destination">DESTINATION</Label>
@@ -135,16 +156,16 @@ export function BookingFormModal({
                             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         />
                     </div>
-                    {submitError && (
-                        <div className="text-red-500 text-sm">{submitError}</div>
-                    )}
                     <Button
                         type="submit"
                         className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white hover:from-[#00f6ff] hover:to-[#017ae3] transition-all duration-300"
                         disabled={isSubmitting}
                     >
-                        {isSubmitting ? 'Sending...' : 'Get a Callback'}
+                        {isSubmitting ? 'Processing Payment...' : 'Proceed to Payment'}
                     </Button>
+                    {submitError && (
+                        <p className="text-red-500 text-sm text-center">{submitError}</p>
+                    )}
                 </form>
             </DialogContent>
         </Dialog>

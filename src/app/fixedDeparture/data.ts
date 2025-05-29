@@ -52,7 +52,7 @@ export const fixedDeparturesData: Record<string, FixedDeparture> = {
         country: "Europe",
         days: 12,
         nights: 11,
-        amount: 395000,
+        amount: 1,
         dateStart: "16 May 2025",
         dateEnd: "28 May 2025",
         flightFrom: "Delhi",

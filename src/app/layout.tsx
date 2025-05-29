@@ -11,6 +11,7 @@ import GoogleAnalytics from '../components/GoogleAnalytics';
 import { Poppins } from 'next/font/google';
 import { GoogleTagManager } from '@next/third-parties/google'
 import dynamic from 'next/dynamic';
+import { Toaster } from 'react-hot-toast';
 
 // Dynamically import ClerkProvider with fallback
 const ClerkProvider = dynamic(
@@ -124,6 +125,7 @@ export default function RootLayout({
             <Footer />
           
           <Analytics />
+          <Toaster />
         </body>
       </html>
     </ClerkProvider>

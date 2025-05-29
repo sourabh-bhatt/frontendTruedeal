@@ -7,7 +7,7 @@ import {
     DestinationWithoutFlight,
     isFixedDeparture
 } from '../data';
-import { notFound } from 'next/navigation';
+import { notFound, useSearchParams } from 'next/navigation';
 import { FaPlane, FaCalendarAlt } from 'react-icons/fa';
 import { use, useState, useEffect, useRef } from 'react';
 import { Button } from "@/components/ui/button";
@@ -33,6 +33,7 @@ import { LocalCuisine } from '@/app/components/destinations/LocalCuisine';
 import Image from 'next/image';
 import BaliBanner from '@/app/components/homepage/BaliBanner';
 import BaliPage from '@/app/bali/page';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 
 
 interface PageProps {
@@ -54,6 +55,9 @@ function formatIndianPrice(price: number): string {
 
 export default function FixedDeparturePage({ params }: PageProps) {
     const { id } = use(params);
+    const searchParams = useSearchParams();
+    const paymentStatus = searchParams.get('payment');
+    const txnid = searchParams.get('txnid');
 
     // Look for the destination in both data objects
     const destination: FixedDeparture | DestinationWithoutFlight | undefined =
@@ -79,6 +83,12 @@ export default function FixedDeparturePage({ params }: PageProps) {
     const exclusionsRef = useRef<HTMLDivElement>(null);
     const otherRef = useRef<HTMLDivElement>(null);
     const tabsRef = useRef<HTMLDivElement>(null);
+
+    // Modal state for receipt
+    const [showReceiptModal, setShowReceiptModal] = useState(false);
+    const [receiptLoading, setReceiptLoading] = useState(false);
+    const [receiptError, setReceiptError] = useState<string | null>(null);
+    const [paymentDetails, setPaymentDetails] = useState<any>(null);
 
     useScroll();
 
@@ -126,8 +136,189 @@ export default function FixedDeparturePage({ params }: PageProps) {
         setActiveTab(tabId);
     };
 
+    // Fetch payment details when modal opens
+    useEffect(() => {
+        if (showReceiptModal && txnid) {
+            setReceiptLoading(true);
+            setReceiptError(null);
+            fetch(`/api/payu/status?txnid=${txnid}`)
+                .then(res => res.json())
+                .then(data => {
+                    if (data.success && data.result) {
+                        setPaymentDetails(data.result);
+                    } else {
+                        setReceiptError(data.error || 'Could not fetch receipt');
+                    }
+                })
+                .catch(() => setReceiptError('Could not fetch receipt'))
+                .finally(() => setReceiptLoading(false));
+        }
+    }, [showReceiptModal, txnid]);
+
+    // Receipt HTML generator (copied from /payment/success/page.tsx)
+    const generateReceiptHTML = () => {
+        if (!paymentDetails) return '';
+        const formatDate = () => {
+            return new Date().toLocaleDateString('en-IN', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+        };
+        return `
+          <!DOCTYPE html>
+          <html>
+          <head>
+            <title>Payment Receipt - ${paymentDetails.txnid}</title>
+            <style>
+              body { font-family: Arial, sans-serif; margin: 20px; }
+              .header { text-align: center; color: #16a34a; margin-bottom: 30px; }
+              .details { margin: 20px 0; }
+              .detail-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #eee; }
+              .amount { font-size: 24px; font-weight: bold; color: #16a34a; }
+              .status { background: #dcfce7; color: #166534; padding: 4px 8px; border-radius: 4px; }
+              .footer { margin-top: 30px; text-align: center; color: #666; }
+            </style>
+          </head>
+          <body>
+            <div class="header">
+              <h1>Payment Receipt</h1>
+              <h2>TrueDeal Travel</h2>
+              <p>Generated on: ${formatDate()}</p>
+            </div>
+            <div class="details">
+              <div class="detail-row">
+                <span>Transaction ID:</span>
+                <span>${paymentDetails.txnid}</span>
+              </div>
+              <div class="detail-row">
+                <span>Payment ID:</span>
+                <span>${paymentDetails.mihpayid}</span>
+              </div>
+              <div class="detail-row">
+                <span>Customer Name:</span>
+                <span>${paymentDetails.firstname}</span>
+              </div>
+              <div class="detail-row">
+                <span>Email:</span>
+                <span>${paymentDetails.email}</span>
+              </div>
+              <div class="detail-row">
+                <span>Package:</span>
+                <span>${paymentDetails.productinfo}</span>
+              </div>
+              <div class="detail-row">
+                <span>Amount Paid:</span>
+                <span class="amount">₹${paymentDetails.amount}</span>
+              </div>
+              <div class="detail-row">
+                <span>Status:</span>
+                <span class="status">SUCCESS</span>
+              </div>
+              ${paymentDetails.bank_ref_num ? `
+              <div class="detail-row">
+                <span>Bank Reference:</span>
+                <span>${paymentDetails.bank_ref_num}</span>
+              </div>
+              ` : ''}
+            </div>
+            <div class="footer">
+              <p>Thank you for choosing TrueDeal Travel</p>
+              <p>Email: info@truedeal4u.com | Phone: +91-9310271488</p>
+            </div>
+          </body>
+          </html>
+        `;
+    };
+
+    const handleDownloadReceipt = () => {
+        if (!paymentDetails) return;
+        const receiptHTML = generateReceiptHTML();
+        const blob = new Blob([receiptHTML], { type: 'text/html' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = `payment-receipt-${paymentDetails.txnid}.html`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+        setTimeout(() => {
+            window.print();
+        }, 500);
+    };
+
+    const handlePrint = () => {
+        window.print();
+    };
+
     return (
         <div className={`min-h-screen bg-gray-50 ${poppins.className} relative`}>
+            {/* Payment status banner */}
+            {paymentStatus === 'success' && (
+                <div className="bg-green-100 border border-green-400 text-green-800 px-4 py-3 rounded text-center font-semibold text-lg mb-4 flex flex-col md:flex-row items-center justify-center gap-4">
+                    <span>Payment is done! Thank you for booking this package.</span>
+                    {txnid && (
+                        <button
+                            className="ml-2 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition"
+                            onClick={() => setShowReceiptModal(true)}
+                        >
+                            View/Download Receipt
+                        </button>
+                    )}
+                </div>
+            )}
+            {paymentStatus === 'failure' && (
+                <div className="bg-red-100 border border-red-400 text-red-800 px-4 py-3 rounded text-center font-semibold text-lg mb-4">
+                    Payment failed. Please try again or contact support.
+                </div>
+            )}
+            {/* Receipt Modal */}
+            <Dialog open={showReceiptModal} onOpenChange={setShowReceiptModal}>
+                <DialogContent className="max-w-lg w-full">
+                    <DialogHeader>
+                        <DialogTitle>Payment Receipt</DialogTitle>
+                    </DialogHeader>
+                    {receiptLoading && <div className="text-center py-8">Loading receipt...</div>}
+                    {receiptError && <div className="text-red-600 text-center py-8">{receiptError}</div>}
+                    {paymentDetails && (
+                        <div className="space-y-4">
+                            <div className="bg-green-50 border border-green-200 rounded-lg p-4 text-center">
+                                <h2 className="text-xl font-bold text-green-700 mb-2">Payment Successful!</h2>
+                                <div className="text-gray-700">Thank you for your booking with TrueDeal Travel</div>
+                            </div>
+                            <div className="bg-gray-50 rounded-lg p-4">
+                                <div className="mb-2"><span className="font-semibold">Transaction ID:</span> {paymentDetails.txnid}</div>
+                                <div className="mb-2"><span className="font-semibold">Payment ID:</span> {paymentDetails.mihpayid}</div>
+                                <div className="mb-2"><span className="font-semibold">Customer Name:</span> {paymentDetails.firstname}</div>
+                                <div className="mb-2"><span className="font-semibold">Email:</span> {paymentDetails.email}</div>
+                                <div className="mb-2"><span className="font-semibold">Package:</span> {paymentDetails.productinfo}</div>
+                                <div className="mb-2"><span className="font-semibold">Amount Paid:</span> ₹{paymentDetails.amount}</div>
+                                <div className="mb-2"><span className="font-semibold">Status:</span> <span className="text-green-700 font-bold">SUCCESS</span></div>
+                                {paymentDetails.bank_ref_num && (
+                                    <div className="mb-2"><span className="font-semibold">Bank Reference:</span> {paymentDetails.bank_ref_num}</div>
+                                )}
+                            </div>
+                            <div className="flex gap-4">
+                                <button
+                                    className="flex-1 bg-green-600 hover:bg-green-700 text-white py-2 rounded"
+                                    onClick={handleDownloadReceipt}
+                                >
+                                    Download Receipt
+                                </button>
+                                <button
+                                    className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded"
+                                    onClick={handlePrint}
+                                >
+                                    Print Receipt
+                                </button>
+                            </div>
+                        </div>
+                    )}
+                </DialogContent>
+            </Dialog>
             {/* Hero Section with Parallax Effect */}
             <div className="relative h-[70vh] md:h-[80vh] overflow-hidden">
                 <AnimatePresence mode='wait'>
