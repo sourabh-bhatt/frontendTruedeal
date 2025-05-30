@@ -11,7 +11,7 @@ import { notFound } from 'next/navigation';
 import { FaPlane, FaCalendarAlt } from 'react-icons/fa';
 import { use, useState, useEffect, useRef } from 'react';
 import { Button } from "@/components/ui/button";
-import { BookingFormModal } from '@/app/components/BookingFormModal';
+import { BookingOptionsModal } from '@/app/components/BookingOptionsModal';
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { motion, useScroll, AnimatePresence } from "framer-motion";
 import { Poppins } from 'next/font/google';
@@ -628,12 +628,21 @@ export default function FixedDeparturePage({ params }: PageProps) {
             </AnimatePresence>
 
             {/* Booking Modal */}
-            <BookingFormModal
+            <BookingOptionsModal
                 isOpen={isBookingModalOpen}
                 onClose={() => setIsBookingModalOpen(false)}
                 destinationName={`${destination.country} Tour Package`}
-                price={destination.amount}
-                dates={`${destination.dateStart} - ${destination.dateEnd}`}
+                packageDetails={{
+                    id: destination.id,
+                    country: destination.country,
+                    days: destination.days,
+                    nights: destination.nights,
+                    amount: destination.amount,
+                    dateStart: destination.dateStart,
+                    dateEnd: destination.dateEnd,
+                    images: destination.images,
+                    hotelDetails: destination.hotelDetails,
+                }}
             />
 
             {/* Conditionally render flight-specific information */}
