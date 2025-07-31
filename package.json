@@ -6,15 +6,27 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "db:generate": "npx prisma generate",
+    "db:migrate": "npx prisma migrate dev",
+    "db:migrate:reset": "npx prisma migrate reset",
+    "db:studio": "npx prisma studio",
+    "db:seed": "tsx scripts/seed-database.ts",
+    "db:setup": "npm run db:generate && npm run db:migrate && npm run db:seed"
+  },
+  "prisma": {
+    "seed": "tsx scripts/seed-database.ts"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.857.0",
+    "@aws-sdk/s3-request-presigner": "^3.857.0",
     "@clerk/nextjs": "^6.4.0",
     "@emailjs/browser": "^4.4.1",
     "@fortawesome/fontawesome-free": "^6.6.0",
     "@headlessui/react": "^2.2.0",
     "@heroicons/react": "^2.2.0",
     "@next/third-parties": "^15.1.7",
+    "@prisma/client": "^6.13.0",
     "@radix-ui/react-accordion": "^1.2.3",
     "@radix-ui/react-checkbox": "^1.1.2",
     "@radix-ui/react-dialog": "^1.1.2",
@@ -30,6 +42,8 @@
     "@radix-ui/react-toast": "^1.2.2",
     "@sendgrid/mail": "^8.1.4",
     "@types/canvas-confetti": "^1.9.0",
+    "@types/pg": "^8.15.5",
+    "@types/uuid": "^10.0.0",
     "@vercel/analytics": "^1.4.1",
     "@vercel/blob": "^1.0.0",
     "@vercel/speed-insights": "^1.1.0",
@@ -50,7 +64,9 @@
     "motion": "^11.18.2",
     "next": "^15.1.7",
     "nodemailer": "^6.10.0",
+    "pg": "^8.16.3",
     "phosphor-react": "^1.4.1",
+    "prisma": "^6.13.0",
     "radix-ui": "^1.0.1",
     "react": "18.2.0",
     "react-day-picker": "^9.3.0",
@@ -63,11 +79,12 @@
     "shadcn": "^2.1.8",
     "swiper": "^11.2.1",
     "tailwind-merge": "^2.5.4",
-    "toast": "^0.5.4"
+    "toast": "^0.5.4",
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
     "@types/jsonwebtoken": "^9.0.8",
-    "@types/node": "^22",
+    "@types/node": "^22.17.0",
     "@types/nodemailer": "^6.4.17",
     "@types/react": "^18",
     "@types/react-dom": "^18",
@@ -79,6 +96,7 @@
     "tailwindcss": "^3.4.15",
     "tailwindcss-animate": "^1.0.7",
     "tailwindcss-typography": "^3.1.0",
+    "tsx": "^4.20.3",
     "typescript": "^5"
   }
 }

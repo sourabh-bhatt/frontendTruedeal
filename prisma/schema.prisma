@@ -1,0 +1,95 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Destination {
+  id          Int      @id @default(autoincrement())
+  name        String
+  slug        String   @unique
+  description String?
+  continent   String?
+  country     String?
+  basePrice   Decimal? @map("base_price") @db.Decimal(10, 2)
+  isActive    Boolean  @default(true) @map("is_active")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  mediaAssets MediaAsset[]
+  packages    Package[]
+
+  @@map("destinations")
+}
+
+model MediaAsset {
+  id            Int      @id @default(autoincrement())
+  destinationId Int      @map("destination_id")
+  assetType     String   @map("asset_type") // 'banner', 'gallery', 'background', 'thumbnail'
+  fileType      String   @map("file_type") // 'image', 'video'
+  fileFormat    String   @map("file_format") // 'jpg', 'png', 'mp4', 'webp'
+  s3Url         String   @map("s3_url")
+  altText       String?  @map("alt_text")
+  displayOrder  Int      @default(0) @map("display_order")
+  isPrimary     Boolean  @default(false) @map("is_primary")
+  createdAt     DateTime @default(now()) @map("created_at")
+
+  // Relations
+  destination Destination @relation(fields: [destinationId], references: [id], onDelete: Cascade)
+
+  @@map("media_assets")
+}
+
+model Package {
+  id             Int      @id @default(autoincrement())
+  destinationId  Int      @map("destination_id")
+  packageName    String   @map("package_name")
+  durationDays   Int?     @map("duration_days")
+  durationNights Int?     @map("duration_nights")
+  price          Decimal? @db.Decimal(10, 2)
+  description    String?
+  isFeatured     Boolean  @default(false) @map("is_featured")
+  createdAt      DateTime @default(now()) @map("created_at")
+
+  // Relations
+  destination    Destination     @relation(fields: [destinationId], references: [id], onDelete: Cascade)
+  itinerary      Itinerary[]
+  packageDetails PackageDetail[]
+
+  @@map("packages")
+}
+
+model Itinerary {
+  id          Int      @id @default(autoincrement())
+  packageId   Int      @map("package_id")
+  dayNumber   Int      @map("day_number")
+  title       String?
+  description String?
+  activities  Json? // Store as JSON array
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  // Relations
+  package Package @relation(fields: [packageId], references: [id], onDelete: Cascade)
+
+  @@map("itinerary")
+}
+
+model PackageDetail {
+  id           Int      @id @default(autoincrement())
+  packageId    Int      @map("package_id")
+  detailType   String   @map("detail_type") // 'inclusion', 'exclusion', 'cancellation_policy'
+  detailText   String   @map("detail_text")
+  displayOrder Int      @default(0) @map("display_order")
+
+  // Relations
+  package Package @relation(fields: [packageId], references: [id], onDelete: Cascade)
+
+  @@map("package_details")
+}
